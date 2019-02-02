@@ -10,7 +10,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_02_130843) do
+ActiveRecord::Schema.define(version: 2019_02_02_135000) do
+
+  create_table "cards", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "area_id"
+    t.integer "pref_id"
+    t.string "dam_name"
+    t.date "visit_date"
+    t.integer "version_bf"
+    t.integer "version_af"
+    t.integer "version_y"
+    t.integer "version_m"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dams", force: :cascade do |t|
+    t.integer "region_id"
+    t.integer "pref_id"
+    t.string "name"
+    t.string "name_kana"
+    t.string "river"
+    t.integer "type"
+    t.string "gate"
+    t.integer "height"
+    t.integer "length"
+    t.integer "volume"
+    t.text "purpose"
+    t.text "constructor"
+    t.integer "start_of_construction"
+    t.integer "end_of_construction"
+    t.text "dam_image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "distributes", force: :cascade do |t|
+    t.integer "dam_id"
+    t.integer "facility_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "facilities", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.text "opening_hours"
+    t.text "comment"
+    t.decimal "latitude", precision: 11, scale: 8
+    t.decimal "longitude", precision: 11, scale: 8
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prefectures", force: :cascade do |t|
+    t.string "region_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
