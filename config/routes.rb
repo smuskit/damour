@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get    '/dams/top',    to: 'dams#top'
   get    '/dams/prefecture',    to: 'dams#prefecture'
   get    '/dams/search',    to: 'dams#search'
-  resources :dams, only: [:new, :create, :index, :show, :update, :destroy]
+  get    '/dams/management',    to: 'dams#management'
+  resources :dams, only: [:new, :create, :show, :update, :destroy]
 end
