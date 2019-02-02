@@ -1,0 +1,2 @@
+class Dam < ApplicationRecord
+end
