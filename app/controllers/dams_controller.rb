@@ -1,0 +1,2 @@
+class DamsController < ApplicationController
+end
