@@ -1,3 +1,7 @@
 cards#top
 
 <h1>カードトップ</h1>
+
+<% @cards.each do |c| %>
+  <p><%= c.dam_name%>カード</p>
+<% end %>
