@@ -1,3 +1,31 @@
-edit.html.erb
-
 users#edit
+
+<%= form_for(@user) do |f| %>
+        <div class="field">
+          <%= f.label :名前 %><br />
+          <%= f.text_field :name, autocomplete: "name", autofocus: true, class:"" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :名前ふりかな %><br />
+          <%= f.text_field :name, autocomplete: "name_kana", autofocus: true, class:"" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :ニックネーム %><br />
+          <%= f.text_field :hundle_name, autocomplete: "hundle_name", class:"" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autocomplete: "email", class:"" %>
+        </div>
+
+        <div class="field">
+            <%= f.label :プロフィール画像 %><br />
+            <%= f.attachment_field :profile_image, class:"" %>
+        </div>
+      <%= f.submit "変更を保存", class:"" %>
+    </div>
+  <% end %>
+</div>
