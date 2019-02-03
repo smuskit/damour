@@ -1,4 +1,9 @@
-users#show
+<h1>ユーザマイページ</h1>
+
+<p><%= attachment_image_tag @user, :profile_image, size: "100%",class:"", fallback: "no_image.jpeg" %></p>
+<p>名前：<%= @user.name %></p>
+<p>かな：<%= @user.name_kana %></p>
+<p>メールアドレス：<%= @user.email %></p>
 
 
 <p><%= link_to 'ユーザ情報編集画面へ', edit_user_path(current_user) %></p>
