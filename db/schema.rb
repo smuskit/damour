@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 2019_02_03_015221) do
 
   create_table "cards", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "area_id"
-    t.integer "pref_id"
+    t.integer "region_id"
+    t.integer "prefecture_id"
     t.string "dam_name"
     t.date "visit_date"
     t.integer "version_bf"
