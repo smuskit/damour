@@ -2,4 +2,75 @@ prefectures#show
 
 <h2><%= @region.name %>地方</h2>
 
-<p><%= @prefecture.name%>のダム一覧</p>
+<% if @region.id == 1 %>
+  <%=link_to '北海道', prefecture_path(1) %>
+
+<% elsif @region.id == 2 %>
+  <%=link_to '青森県', prefecture_path(2) %>
+  <%=link_to '秋田県', prefecture_path(3) %>
+  <%=link_to '岩手県', prefecture_path(4) %>
+  <%=link_to '福島県', prefecture_path(5) %>
+  <%=link_to '宮城県', prefecture_path(6) %>
+  <%=link_to '山形県', prefecture_path(7) %>
+
+<% elsif @region.id == 3 %>
+  <%=link_to '茨城県', prefecture_path(8) %>
+  <%=link_to '神奈川県', prefecture_path(9) %>
+  <%=link_to '群馬県', prefecture_path(10) %>
+  <%=link_to '埼玉県', prefecture_path(11) %>
+  <%=link_to '千葉県', prefecture_path(12) %>
+  <%=link_to '東京都', prefecture_path(13) %>
+  <%=link_to '栃木県', prefecture_path(14) %>
+
+<% elsif @region.id == 4 %>
+  <%=link_to '石川県', prefecture_path(15) %>
+  <%=link_to '富山県', prefecture_path(16) %>
+  <%=link_to '長野県', prefecture_path(17) %>
+  <%=link_to '新潟県', prefecture_path(18) %>
+  <%=link_to '福井県', prefecture_path(19) %>
+  <%=link_to '山梨県', prefecture_path(20) %>
+
+<% elsif @region.id == 5 %>
+  <%=link_to '愛知県', prefecture_path(21) %>
+  <%=link_to '岐阜県', prefecture_path(22) %>
+  <%=link_to '静岡県', prefecture_path(23) %>
+  <%=link_to '三重県', prefecture_path(24) %>
+
+<% elsif @region.id == 6 %>
+  <%=link_to '大阪府', prefecture_path(25) %>
+  <%=link_to '京都府', prefecture_path(26) %>
+  <%=link_to '滋賀県', prefecture_path(27) %>
+  <%=link_to '兵庫県', prefecture_path(28) %>
+  <%=link_to '奈良県', prefecture_path(29) %>
+  <%=link_to '和歌山県', prefecture_path(30) %>
+
+<% elsif @region.id == 7 %>
+  <%=link_to '岡山県', prefecture_path(31) %>
+  <%=link_to '島根県', prefecture_path(32) %>
+  <%=link_to '鳥取県', prefecture_path(33) %>
+  <%=link_to '広島県', prefecture_path(34) %>
+  <%=link_to '山口県', prefecture_path(35) %>
+
+<% elsif @region.id == 8 %>
+  <%=link_to '香川県', prefecture_path(36) %>
+  <%=link_to '愛媛県', prefecture_path(37) %>
+  <%=link_to '高知県', prefecture_path(38) %>
+  <%=link_to '徳島県', prefecture_path(39) %>
+
+<% else @region.id == 9 %>
+  <%=link_to '大分県', prefecture_path(40) %>
+  <%=link_to '鹿児島県', prefecture_path(41) %>
+  <%=link_to '熊本県', prefecture_path(42) %>
+  <%=link_to '佐賀県', prefecture_path(43) %>
+  <%=link_to '長崎県', prefecture_path(44) %>
+  <%=link_to '福岡県', prefecture_path(45) %>
+  <%=link_to '宮崎県', prefecture_path(46) %>
+  <%=link_to '沖縄県', prefecture_path(47) %>
+<% end %>
+
+<div class="prefecture-show-border"></div>
+<p><%= @prefecture.name %>のダム</p>
+
+<% @dams.each do |d| %>
+  <p><%= d.name %></p><p>
+<% end %>

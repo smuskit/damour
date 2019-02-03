@@ -2,11 +2,11 @@ class CreateDams < ActiveRecord::Migration[5.2]
   def change
     create_table :dams do |t|
       t.integer :region_id
-      t.integer :pref_id
+      t.integer :prefecture_id
       t.string :name
       t.string :name_kana
       t.string :river
-      t.integer :type
+      t.integer :dam_type
       t.string :gate
       t.integer :height
       t.integer :length
