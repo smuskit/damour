@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 2019_02_03_015221) do
     t.string "name"
     t.string "name_kana"
     t.string "hundle_name"
-    t.string "profile_image_id"
+    t.text "profile_image_id"
     t.boolean "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
