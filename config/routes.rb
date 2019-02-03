@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get    '/users/faq',    to: 'users#faq'
   resources :users, only: [:show, :edit, :update, :destroy]
 
-  get    '/cards/top',    to: 'cards#top'
+  get    '/cards/:id',    to: 'cards#top', as: 'card_top'
   resources :cards, only: [:create, :edit, :update, :destroy]
 
   get    '/dams/top',    to: 'dams#top'

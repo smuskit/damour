@@ -1,6 +1,8 @@
 class CardsController < ApplicationController
 
   def top
+    user = User.find(params[:id])
+    @cards = user.cards.all
   end
 
   def create
