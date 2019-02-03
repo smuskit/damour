@@ -4,6 +4,7 @@ class DamsController < ApplicationController
   end
 
   def prefecture
+    
   end
 
   def new
