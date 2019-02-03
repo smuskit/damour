@@ -10,12 +10,13 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="bootstrap.min.css">
+
   </head>
 
   <body>
     <div>
       <% if user_signed_in? %>
-        <%= link_to 'トップ', dams_top_path, class:"btn btn-primary" %>
+        <%= link_to 'トップ', dams_top_path, data: {"turbolinks" => false}, class:"btn btn-primary" %>
         <%= link_to 'カードトップ', cards_top_path(current_user), class:"btn btn-primary" %>
         <%= link_to 'マイページ', user_path(current_user), class:"btn btn-success" %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"btn btn-danger" %>
