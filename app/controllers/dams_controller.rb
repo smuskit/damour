@@ -4,6 +4,7 @@ class DamsController < ApplicationController
   end
 
   def prefecture
+    @prefecture = Prefecture.find(params[:id])
   end
 
   def new
@@ -26,5 +27,10 @@ class DamsController < ApplicationController
 
   def management
   end
+
+  private
+    def prefecture_params
+      params.require(:prefecture).permit(:region_id, :name)
+    end
 
 end
