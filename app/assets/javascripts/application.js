@@ -32,6 +32,18 @@ $(function(){
     {"code": 9 , "name":"九州地方",   "color":"#f7a6a6", "hoverColor":"#ffcece", "prefectures":[40,41,42,43,44,45,46,47]},
   ];
 
+  var areaLinks = {
+    "北海道地方" : "/prefectures/1",
+    "東北地方" : "/prefectures/2",
+    "関東地方" : "/prefectures/8",
+    "北陸・甲信越地方" : "/prefectures/15",
+    "東海地方" : "/prefectures/21",
+    "近畿地方" : "/prefectures/25",
+    "中国地方" : "/prefectures/31",
+    "四国地方" : "/prefectures/36",
+    "九州地方" : "/prefectures/40",
+  };
+
   $("#map").japanMap(
     {
       width: 800,
@@ -47,6 +59,9 @@ $(function(){
       fontSize : 12, //地図に表示する文字のサイズ
       fontColor : "areaColor", //地図に表示する文字の色。"areaColor"でエリアの色に合わせる
       fontShadowColor : "black", //地図に表示する文字の影の色
+      onSelect:function(data){ //選択範囲をクリックしたときに実行
+        location.href = areaLinks[data.area.name]; //data.area.nameは選択したエリアの名前
+      },
     }
   );
 });

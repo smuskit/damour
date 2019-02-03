@@ -3,10 +3,6 @@ class DamsController < ApplicationController
   def top
   end
 
-  def prefecture
-    @prefecture = Prefecture.find(params[:id])
-  end
-
   def new
   end
 

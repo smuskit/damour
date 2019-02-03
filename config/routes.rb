@@ -22,8 +22,9 @@ Rails.application.routes.draw do
   resources :cards, only: [:create, :edit, :update, :destroy]
 
   get    '/dams/top',    to: 'dams#top'
-  get    '/dams/prefecture',    to: 'dams#prefecture'
   get    '/dams/search',    to: 'dams#search'
   get    '/dams/management',    to: 'dams#management'
   resources :dams, only: [:new, :create, :show, :update, :destroy]
+
+  resources :prefectures, only: [:show]
 end
