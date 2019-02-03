@@ -1,0 +1,36 @@
+cards#show
+
+<h1>カードトップ</h1>
+
+<% @cards.each do |c| %>
+  <p><%= c.dam_name%>カード</p>
+<% end %>
+
+
+<%= form_for(@card) do |f| %>
+
+  <% if @card.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @cards.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="region-area">
+    <%= f.label :region_id %><br>
+    <%= collection_select :card, :region_id, Region.all, :id, :name %>
+  </div>
+
+  <div class="prefecture-area">
+    <%= render partial: 'select_prefecture', locals: {region_id: Region.first.id} %>
+  </div>
+
+  <div class="">
+    <%= f.label :ダム名 %><br>
+    <%= f.text_field :dam_name, class:"" %>
+  </div>
+
+<% end %>
