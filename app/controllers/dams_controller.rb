@@ -4,6 +4,7 @@ class DamsController < ApplicationController
   end
 
   def new
+    @dam = Dam.new
   end
 
   def create
