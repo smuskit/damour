@@ -1,1 +1,69 @@
-new.html.erb
+<h2>ダム登録</h2>
+
+<%= form_for (@dam) do |f| %>
+
+  <div class="region-area">
+    ■<%= f.label :地域 %><br>
+    <%= collection_select :card, :region_id, Region.all, :id, :name %>
+  </div>
+
+  <div class="prefecture-area">
+    <%= render partial: 'cards/select_prefecture', locals: {region_id: Region.first.id} %>
+  </div>
+
+  <div>
+    ■<%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    ■<%= f.label :name_kana %><br>
+    <%= f.text_field :name_kana %>
+  </div>
+
+  <div>
+    ■<%= f.label :river %><br>
+    <%= f.text_field :river %>
+  </div>
+
+  <div>
+    ■<%= f.label :dam_type %><br>
+    <%= f.text_field :dam_type %>
+  </div>
+
+  <div>
+    ■<%= f.label :gate %><br>
+    <%= f.text_field :gate %>
+  </div>
+
+  <div>
+    ■<%= f.label :height_and_length %><br>
+    <%= f.number_field :height %>/<%= f.number_field :length %>
+  </div>
+
+  <div>
+    ■<%= f.label :volume %><br>
+    <%= f.number_field :volume %>
+  </div>
+
+  <div>
+    ■<%= f.label :purpose %><br>
+    <%= f.text_field :purpose %>
+  </div>
+
+  <div>
+    ■<%= f.label :constructor %><br>
+    <%= f.text_field :constructor %>
+  </div>
+
+  <div>
+    ■<%= f.label :construction %><br>
+    <%= f.number_field :start_of_construction %>~<%= f.number_field :end_of_construction %>
+  </div>
+
+  <div>
+    <%= f.submit 'create DAM', class:"btn btn-sm btn-success" %><br>
+  </div>
+
+<% end %>
+

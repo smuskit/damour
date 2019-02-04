@@ -16,10 +16,6 @@ Region.create(name: '中国')
 Region.create(name: '四国')
 Region.create(name: '九州')
 
-Card.create(user_id: '1', region_id: '1', prefecture_id: '1', dam_name: '厚幌ダム', visit_date: '2018-12-31', version_bf: '0', version_af: '1', version_y: '2016', version_m: '6')
-
-Card.create(user_id: '1', region_id: '2', prefecture_id: '2', dam_name: '津軽ダム', visit_date: '2018-12-31', version_bf: '0', version_af: '1', version_y: '2016', version_m: '6')
-
 Prefecture.create(region_id: '1', name: '北海道')
 
 Prefecture.create(region_id: '2', name: '青森県')
