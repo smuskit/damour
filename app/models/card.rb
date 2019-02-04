@@ -2,7 +2,7 @@ class Card < ApplicationRecord
   belongs_to :region
   belongs_to :prefecture
   belongs_to :user
+  has_many :images, dependent: :destroy
 
-  mount_uploaders :images, ImageUploader
-  # serialize :images, JSON
+  accepts_nested_attributes_for :images
 end

@@ -2,68 +2,90 @@ cards#show
 
 <h1>カードトップ</h1>
 
-<% @cards.each do |c| %>
-  <p><%= c.dam_name%>カード</p>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
 
-<!-- カード登録 -->
+      <% @cards.each do |c| %>
+        <p><%= c.dam_name%>カード</p>
+        <p>訪問日：<%= c.visit_date%></p>
+        <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
+        <p>
+          <% c.images.each do |i| %>
+             <!--carrierwavwを使った時の画像を取り出す記述-->
+            <%= image_tag i.dam_image.url %>
+            <!--carrierwavwを使った時の画像を取り出す記述-->
+          <% end %>
+        </p>
+      <% end %>
 
-<h3>ダムカード新規追加</h3>
-
-<% flash.each do |key, value| %>
-  <%= content_tag(:div, value, class: "#{key}") %>
-<% end %>
-
-<%= form_for(@card) do |f| %>
-
-  <% if @card.errors.any? %>
-
-    <div id="error_explanation">
-      <ul>
-        <% @cards.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
     </div>
-  <% end %>
+    <div class="col-xs-4">
 
-  <div class="region-area">
-    <%= f.label :地域 %><br>
-    <%= collection_select :card, :region_id, Region.all, :id, :name %>
+      <!-- カード登録 -->
+      <h3>ダムカード登録</h3>
+
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
+
+      <%= form_for(@card) do |f| %>
+
+        <% if @card.errors.any? %>
+
+          <div id="error_explanation">
+            <ul>
+              <% @cards.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="region-area">
+          ■<%= f.label :地域 %><br>
+          <%= collection_select :card, :region_id, Region.all, :id, :name %>
+        </div>
+
+        <div class="prefecture-area">
+          <%= render partial: 'select_prefecture', locals: {region_id: Region.first.id} %>
+        </div>
+
+        <div class="">
+          ■<%= f.label :ダム名 %><br>
+          <%= f.text_field :dam_name, class:"" %>
+        </div>
+
+        <div class="">
+          ■<%= f.label :ダム訪問日 %> (任意)<br>
+          <%= f.date_field :visit_date, class:"" %>
+        </div>
+
+        <div class="">
+          ■<%= f.label :カードのバージョン %> (任意)<br>
+          Ver.<%= f.number_field :version_bf, min: 0, max:5, class:"" %>
+          .<%= f.number_field :version_af, min: 0, max:5, class:"" %>
+          (<%= f.number_field :version_y, min: 1, max:9999, class:"" %>
+          <%= f.number_field :version_m, min: 1, max:12, class:"" %>)
+        </div>
+
+        <div class="">
+          ■<%= f.label :カード画像 %> (任意)<br>
+          <p>  *表面と裏面を写真に撮って登録できます</p>
+          <%= f.fields_for :images do |i| %>
+            <%= i.hidden_field :user_id, value: current_user.id %>
+            <%= i.file_field :dam_image %>
+          <% end %>
+        </div>
+
+        <div class="">
+          <%= f.submit "アルバムに登録", class: "btn btn-primary" %>
+        </div>
+
+      <% end %>
+      <!-- カード登録 -->
+    </div>
   </div>
-
-  <div class="prefecture-area">
-    <%= render partial: 'select_prefecture', locals: {region_id: Region.first.id} %>
-  </div>
-
-  <div class="">
-    <%= f.label :ダム名 %><br>
-    <%= f.text_field :dam_name, class:"" %>
-  </div>
-
-  <div class="">
-    <%= f.label :ダム訪問日 %> (任意)<br>
-    <%= f.date_field :visit_date, class:"" %>
-  </div>
-
-  <div class="">
-    <%= f.label :カードのバージョン %> (任意)<br>
-    Ver.<%= f.number_field :version_bf, min: 0, max:5, class:"" %>
-    .<%= f.number_field :version_af, min: 0, max:5, class:"" %>
-    (<%= f.number_field :version_y, min: 1, max:9999, class:"" %>
-    <%= f.number_field :version_m, min: 1, max:12, class:"" %>)
-  </div>
-
-  <div class="">
-    <%= f.file_field :images, multiple: true %>
-  </div>
-
-  <div class="">
-    <%= f.submit "アルバムに登録", class: "btn btn-primary" %>
-  </div>
-
-<% end %>
-<!-- カード登録 -->
-
+</div>
 
 

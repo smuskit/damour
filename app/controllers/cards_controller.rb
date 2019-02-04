@@ -1,9 +1,10 @@
 class CardsController < ApplicationController
 
   def show
-    user = User.find(params[:id])
-    @cards = user.cards.all
+    @user = User.find(params[:id])
+    @cards = @user.cards.all
     @card = Card.new
+    2.times { @card.images.build }
   end
 
   def get_prefectures
@@ -13,13 +14,13 @@ class CardsController < ApplicationController
   def create
     card = Card.new(card_params)
     card.user_id = current_user.id
-    if card.save
-      flash.notice = 'カードを登録しました．'
-      redirect_to card_path(current_user.id)
-    else
-      flash.notice = '入力に誤りがあります．'
-      render 'show'
-    end
+      if card.save
+        flash.notice = 'カードを登録しました．'
+        redirect_to card_path(current_user.id)
+      else
+        flash.notice = '入力に誤りがあります．'
+        render 'show'
+      end
   end
 
   def edit
@@ -32,8 +33,9 @@ class CardsController < ApplicationController
   end
 
   private
+
     def card_params
-      params.require(:card).permit(:region_id, :prefecture_id, :dam_name, :visit_date, :varsion_bf, :varsion_af, :varsion_y, :varsion_m, {images: []})
+      params.require(:card).permit(:region_id, :prefecture_id, :dam_name, :visit_date, :version_bf, :version_af, :version_y, :version_m, images_attributes: [:dam_image])
     end
 
 end
