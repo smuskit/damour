@@ -9,6 +9,11 @@ cards#show
 <!-- カード登録 -->
 
 <h3>ダムカード新規追加</h3>
+
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
+
 <%= form_for(@card) do |f| %>
 
   <% if @card.errors.any? %>

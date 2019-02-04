@@ -11,6 +11,15 @@ class CardsController < ApplicationController
   end
 
   def create
+    card = Card.new(card_params)
+    card.user_id = current_user.id
+    if card.save
+      flash.notice = 'カードを登録しました．'
+      redirect_to card_path(current_user.id)
+    else
+      flash.notice = '入力に誤りがあります．'
+      render 'show'
+    end
   end
 
   def edit
@@ -21,5 +30,10 @@ class CardsController < ApplicationController
 
   def destroy
   end
+
+  private
+    def card_params
+      params.require(:card).permit(:)
+    end
 
 end
