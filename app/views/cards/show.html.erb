@@ -6,10 +6,13 @@ cards#show
   <p><%= c.dam_name%>カード</p>
 <% end %>
 
+<!-- カード登録 -->
 
+<h3>ダムカード新規追加</h3>
 <%= form_for(@card) do |f| %>
 
   <% if @card.errors.any? %>
+
     <div id="error_explanation">
       <ul>
         <% @cards.errors.full_messages.each do |message| %>
@@ -20,7 +23,7 @@ cards#show
   <% end %>
 
   <div class="region-area">
-    <%= f.label :region_id %><br>
+    <%= f.label :地域 %><br>
     <%= collection_select :card, :region_id, Region.all, :id, :name %>
   </div>
 
@@ -33,4 +36,25 @@ cards#show
     <%= f.text_field :dam_name, class:"" %>
   </div>
 
+  <div class="">
+    <%= f.label :ダム訪問日 %> (任意)<br>
+    <%= f.date_field :visit_date, class:"" %>
+  </div>
+
+  <div class="">
+    <%= f.label :カードのバージョン %> (任意)<br>
+    Ver.<%= f.number_field :version_bf, min: 0, max:5, class:"" %>
+    .<%= f.number_field :version_af, min: 0, max:5, class:"" %>
+    (<%= f.number_field :version_y, min: 1, max:9999, class:"" %>
+    <%= f.number_field :version_m, min: 1, max:12, class:"" %>)
+  </div>
+
+  <div class="">
+    <%= f.submit "アルバムに登録", class: "btn btn-primary" %>
+  </div>
+
 <% end %>
+<!-- カード登録 -->
+
+
+
