@@ -1,14 +1,20 @@
 <h2>ダム登録</h2>
 
+
+<% @dam.errors.full_messages.each do |e| %>
+  <%= e %>
+<% end %>
+
+
 <%= form_for (@dam) do |f| %>
 
-  <div class="region-area">
+  <div class="region-area-dam">
     ■<%= f.label :地域 %><br>
-    <%= collection_select :card, :region_id, Region.all, :id, :name %>
+    <%= collection_select :dam, :region_id, Region.all, :id, :name %>
   </div>
 
-  <div class="prefecture-area">
-    <%= render partial: 'cards/select_prefecture', locals: {region_id: Region.first.id} %>
+  <div class="prefecture-area-dam">
+    <%= render partial: 'select_prefecture_for_dam', locals: {region_id: Region.first.id} %>
   </div>
 
   <div>
@@ -27,7 +33,7 @@
   </div>
 
   <div>
-    ■<%= f.label :dam_type %><br>
+    ■<%= f.label :dam_type %>(integer)<br>
     <%= f.text_field :dam_type %>
   </div>
 
@@ -47,7 +53,7 @@
   </div>
 
   <div>
-    ■<%= f.label :purpose %><br>
+    ■<%= f.label :purpose %>(integer)<br>
     <%= f.text_field :purpose %>
   </div>
 
