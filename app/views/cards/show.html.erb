@@ -11,11 +11,9 @@ cards#show
         <p>訪問日：<%= c.visit_date%></p>
         <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
         <p>
-          <% c.images.each do |i| %>
-             <!--carrierwavwを使った時の画像を取り出す記述-->
-            <%= image_tag i.dam_image.url %>
-            <!--carrierwavwを使った時の画像を取り出す記述-->
-          <% end %>
+          <!--複数枚投稿画像のうち最初の画像を表示-->
+          <%= image_tag c.images.first.dam_image.url %>
+          <!--複数枚投稿画像のうち最初の画像を表示-->
         </p>
       <% end %>
 
