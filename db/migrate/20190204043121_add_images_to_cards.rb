@@ -1,5 +1,5 @@
 class AddImagesToCards < ActiveRecord::Migration[5.2]
   def change
-    add_column :cards, :images, :json
+    add_column :cards, :image, :string
   end
 end

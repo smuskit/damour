@@ -33,7 +33,7 @@ class CardsController < ApplicationController
 
   private
     def card_params
-      params.require(:card).permit(:)
+      params.require(:card).permit(:region_id, :prefecture_id, :dam_name, :visit_date, :varsion_bf, :varsion_af, :varsion_y, :varsion_m, {images: []})
     end
 
 end
