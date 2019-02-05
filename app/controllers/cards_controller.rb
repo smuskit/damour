@@ -23,17 +23,28 @@ class CardsController < ApplicationController
   def create
     card = Card.new(card_params)
     card.user_id = current_user.id
-      if card.save
-        flash.notice = 'カードを登録しました．'
-        redirect_to card_path(current_user.id)
-      else
-        flash.notice = '入力に誤りがあります．'
-        render 'show'
+    if card.save
+      if card.images.all.last.dam_image.blank?
+      card.images.all.last.destroy
       end
+      if card.images.all.last.dam_image.blank?
+        card.images.all.last.destroy
+      end
+      flash.notice = 'カードを登録しました．'
+      redirect_to card_path(current_user.id)
+    else
+      flash.notice = '入力に誤りがあります．'
+      render 'show'
+    end
   end
 
   def edit
     @card_edit = Card.find(params[:id])
+    if @card_edit.images.blank?
+      2.times { @card_edit.images.build }
+    elsif @card_edit.images.count == 1
+      1.times { @card_edit.images.build }
+    end
     respond_to do |format|
       format.html{}
       format.js {}

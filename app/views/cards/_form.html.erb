@@ -46,6 +46,7 @@
           <%= f.fields_for :images do |i| %>
             <%= i.hidden_field :user_id, value: current_user.id %>
             <%= i.file_field :dam_image %>
+            <%= i.hidden_field :dam_image_cache %>
           <% end %>
         </div>
 
