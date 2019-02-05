@@ -249,7 +249,7 @@ cards#show
 
           <div id="error_explanation">
             <ul>
-              <% @cards.errors.full_messages.each do |message| %>
+              <% @card.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
               <% end %>
             </ul>
