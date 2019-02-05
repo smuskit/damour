@@ -1,6 +1,6 @@
 <div class="modal-dialog modal-sm">
   <div class="modal-content">
-    <%= form_for(@card_edit, remote: true) do |f| %>
+    <%= form_for(@card_edit, remote: true, :url => {:action => 'update'}) do |f| %>
 
         <% if @card_edit.errors.any? %>
 
