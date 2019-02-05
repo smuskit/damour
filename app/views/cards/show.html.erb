@@ -21,31 +21,214 @@ cards#show
       </ul>
       <div class="tabcontent">
           <div id="tab01">
-            ALLダムード
-            <% @cards.each do |c| %>
-              <p><%= c.dam_name%>カード</p>
-              <p>訪問日：<%= c.visit_date%></p>
-              <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
-              <p>
-                <!--複数枚投稿画像のうち最初の画像を表示-->
-                <% if !c.images.count == 0 %>
-                  <%= image_tag c.images.first.dam_image.url %>
-                <% else %>
-                  <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
-                <% end %>
-                <!--複数枚投稿画像のうち最初の画像を表示-->
-              </p>
+            <% if @cards.empty? %>
+              カードはまだありません．
+            <% else %>
+              <% @cards.each do |c| %>
+                <p><%= c.dam_name%>カード</p>
+                <p>訪問日：<%= c.visit_date%></p>
+                <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
+                <p>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                  <% if !c.images.count == 0 %>
+                    <%= image_tag c.images.first.dam_image.url %>
+                  <% else %>
+                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
+                  <% end %>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                </p>
+              <% end %>
             <% end %>
           </div>
-          <div id="tab02">北海道のダムカード</div>
-          <div id="tab03">東北のダムカード</div>
-          <div id="tab04">関東のダムカード</div>
-          <div id="tab05">北陸・甲信越のダムカード</div>
-          <div id="tab06">東海のダムカード</div>
-          <div id="tab07">近畿のダムカード</div>
-          <div id="tab08">中国のダムカード</div>
-          <div id="tab09">四国のダムカード</div>
-          <div id="tab10">九州のダムカード</div>
+
+          <div id="tab02">
+            <% if @cards_hokkaido.empty? %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_hokkaido.each do |c| %>
+                <p><%= c.dam_name%>カード</p>
+                <p>訪問日：<%= c.visit_date%></p>
+                <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
+                <p>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                  <% if !c.images.count == 0 %>
+                    <%= image_tag c.images.first.dam_image.url %>
+                  <% else %>
+                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
+                  <% end %>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab03">
+            <% if @cards_tohoku.empty? %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_tohoku.each do |c| %>
+                <p><%= c.dam_name%>カード</p>
+                <p>訪問日：<%= c.visit_date%></p>
+                <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
+                <p>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                  <% if !c.images.count == 0 %>
+                    <%= image_tag c.images.first.dam_image.url %>
+                  <% else %>
+                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
+                  <% end %>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab04">
+            <% if @cards_kanto.empty? %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_kanto.each do |c| %>
+                <p><%= c.dam_name%>カード</p>
+                <p>訪問日：<%= c.visit_date%></p>
+                <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
+                <p>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                  <% if !c.images.count == 0 %>
+                    <%= image_tag c.images.first.dam_image.url %>
+                  <% else %>
+                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
+                  <% end %>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab05">
+            <% if @cards_hokuriku.empty? %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_hokuriku.each do |c| %>
+                <p><%= c.dam_name%>カード</p>
+                <p>訪問日：<%= c.visit_date%></p>
+                <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
+                <p>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                  <% if !c.images.count == 0 %>
+                    <%= image_tag c.images.first.dam_image.url %>
+                  <% else %>
+                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
+                  <% end %>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab06">
+            <% if @cards_tokai.empty? %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_tokai.each do |c| %>
+                <p><%= c.dam_name%>カード</p>
+                <p>訪問日：<%= c.visit_date%></p>
+                <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
+                <p>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                  <% if !c.images.count == 0 %>
+                    <%= image_tag c.images.first.dam_image.url %>
+                  <% else %>
+                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
+                  <% end %>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab07">
+            <% if @cards_kinki.empty? %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_kinki.each do |c| %>
+                <p><%= c.dam_name%>カード</p>
+                <p>訪問日：<%= c.visit_date%></p>
+                <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
+                <p>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                  <% if !c.images.count == 0 %>
+                    <%= image_tag c.images.first.dam_image.url %>
+                  <% else %>
+                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
+                  <% end %>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab08">
+            <% if @cards_chugoku.empty? %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_chugoku.each do |c| %>
+                <p><%= c.dam_name%>カード</p>
+                <p>訪問日：<%= c.visit_date%></p>
+                <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
+                <p>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                  <% if !c.images.count == 0 %>
+                    <%= image_tag c.images.first.dam_image.url %>
+                  <% else %>
+                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
+                  <% end %>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab09">
+            <% if @cards_shikoku.empty? %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_shikoku.each do |c| %>
+                <p><%= c.dam_name%>カード</p>
+                <p>訪問日：<%= c.visit_date%></p>
+                <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
+                <p>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                  <% if !c.images.count == 0 %>
+                    <%= image_tag c.images.first.dam_image.url %>
+                  <% else %>
+                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
+                  <% end %>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab10">
+            <% if @cards_kyushu.empty? %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_kyushu.each do |c| %>
+                <p><%= c.dam_name%>カード</p>
+                <p>訪問日：<%= c.visit_date%></p>
+                <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
+                <p>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                  <% if !c.images.count == 0 %>
+                    <%= image_tag c.images.first.dam_image.url %>
+                  <% else %>
+                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
+                  <% end %>
+                  <!--複数枚投稿画像のうち最初の画像を表示-->
+                </p>
+              <% end %>
+            <% end %>
+          </div>
       </div>
 
     </div>
