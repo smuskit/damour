@@ -72,7 +72,7 @@ prefectures#show
 <p><%= @prefecture.name %>のダム</p>
 
 <% @dams.each do |d| %>
-  <p><%= d.name %>/<%= d.name_kana %></p>
+  <p><%= d.name %>/<%= d.name_kana %><%= link_to '削除', dam_path(d), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-xs btn-danger" %></p>
   <p>河川名：<%= d.river %></p>
   <p>型式：<%= d.dam_type %></p>
   <p>ゲート：<%= d.gate %></p>

@@ -32,7 +32,7 @@ class DamsController < ApplicationController
     dam = Dam.find(params[:id])
       if  dam.destroy
           flash[:destroy] = '#{dam.name}の情報を削除しました．'
-          redirect_to dams_path
+          redirect_to dams_top_path
       else
         render action: :new
       end
