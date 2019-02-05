@@ -20,7 +20,23 @@ cards#show
 
       </ul>
       <div class="tabcontent">
-          <div id="tab01">ALLダムード</div>
+          <div id="tab01">
+            ALLダムード
+            <% @cards.each do |c| %>
+              <p><%= c.dam_name%>カード</p>
+              <p>訪問日：<%= c.visit_date%></p>
+              <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
+              <p>
+                <!--複数枚投稿画像のうち最初の画像を表示-->
+                <% if !c.images.count == 0 %>
+                  <%= image_tag c.images.first.dam_image.url %>
+                <% else %>
+                  <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
+                <% end %>
+                <!--複数枚投稿画像のうち最初の画像を表示-->
+              </p>
+            <% end %>
+          </div>
           <div id="tab02">北海道のダムカード</div>
           <div id="tab03">東北のダムカード</div>
           <div id="tab04">関東のダムカード</div>
@@ -31,17 +47,6 @@ cards#show
           <div id="tab09">四国のダムカード</div>
           <div id="tab10">九州のダムカード</div>
       </div>
-
-      <% @cards.each do |c| %>
-        <p><%= c.dam_name%>カード</p>
-        <p>訪問日：<%= c.visit_date%></p>
-        <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
-        <p>
-          <!--複数枚投稿画像のうち最初の画像を表示-->
-          <%= image_tag c.images.first.dam_image.url %>
-          <!--複数枚投稿画像のうち最初の画像を表示-->
-        </p>
-      <% end %>
 
     </div>
     <div class="col-xs-4">
