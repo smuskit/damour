@@ -34,9 +34,11 @@ cards#show
                 <p>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                   <% if !c.images.blank? %>
-                    <%= image_tag c.images.first.dam_image.url %>
+                    <%= link_to card_image_path(c) do %>
+                      <%= image_tag c.images.first.dam_image.url, size: "200x150" %>
+                    <% end %>
                   <% else %>
-                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
+                    <%= image_tag 'dam_card.jpeg', size: "200x150", class:"dam-card-sample-image" %>
                   <% end %>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                 </p>

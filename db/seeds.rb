@@ -72,7 +72,4 @@ Prefecture.create(region_id: '9', name: '福岡県')
 Prefecture.create(region_id: '9', name: '宮崎県')
 Prefecture.create(region_id: '9', name: '沖縄県')
 
-Dam.create(region_id: '1', prefecture_id: '1', name: '厚幌ダム', name_kana: 'あっぽろだむ', river: '厚真川水系厚真川', dam_type: '1', gate: 'コンジットゲート', height: '427', length: '516', volume: '4740', purpose: '3', constructor: '安藤ハザマ・岩田地崎・田中JV', start_of_construction: '2014', end_of_construction: '2019', dam_image_id: '1')
-
-
 
