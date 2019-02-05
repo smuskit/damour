@@ -73,3 +73,6 @@ gem 'kaminari'
 
 gem 'pry-rails'
 
+gem 'carrierwave'
+gem 'rmagick'
+

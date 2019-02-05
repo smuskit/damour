@@ -72,5 +72,16 @@ prefectures#show
 <p><%= @prefecture.name %>のダム</p>
 
 <% @dams.each do |d| %>
-  <p><%= d.name %></p><p>
+  <p><%= d.name %>/<%= d.name_kana %></p>
+  <p>河川名：<%= d.river %></p>
+  <p>型式：<%= d.dam_type %></p>
+  <p>ゲート：<%= d.gate %></p>
+  <p>堤高/堤頂長：<%= d.height %>m/<%= d.length %>m</p>
+  <p>総貯水容量：<%= d.volume %>万㎥</p>
+  <p>ダムの目的：<%= d.purpose %></p>
+  <p>施工業者：<%= d.constructor %></p>
+  <p>着工年/完成年：<%= d.start_of_construction %>/<%= d.end_of_construction %></p>
 <% end %>
+
+
+

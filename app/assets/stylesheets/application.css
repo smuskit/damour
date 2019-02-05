@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+.clearfix::after{
+  content: "";
+  display: inline-block;
+  clear: both;
+}

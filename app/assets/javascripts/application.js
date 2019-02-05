@@ -54,7 +54,7 @@ $(function(){
       movesIslands : true, //南西諸島を左上に移動させるときはtrue、移動させないときはfalse
       showsAreaName : true, //エリア名を表示しない場合はfalse
       width: 800, //canvasのwidth。別途heightも指定可。
-      backgroundColor: "#ffffff", //canvasの背景色
+      backgroundColor: "rgba(0, 0, 0, 0.1)", //canvasの背景色
       font : "MS Mincho", //地図に表示する文字のフォント
       fontSize : 12, //地図に表示する文字のサイズ
       fontColor : "areaColor", //地図に表示する文字の色。"areaColor"でエリアの色に合わせる
@@ -65,6 +65,7 @@ $(function(){
     }
   );
 });
+
 
 $(function($){
     $('.tabcontent > div').hide();
@@ -78,3 +79,4 @@ $(function($){
         return false;
     }).filter(':eq(0)').click();
 });
+

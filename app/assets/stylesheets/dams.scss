@@ -1,3 +1,44 @@
 // Place all the styles related to the Dams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* dams#top */
+
+#map {
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* new */
+
+.dam-new-form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.dam-new-form-half {
+  float: left;
+  width: 50%;
+}
+
+.dams-new-table {
+  width: 80%;
+  th {
+    width: 30%;
+    text-align: center;
+  }
+  td {
+    width: 70%;
+  }
+}
+
+.dams-new-form-submit {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.dams-new-form-submit-in {
+  width: 80%;
+  font-size: 20px;
+}
+

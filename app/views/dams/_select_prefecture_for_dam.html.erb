@@ -1,0 +1,2 @@
+■<%= label :dam, :都道府県 %><br>
+<%= collection_select :dam, :prefecture_id, Prefecture.where(region_id: region_id), :id, :name %>
