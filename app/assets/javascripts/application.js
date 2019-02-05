@@ -11,13 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
+//= require bootstrap-sprockets
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
 
-
-$(function(){
+document.addEventListener("turbolinks:load", function(){
   //地域を設定
   //{"code":[地域のコード], "name": [地域の名前], "color":[地域につける色], "hoverColor":[地域をマウスでホバーしたときの色], "prefectures":[地域に含まれる都道府県のコード]}
   var areas = [
@@ -53,7 +54,7 @@ $(function(){
       drawsBoxLine : false, //canvasを線で囲む場合はtrue
       movesIslands : true, //南西諸島を左上に移動させるときはtrue、移動させないときはfalse
       showsAreaName : true, //エリア名を表示しない場合はfalse
-      width: 800, //canvasのwidth。別途heightも指定可。
+      width: 800, //canvasのwidth。別途heightも指定可。˜ß
       backgroundColor: "rgba(0, 0, 0, 0.1)", //canvasの背景色
       font : "MS Mincho", //地図に表示する文字のフォント
       fontSize : 12, //地図に表示する文字のサイズ
@@ -67,7 +68,8 @@ $(function(){
 });
 
 
-$(function($){
+
+document.addEventListener("turbolinks:load", function(){
     $('.tabcontent > div').hide();
 
     $('.tabnav a').click(function () {

@@ -1,0 +1,58 @@
+<div class="modal-dialog modal-sm">
+  <div class="modal-content">
+    <%= form_for(@card_edit, remote: true) do |f| %>
+
+        <% if @card_edit.errors.any? %>
+
+          <div id="error_explanation">
+            <ul>
+              <% @card_edit.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="region-area">
+          ■<%= f.label :地域 %><br>
+          <%= collection_select :card, :region_id, Region.all, :id, :name %>
+        </div>
+
+        <div class="prefecture-area">
+          <%= render partial: 'select_prefecture', locals: {region_id: Region.first.id} %>
+        </div>
+
+        <div class="">
+          ■<%= f.label :ダム名 %><br>
+          <%= f.text_field :dam_name, class:"" %>
+        </div>
+
+        <div class="">
+          ■<%= f.label :ダム訪問日 %> (任意)<br>
+          <%= f.date_field :visit_date, class:"" %>
+        </div>
+
+        <div class="">
+          ■<%= f.label :カードのバージョン %> (任意)<br>
+          Ver.<%= f.number_field :version_bf, min: 0, max:5, class:"" %>
+          .<%= f.number_field :version_af, min: 0, max:5, class:"" %>
+          (<%= f.number_field :version_y, min: 1, max:9999, class:"" %>
+          <%= f.number_field :version_m, min: 1, max:12, class:"" %>)
+        </div>
+
+        <div class="">
+          ■<%= f.label :カード画像 %> (任意)<br>
+          <p>  *表面と裏面を写真に撮って登録できます</p>
+          <%= f.fields_for :images do |i| %>
+            <%= i.hidden_field :user_id, value: current_user.id %>
+            <%= i.file_field :dam_image %>
+          <% end %>
+        </div>
+
+        <div class="">
+          <%= f.submit "Update", class: "btn btn-primary" %>
+        </div>
+
+      <% end %>
+  </div>
+</div>
