@@ -3,6 +3,15 @@ class CardsController < ApplicationController
   def show
     @user = User.find(params[:id])
     @cards = @user.cards.all
+    @cards_hokkaido = @user.cards.all.where(region_id: 1)
+    @cards_tohoku = @user.cards.all.where(region_id: 2)
+    @cards_kanto = @user.cards.all.where(region_id: 3)
+    @cards_hokuriku = @user.cards.all.where(region_id: 4)
+    @cards_tokai = @user.cards.all.where(region_id: 5)
+    @cards_kinki = @user.cards.all.where(region_id: 6)
+    @cards_chugoku = @user.cards.all.where(region_id: 7)
+    @cards_shikoku = @user.cards.all.where(region_id: 8)
+    @cards_kyushu = @user.cards.all.where(region_id: 9)
     @card = Card.new
     2.times { @card.images.build }
   end
