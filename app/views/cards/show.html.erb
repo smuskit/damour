@@ -25,7 +25,10 @@ cards#show
               カードはまだありません．
             <% else %>
               <% @cards.each do |c| %>
-                <p><%= c.dam_name%>カード</p>
+                <p><%= c.dam_name%>カード
+                  <%= link_to '編集', edit_card_path(c.id), remote: true, class: "btn btn-sm btn-primary" %>
+                  <div class="modal fade card-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+                </p>
                 <p>訪問日：<%= c.visit_date%></p>
                 <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
                 <p>
@@ -230,7 +233,6 @@ cards#show
             <% end %>
           </div>
       </div>
-
     </div>
     <div class="col-xs-4">
 

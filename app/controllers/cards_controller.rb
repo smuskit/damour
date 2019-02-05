@@ -33,9 +33,27 @@ class CardsController < ApplicationController
   end
 
   def edit
+    @card_edit = Card.find(params[:id])
+    respond_to do |format|
+      format.html{}
+      format.js {}
+    end
   end
 
   def update
+    card = Card.find(card_params)
+    card.user_id = current_user.id
+    respond_to do |format|
+      if @user.update
+        format.html { redirect_to card_path(current_user), notice: 'カード情報を編集しました.' }
+        format.json { render :show, status: :ok, location: card_path(current_user) }
+        format.js { @status = "success"}
+      else
+        format.html { render :edit }
+        format.json { render json: card.errors, status: :unprocessable_entity }
+        format.js { @status = "fail" }
+      end
+    end
   end
 
   def destroy
