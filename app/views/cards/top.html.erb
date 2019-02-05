@@ -2,6 +2,32 @@ cards#top
 
 <h1>カードトップ</h1>
 
+<ul class="tabnav">
+    <li id="h"><a href="#tab01">すべて</a></li>
+    <li id="h"><a href="#tab02">北海道</a></li>
+    <li><a href="#tab03">東北</a></li>
+    <li><a href="#tab04">関東</a></li>
+    <li id="hk"><a href="#tab05">北陸・甲信越</a></li>
+    <li><a href="#tab06">東海</a></li>
+    <li><a href="#tab07">近畿</a></li>
+    <li><a href="#tab08">中国</a></li>
+    <li><a href="#tab09">四国</a></li>
+    <li><a href="#tab10">九州</a></li>
+
+</ul>
+<div class="tabcontent">
+    <div id="tab01">ALLダムード</div>
+    <div id="tab02">北海道のダムカード</div>
+    <div id="tab03">東北のダムカード</div>
+    <div id="tab04">関東のダムカード</div>
+    <div id="tab05">北陸・甲信越のダムカード</div>
+    <div id="tab06">東海のダムカード</div>
+    <div id="tab07">近畿のダムカード</div>
+    <div id="tab08">中国のダムカード</div>
+    <div id="tab09">四国のダムカード</div>
+    <div id="tab10">九州のダムカード</div>
+</div>
+
 <% @cards.each do |c| %>
   <p><%= c.dam_name%>カード</p>
 <% end %>
