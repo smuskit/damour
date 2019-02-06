@@ -293,6 +293,7 @@ cards#show
         <div class="">
           ■<%= f.label :カード画像 %> (任意)<br>
           <p>  *表面と裏面を写真に撮って登録できます</p>
+          下のファイルフォームだけに追加するとエラーが出る
           <%= f.fields_for :images do |i| %>
             <%= i.file_field :dam_image %>
           <% end %>
