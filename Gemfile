@@ -78,3 +78,4 @@ gem 'rmagick'
 
 gem 'jquery-turbolinks'
 
+
