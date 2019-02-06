@@ -1,1 +1,11 @@
-aaa
+<div><%= @dam.name %>/<%= @dam.name_kana %></div>
+<div><%= attachment_image_tag @dam, :dam_image, size: '450x300', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %></div>
+<div>河川名：<%= @dam.river %></div>
+<div>型式：<%= @dam.dam_type %></div>
+<div>ゲート：<%= @dam.gate %></div>
+<div>堤高/堤頂長：<%= @dam.height %>m/<%= @dam.length %>m</div>
+<div>総貯水容量：<%= @dam.volume %>万㎥</div>
+<div>ダムの目的：<%= @dam.purpose %></div>
+<div>施工業者：<%= @dam.constructor %></div>
+<div>着工年/完成年：<%= @dam.start_of_construction %>/<%= @dam.end_of_construction %></div>
+<%= link_to '削除', dam_path(@dam), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-xs btn-danger" %>
