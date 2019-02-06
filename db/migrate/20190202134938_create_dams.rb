@@ -8,13 +8,13 @@ class CreateDams < ActiveRecord::Migration[5.2]
       t.string :river
       t.integer :dam_type, limit: 1, default: 0, null: false
       t.string :gate
-      t.string :height
-      t.string :length
-      t.integer :volume
+      t.float :height
+      t.float :length
+      t.float :volume
       t.text :purpose
       t.text :constructor
-      t.integer :start_of_construction
-      t.integer :end_of_construction
+      t.text :start_of_construction
+      t.text :end_of_construction
       t.string :dam_image_id
       t.timestamps
     end
