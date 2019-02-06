@@ -13,9 +13,10 @@ class DamsController < ApplicationController
 
   def create
     @dam = Dam.new(dam_params)
+    @prefecture = @dam.prefecture
     if @dam.save
       flash.notice = '登録OK!'
-      redirect_to dams_top_path
+      redirect_to prefecture_path(@prefecture)
     else
       flash.notice = '再入力'
       render 'new'
@@ -30,6 +31,7 @@ class DamsController < ApplicationController
 
   def destroy
     dam = Dam.find(params[:id])
+    prefecture = dam.prefecture
       if  dam.destroy
           flash[:destroy] = '#{dam.name}の情報を削除しました．'
           redirect_to dams_top_path
@@ -50,7 +52,7 @@ class DamsController < ApplicationController
     end
 
     def dam_params
-      params.require(:dam).permit(:region_id, :prefecture_id, :name, :name_kana, :river, :dam_type, :gate, :height, :length, :volume, :purpose, :constructor, :start_of_construction, :end_of_construction, :dam_image_id)
+      params.require(:dam).permit(:region_id, :prefecture_id, :name, :name_kana, :river, :dam_type, :gate, :height, :length, :volume, :purpose, :constructor, :start_of_construction, :end_of_construction, :dam_image)
     end
 
 end
