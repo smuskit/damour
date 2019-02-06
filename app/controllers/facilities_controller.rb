@@ -4,7 +4,7 @@ class FacilitiesController < ApplicationController
 
   def create
     @facility = Facility.new(facility_params)
-    if save
+    if @facility.save
       flash[:destroy] = '#{@facility.name}の情報を削除しました．'
       redirect_to dams_top_path
     else
