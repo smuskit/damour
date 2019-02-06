@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update, :destroy]
 
   get    '/cards/top',    to: 'cards#top'
+
   resources :cards, only: [:show] do
     member do
       get 'get_prefectures' #/cards/:id/get_prefectures
@@ -38,4 +39,7 @@ Rails.application.routes.draw do
   resources :dams, only: [:create, :show, :update, :destroy]
 
   resources :prefectures, only: [:show]
+
+  resources :facilities, only: [:new, :create, :index, :edit, :update, :destroy]
+
 end
