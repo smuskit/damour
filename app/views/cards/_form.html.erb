@@ -40,15 +40,7 @@
           <%= f.number_field :version_m, min: 1, max:12, class:"" %>)
         </div>
 
-        <div class="">
-          ■<%= f.label :カード画像 %> (任意)<br>
-          <p>  *表面と裏面を写真に撮って登録できます</p>
-          <%= f.fields_for :images do |i| %>
-            <%= i.hidden_field :user_id, value: current_user.id %>
-            <%= i.file_field :dam_image %>
-            <%= i.hidden_field :dam_image_cache %>
-          <% end %>
-        </div>
+        <div>※画像の変更はできません</div>
 
         <div class="">
           <%= f.submit "Update", class: "btn btn-primary" %>

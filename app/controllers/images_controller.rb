@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
   def show
-    @image = Image.find(params[:id])
+    @images = Image.where(card_id: params[:card_id])
   end
 end

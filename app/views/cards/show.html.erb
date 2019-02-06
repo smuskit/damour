@@ -26,20 +26,25 @@ cards#show
             <% else %>
               <% @cards.each do |c| %>
                 <p><%= c.dam_name%>カード
+                  <!-- モーダル編集 -->
                   <%= link_to '編集', edit_card_path(c.id), remote: true, class: "btn btn-sm btn-primary" %>
                   <div class="modal fade card-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+                  <!-- モーダル編集 -->
                 </p>
                 <p>訪問日：<%= c.visit_date%></p>
                 <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
                 <p>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
+                  <!-- モーダル編集 -->
                   <% if !c.images.blank? %>
-                    <%= link_to card_image_path(c) do %>
+                    <%= link_to card_image_path(c), remote: true do %>
                       <%= image_tag c.images.first.dam_image.url, size: "200x150" %>
                     <% end %>
+                    <div class="modal fade image-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
                   <% else %>
                     <%= image_tag 'dam_card.jpeg', size: "200x150", class:"dam-card-sample-image" %>
                   <% end %>
+                  <!-- モーダル編集 -->
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                 </p>
               <% end %>
