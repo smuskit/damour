@@ -28,23 +28,23 @@ cards#show
                 <p><%= c.dam_name%>カード
                   <!-- モーダル編集 -->
                   <%= link_to '編集', edit_card_path(c.id), remote: true, class: "btn btn-sm btn-primary" %>
-                  <div class="modal fade card-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+                  <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
                   <!-- モーダル編集 -->
                 </p>
                 <p>訪問日：<%= c.visit_date%></p>
                 <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
                 <p>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
-                  <!-- モーダル編集 -->
+                  <!-- モーダル表祭表示 -->
                   <% if !c.images.blank? %>
                     <%= link_to card_image_path(c), remote: true do %>
                       <%= image_tag c.images.first.dam_image.url, size: "200x150" %>
                     <% end %>
-                    <div class="modal fade image-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+                    <div class="modal fade" id="image-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
                   <% else %>
                     <%= image_tag 'dam_card_no_image.jpeg', size: "200x150", class:"dam-card-sample-image" %>
                   <% end %>
-                  <!-- モーダル編集 -->
+                  <!-- モーダル詳細表示 -->
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                 </p>
               <% end %>
@@ -64,7 +64,7 @@ cards#show
                   <% if !c.images.blank? %>
                     <%= image_tag c.images.first.dam_image.url %>
                   <% else %>
-                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
+                    <%= image_tag 'dam_card_no_image.jpeg', class:"dam-card-sample-image" %>
                   <% end %>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                 </p>

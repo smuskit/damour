@@ -18,6 +18,8 @@
 //= require turbolinks
 //= require_tree .
 
+
+//JapanMap
 document.addEventListener("turbolinks:load", function(){
   //地域を設定
   //{"code":[地域のコード], "name": [地域の名前], "color":[地域につける色], "hoverColor":[地域をマウスでホバーしたときの色], "prefectures":[地域に含まれる都道府県のコード]}
@@ -66,8 +68,7 @@ document.addEventListener("turbolinks:load", function(){
   );
 });
 
-
-
+//prefectures#show タブメニュー
 document.addEventListener("turbolinks:load", function(){
     $('.tabcontent > div').hide();
 
@@ -81,3 +82,15 @@ document.addEventListener("turbolinks:load", function(){
     }).filter(':eq(0)').click();
 });
 
+//
+$(function(){
+  $('div.edit-modal').each(function(i){
+        $(this).attr('id','edit-modal' + (i+1));
+    });
+});
+
+$(function(){
+  $('div.image-modal').each(function(i){
+        $(this).attr('id','image-modal' + (i+1));
+    });
+});

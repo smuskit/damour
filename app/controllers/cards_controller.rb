@@ -24,11 +24,13 @@ class CardsController < ApplicationController
     card = Card.new(card_params)
     card.user_id = current_user.id
     if card.save
-      if card.images.all.last.dam_image.blank?
-      card.images.all.last.destroy
-      end
-      if card.images.all.last.dam_image.blank?
+      if card.images
+        if card.images.all.last.dam_image.blank?
         card.images.all.last.destroy
+        end
+        if card.images.all.last.dam_image.blank?
+          card.images.all.last.destroy
+        end
       end
       flash.notice = 'カードを登録しました．'
       redirect_to card_path(current_user.id)
