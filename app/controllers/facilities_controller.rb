@@ -5,8 +5,7 @@ class FacilitiesController < ApplicationController
   def create
     @facility = Facility.new(facility_params)
     if @facility.save
-      flash[:destroy] = '#{@facility.name}の情報を削除しました．'
-      redirect_to dams_top_path
+      redirect_to facilities_path, flash: {key: "#{@facility.name}の情報を登録しました．"}
     else
       flash[:destroy] = '入力に誤りがあります．'
       render 'index'
@@ -19,12 +18,16 @@ class FacilitiesController < ApplicationController
   end
 
   def edit
+    @facility = Facility.find(params[:id])
   end
 
   def update
   end
 
   def destroy
+    facility = Facility.find(params[:id])
+    facility.destroy
+    redirect_to facilities_path, flash: {key: "#{facility.name}の情報を削除しました．"}
   end
 
   private
