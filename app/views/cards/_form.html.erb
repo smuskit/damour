@@ -45,6 +45,7 @@
         <div class="">
           <%= f.submit "Update", class: "btn btn-primary" %>
         </div>
+        <%= link_to '削除', card_path(@card_edit), method: :delete, class: "btn btn-sm btn-danger" %>
 
       <% end %>
   </div>

@@ -84,13 +84,13 @@ document.addEventListener("turbolinks:load", function(){
 
 //
 $(function(){
-  $('div.edit-modal').each(function(i){
+  $('div.modal fade').each(function(i){
         $(this).attr('id','edit-modal' + (i+1));
     });
 });
 
 $(function(){
-  $('div.image-modal').each(function(i){
+  $('div.modal fade').each(function(i){
         $(this).attr('id','image-modal' + (i+1));
     });
 });
