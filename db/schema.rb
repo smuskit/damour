@@ -46,13 +46,13 @@ ActiveRecord::Schema.define(version: 2019_02_04_054700) do
     t.string "river"
     t.integer "dam_type", limit: 1, default: 0, null: false
     t.string "gate"
-    t.string "height"
-    t.string "length"
-    t.integer "volume"
+    t.float "height"
+    t.float "length"
+    t.float "volume"
     t.text "purpose"
     t.text "constructor"
-    t.integer "start_of_construction"
-    t.integer "end_of_construction"
+    t.text "start_of_construction"
+    t.text "end_of_construction"
     t.string "dam_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -66,9 +66,13 @@ ActiveRecord::Schema.define(version: 2019_02_04_054700) do
   end
 
   create_table "facilities", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.text "opening_hours"
+    t.text "name"
+    t.text "name_kana"
+    t.text "address"
+    t.time "opening_hours"
+    t.time "closing_hours"
+    t.text "holiday"
+    t.text "business_period"
     t.text "comment"
     t.decimal "latitude", precision: 11, scale: 8
     t.decimal "longitude", precision: 11, scale: 8

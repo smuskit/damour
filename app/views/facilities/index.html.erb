@@ -1,5 +1,71 @@
-カード配布場所登録
+<h3>カード配布場所登録</h3>
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
 
+<%= form_for(@facility) do |f| %>
 
+  <% if @facility.errors.any? %>
 
-カード配布場所一覧
+    <div id="error_explanation">
+      <ul>
+        <% @facility.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="">
+    ■<%= f.label :配布場所名 %><br>
+    <%= f.text_field :name, class:"" %>(text)
+  </div>
+
+  <div class="">
+    ■<%= f.label :配布場所名かな %><br>
+    <%= f.text_field :name_kana, class:"" %>(ひらがな)
+  </div>
+
+  <div class="">
+    ■<%= f.label :住所 %><br>
+    例：東京都港区南青山1-1-1<br>
+    <%= f.text_field :address, class:"" %>
+  </div>
+
+  <div class="">
+    ■<%= f.label :営業開始時間 %><br>
+    <%= f.time_field :opening_hours, class:"" %>時
+  </div>
+
+  <div class="">
+    ■<%= f.label :営業終了時間 %><br>
+    <%= f.time_field :closing_hours, class:"" %>時
+  </div>
+
+  <div class="">
+    ■<%= f.label :定休日 %><br>
+    例：「土・日」<br>
+    <%= f.text_field :holiday, class:"" %>曜日
+  </div>
+
+  <div class="">
+    ■<%= f.label :営業期間 %><br>
+    例：「1月第3月曜日〜10月末」<br>
+    <%= f.text_field :business_period, class:"" %>
+  </div>
+
+  <div class="">
+    ■<%= f.label :備考 %><br>
+    <%= f.text_area :comment, class:"" %>
+  </div>
+<% end %>
+
+<div class="prefecture-show-border"></div>
+
+<h4>カード配布場所一覧</h4>
+
+<% @facilities.each do |f| %>
+  <div>
+    <%= f.name %>
+  </div>
+<% end %>
