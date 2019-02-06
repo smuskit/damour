@@ -7,7 +7,7 @@ class FacilitiesController < ApplicationController
     if @facility.save
       redirect_to facilities_path, flash: {key: "#{@facility.name}の情報を登録しました．"}
     else
-      flash[:destroy] = '入力に誤りがあります．'
+      flash[:create] = '入力に誤りがあります．'
       render 'index'
     end
   end
@@ -22,6 +22,13 @@ class FacilitiesController < ApplicationController
   end
 
   def update
+    facility = Facility.find(params[:id])
+    if facility.update(facility_params)
+      redirect_to facilities_path, flash: {key: "#{facility.name}の情報を更新しました．"}
+    else
+      flash[:update] = '入力に誤りがあります．'
+      render 'edit'
+    end
   end
 
   def destroy
@@ -32,6 +39,6 @@ class FacilitiesController < ApplicationController
 
   private
     def facility_params
-      params.require(:facility).permit(:name, :address, :opening_hours, :comment)
+      params.require(:facility).permit(:name, :name_kana, :address, :opening_hours, :closing_hours, :holiday, :business_period, :comment)
     end
 end

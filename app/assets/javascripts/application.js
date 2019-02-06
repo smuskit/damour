@@ -47,7 +47,7 @@ document.addEventListener("turbolinks:load", function(){
 
   $("#map").japanMap(
     {
-      width: 800,
+      width: 600,
       areas  : areas, //上で設定したエリアの情報
       selection : "area", //選ぶことができる範囲(県→prefecture、エリア→area)
       borderLineWidth: 0.25, //線の幅
