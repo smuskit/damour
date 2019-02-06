@@ -43,9 +43,9 @@
         <div>※画像の変更はできません</div>
 
         <div class="">
-          <%= f.submit "Update", class: "btn btn-primary" %>
+          <%= f.submit "Update", class: "btn btn-sm btn-primary" %>
+        <%= link_to '削除', card_path(@card_edit), method: :delete, class: "btn btn-xs btn-danger" %>
         </div>
-        <%= link_to '削除', card_path(@card_edit), method: :delete, class: "btn btn-sm btn-danger" %>
 
       <% end %>
   </div>

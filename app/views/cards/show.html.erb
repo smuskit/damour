@@ -27,7 +27,7 @@ cards#show
               <% @cards.each do |c| %>
                 <p><%= c.dam_name%>カード
                   <!-- モーダル編集 -->
-                  <%= link_to '編集', edit_card_path(c.id), remote: true, class: "btn btn-sm btn-primary" %>
+                  <%= link_to '編集', edit_card_path(c.id), remote: true, class: "btn btn-xs btn-primary" %>
                   <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
                   <!-- モーダル編集 -->
                 </p>
