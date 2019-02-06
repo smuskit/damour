@@ -57,6 +57,12 @@ class CardsController < ApplicationController
     @card.user_id = current_user.id
     respond_to do |format|
       if @card.update(card_params)
+        if @card.images.all.last.dam_image.blank?
+        @card.images.all.last.destroy
+        end
+        if @card.images.all.last.dam_image.blank?
+          @card.images.all.last.destroy
+        end
         flash.notice = 'カードを更新しました．'
         format.html { redirect_to @user }
         format.js { render js: "window.location = '#{card_path(@user)}'" }

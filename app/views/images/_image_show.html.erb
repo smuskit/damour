@@ -1,0 +1,7 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <% @images.each do |i| %>
+      <%= image_tag i.dam_image.url %>
+    <% end %>
+  </div>
+</div>
