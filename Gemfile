@@ -78,3 +78,5 @@ gem 'rmagick'
 
 gem 'jquery-turbolinks'
 
+gem 'cocoon'
+
