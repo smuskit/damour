@@ -85,14 +85,8 @@ document.addEventListener("turbolinks:load", function(){
 
 //カード編集用モーダル
 $(function(){
-  $('div.modal fade').each(function(i){
+  $('div.edit_modal').each(function(i){
         $(this).attr('id','edit-modal' + (i+1));
     });
 });
 
-//カード画像閲覧用モーダル
-$(function(){
-  $('div.modal fade').each(function(i){
-        $(this).attr('id','image-modal' + (i+1));
-    });
-});
