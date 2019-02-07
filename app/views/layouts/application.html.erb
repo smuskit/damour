@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="path/to/fontawesome5/css/fontawesome-all.min.css" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
@@ -20,8 +21,10 @@
         <%= link_to 'ダム登録', new_dam_path, class:"btn btn-warning" %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"btn btn-danger" %>
       <% elsif admin_signed_in? %>
-        <%= link_to 'トップ', dams_top %>
+        <%= link_to 'トップ', dams_top_path, class:"btn btn-primary" %>
         <%= link_to 'マイページ', admin_path(current_admin), class:"btn btn-success" %>
+        <%= link_to 'カード配布場所', facilities_path, class:"btn btn-success" %>
+        <%= link_to 'ダム登録', new_dam_path, class:"btn btn-warning" %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"btn btn-danger" %>
       <% else %>
         <%= link_to 'ユーザー会員登録', new_user_registration_path, class:"btn btn-primary" %>

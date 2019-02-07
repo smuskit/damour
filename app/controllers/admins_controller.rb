@@ -1,6 +1,7 @@
 class AdminsController < ApplicationController
 
   def show
+    @admin = Admin.find(params[:id])
   end
 
   def edit
@@ -8,7 +9,7 @@ class AdminsController < ApplicationController
 
   private
     def admin_params
-      params.require(:user).permit(:name, :name_kana, :hundle_name, :email, :profile_image_id )
+      params.require(:admin).permit(:email)
     end
 
 end
