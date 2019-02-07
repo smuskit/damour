@@ -36,7 +36,7 @@ Rails.application.routes.draw do
       get 'get_prefectures' #/dams/get_prefectures
     end
   end
-  resources :dams, only: [:create, :show, :update, :destroy]
+  resources :dams, only: [:create, :index, :show, :update, :destroy]
 
   resources :prefectures, only: [:show]
 

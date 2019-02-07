@@ -1,0 +1,8 @@
+<% @dams.each do |d|%>
+  <div>
+    <%= attachment_image_tag d,:dam_image, format: 'jpeg', fallback: "dam_no_image.jpeg", class:"dam-index-image" %>
+  </div>
+  <div>
+    <%= d.name %>
+  </div>
+<% end %>

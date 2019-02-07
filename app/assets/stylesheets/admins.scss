@@ -1,3 +1,26 @@
 // Place all the styles related to the admins controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* show */
+
+  /* タイトル */
+
+.admin-show-title {
+  position: relative;
+  background: #f1f8ff;
+  padding: 0.25em 0.5em;
+  border-left: solid 2em #5c9ee7;
+}
+
+.admin-show-title:before {
+  position: absolute;
+  padding: 0em;
+  color: white;
+  font-weight: normal;
+  left: -1.35em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
