@@ -28,7 +28,7 @@
     color: #333;
 }
 
-/* すべて・北海道用 */
+/* 北海道用 */
 
 #h a{
     display: inline;
@@ -75,6 +75,30 @@
 }
 
 /* 北陸・甲信越用　ここまで */
+
+/* カード情報編集用 */
+
+#ed a{
+    display: inline;
+}
+#ed a{
+    display: inline-block;
+    background: gray; /*default  #405dca*/
+    color: #FFF;
+    padding: 20px 10px 15px 10px;
+    border-radius: 5px 5px 0 0;
+    text-decoration: none;
+    text-align: center;
+    width: 17%;
+}
+
+#ed a:hover,
+#ed a.active{
+    background: #ECF6CE;
+    color: #333;
+}
+
+/* カード情報編集用　ここまで */
 
 .tabcontent{
     padding: 20px;

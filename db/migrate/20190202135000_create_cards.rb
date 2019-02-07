@@ -10,6 +10,7 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.integer :version_af
       t.integer :version_y
       t.integer :version_m
+      t.string :card_image_id
       t.timestamps
     end
   end

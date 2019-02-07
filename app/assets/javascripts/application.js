@@ -14,7 +14,7 @@
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require rails-ujs
-//= require activestorage
+//= require lightbox
 //= require turbolinks
 //= require_tree .
 
@@ -82,15 +82,11 @@ document.addEventListener("turbolinks:load", function(){
     }).filter(':eq(0)').click();
 });
 
-//
+
+//カード編集用モーダル
 $(function(){
-  $('div.modal fade').each(function(i){
+  $('div.edit_modal').each(function(i){
         $(this).attr('id','edit-modal' + (i+1));
     });
 });
 
-$(function(){
-  $('div.modal fade').each(function(i){
-        $(this).attr('id','image-modal' + (i+1));
-    });
-});

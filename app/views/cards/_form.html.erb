@@ -1,4 +1,4 @@
-<div class="modal-dialog modal-sm">
+<div class="modal-dialog modal-ms">
   <div class="modal-content">
     <%= form_for(@card_edit, remote: true, :url => {:action => 'update'}) do |f| %>
 
@@ -39,10 +39,9 @@
           (<%= f.number_field :version_y, min: 1, max:9999, class:"" %>
           <%= f.number_field :version_m, min: 1, max:12, class:"" %>)
         </div>
+
         <div>■<%= f.label :カードの写真 %><br>
-          <%= f.fields_for :images do |i| %>
-            <%= i.file_field :dam_image %>
-          <% end %>
+          <%= f.attachment_field :card_image, class:"" %>
         </div>
 
         <div class="">

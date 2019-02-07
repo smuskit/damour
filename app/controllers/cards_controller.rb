@@ -57,17 +57,11 @@ class CardsController < ApplicationController
     @card.user_id = current_user.id
     respond_to do |format|
       if @card.update(card_params)
-        # if @card.images.all.last.dam_image.blank?
-        # @card.images.all.last.destroy
-        # end
-        # if @card.images.all.last.dam_image.blank?
-        #   @card.images.all.last.destroy
-        # end
         flash.notice = 'カードを更新しました．'
         format.html { redirect_to @user }
         format.js { render js: "window.location = '#{card_path(@user)}'" }
       else
-        @bid.errors.each do |name, msg|
+        @card.errors.each do |name, msg|
           flash.now[name] = msg
         end
         format.html { redirect_to @card }
@@ -85,7 +79,7 @@ class CardsController < ApplicationController
   private
 
     def card_params
-      params.require(:card).permit(:region_id, :prefecture_id, :dam_name, :visit_date, :version_bf, :version_af, :version_y, :version_m, images_attributes: [:dam_image])
+      params.require(:card).permit(:region_id, :prefecture_id, :dam_name, :visit_date, :version_bf, :version_af, :version_y, :version_m, :card_image)
     end
 
 end

@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_02_04_054700) do
     t.integer "version_af"
     t.integer "version_y"
     t.integer "version_m"
+    t.string "card_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
