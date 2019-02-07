@@ -42,3 +42,48 @@
   font-size: 20px;
 }
 
+/* show */
+
+.dam-show-image-box {
+  position: relative;
+  margin: 0 auto;
+  width: 650px;
+}
+
+  /* ダム写真 */
+
+.dam-show-image {
+  width: 650px;
+  height: 450px;
+}
+
+.square_btn {
+  position: absolute;
+  display: inline-block;
+  font-weight: bold;
+  padding: 1.5em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #04B431;
+  transition: .4s;
+  width: 140px;
+  text-align: center;
+  right: 30px;
+  bottom: -40px;
+}
+
+.square_btn:hover{
+  text-decoration: none;
+}
+
+.square_btn>span{
+  font-size: 25px;
+  border-bottom: solid 2px #FFF;
+  border-top: solid 2px #FFF;
+}
+
+.square_btn:hover span {
+  color: #FFF;
+  padding: 0.1em 0;
+}
+
