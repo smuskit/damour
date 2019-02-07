@@ -1,8 +1,36 @@
-<% @dams.each do |d|%>
-  <div>
-    <%= attachment_image_tag d,:dam_image, format: 'jpeg', fallback: "dam_no_image.jpeg", class:"dam-index-image" %>
-  </div>
-  <div>
-    <%= d.name %>
-  </div>
-<% end %>
+<table class='table'>
+  <thead>
+    <tr>
+      <th></th>
+      <th>ID</th>
+      <th>地方名</th>
+      <th>都道府県</th>
+      <th>ダム名</th>
+      <th>かな</th>
+      <th>施工業者</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dams.each do |d|%>
+      <tr>
+        <td>
+          <%= attachment_image_tag d, :dam_image, size: "200x150", format: 'jpeg', fallback: "dam_no_image.jpeg", class:"dam-index-image" %>
+        </td>
+        <td><%= d.id %></td>
+        <td><%= d.prefecture.region.name %>地方</td>
+        <td><%= d.prefecture.name %></td>
+        <td>
+          <%= link_to dam_path(d) do %>
+            <%= d.name %>
+          <% end %>
+        </td>
+        <td><%= d.name_kana %></td>
+        <td><%= d.constructor %></td>
+        <td><%= link_to 'EDIT', dam_path(d), class:"btn btn-sm btn-primary" %></td>
+        <td><%= link_to 'DELETE', dam_path(d), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-sm btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -16,5 +16,4 @@
   <div>ダムの目的：<%= @dam.purpose %></div>
   <div>施工業者：<%= @dam.constructor %></div>
   <div>着工年/完成年：<%= @dam.start_of_construction %>/<%= @dam.end_of_construction %></div>
-  <%= link_to '削除', dam_path(@dam), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-xs btn-danger" %>
 </div>

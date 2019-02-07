@@ -23,6 +23,10 @@ class DamsController < ApplicationController
     end
   end
 
+  def index
+    @dams = Dam.all
+  end
+
   def show
     @dam = Dam.find(params[:id])
   end
