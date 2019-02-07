@@ -21,7 +21,7 @@ cards#show
       </ul>
       <div class="tabcontent">
           <div id="tab01">
-            <% if @cards.empty? %>
+            <% if !@cards %>
               カードはまだありません．
             <% else %>
               <% @cards.each do |c| %>
@@ -37,12 +37,7 @@ cards#show
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                   <!-- モーダル詳細表示 -->
                   <% if !c.images.blank? %>
-                    <% c.images.each do |image|%>
-                      <%= image_tag image.variant(resize: "150x150") %>
-                    <% end %>
-                  <% else %>
-                    <%= image_tag 'dam_card_no_image.jpeg', size: "200x150", class:"dam-card-sample-image" %>
-                  <% end %>
+                    <%= attachment_image_tag c, :dam_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %>
                   <!-- モーダル詳細表示 -->
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                 </p>

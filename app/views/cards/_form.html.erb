@@ -41,20 +41,7 @@
         </div>
 
         <div>■<%= f.label :カードの写真 %><br>
-          <%= f.file_field :images , multiple: true%>
-          <% if @card_edit.images.attached? %>
-            <% @card_edit.images.each do |i| %>
-              <div class="image-box">
-                <%= image_tag i.variant(resize: "150x150") %>
-                <p> <%= i.filename %> </p>
-                <%= f.hidden_field :images , name: "card[images][]", value: "#{image.blob.id}", style: "display: none;", class: "card-images-input" %>
-                <%= link_to "Edit", "", class: "btn-edit" %>
-                <%= file_field "edit-image","" , class: "edit-image-file-input file-input", style: "display: none;"%>
-                <%= link_to "Delete", "", class: "btn-delete" %>
-              </div>
-            <% end %>
-          <% end %>
-
+          <%= f.attachment_image_tag @card_edit, :card_image, class:"" %>
         </div>
 
         <div class="">
