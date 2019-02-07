@@ -39,11 +39,15 @@
           (<%= f.number_field :version_y, min: 1, max:9999, class:"" %>
           <%= f.number_field :version_m, min: 1, max:12, class:"" %>)
         </div>
-
-        <div>※画像の変更はできません</div>
+        <div>■<%= f.label :カードの写真 %><br>
+          <%= f.fields_for :images do |i| %>
+            <%= i.file_field :dam_image %>
+          <% end %>
+        </div>
 
         <div class="">
-          <%= f.submit "Update", class: "btn btn-primary" %>
+          <%= f.submit "Update", class: "btn btn-sm btn-primary" %>
+        <%= link_to '削除', card_path(@card_edit), method: :delete, class: "btn btn-xs btn-danger" %>
         </div>
 
       <% end %>

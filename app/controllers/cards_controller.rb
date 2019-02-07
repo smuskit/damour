@@ -13,7 +13,7 @@ class CardsController < ApplicationController
     @cards_shikoku = @user.cards.all.where(region_id: 8)
     @cards_kyushu = @user.cards.all.where(region_id: 9)
     @card = Card.new
-    2.times { @card.images.build }
+    # 2.times { @card.images.build }
   end
 
   def get_prefectures
@@ -24,12 +24,12 @@ class CardsController < ApplicationController
     card = Card.new(card_params)
     card.user_id = current_user.id
     if card.save
-      if card.images.all.last.dam_image.blank?
-      card.images.all.last.destroy
-      end
-      if card.images.all.last.dam_image.blank?
-        card.images.all.last.destroy
-      end
+      # if card.images.all.last.dam_image.blank?
+      # card.images.all.last.destroy
+      # end
+      # if card.images.all.last.dam_image.blank?
+      #   card.images.all.last.destroy
+      # end
       flash.notice = 'カードを登録しました．'
       redirect_to card_path(current_user.id)
     else
@@ -40,11 +40,11 @@ class CardsController < ApplicationController
 
   def edit
     @card_edit = Card.find(params[:id])
-    if @card_edit.images.blank?
-      2.times { @card_edit.images.build }
-    elsif @card_edit.images.count == 1
-      1.times { @card_edit.images.build }
-    end
+    # if @card_edit.images.blank?
+    #   2.times { @card_edit.images.build }
+    # elsif @card_edit.images.count == 1
+    #   1.times { @card_edit.images.build }
+    # end
     respond_to do |format|
       format.html{}
       format.js {}
@@ -57,12 +57,12 @@ class CardsController < ApplicationController
     @card.user_id = current_user.id
     respond_to do |format|
       if @card.update(card_params)
-        if @card.images.all.last.dam_image.blank?
-        @card.images.all.last.destroy
-        end
-        if @card.images.all.last.dam_image.blank?
-          @card.images.all.last.destroy
-        end
+        # if @card.images.all.last.dam_image.blank?
+        # @card.images.all.last.destroy
+        # end
+        # if @card.images.all.last.dam_image.blank?
+        #   @card.images.all.last.destroy
+        # end
         flash.notice = 'カードを更新しました．'
         format.html { redirect_to @user }
         format.js { render js: "window.location = '#{card_path(@user)}'" }
@@ -77,6 +77,9 @@ class CardsController < ApplicationController
   end
 
   def destroy
+    card = Card.find(params[:id])
+    card.destroy
+    redirect_to card_path(current_user)
   end
 
   private

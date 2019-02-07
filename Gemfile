@@ -73,8 +73,8 @@ gem 'kaminari'
 
 gem 'pry-rails'
 
-gem 'carrierwave'
-gem 'rmagick'
+# gem 'carrierwave'
+# gem 'rmagick'
 
 gem 'jquery-turbolinks'
 
