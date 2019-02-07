@@ -31,7 +31,17 @@ class DamsController < ApplicationController
     @dam = Dam.find(params[:id])
   end
 
+  def edit
+    @dam = Dam.find(params[:id])
+  end
+
   def update
+    @dam = Dam.find(params[:id])
+    if @dam.update(dam_params)
+      redirect_to dam_path(@dam)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
