@@ -78,5 +78,4 @@ gem 'pry-rails'
 
 gem 'jquery-turbolinks'
 
-gem 'mini_magick'
 
