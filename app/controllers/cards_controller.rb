@@ -38,6 +38,14 @@ class CardsController < ApplicationController
     end
   end
 
+  def upload_image
+      @image_blob = create_blob(params[:image])
+      respond_to do |format|
+        format.json { @image_blob.id }
+      end
+  end
+
+
   def edit
     @card_edit = Card.find(params[:id])
     # if @card_edit.images.blank?
@@ -55,6 +63,8 @@ class CardsController < ApplicationController
     @user = User.find(current_user.id)
     @card = Card.find(params[:id])
     @card.user_id = current_user.id
+    @card.images.detach #一旦、すべてのimageの紐つけを解除
+    if @item.update(item_params)
     respond_to do |format|
       if @card.update(card_params)
         # if @card.images.all.last.dam_image.blank?
@@ -85,7 +95,18 @@ class CardsController < ApplicationController
   private
 
     def card_params
-      params.require(:card).permit(:region_id, :prefecture_id, :dam_name, :visit_date, :version_bf, :version_af, :version_y, :version_m, images_attributes: [:dam_image])
+      params.require(:card).permit(:region_id, :prefecture_id, :dam_name, :visit_date, :version_bf, :version_af, :version_y, :version_m).merge(images: uploaded_images)
+    end
+
+    def uploaded_images
+      params[:card][:images].map{|id| ActiveStorage::Blob.find(id)} if params[:card][:images]
+    end
+
+    def create_blob(uploading_file)
+      ActiveStorage::Blob.create_after_upload! \
+        io: uploading_file.open,
+        filename: uploading_file.original_filename,
+        content_type: uploading_file.content_type
     end
 
 end

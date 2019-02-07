@@ -25,7 +25,7 @@ cards#show
               カードはまだありません．
             <% else %>
               <% @cards.each do |c| %>
-                <p><%= c.dam_name%>カード
+                <p><%= c.dam_name %>カード
                   <!-- モーダル編集 -->
                   <%= link_to '編集', edit_card_path(c.id), remote: true, class: "btn btn-xs btn-primary" %>
                   <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
@@ -35,12 +35,11 @@ cards#show
                 <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
                 <p>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
-                  <!-- モーダル表祭表示 -->
+                  <!-- モーダル詳細表示 -->
                   <% if !c.images.blank? %>
-                    <%= link_to card_image_path(c), remote: true do %>
-                      <%= image_tag c.images.first.dam_image.url, size: "200x150" %>
+                    <% c.images.each do |image|%>
+                      <%= image_tag image.variant(resize: "150x150") %>
                     <% end %>
-                    <div class="modal fade" id="image-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
                   <% else %>
                     <%= image_tag 'dam_card_no_image.jpeg', size: "200x150", class:"dam-card-sample-image" %>
                   <% end %>
@@ -61,11 +60,7 @@ cards#show
                 <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
                 <p>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
-                  <% if !c.images.blank? %>
-                    <%= image_tag c.images.first.dam_image.url %>
-                  <% else %>
-                    <%= image_tag 'dam_card_no_image.jpeg', class:"dam-card-sample-image" %>
-                  <% end %>
+                  <%= image_tag 'dam_card_no_image.jpeg', class:"dam-card-sample-image" %>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                 </p>
               <% end %>
@@ -82,11 +77,7 @@ cards#show
                 <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
                 <p>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
-                  <% if !c.images.blank? %>
-                    <%= image_tag c.images.first.dam_image.url %>
-                  <% else %>
-                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
-                  <% end %>
+                  <%= image_tag 'dam_card_no_image.jpeg', class:"dam-card-sample-image" %>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                 </p>
               <% end %>
@@ -103,11 +94,7 @@ cards#show
                 <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
                 <p>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
-                  <% if !c.images.blank? %>
-                    <%= image_tag c.images.first.dam_image.url %>
-                  <% else %>
-                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
-                  <% end %>
+                  <%= image_tag 'dam_card_no_image.jpeg', class:"dam-card-sample-image" %>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                 </p>
               <% end %>
@@ -124,11 +111,7 @@ cards#show
                 <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
                 <p>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
-                  <% if !c.images.blank? %>
-                    <%= image_tag c.images.first.dam_image.url %>
-                  <% else %>
-                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
-                  <% end %>
+                  <%= image_tag 'dam_card_no_image.jpeg', class:"dam-card-sample-image" %>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                 </p>
               <% end %>
@@ -145,11 +128,7 @@ cards#show
                 <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
                 <p>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
-                  <% if !c.images.blank? %>
-                    <%= image_tag c.images.first.dam_image.url %>
-                  <% else %>
-                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
-                  <% end %>
+                  <%= image_tag 'dam_card_no_image.jpeg', class:"dam-card-sample-image" %>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                 </p>
               <% end %>
@@ -166,11 +145,7 @@ cards#show
                 <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
                 <p>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
-                  <% if !c.images.blank? %>
-                    <%= image_tag c.images.first.dam_image.url %>
-                  <% else %>
-                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
-                  <% end %>
+                  <%= image_tag 'dam_card_no_image.jpeg', class:"dam-card-sample-image" %>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                 </p>
               <% end %>
@@ -187,11 +162,7 @@ cards#show
                 <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
                 <p>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
-                  <% if !c.images.blank? %>
-                    <%= image_tag c.images.first.dam_image.url %>
-                  <% else %>
-                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
-                  <% end %>
+                  <%= image_tag 'dam_card_no_image.jpeg', class:"dam-card-sample-image" %>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                 </p>
               <% end %>
@@ -208,11 +179,7 @@ cards#show
                 <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
                 <p>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
-                  <% if !c.images.blank?s %>
-                    <%= image_tag c.images.first.dam_image.url %>
-                  <% else %>
-                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
-                  <% end %>
+                  <%= image_tag 'dam_card_no_image.jpeg', class:"dam-card-sample-image" %>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                 </p>
               <% end %>
@@ -229,11 +196,7 @@ cards#show
                 <p>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</p>
                 <p>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
-                  <% if !c.images.blank? %>
-                    <%= image_tag c.images.first.dam_image.url %>
-                  <% else %>
-                    <%= image_tag 'dam_card.jpeg', class:"dam-card-sample-image" %>
-                  <% end %>
+                  <%= image_tag 'dam_card_no_image.jpeg', class:"dam-card-sample-image" %>
                   <!--複数枚投稿画像のうち最初の画像を表示-->
                 </p>
               <% end %>
@@ -293,10 +256,9 @@ cards#show
         <div class="">
           ■<%= f.label :カード画像 %> (任意)<br>
           <div>  *表面と裏面を写真に撮って登録できます</div>
-          下のファイルフォームだけに追加するとエラーが出る
-          <%= f.fields_for :images do |i| %>
-            <%= i.file_field :dam_image %>
-          <% end %>
+          <div>■<%= f.label :カードの写真 %><br>
+            <%= f.file_field :images , multiple: true%>
+          </div>
         </div>
 
         <div class="">
