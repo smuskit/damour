@@ -1,0 +1,115 @@
+
+<div class="facility-index-body">
+
+  <h4>カード配布場所一覧</h4>
+
+  <table class='table table-hover table-inverse'>
+    <thead>
+      <tr>
+        <th>施設名</th>
+        <th>住所</th>
+        <th>営業時間</th>
+        <th>定休日</th>
+        <th>営業期間</th>
+        <th>備考</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @facilities.each do |f| %>
+        <tr>
+          <td>
+            <%= f.name %>
+          </td>
+          <td>
+            <%= f.address %>
+          </td>
+          <td>
+            <%= facility_simple_time(f.opening_hours) %>-<%= facility_simple_time(f.closing_hours) %>
+          </td>
+          <td>
+            <%= f.holiday %>
+          </td>
+          <td>
+            <%= f.business_period %>
+          </td>
+          <td>
+            <%= f.comment %>
+          </td>
+          <td>
+            <%= link_to '編集', edit_facility_path(f), class:"btn btn-xs btn-success" %>
+            <%= link_to '削除', facility_path(f), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-xs btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="facility-index-form">
+
+  <h3>カード配布場所登録</h3>
+
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
+
+  <%= form_for(@facility) do |f| %>
+
+    <% if @facility.errors.any? %>
+
+      <div id="error_explanation">
+        <ul>
+          <% @facility.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="">
+      ■<%= f.label :配布場所名 %><br>
+      <%= f.text_field :name, class:"" %>(text)
+    </div>
+
+    <div class="">
+      ■<%= f.label :配布場所名かな %><br>
+      <%= f.text_field :name_kana, class:"" %>(ひらがな)
+    </div>
+
+    <div class="">
+      ■<%= f.label :住所 %><br>
+      例：東京都港区南青山1-1-1<br>
+      <%= f.text_field :address, class:"" %>
+    </div>
+
+    <div class="">
+      ■<%= f.label :営業開始時間 %><br>
+      <%= f.time_field :opening_hours, class:"" %>時
+    </div>
+
+    <div class="">
+      ■<%= f.label :営業終了時間 %><br>
+      <%= f.time_field :closing_hours, class:"" %>時
+    </div>
+
+    <div class="">
+      ■<%= f.label :定休日 %><br>
+      例：「土・日」<br>
+      <%= f.text_field :holiday, class:"" %>曜日
+    </div>
+
+    <div class="">
+      ■<%= f.label :営業期間 %><br>
+      例：「1月第3月曜日〜10月末」<br>
+      <%= f.text_field :business_period, class:"" %>
+    </div>
+
+    <div class="">
+      ■<%= f.label :備考 %><br>
+      <%= f.text_area :comment, class:"" %>
+    </div>
+    <div>
+      <%= f.submit '登録', class:"btn btn-ms btn-primary"%>
+    </div>
+  <% end %>
+</div>

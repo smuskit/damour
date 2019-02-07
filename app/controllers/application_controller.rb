@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     case resource
     when User
-      cards_top_path(current_user.id)
+      card_path(current_user.id)
     when Admin
       admin_path(current_admin.id)
     end
@@ -19,5 +19,4 @@ class ApplicationController < ActionController::Base
 	  def configure_permitted_parameters
 	    devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
 	  end
-
 end

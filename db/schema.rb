@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_03_015221) do
+ActiveRecord::Schema.define(version: 2019_02_04_054700) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,34 +26,35 @@ ActiveRecord::Schema.define(version: 2019_02_03_015221) do
 
   create_table "cards", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "area_id"
-    t.integer "pref_id"
+    t.integer "region_id"
+    t.integer "prefecture_id"
     t.string "dam_name"
     t.date "visit_date"
     t.integer "version_bf"
     t.integer "version_af"
     t.integer "version_y"
     t.integer "version_m"
+    t.string "card_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "dams", force: :cascade do |t|
     t.integer "region_id"
-    t.integer "pref_id"
+    t.integer "prefecture_id"
     t.string "name"
     t.string "name_kana"
     t.string "river"
-    t.integer "type"
+    t.integer "dam_type", limit: 1, default: 0, null: false
     t.string "gate"
-    t.integer "height"
-    t.integer "length"
-    t.integer "volume"
+    t.float "height"
+    t.float "length"
+    t.float "volume"
     t.text "purpose"
     t.text "constructor"
-    t.integer "start_of_construction"
-    t.integer "end_of_construction"
-    t.text "dam_image_id"
+    t.text "start_of_construction"
+    t.text "end_of_construction"
+    t.string "dam_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -66,12 +67,23 @@ ActiveRecord::Schema.define(version: 2019_02_03_015221) do
   end
 
   create_table "facilities", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.text "opening_hours"
+    t.text "name"
+    t.text "name_kana"
+    t.text "address"
+    t.time "opening_hours"
+    t.time "closing_hours"
+    t.text "holiday"
+    t.text "business_period"
     t.text "comment"
     t.decimal "latitude", precision: 11, scale: 8
     t.decimal "longitude", precision: 11, scale: 8
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.integer "card_id"
+    t.string "dam_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

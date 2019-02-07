@@ -73,3 +73,11 @@ gem 'kaminari'
 
 gem 'pry-rails'
 
+# gem 'carrierwave'
+# gem 'rmagick'
+
+gem 'jquery-turbolinks'
+
+gem 'lightbox2-rails'
+
+

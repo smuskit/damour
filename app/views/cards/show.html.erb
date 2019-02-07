@@ -1,0 +1,225 @@
+cards#show
+
+<h1>カードトップ</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-9">
+
+      <ul class="tabnav">
+          <li id="h"><a href="#tab01">北海道</a></li>
+          <li><a href="#tab02">東北</a></li>
+          <li><a href="#tab03">関東</a></li>
+          <li id="hk"><a href="#tab04">北陸・甲信越</a></li>
+          <li><a href="#tab05">東海</a></li>
+          <li><a href="#tab06">近畿</a></li>
+          <li><a href="#tab07">中国</a></li>
+          <li><a href="#tab08">四国</a></li>
+          <li><a href="#tab09">九州</a></li>
+          <li id="ed"><a href="#tab10">カード情報編集</a></li>
+
+      </ul>
+      <div class="tabcontent">
+          <div id="tab01">
+            <% if @cards_hokkaido.count == 0 %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_hokkaido.each do |c| %>
+                <div><%= c.dam_name %>カード
+                </div>
+                <div>訪問日：<%= c.visit_date%></div>
+                <div>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</div>
+                <div><%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %></div>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab02">
+            <% if @cards_tohoku.count == 0 %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_tohoku.each do |c| %>
+                <div><%= c.dam_name %>カード</div>
+                <div>訪問日：<%= c.visit_date%></div>
+                <div>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</div>
+                <div><%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %></div>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab03">
+            <% if @cards_kanto.count == 0 %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_kanto.each do |c| %>
+                <div><%= c.dam_name %>カード</div>
+                <div>訪問日：<%= c.visit_date%></div>
+                <div>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</div>
+                <div><%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %></div>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab04">
+            <% if @cards_hokuriku.count == 0 %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_kanto.each do |c| %>
+                <div><%= c.dam_name %>カード</div>
+                <div>訪問日：<%= c.visit_date%></div>
+                <div>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</div>
+                <div><%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %></div>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab05">
+            <% if @cards_tokai.count == 0 %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_tokai.each do |c| %>
+                <div><%= c.dam_name %>カード</div>
+                <div>訪問日：<%= c.visit_date%></div>
+                <div>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</div>
+                <div><%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %></div>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab06">
+            <% if @cards_kinki.count == 0 %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_kinki.each do |c| %>
+                <div><%= c.dam_name %>カード</div>
+                <div>訪問日：<%= c.visit_date%></div>
+                <div>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</div>
+                <div><%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %></div>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab07">
+            <% if @cards_chugoku.count == 0 %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_chugoku.each do |c| %>
+                <div><%= c.dam_name %>カード</div>
+                <div>訪問日：<%= c.visit_date%></div>
+                <div>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</div>
+                <div><%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %></div>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab08">
+            <% if @cards_shikoku.count == 0 %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_shikoku.each do |c| %>
+                <div><%= c.dam_name %>カード</div>
+                <div>訪問日：<%= c.visit_date%></div>
+                <div>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</div>
+                <div><%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %></div>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab09">
+            <% if @cards_kyushu.count == 0 %>
+              カードはまだありません．
+            <% else %>
+              <% @cards_kyushu.each do |c| %>
+                <div><%= c.dam_name %>カード</div>
+                <div>訪問日：<%= c.visit_date%></div>
+                <div>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</div>
+                <div><%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %></div>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div id="tab10">
+            <% if !@cards %>
+              カードはまだありません．
+            <% else %>
+              <% @cards.each do |c| %>
+                <div><%= c.dam_name %>カード
+                  <!-- モーダル編集 -->
+                  <%= link_to '編集', edit_card_path(c.id), remote: true, class: "btn btn-xs btn-primary" %>
+                  <div class="modal fade h" id="edit-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+                  <!-- モーダル編集 -->
+                </div>
+                <div>訪問日：<%= c.visit_date%></div>
+                <div>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</div>
+                <div><%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %></div>
+              <% end %>
+            <% end %>
+          </div>
+      </div>
+    </div>
+    <div class="col-xs-3">
+
+      <!-- カード登録 -->
+      <h3>ダムカード登録</h3>
+
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
+
+      <%= form_for(@card) do |f| %>
+
+        <% if @card.errors.any? %>
+
+          <div id="error_explanation">
+            <ul>
+              <% @card.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="region-area">
+          ■<%= f.label :地域 %><br>
+          <%= collection_select :card, :region_id, Region.all, :id, :name %>
+        </div>
+
+        <div class="prefecture-area">
+          <%= render partial: 'select_prefecture', locals: {region_id: Region.first.id} %>
+        </div>
+
+        <div class="">
+          ■<%= f.label :ダム名 %><br>
+          <%= f.text_field :dam_name, class:"" %>
+        </div>
+
+        <div class="">
+          ■<%= f.label :ダム訪問日 %> (任意)<br>
+          <%= f.date_field :visit_date, class:"" %>
+        </div>
+
+        <div class="">
+          ■<%= f.label :カードのバージョン %> (任意)<br>
+          Ver.<%= f.number_field :version_bf, min: 0, max:5, class:"" %>
+          .<%= f.number_field :version_af, min: 0, max:5, class:"" %>
+          (<%= f.number_field :version_y, min: 1, max:9999, class:"" %>
+          <%= f.number_field :version_m, min: 1, max:12, class:"" %>)
+        </div>
+
+        <div class="">
+          ■<%= f.label :カード画像 %> (任意)<br>
+          <div>  *表面と裏面を写真に撮って登録できます</div>
+          <div>■<%= f.label :カードの写真 %><br>
+            <%= f.attachment_field :card_image, class:"" %>
+          </div>
+        </div>
+
+        <div class="">
+          <%= f.submit "アルバムに登録", class: "btn btn-primary" %>
+        </div>
+
+      <% end %>
+      <!-- カード登録 -->
+    </div>
+  </div>
+</div>
