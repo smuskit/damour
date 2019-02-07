@@ -39,14 +39,22 @@
           (<%= f.number_field :version_y, min: 1, max:9999, class:"" %>
           <%= f.number_field :version_m, min: 1, max:12, class:"" %>)
         </div>
+
         <div>■<%= f.label :カードの写真 %><br>
           <%= f.file_field :images , multiple: true%>
           <% if @card_edit.images.attached? %>
-              <% @card_edit.images.each do |i| %>
+            <% @card_edit.images.each do |i| %>
+              <div class="image-box">
                 <%= image_tag i.variant(resize: "150x150") %>
-              <% end %>
+                <p> <%= i.filename %> </p>
+                <%= f.hidden_field :images , name: "card[images][]", value: "#{image.blob.id}", style: "display: none;", class: "card-images-input" %>
+                <%= link_to "Edit", "", class: "btn-edit" %>
+                <%= file_field "edit-image","" , class: "edit-image-file-input file-input", style: "display: none;"%>
+                <%= link_to "Delete", "", class: "btn-delete" %>
+              </div>
             <% end %>
-          </div>
+          <% end %>
+
         </div>
 
         <div class="">
