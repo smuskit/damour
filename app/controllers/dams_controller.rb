@@ -25,6 +25,8 @@ class DamsController < ApplicationController
 
   def index
     @dams = Dam.all
+    @dams_prefecture = Dam.order(prefecture_id: "ASC")
+    @dams_kana = Dam.order :name_kana
   end
 
   def show
