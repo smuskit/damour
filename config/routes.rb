@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :admins, only: [:show, :edit, :update, :destroy]
 
   get    '/users/faq',    to: 'users#faq'
-  resources :users, only: [:show, :edit, :update, :destroy]
+  resources :users, only: [:index, :show, :edit, :update, :destroy]
 
   get    '/cards/top',    to: 'cards#top'
 
@@ -41,5 +41,7 @@ Rails.application.routes.draw do
   resources :prefectures, only: [:show]
 
   resources :facilities, only: [:new, :create, :index, :edit, :update, :destroy]
+
+  resources :distributes, only: [:create, :index, :destroy]
 
 end

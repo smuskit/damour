@@ -1,1 +1,35 @@
-index.html.erb
+<h1>ユーザ管理画面</h1>
+
+<div class="user-index-table">
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>画像</th>
+        <th>Name</th>
+        <th>NameKana</th>
+        <th>HundleName</th>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |u| %>
+        <tr>
+          <td><%= u.id %></td>
+          <td><%= attachment_image_tag u, :profile_image, size: "50x50", format: 'jpeg', fallback: "no_image.jpeg", class:"user-index-image" %></td>
+          <td><%= link_to user_path(u) do %>
+                <%= u.name %>
+              <% end %>
+          </td>
+          <td><%= u.name_kana %></td>
+          <td><%= u.hundle_name %></td>
+          <td><%= u.email %></td>
+          <td><%= link_to 'EDIT', edit_user_path(u), class:"btn btn-sm btn-primary" %></td>
+          <td><%= link_to 'DELETE', user_path(u), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-sm btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

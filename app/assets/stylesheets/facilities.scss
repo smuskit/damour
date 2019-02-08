@@ -10,6 +10,9 @@
 }
 
 .facility-index-form {
+  position: -webkit-sticky;  /* safari対応 */
+  position: sticky;          /* 上端から10pxのところで固定 */
+  top: 10px;
   width: 25%;
   padding-left: 20px;
   float: left;

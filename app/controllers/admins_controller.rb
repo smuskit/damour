@@ -7,6 +7,9 @@ class AdminsController < ApplicationController
   def edit
   end
 
+  def update
+  end
+
   private
     def admin_params
       params.require(:admin).permit(:email)

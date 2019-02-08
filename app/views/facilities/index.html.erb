@@ -25,7 +25,9 @@
             <%= f.address %>
           </td>
           <td>
+            <% if !f.opening_hours.nil? && !f.opening_hours.nil? %>
             <%= facility_simple_time(f.opening_hours) %>-<%= facility_simple_time(f.closing_hours) %>
+            <% end %>
           </td>
           <td>
             <%= f.holiday %>

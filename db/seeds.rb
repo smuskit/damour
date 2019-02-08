@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Admin.find_or_create_by(id: 1) do |admin|
+  admin.email = 'z@z'
+  admin.password = '000000'
+end
+
 Region.create(name: '北海道')
 Region.create(name: '東北')
 Region.create(name: '関東')
