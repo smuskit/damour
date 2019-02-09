@@ -78,6 +78,4 @@ gem 'pry-rails'
 
 gem 'jquery-turbolinks'
 
-gem 'lightbox2-rails'
-
-
+gem 'dotenv-rails'

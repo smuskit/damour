@@ -9,23 +9,17 @@
         <th>配布場所ID</th>
         <th>ダム名</th>
         <th>配布場所</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <% @distributes.each do |d| %>
         <tr>
-          <td>
-            <%= d.dam_id %>
-          </td>
-          <td>
-            <%= d.facility_id %>
-          </td>
-          <td>
-            <%= d.dam.name %>
-          </td>
-          <td>
-            <%= d.facility.name %>
-          </td>
+          <td><%= d.dam_id %></td>
+          <td><%= d.facility_id %></td>
+          <td><%= d.dam.name %></td>
+          <td><%= d.facility.name %></td>
+          <td><%= link_to 'DELETE', distribute_path(d), method: :delete, class:"btn btn-sm btn-danger" %>
         </tr>
       <% end %>
     </tbody>

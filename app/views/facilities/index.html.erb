@@ -48,7 +48,7 @@
 </div>
 <div class="facility-index-form">
 
-  <h3>カード配布場所登録</h3>
+  <h4>カード配布場所登録</h4>
 
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "#{key}") %>
@@ -69,12 +69,12 @@
 
     <div class="">
       ■<%= f.label :配布場所名 %><br>
-      <%= f.text_field :name, class:"" %>(text)
+      <%= f.text_field :name, class:"" %>
     </div>
 
     <div class="">
       ■<%= f.label :配布場所名かな %><br>
-      <%= f.text_field :name_kana, class:"" %>(ひらがな)
+      <%= f.text_field :name_kana, class:"" %>
     </div>
 
     <div class="">

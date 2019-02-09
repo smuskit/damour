@@ -14,7 +14,6 @@
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require rails-ujs
-//= require lightbox
 //= require turbolinks
 //= require_tree .
 
@@ -90,3 +89,7 @@ $(function(){
     });
 });
 
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
