@@ -79,3 +79,7 @@ gem 'pry-rails'
 gem 'jquery-turbolinks'
 
 gem 'dotenv-rails'
+
+gem 'geocoder'
+gem 'gmaps4rails'
+

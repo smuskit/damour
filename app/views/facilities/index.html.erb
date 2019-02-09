@@ -18,10 +18,12 @@
       <% @facilities.each do |f| %>
         <tr>
           <td>
-            <%= f.name %>
+            <%=link_to facility_path(f) do %>
+              <%= f.name %>
+            <% end %>
           </td>
           <td>
-            <%= f.address %>
+              <%= f.address %>
           </td>
           <td>
             <% if !f.opening_hours.nil? && !f.opening_hours.nil? %>
@@ -37,6 +39,7 @@
           <td>
             <%= f.comment %>
           </td>
+
           <td>
             <%= link_to '編集', edit_facility_path(f), class:"btn btn-xs btn-success" %>
             <%= link_to '削除', facility_path(f), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-xs btn-danger" %>
@@ -78,9 +81,20 @@
     </div>
 
     <div class="">
-      ■<%= f.label :住所 %><br>
+      ◽︎<%= f.label :住所 %><br>
       例：東京都港区南青山1-1-1<br>
       <%= f.text_field :address, class:"" %>
+    </div>
+
+    <div class="">
+      ■<%= f.label :latitude_経度 %><br>
+      <%= f.text_field :latitude, class:"" %>
+    </div>
+
+    <div class="">
+      ■<%= f.label :longitude_緯度 %><br>
+      例：東京都港区南青山1-1-1<br>
+      <%= f.text_field :longitude, class:"" %>
     </div>
 
     <div class="">

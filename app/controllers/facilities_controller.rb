@@ -1,9 +1,12 @@
 class FacilitiesController < ApplicationController
+  require 'geocoder'
+
   def new
   end
 
   def create
     @facility = Facility.new(facility_params)
+
     if @facility.save
       redirect_to facilities_path, flash: {key: "#{@facility.name}の情報を登録しました．"}
     else
@@ -15,6 +18,15 @@ class FacilitiesController < ApplicationController
   def index
     @facility = Facility.new
     @facilities = Facility.all
+  end
+
+  def show
+    @facility = Facility.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@facility) do |place, marker|
+      marker.lat place.latitude
+      marker.lng place.longitude
+      marker.infowindow place.name
+    end
   end
 
   def edit
@@ -39,6 +51,6 @@ class FacilitiesController < ApplicationController
 
   private
     def facility_params
-      params.require(:facility).permit(:name, :name_kana, :address, :opening_hours, :closing_hours, :holiday, :business_period, :comment)
+      params.require(:facility).permit(:name, :name_kana, :address, :opening_hours, :closing_hours, :holiday, :business_period, :comment, :latitude, :longitude)
     end
 end

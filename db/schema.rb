@@ -69,14 +69,14 @@ ActiveRecord::Schema.define(version: 2019_02_04_054700) do
   create_table "facilities", force: :cascade do |t|
     t.text "name"
     t.text "name_kana"
-    t.text "address"
+    t.string "address"
     t.time "opening_hours"
     t.time "closing_hours"
     t.text "holiday"
     t.text "business_period"
     t.text "comment"
-    t.decimal "latitude", precision: 11, scale: 8
-    t.decimal "longitude", precision: 11, scale: 8
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
