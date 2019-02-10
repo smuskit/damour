@@ -54,11 +54,11 @@ document.addEventListener("turbolinks:load", function(){
       drawsBoxLine : false, //canvasを線で囲む場合はtrue
       movesIslands : true, //南西諸島を左上に移動させるときはtrue、移動させないときはfalse
       showsAreaName : true, //エリア名を表示しない場合はfalse
-      width: 800, //canvasのwidth。別途heightも指定可。˜ß
-      backgroundColor: "rgba(0, 0, 0, 0.1)", //canvasの背景色
+      width: 800, //canvasのwidth。別途heightも指定可。
+      // backgroundColor: "rgba(255, 255, 255, 0.1)", //canvasの背景色
       font : "MS Mincho", //地図に表示する文字のフォント
       fontSize : 12, //地図に表示する文字のサイズ
-      fontColor : "areaColor", //地図に表示する文字の色。"areaColor"でエリアの色に合わせる
+      fontColor : "#FFF", //地図に表示する文字の色。"areaColor"でエリアの色に合わせる
       fontShadowColor : "black", //地図に表示する文字の影の色
       onSelect:function(data){ //選択範囲をクリックしたときに実行
         location.href = areaLinks[data.area.name]; //data.area.nameは選択したエリアの名前

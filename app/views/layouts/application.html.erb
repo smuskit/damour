@@ -10,30 +10,41 @@
 
   </head>
 
-  <body>
-    <h1>ダム王</h1>
+  <%= link_to card_path(current_user), class:"my-parts" do %>
+    <span class="my-parts-text">ダムカード<br>コレクション<span>
+  <% end %>
 
-    <% if user_signed_in? %>
-      <%= link_to 'Home', dams_top_path, class:"menu-btn" %>
-      <%= link_to 'About', "", class:"menu-btn" %>
-      <%= link_to 'MyPage', user_path(current_user), class:"menu-btn" %>
+  <body>
+
+    <header>
       <%= link_to 'Admin Page', admin_path(Admin.find(1)), class:"btn btn-warning" %>
-      <%= link_to 'Contact', "", class:"menu-btn" %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"menu-btn" %>
-    <% elsif admin_signed_in? %>
-      <%= link_to 'Home', dams_top_path, class:"menu-btn" %>
-      <%= link_to 'ABOUT', "", class:"menu-btn" %>
-      <%= link_to 'ADMIN PAGE', admin_path(@admin), class:"menu-btn" %>
-      <%= link_to 'CONTACT', "", class:"menu-btn" %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"menu-btn" %>
-    <% else %>
-      <%= link_to 'Home', dams_top_path, class:"menu-btn" %>
-      <%= link_to 'About', "", class:"menu-btn" %>
-      <%= link_to 'Contact', "", class:"menu-btn" %>
-      <%= link_to 'SignUp', new_user_registration_path, class:"menu-btn" %>
-      <%= link_to 'LogIn', new_user_session_path, class:"menu-btn" %>
-      <%= link_to 'Admin Login', new_admin_session_path, class:"btn btn-warning" %>
-    <% end %>
+
+      <li class="title">ダム王</li>
+      <li class="sub-title">damour</li>
+
+      <div class="nav-menu">
+        <% if user_signed_in? %>
+          <%= link_to 'Home', dams_top_path, class:"menu-btn-home" %>
+          <%= link_to 'MyPage', user_path(current_user), class:"menu-btn" %>
+          <%= link_to 'About', "", class:"menu-btn" %>
+          <%= link_to 'Contact', "", class:"menu-btn" %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"menu-btn" %>
+        <% elsif admin_signed_in? %>
+          <%= link_to 'Home', dams_top_path, class:"menu-btn" %>
+          <%= link_to 'ABOUT', "", class:"menu-btn" %>
+          <%= link_to 'ADMIN PAGE', admin_path(@admin), class:"menu-btn" %>
+          <%= link_to 'CONTACT', "", class:"menu-btn" %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"menu-btn" %>
+        <% else %>
+          <%= link_to 'Home', dams_top_path, class:"menu-btn" %>
+          <%= link_to 'About', "", class:"menu-btn" %>
+          <%= link_to 'Contact', "", class:"menu-btn" %>
+          <%= link_to 'SignUp', new_user_registration_path, class:"menu-btn" %>
+          <%= link_to 'LogIn', new_user_session_path, class:"menu-btn" %>
+          <%= link_to 'Admin Login', new_admin_session_path, class:"btn btn-warning" %>
+        <% end %>
+      </div>
+    </header>
 
     <%= yield %>
   </body>
