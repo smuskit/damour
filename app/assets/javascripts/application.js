@@ -14,8 +14,6 @@
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require rails-ujs
-//= require underscore
-//= require gmaps/google
 //= require turbolinks
 //= require_tree .
 
@@ -90,6 +88,4 @@ $(function(){
         $(this).attr('id','edit-modal' + (i+1));
     });
 });
-
-//Google map
 

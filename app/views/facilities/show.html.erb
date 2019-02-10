@@ -1,11 +1,1 @@
-<div id="map1" style="width: 800px; height: 400px;"></div>
-
-<script>
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map1'}}, function(){
-    markers = handler.addMarkers(<%= raw @hash.to_json %>);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    handler.getMap().setZoom(12);
-  });
-</script>
+<iframe src="https://maps.google.co.jp/maps?output=embed&q= <%= @facility.address %>"></iframe>

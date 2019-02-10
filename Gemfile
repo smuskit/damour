@@ -73,13 +73,6 @@ gem 'kaminari'
 
 gem 'pry-rails'
 
-# gem 'carrierwave'
-# gem 'rmagick'
-
 gem 'jquery-turbolinks'
 
 gem 'dotenv-rails'
-
-gem 'geocoder'
-gem 'gmaps4rails'
-

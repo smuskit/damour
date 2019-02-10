@@ -1,5 +1,4 @@
 class FacilitiesController < ApplicationController
-  require 'geocoder'
 
   def new
   end
@@ -22,11 +21,6 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
-    @hash = Gmaps4rails.build_markers(@facility) do |place, marker|
-      marker.lat place.latitude
-      marker.lng place.longitude
-      marker.infowindow place.name
-    end
   end
 
   def edit
