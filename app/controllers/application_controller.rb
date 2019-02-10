@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
     dams_top_path
   end
 
+  def header
+    @admin = Admin.find(1)
+  end
+
   protected
 	  def configure_permitted_parameters
 	    devise_parameter_sanitizer.permit(:sign_up, keys: [:email])

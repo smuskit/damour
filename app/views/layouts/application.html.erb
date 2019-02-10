@@ -11,26 +11,41 @@
   </head>
 
   <body>
-    <div>
-      <% if user_signed_in? %>
-        <%= link_to 'トップ', dams_top_path, class:"btn btn-primary" %>
-        <%= link_to 'カードトップ', card_path(current_user), class:"btn btn-primary" %>
-        <%= link_to 'マイページ', user_path(current_user), class:"btn btn-success" %>
-        <%= link_to 'カード配布場所', facilities_path, class:"btn btn-success" %>
-        <%= link_to 'ダム登録', new_dam_path, class:"btn btn-warning" %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"btn btn-danger" %>
-      <% elsif admin_signed_in? %>
-        <%= link_to 'トップ', dams_top_path, class:"btn btn-primary" %>
-        <%= link_to 'マイページ', admin_path(current_admin), class:"btn btn-success" %>
-        <%= link_to 'カード配布場所', facilities_path, class:"btn btn-success" %>
-        <%= link_to 'ダム登録', new_dam_path, class:"btn btn-warning" %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"btn btn-danger" %>
-      <% else %>
-        <%= link_to 'ユーザー会員登録', new_user_registration_path, class:"btn btn-primary" %>
-        <%= link_to 'ユーザーログイン', new_user_session_path, class:"btn btn-success" %>
-        <%= link_to '管理者ログイン', new_admin_session_path, class:"btn btn-warning" %>
-      <% end %>
-    </div>
+    <h1>ダム王</h1>
+
+    <% if user_signed_in? %>
+      <%= link_to 'Home', dams_top_path, class:"menu-btn" %>
+      <%= link_to 'About', "", class:"menu-btn" %>
+      <%= link_to 'MyPage', user_path(current_user), class:"menu-btn" %>
+      <%= link_to 'Admin Page', admin_path(Admin.find(1)), class:"btn btn-warning" %>
+      <%= link_to 'Contact', "", class:"menu-btn" %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"menu-btn" %>
+    <% elsif admin_signed_in? %>
+      <%= link_to 'Home', dams_top_path, class:"menu-btn" %>
+      <%= link_to 'ABOUT', "", class:"menu-btn" %>
+      <%= link_to 'ADMIN PAGE', admin_path(@admin), class:"menu-btn" %>
+      <%= link_to 'CONTACT', "", class:"menu-btn" %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"menu-btn" %>
+    <% else %>
+      <%= link_to 'Home', dams_top_path, class:"menu-btn" %>
+      <%= link_to 'About', "", class:"menu-btn" %>
+      <%= link_to 'Contact', "", class:"menu-btn" %>
+      <%= link_to 'SignUp', new_user_registration_path, class:"menu-btn" %>
+      <%= link_to 'LogIn', new_user_session_path, class:"menu-btn" %>
+      <%= link_to 'Admin Login', new_admin_session_path, class:"btn btn-warning" %>
+    <% end %>
+
     <%= yield %>
   </body>
+
+  <footer class="footer mt-auto py-3">
+    <div class='container'>
+      <div class='row'>
+        <div class='col-xs-3 col-xs-offset-9'>
+        <span class="text-muted">CopyRight DIGRU.inc</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </html>
