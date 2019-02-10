@@ -10,9 +10,35 @@
   background-color: gray;
 }
 
-#map {
+.dam-top-box{
+  margin: 0 auto;
+}
+
+.dam-top-map {
+  float: left;
+  width: 800px;
+  padding: 20px;
+  margin: 15px;
+  background-color: yellow;
+}
+
+.dam-top-search-box {
+  float: left;
+  width: 35%;
+  margin: 15px 15px;
+  background-color: pink;
+}
+
+.dam-top-search {
+ padding: 10px;
+}
+
+.dam-top-search-form {
+}
+
+.map {
     width: 800px;
-    margin: 30px auto;
+    margin-top: 50px;
     /* -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); */
     /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); */
 }

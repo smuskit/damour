@@ -46,7 +46,7 @@ document.addEventListener("turbolinks:load", function(){
     "九州地方" : "/prefectures/40",
   };
 
-  $("#map").japanMap(
+  $(".map").japanMap(
     {
       areas  : areas, //上で設定したエリアの情報
       selection : "area", //選ぶことができる範囲(県→prefecture、エリア→area)
@@ -54,7 +54,7 @@ document.addEventListener("turbolinks:load", function(){
       drawsBoxLine : false, //canvasを線で囲む場合はtrue
       movesIslands : true, //南西諸島を左上に移動させるときはtrue、移動させないときはfalse
       showsAreaName : true, //エリア名を表示しない場合はfalse
-      width: 800, //canvasのwidth。別途heightも指定可。
+      width: 700, //canvasのwidth。別途heightも指定可。
       // backgroundColor: "rgba(255, 255, 255, 0.1)", //canvasの背景色
       font : "MS Mincho", //地図に表示する文字のフォント
       fontSize : 12, //地図に表示する文字のサイズ
