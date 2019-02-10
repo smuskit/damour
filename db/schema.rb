@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_02_04_054700) do
     t.integer "prefecture_id"
     t.string "name"
     t.string "name_kana"
+    t.string "address"
     t.string "river"
     t.integer "dam_type", limit: 1, default: 0, null: false
     t.string "gate"
@@ -75,8 +76,6 @@ ActiveRecord::Schema.define(version: 2019_02_04_054700) do
     t.text "holiday"
     t.text "business_period"
     t.text "comment"
-    t.float "latitude"
-    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

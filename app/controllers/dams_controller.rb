@@ -69,7 +69,7 @@ class DamsController < ApplicationController
     end
 
     def dam_params
-      params.require(:dam).permit(:region_id, :prefecture_id, :name, :name_kana, :river, :dam_type, :gate, :height, :length, :volume, :purpose, :constructor, :start_of_construction, :end_of_construction, :dam_image)
+      params.require(:dam).permit(:region_id, :prefecture_id, :name, :name_kana, :address, :river, :dam_type, :gate, :height, :length, :volume, :purpose, :constructor, :start_of_construction, :end_of_construction, :dam_image)
     end
 
 end

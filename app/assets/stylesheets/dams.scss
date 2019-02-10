@@ -47,13 +47,13 @@
 .dam-show-image-box {
   position: relative;
   margin: 0 auto;
-  width: 650px;
+  width: 800px;
 }
 
   /* ダム写真 */
 
 .dam-show-image {
-  width: 650px;
+  width: 800px;
   height: 450px;
 }
 
@@ -61,12 +61,12 @@
   position: absolute;
   display: inline-block;
   font-weight: bold;
-  padding: 1.5em 0.5em;
+  padding: 2.0em 0.5em;
   text-decoration: none;
   color: #FFF;
   background: #04B431;
   transition: .4s;
-  width: 140px;
+  width: 160px;
   text-align: center;
   right: 30px;
   bottom: -40px;
@@ -84,6 +84,27 @@
 
 .square_btn:hover span {
   color: #FFF;
-  padding: 0.1em 0;
+  padding: 0.3em 0;
+}
+
+
+.dam-show-information {
+  width: 800px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.dam-show-information-content {
+  width: 600px;
+}
+
+.dam-show-map-box {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.dam-show-map {
+  width: 800px;
+  height: 400px;
 }
 

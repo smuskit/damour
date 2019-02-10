@@ -45,6 +45,6 @@ class FacilitiesController < ApplicationController
 
   private
     def facility_params
-      params.require(:facility).permit(:name, :name_kana, :address, :opening_hours, :closing_hours, :holiday, :business_period, :comment, :latitude, :longitude)
+      params.require(:facility).permit(:name, :name_kana, :address, :opening_hours, :closing_hours, :holiday, :business_period, :comment)
     end
 end

@@ -5,6 +5,7 @@ class CreateDams < ActiveRecord::Migration[5.2]
       t.integer :prefecture_id
       t.string :name
       t.string :name_kana
+      t.string :address
       t.string :river
       t.integer :dam_type, limit: 1, default: 0, null: false
       t.string :gate
