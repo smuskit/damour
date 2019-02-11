@@ -1,10 +1,10 @@
-<li class="prefecture-show-region-name"><%= @region.name %>地方</li>
+<li class="pr-show-region-name"><%= @region.name %>地方</li>
 
-<div class="prefecture-show-border"></div>
+<div class="pr-show-border"></div>
 
-<li class="prefecture-show-prefecture-name">【<%= @prefecture.name %>のダム】</li>
+<li class="pr-show-pr-name">【<%= @prefecture.name %>のダム】</li>
 
-<div class="prefecture-show-search-form">
+<div class="pr-show-search-form">
   <%= form_tag(prefecture_path(@prefecture), :method => 'get') do %>
     <%= label_tag(:dam, "#{@prefecture.name}のダムを検索") %>
     <%= text_field_tag :search %>
@@ -12,7 +12,7 @@
   <% end %>
 </div>
 
-<div class="prefecture-show-content">
+<div class="pr-show-content">
   <% if @region.id == 1 %>
     <div class="container">
       <div class="row">
@@ -97,26 +97,53 @@
       <div class="col-md-10">
 
         <% @dams.each do |d| %>
-          <div class="prefecture-show-dam-item">
-            <div class="prefecture-show-dam-item-image">
-              <%= attachment_image_tag d, :dam_image, size: '300x200', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %>
-            </div>
-            <div class="prefecture-show-dam-item-information">
+          <div class="pr-show-dam-item">
+            <div class="pr-show-dam-item-image">
               <%= link_to dam_path(d) do %>
-                <div class="prefecture-show-dam-item-information-name">
-                  【<%= d.name %>/<%= d.name_kana %>】
-                  <%= link_to '削除', dam_path(d), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-xs btn-danger" %>
-                </div>
+                <%= attachment_image_tag d, :dam_image, size: '300x200', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %>
               <% end %>
-              <div class="prefecture-show-dam-item-information-river">
-                <%= d.river %>
-              </div>
-              <div class="prefecture-show-dam-item-information-address">
-                <%= d.address %>
-              </div>
             </div>
-            <div  class="prefecture-show-dam-item-facility">
-              <li class="prefecture-show-dam-item-facility-title">カード配布場所</li>
+            <div class="pr-show-dam-item-info">
+              <div class="pr-show-dam-item-info-name">
+                【<%= d.name %>/<span class="pr-show-dam-item-info-name-kana"><%= d.name_kana %></span>】
+              </div>
+              <div  class="pr-show-dam-item-info-text clearfix">
+                <div class="pr-show-dam-item-info-river">
+                  <%= d.river %>
+                </div>
+                <div class="pr-show-dam-item-info-address">
+                  〒<%= d.postal_code %> <%= d.address %>
+                </div>
+              </div>
+              <div  class="pr-show-dam-item-facility">
+                <table class='table-sm table-striped'>
+                  <thead>
+                    <tr>
+                      <th class="pr-show-dam-item-facility-title"><i class="fas fa-flag-checkered"></i> カード配布場所</th>
+                      <th class="pr-show-dam-item-facility-hours">営業時間</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <% distributes = d.distributes %>
+                      <% distributes.each do |dist| %>
+                      <tr>
+                        <td>
+                          <div class="pr-show-dam-item-facility-item">
+                            <%= link_to "#{dist.facility.name}", facility_path(dist.facility) %>
+                          </div>
+                        </td>
+                        <td>
+                          <span class="pr-show-dam-item-facility-hours"><%= facility_simple_time(dist.facility.opening_hours) %></span>~<%= facility_simple_time(dist.facility.closing_hours) %>
+                        </td>
+                        <td>
+                          <span class="pr-show-dam-item-facility-business-period">(<%= dist.facility.business_period %>)</span>
+                        </td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         <% end %>
@@ -124,6 +151,3 @@
     </div>
   </div>
 </div>
-
-
-
