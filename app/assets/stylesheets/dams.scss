@@ -4,11 +4,7 @@
 
 /* dams#top */
 
-.slider {
-  height: 500px;
-  margin: 0 auto;
-  background-color: gray;
-}
+  /* anchor scroll ボタン */
 
 #anchor {
   width: 20%;
@@ -23,6 +19,7 @@
 .anchor-text{
   list-style: none;
   color: #000;
+  font-weight: bold;
 }
 
 .anchor-text {
@@ -31,8 +28,52 @@
 
 .arrow {
   width: 30px;
-  padding-top: 10px;
+  padding-top: 15px;
+  animation: key1 .4s ease infinite alternate;
 }
+
+@keyframes key1{
+  0% {transform: translateY(0px);}
+  100% {transform: translateY(-10px);}
+}
+
+
+  /* スライダー */
+
+#container{
+  height: 500px;
+  margin: 0 auto;
+  z-index: 1;
+  background-color: #000;
+}
+
+.skippr {
+  background-position: none;
+}
+
+.dam-image1 {
+background-image: url(dam_image1-1.jpeg);
+background-position: 50% 62.5%;
+}
+.dam-image2 {
+background-image: url(dam_image2-1.jpeg);
+background-position: 40% 20%;
+}
+.dam-image3 {
+background-image: url(dam_image3.jpeg);
+background-position:50% 62.5%;
+}
+.dam-image4 {
+background-image: url(dam_image4.jpeg);
+background-position: 35% 50%;
+}
+.dam-image5 {
+background-image: url(dam_image5.jpeg);
+background-position:50% 62.5%;
+}
+
+
+  /* 黒部ダムレコメンド */
 
 .kurobe-box {
   width: 100%;
@@ -115,10 +156,11 @@
 }
 
 .dam-top-map {
+  padding: 50px 0;
 }
 
 .dam-top-map-title {
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
 }
 

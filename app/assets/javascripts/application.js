@@ -18,6 +18,33 @@
 //= require_tree .
 
 
+// スライダー
+
+document.addEventListener("turbolinks:load", function(){
+  $("#theTarget").skippr({
+      // スライドショーの変化 ("fade" or "slide")
+      transition : 'slide',
+      // 変化に係る時間(ミリ秒)
+      speed : 1500,
+      // easingの種類
+      easing : 'easeOutQuart',
+      // ナビゲーションの形("block" or "bubble")
+      navType : 'bubble',
+      // 子要素の種類("div" or "img")
+      childrenElementType : 'div',
+      // ナビゲーション矢印の表示(trueで表示)
+      arrows : true,
+      // スライドショーの自動再生(falseで自動再生なし)
+      autoPlay : true,
+      // 自動再生時のスライド切替間隔(ミリ秒)
+      autoPlayDuration : 3000,
+      // キーボードの矢印キーによるスライド送りの設定(trueで有効)
+      keyboardOnAlways : true,
+      // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
+      hidePrevious : false
+  });
+});
+
 //JapanMap
 document.addEventListener("turbolinks:load", function(){
   //地域を設定
@@ -54,7 +81,7 @@ document.addEventListener("turbolinks:load", function(){
       drawsBoxLine : false, //canvasを線で囲む場合はtrue
       movesIslands : true, //南西諸島を左上に移動させるときはtrue、移動させないときはfalse
       showsAreaName : true, //エリア名を表示しない場合はfalse
-      width: 800, //canvasのwidth。別途heightも指定可。
+      width: 900, //canvasのwidth。別途heightも指定可。
       // backgroundColor: "rgba(255, 255, 255, 0.1)", //canvasの背景色
       font : "MS Mincho", //地図に表示する文字のフォント
       fontSize : 12, //地図に表示する文字のサイズ
@@ -91,7 +118,7 @@ $(function(){
 
 
 //anchor
-$(function(){
+document.addEventListener("turbolinks:load", function(){
   $('a[href^="#"]').click(function() {
     var href = $(this).attr("href");
     var target = $(href == "#" || href == "" ? 'html' : href);

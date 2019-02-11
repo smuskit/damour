@@ -32,8 +32,9 @@
   -moz-transition-timing-function: cubic-bezier(100,50,21,6);
 }
 
+
 body{
-  background: #FFF;     /* #1b1b2b; */
+  background: #E6E6E6;     /* #1b1b2b; */
   padding-bottom:50px 0;
 }
 
@@ -114,6 +115,7 @@ body{
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
   transition: .4s;
   padding: 40px 0 0 20px;
+  z-index: 10;
 }
 
 .my-parts:hover {

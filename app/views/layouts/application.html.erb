@@ -9,9 +9,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
-
-  <%= link_to card_path(current_user), class:"my-parts" do %>
-    <span class="my-parts-text">ダムカード<br>コレクション<span>
+  <%if user_signed_in? %>
+    <%= link_to card_path(current_user), class:"my-parts" do %>
+      <span class="my-parts-text">ダムカード<br>コレクション<span>
+    <% end %>
+  <% elsif admin_signed_in? %>
+  <% else %>
+    <%= link_to new_user_session_path, class:"my-parts" do %>
+      <span class="my-parts-text">ダムカード<br>コレクション<span>
+    <% end %>
   <% end %>
 
   <body>

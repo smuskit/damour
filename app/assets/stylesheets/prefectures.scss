@@ -5,4 +5,93 @@
 .prefecture-show-border {
   width: 100%;
   border-bottom: solid 1px #000;
+  margin-bottom: 30px;
+}
+
+.prefecture-show-region-name {
+  list-style: none;
+  font-size: 30px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.prefecture-show-prefecture-name {
+  list-style: none;
+  font-size: 30px;
+  padding-left: 65px;
+}
+
+.prefecture-show-search-form {
+  text-align: center;
+}
+
+.prefecture-show-content {
+  padding: 50px 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 100%;
+}
+
+.bg-light {
+  text-align: center;
+  font-size: 15px;
+}
+
+.list-group-item.list-group-item-action.bg-light {
+  background-color: #000;
+  color: #FFF;
+}
+
+#wrapper #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+.prefecture-show-dam-item {
+  width: 950px;
+  height: 230px;
+  background-color: #FFF;
+  margin-bottom: 10px;
+}
+
+.prefecture-show-dam-item-image {
+  float: left;
+  line-height: 230px;
+  padding: 0 20px;
+}
+
+.prefecture-show-dam-item-information {
+  float: left;
+  padding: 15px 0;
+}
+
+.prefecture-show-dam-item-information-name {
+  font-size: 20px;
 }
