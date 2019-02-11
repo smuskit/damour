@@ -10,6 +10,30 @@
   background-color: gray;
 }
 
+#anchor {
+  width: 20%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+#anchor a, #anchor a:hover {
+  text-decoration: none;
+}
+
+.anchor-text{
+  list-style: none;
+  color: #000;
+}
+
+.anchor-text {
+  color: #000;
+}
+
+.arrow {
+  width: 30px;
+  padding-top: 10px;
+}
+
 .kurobe-box {
   width: 100%;
   height: 450px;

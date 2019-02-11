@@ -1,5 +1,3 @@
-prefectures#show
-
 <h2><%= @region.name %>地方</h2>
 
 <% if @region.id == 1 %>
@@ -71,7 +69,6 @@ prefectures#show
 <div class="prefecture-show-border"></div>
 <p><%= @prefecture.name %>のダム</p>
 
-<p>検索</p>
 <%= form_tag(prefecture_path(@prefecture), :method => 'get') do %>
   <%= label_tag(:dam, 'Search dam') %>
   <%= text_field_tag :search %>
