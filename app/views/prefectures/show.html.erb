@@ -98,18 +98,26 @@
 
         <% @dams.each do |d| %>
           <div class="prefecture-show-dam-item">
-            <%= link_to dam_path(d) do %>
-              <div class="prefecture-show-dam-item-image">
-                <%= attachment_image_tag d, :dam_image, size: '300x200', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %>
-              </div>
-              <div class="prefecture-show-dam-item-information">
+            <div class="prefecture-show-dam-item-image">
+              <%= attachment_image_tag d, :dam_image, size: '300x200', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %>
+            </div>
+            <div class="prefecture-show-dam-item-information">
+              <%= link_to dam_path(d) do %>
                 <div class="prefecture-show-dam-item-information-name">
                   【<%= d.name %>/<%= d.name_kana %>】
+                  <%= link_to '削除', dam_path(d), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-xs btn-danger" %>
                 </div>
-                
+              <% end %>
+              <div class="prefecture-show-dam-item-information-river">
+                <%= d.river %>
               </div>
-              <%= link_to '削除', dam_path(d), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-xs btn-danger" %>
-            <% end %>
+              <div class="prefecture-show-dam-item-information-address">
+                <%= d.address %>
+              </div>
+            </div>
+            <div  class="prefecture-show-dam-item-facility">
+              <li class="prefecture-show-dam-item-facility-title">カード配布場所</li>
+            </div>
           </div>
         <% end %>
       </div>

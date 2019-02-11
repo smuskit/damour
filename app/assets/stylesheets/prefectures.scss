@@ -75,7 +75,7 @@ body {
 }
 
 .prefecture-show-dam-item {
-  width: 950px;
+  width: 1000px;
   height: 230px;
   background-color: #FFF;
   margin-bottom: 10px;
@@ -89,9 +89,23 @@ body {
 
 .prefecture-show-dam-item-information {
   float: left;
-  padding: 15px 0;
+  padding: 20px 15px 15px 20px;
 }
 
 .prefecture-show-dam-item-information-name {
   font-size: 20px;
 }
+
+.prefecture-show-dam-item-facility {
+  float: left;
+  padding: 15px;
+}
+
+.prefecture-show-dam-item-facility-title {
+  list-style: none;
+  font-weight: bold;
+  border-bottom: 0.5px solid gray;
+}
+
+
+
