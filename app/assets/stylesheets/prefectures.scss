@@ -83,16 +83,42 @@ body {
   width: 950px;
   height: 230px;
   background-color: #FFF;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .pr-show-black-box {
   position: absolute;
   width: 40px;
   height: 230px;
-  background-color: #5FB404;
+  background-color: #000;
   right: 0;
 }
+
+  /* 詳細へボタン */
+
+.pr-show-dam-item-link-box span {
+  font-size: 22px;
+}
+
+.pr-show-dam-item-link {
+  position: absolute;
+  right: 20px;
+  bottom: -20px;
+  display: inline-block;
+  font-weight: bold;
+  padding: 1.5em 1.5em;
+  text-decoration: none;
+  color: #ECECEC;
+  background: #5FB404;
+  transition: .4s;
+}
+
+.pr-show-dam-item-link:hover {
+  background: #ECECEC;
+  color: #5FB404;
+  text-decoration: none;
+}
+
 
 .pr-show-dam-item-image-box {
   float: left;
@@ -107,7 +133,7 @@ body {
 
 .pr-show-dam-item-info {
   float: left;
-  padding: 20px 15px 15px 15px;
+  padding: 20px 15px 15px 0px;
 }
 
 .pr-show-dam-item-info-name {
