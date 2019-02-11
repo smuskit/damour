@@ -25,6 +25,10 @@
   text-align: center;
 }
 
+.pr-show-search-form-box{
+  width: 400px;
+}
+
 .pr-show-content {
   padding: 50px 0;
 }
@@ -75,16 +79,30 @@ body {
 }
 
 .pr-show-dam-item {
+  position: relative;
   width: 950px;
   height: 230px;
   background-color: #FFF;
   margin-bottom: 10px;
 }
 
-.pr-show-dam-item-image {
+.pr-show-black-box {
+  position: absolute;
+  width: 40px;
+  height: 230px;
+  background-color: #5FB404;
+  right: 0;
+}
+
+.pr-show-dam-item-image-box {
   float: left;
   line-height: 230px;
   padding: 0 20px;
+}
+
+.pr-show-dam-item-image {
+  display: inline-block;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
 }
 
 .pr-show-dam-item-info {

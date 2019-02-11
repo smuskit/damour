@@ -6,9 +6,9 @@
 
 <div class="pr-show-search-form">
   <%= form_tag(prefecture_path(@prefecture), :method => 'get') do %>
-    <%= label_tag(:dam, "#{@prefecture.name}のダムを検索") %>
-    <%= text_field_tag :search %>
-    <%= submit_tag 'Search', :name => nil %>
+    <div><%= label_tag(:dam, "#{@prefecture.name}内のダムを検索しよう！") %></div>
+    <%= text_field_tag :search, "", placeholder:"ダム名，地名で検索", class:"pr-show-search-form-box" %>
+    <%= submit_tag 'Search', :name => nil, class:"btn btn-sm btn-success" %>
   <% end %>
 </div>
 
@@ -40,114 +40,170 @@
           </div>
         </div>
   <% elsif @region.id == 3 %>
-    <%=link_to '茨城県', prefecture_path(8) %>
-    <%=link_to '神奈川県', prefecture_path(9) %>
-    <%=link_to '群馬県', prefecture_path(10) %>
-    <%=link_to '埼玉県', prefecture_path(11) %>
-    <%=link_to '千葉県', prefecture_path(12) %>
-    <%=link_to '東京都', prefecture_path(13) %>
-    <%=link_to '栃木県', prefecture_path(14) %>
-
-  <% elsif @region.id == 4 %>
-    <%=link_to '石川県', prefecture_path(15) %>
-    <%=link_to '富山県', prefecture_path(16) %>
-    <%=link_to '長野県', prefecture_path(17) %>
-    <%=link_to '新潟県', prefecture_path(18) %>
-    <%=link_to '福井県', prefecture_path(19) %>
-    <%=link_to '山梨県', prefecture_path(20) %>
-
-  <% elsif @region.id == 5 %>
-    <%=link_to '愛知県', prefecture_path(21) %>
-    <%=link_to '岐阜県', prefecture_path(22) %>
-    <%=link_to '静岡県', prefecture_path(23) %>
-    <%=link_to '三重県', prefecture_path(24) %>
-
-  <% elsif @region.id == 6 %>
-    <%=link_to '大阪府', prefecture_path(25) %>
-    <%=link_to '京都府', prefecture_path(26) %>
-    <%=link_to '滋賀県', prefecture_path(27) %>
-    <%=link_to '兵庫県', prefecture_path(28) %>
-    <%=link_to '奈良県', prefecture_path(29) %>
-    <%=link_to '和歌山県', prefecture_path(30) %>
-
-  <% elsif @region.id == 7 %>
-    <%=link_to '岡山県', prefecture_path(31) %>
-    <%=link_to '島根県', prefecture_path(32) %>
-    <%=link_to '鳥取県', prefecture_path(33) %>
-    <%=link_to '広島県', prefecture_path(34) %>
-    <%=link_to '山口県', prefecture_path(35) %>
-
-  <% elsif @region.id == 8 %>
-    <%=link_to '香川県', prefecture_path(36) %>
-    <%=link_to '愛媛県', prefecture_path(37) %>
-    <%=link_to '高知県', prefecture_path(38) %>
-    <%=link_to '徳島県', prefecture_path(39) %>
-
-  <% else @region.id == 9 %>
-    <%=link_to '大分県', prefecture_path(40) %>
-    <%=link_to '鹿児島県', prefecture_path(41) %>
-    <%=link_to '熊本県', prefecture_path(42) %>
-    <%=link_to '佐賀県', prefecture_path(43) %>
-    <%=link_to '長崎県', prefecture_path(44) %>
-    <%=link_to '福岡県', prefecture_path(45) %>
-    <%=link_to '宮崎県', prefecture_path(46) %>
-    <%=link_to '沖縄県', prefecture_path(47) %>
-  <% end %>
-
-      <div class="col-md-10">
-
-        <% @dams.each do |d| %>
-          <div class="pr-show-dam-item">
-            <div class="pr-show-dam-item-image">
-              <%= link_to dam_path(d) do %>
-                <%= attachment_image_tag d, :dam_image, size: '300x200', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %>
-              <% end %>
-            </div>
-            <div class="pr-show-dam-item-info">
-              <div class="pr-show-dam-item-info-name">
-                【<%= d.name %>/<span class="pr-show-dam-item-info-name-kana"><%= d.name_kana %></span>】
-              </div>
-              <div  class="pr-show-dam-item-info-text clearfix">
-                <div class="pr-show-dam-item-info-river">
-                  <%= d.river %>
-                </div>
-                <div class="pr-show-dam-item-info-address">
-                  〒<%= d.postal_code %> <%= d.address %>
-                </div>
-              </div>
-              <div  class="pr-show-dam-item-facility">
-                <table class='table-sm table-striped'>
-                  <thead>
-                    <tr>
-                      <th class="pr-show-dam-item-facility-title"><i class="fas fa-flag-checkered"></i> カード配布場所</th>
-                      <th class="pr-show-dam-item-facility-hours">営業時間</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                      <% distributes = d.distributes %>
-                      <% distributes.each do |dist| %>
-                      <tr>
-                        <td>
-                          <div class="pr-show-dam-item-facility-item">
-                            <%= link_to "#{dist.facility.name}", facility_path(dist.facility) %>
-                          </div>
-                        </td>
-                        <td>
-                          <span class="pr-show-dam-item-facility-hours"><%= facility_simple_time(dist.facility.opening_hours) %></span>~<%= facility_simple_time(dist.facility.closing_hours) %>
-                        </td>
-                        <td>
-                          <span class="pr-show-dam-item-facility-business-period">(<%= dist.facility.business_period %>)</span>
-                        </td>
-                      </tr>
-                    <% end %>
-                  </tbody>
-                </table>
-              </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+              <%= link_to '茨城県', prefecture_path(8), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '神奈川県', prefecture_path(9), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '群馬県', prefecture_path(10), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '埼玉県', prefecture_path(11), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '千葉県', prefecture_path(12), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '東京都', prefecture_path(13), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '栃木県', prefecture_path(14), class:"list-group-item list-group-item-action bg-light" %>
             </div>
           </div>
-        <% end %>
+        </div>
+
+  <% elsif @region.id == 4 %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+              <%= link_to '石川県', prefecture_path(15), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '富山県', prefecture_path(16), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '長野県', prefecture_path(17), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '新潟県', prefecture_path(18), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '福井県', prefecture_path(19), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '山梨県', prefecture_path(20), class:"list-group-item list-group-item-action bg-light" %>
+            </div>
+          </div>
+        </div>
+
+  <% elsif @region.id == 5 %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+              <%= link_to '愛知県', prefecture_path(21), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '岐阜県', prefecture_path(22), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '静岡県', prefecture_path(23), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '三重県', prefecture_path(24), class:"list-group-item list-group-item-action bg-light" %>
+          </div>
+        </div>
+
+  <% elsif @region.id == 6 %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+              <%= link_to '大阪府', prefecture_path(25), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '京都府', prefecture_path(26), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '滋賀県', prefecture_path(27), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '兵庫県', prefecture_path(28), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '奈良県', prefecture_path(29), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '和歌山県', prefecture_path(30), class:"list-group-item list-group-item-action bg-light" %>
+            </div>
+          </div>
+        </div>
+
+  <% elsif @region.id == 7 %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+              <%= link_to '岡山県', prefecture_path(31), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '島根県', prefecture_path(32), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '鳥取県', prefecture_path(33), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '広島県', prefecture_path(34), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '山口県', prefecture_path(35), class:"list-group-item list-group-item-action bg-light" %>
+            </div>
+          </div>
+        </div>
+
+  <% elsif @region.id == 8 %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+              <%= link_to '香川県', prefecture_path(36), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '愛媛県', prefecture_path(37), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '高知県', prefecture_path(38), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '徳島県', prefecture_path(39), class:"list-group-item list-group-item-action bg-light" %>
+            </div>
+          </div>
+        </div>
+
+  <% else @region.id == 9 %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+              <%= link_to '大分県', prefecture_path(40), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '鹿児島県', prefecture_path(41), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '熊本県', prefecture_path(42), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '佐賀県', prefecture_path(43), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '長崎県', prefecture_path(44), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '福岡県', prefecture_path(45), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '宮崎県', prefecture_path(46), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '沖縄県', prefecture_path(47), class:"list-group-item list-group-item-action bg-light" %>
+            </div>
+          </div>
+        </div>
+  <% end %>
+
+        <div class="col-md-10">
+
+          <% @dams.each do |d| %>
+            <div class="pr-show-dam-item">
+              <div class="pr-show-black-box"></div>
+              <div class="pr-show-dam-item-image-box">
+                <%= link_to dam_path(d) do %>
+                  <%= attachment_image_tag d, :dam_image, size: '300x200', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"pr-show-dam-item-image" %>
+                <% end %>
+              </div>
+              <div class="pr-show-dam-item-info">
+                <div class="pr-show-dam-item-info-name">
+                  【<%= d.name %>/<span class="pr-show-dam-item-info-name-kana"><%= d.name_kana %></span>】
+                </div>
+                <div  class="pr-show-dam-item-info-text clearfix">
+                  <div class="pr-show-dam-item-info-river">
+                    <%= d.river %>
+                  </div>
+                  <div class="pr-show-dam-item-info-address">
+                    〒<%= d.postal_code %> <%= d.address %>
+                  </div>
+                </div>
+                <div  class="pr-show-dam-item-facility">
+                  <table class='table-sm table-striped'>
+                    <thead>
+                      <tr>
+                        <th class="pr-show-dam-item-facility-title"><i class="fas fa-flag-checkered"></i> カード配布場所</th>
+                        <th class="pr-show-dam-item-facility-hours">営業時間</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% distributes = d.distributes %>
+                        <% distributes.each do |dist| %>
+                        <tr>
+                          <td>
+                            <div class="pr-show-dam-item-facility-item">
+                              <%= link_to "#{dist.facility.name}", facility_path(dist.facility) %>
+                            </div>
+                          </td>
+                          <td>
+                            <span class="pr-show-dam-item-facility-hours"><%= facility_simple_time(dist.facility.opening_hours) %></span>~<%= facility_simple_time(dist.facility.closing_hours) %>
+                          </td>
+                          <td>
+                            <span class="pr-show-dam-item-facility-business-period">(<%= dist.facility.business_period %>)</span>
+                          </td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
 </div>
