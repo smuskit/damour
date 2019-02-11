@@ -71,6 +71,13 @@ prefectures#show
 <div class="prefecture-show-border"></div>
 <p><%= @prefecture.name %>のダム</p>
 
+<p>検索</p>
+<%= form_tag(prefecture_path(@prefecture), :method => 'get') do %>
+  <%= label_tag(:dam, 'Search dam') %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
+
 <% @dams.each do |d| %>
   <%= link_to dam_path(d) do %>
     <div><%= d.name %>/<%= d.name_kana %><%= link_to '削除', dam_path(d), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-xs btn-danger" %></div>
