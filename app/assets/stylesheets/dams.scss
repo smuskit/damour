@@ -210,17 +210,70 @@ background-position:50% 62.5%;
 
 /* show */
 
+.dam-show-background {
+  background-color: #FFF;
+  width: 1030px;
+  margin: 50px auto;
+  padding: 20px 0px 80px 0px;
+}
+
+.dam-show-head {
+    width: 1051px;
+    margin: 20px -10px;
+    font-weight: bold;
+    position: relative;
+    padding: 5px;
+    background: #CEE3F6;
+    text-align: center;
+    border-left: 0.5px solid #A9D0F5;
+    border-right: 0.5px solid #A9D0F5;
+}
+.dam-show-head:before{
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 0;
+    border-color: transparent;
+    border-right-color: #A9D0F5;
+}
+.dam-show-head:after{
+    content: " ";
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 0;
+    border-color: transparent;
+    border-top-color: #A9D0F5;
+}
+
+.dam-show-dam-name {
+  font-size: 50px;
+}
+
+.dam-show-dam-name-kana {
+  font-size: 20px;
+  margin-top: -15px;
+}
+
+  /* ダム写真 */
+
 .dam-show-image-box {
   position: relative;
   margin: 0 auto;
   width: 800px;
 }
 
-  /* ダム写真 */
-
 .dam-show-image {
   width: 800px;
   height: 450px;
+  margin-top: 30px;
   display: inline-block;
   box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
 }
@@ -232,7 +285,7 @@ background-position:50% 62.5%;
   padding: 2.0em 0.5em;
   text-decoration: none;
   color: #FFF;
-  background: #14AAB8;
+  background: #0080FF;
   transition: .4s;
   width: 160px;
   text-align: center;
@@ -255,41 +308,6 @@ background-position:50% 62.5%;
   padding: 0.3em 0;
 }
 
-.dam-show-head {
-    width: 1100px;
-    margin: 50px auto;
-    font-weight:bold;
-    position: relative;
-    padding: 10px;
-    background: #b8b8b8;
-}
-.dam-show-head:before{
-    content: " ";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 10px 10px 0;
-    border-color: transparent;
-    border-right-color: #a6a6a6;
-}
-.dam-show-head:after{
-    content: " ";
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 10px 0 0;
-    border-color: transparent;
-    border-top-color: #a6a6a6;
-}
-
-
-
 .dam-show-information {
   width: 800px;
   margin: 0 auto;
@@ -299,9 +317,10 @@ background-position:50% 62.5%;
 .dam-show-information-content {
   width: 600px;
   padding: 20px 20px 5px;
-  background-color: #FFF;
+  background-color: #F2F2F2;
   border: 0.3px solid #D8D8D8;
   .table {
+    background-color: #FFF;
     border: 0.3px solid #D8D8D8;
   }
 }
