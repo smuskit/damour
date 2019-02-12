@@ -80,10 +80,13 @@
     </div>
     <div class="col-md-2">
       <div class="new-card-form">
-        <div class="new-card-form-main">
-          <div class="new-card-form-pencil"><%= image_tag("pencil.jpeg", class:"new-card-form-pencil-image")%></div>
-          <%= render 'new_card_form', card: @card %>
+        <div class="new-card-form-background">
+          <div class="new-card-form-main">
+            <div class="new-card-form-pencil"><%= image_tag("pencil.jpeg", class:"new-card-form-pencil-image")%></div>
+            <%= render 'new_card_form', card: @card %>
+          </div>
         </div>
+        
       </div>
     </div>
   </div>

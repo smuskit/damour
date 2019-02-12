@@ -119,10 +119,17 @@
     margin-top: -50px;
 }
 
+.new-card-form-background {
+    position: fixed;
+    background-color: #000;
+    height: 515px;
+    width: 325px;
+}
+
 .new-card-form-main {
     position: fixed;
     padding: 20px;
-    margin-bottom: 100px;
+    margin: 10px;
     background-color: #FFF;
 }
 
@@ -156,4 +163,8 @@
 
 .new-card-form-submit {
     margin-top: 20px;
+}
+
+.new-card-form-submit-button {
+    width: 100%;
 }
