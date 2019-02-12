@@ -149,6 +149,20 @@
   “<%= @prefecture.name %>”のダム
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <div class="" style="padding-left: 25px;">
+        <%= paginate @dams, class: "paginate" %>
+      </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>
+
 <div class="pr-show-content">
   <% if @region.id == 1 %>
     <div class="container">
@@ -287,7 +301,6 @@
   <% end %>
 
         <div class="col-md-10">
-          <%= paginate @dams, class: "paginate" %>
           <% @dams.each do |d| %>
             <div class="pr-show-dam-item">
               <div class="pr-show-black-box"></div>
@@ -347,8 +360,21 @@
               </div>
             </div>
           <% end %>
-          <%= paginate @dams, class: "paginate" %>
         </div>
       </div>
     </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <div class="" style="padding-left: 25px;">
+        <%= paginate @dams, class: "paginate" %>
+      </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
 </div>
