@@ -4,6 +4,7 @@
 
 /* show */
 
+
 .tabnav{
     margin: 0;
     padding: 0;
@@ -113,8 +114,45 @@
     filter: grayscale(100%);
 }
 
-.side-menu {
-  display: inline-block;
-  position: fixed;
-  right: 0px;
+.new-card-form {
+    position: relative;
+    margin-top: -50px;
+}
+
+.new-card-form-main {
+    position: fixed;
+    padding: 20px;
+    background-color: #FFF;
+}
+
+.new-card-form-pencil {
+    width: 30px;
+    position: absolute;
+    top: -22px;
+    right: 70px;
+}
+
+.new-card-form-pencil-image {
+    width: 80px;
+}
+
+.new-card-form-item {
+    margin-top: 10px;
+}
+
+.new-card-form-title {
+    width: 180px;
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+.new-card-form-image {
+    margin-top: 20px;
+}
+
+.new-card-form-submit {
+    margin-top: 20px;
 }

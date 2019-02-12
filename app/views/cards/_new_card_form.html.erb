@@ -1,5 +1,5 @@
 <!-- カード登録 -->
-      <h3>ダムカード登録</h3>
+      <li class="new-card-form-title">ダムカード登録</li>
 
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "#{key}") %>
@@ -23,21 +23,21 @@
           <%= collection_select :card, :region_id, Region.all, :id, :name %>
         </div>
 
-        <div class="prefecture-area">
+        <div class="prefecture-area new-card-form-item">
           <%= render partial: 'select_prefecture', locals: {region_id: Region.first.id} %>
         </div>
 
-        <div class="">
+        <div class="new-card-form-item">
           ■<%= f.label :ダム名 %><br>
           <%= f.text_field :dam_name, class:"" %>
         </div>
 
-        <div class="">
+        <div class="new-card-form-item">
           ■<%= f.label :ダム訪問日 %> (任意)<br>
           <%= f.date_field :visit_date, class:"" %>
         </div>
 
-        <div class="">
+        <div class="new-card-form-item">
           ■<%= f.label :カードのバージョン %> (任意)<br>
           Ver.<%= f.number_field :version_bf, min: 0, max:5, class:"" %>
           .<%= f.number_field :version_af, min: 0, max:5, class:"" %>
@@ -45,14 +45,14 @@
           <%= f.number_field :version_m, min: 1, max:12, class:"" %>)
         </div>
 
-        <div class="">
+        <div class="new-card-form-image">
           <div>■<%= f.label :カードの写真 %>(任意)<br>
             <%= f.attachment_field :card_image, class:"" %>
           </div>
         </div>
 
-        <div class="">
-          <%= f.submit "アルバムに登録", class: "btn btn-primary" %>
+        <div class="new-card-form-submit">
+          <%= f.submit "アルバムに登録", class: "btn btn-primary " %>
         </div>
 
       <% end %>
