@@ -1,16 +1,151 @@
-<li class="pr-show-region-name"><%= @region.name %>地方</li>
-
-<div class="pr-show-border"></div>
-
-<li class="pr-show-pr-name">【<%= @prefecture.name %>のダム】</li>
-
-<div class="pr-show-search-form">
-  <%= form_tag(prefecture_path(@prefecture), :method => 'get') do %>
-    <div><%= label_tag(:dam, "#{@prefecture.name}内のダムを検索しよう！") %></div>
-    <%= text_field_tag :search, "", placeholder:"ダム名，地名で検索", class:"pr-show-search-form-box" %>
-    <%= submit_tag 'Search', :name => nil, class:"btn btn-sm btn-success" %>
-  <% end %>
+<% if @region.id == 1 %>
+  <div class="pr-show-title-background-hokkaido">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8">
+        <li class="pr-show-region-name-hokkaido"><%= @prefecture.region.name %></li>
+        <%= render 'search_form', prefecture: @prefecture %>
+      </div>
+      </div>
+      <div class="col-md-2">
+    </div>
+  </div>
 </div>
+
+<% elsif @region.id == 2 %>
+  <div class="pr-show-title-background-tohoku">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <li class="pr-show-region-name-tohoku"><%= @prefecture.region.name %>地方</li>
+          <%= render 'search_form', prefecture: @prefecture %>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @region.id == 3 %>
+  <div class="pr-show-title-background-kanto">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <li class="pr-show-region-name-kanto"><%= @prefecture.region.name %>地方</li>
+          <%= render 'search_form', prefecture: @prefecture %>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @region.id == 4 %>
+  <div class="pr-show-title-background-hokuriku">
+  <div class="pr-show-title-background-hokuriku-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <li class="pr-show-region-name-hokuriku"><%= @prefecture.region.name %>地方</li>
+          <%= render 'search_form', prefecture: @prefecture %>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @region.id == 5 %>
+  <div class="pr-show-title-background-tokai">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <li class="pr-show-region-name-tokai"><%= @prefecture.region.name %>地方</li>
+          <%= render 'search_form', prefecture: @prefecture %>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @region.id == 6 %>
+  <div class="pr-show-title-background-kinki">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <li class="pr-show-region-name-kinki"><%= @prefecture.region.name %>地方</li>
+          <%= render 'search_form', prefecture: @prefecture %>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @region.id == 7 %>
+  <div class="pr-show-title-background-chugoku">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <li class="pr-show-region-name-chugoku"><%= @prefecture.region.name %>地方</li>
+          <%= render 'search_form', prefecture: @prefecture %>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @region.id == 8 %>
+  <div class="pr-show-title-background-shikoku">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <li class="pr-show-region-name-shikoku"><%= @prefecture.region.name %>地方</li>
+          <%= render 'search_form', prefecture: @prefecture %>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @region.id == 9 %>
+  <div class="pr-show-title-background-kyushu">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <li class="pr-show-region-name-kyushu"><%= @prefecture.region.name %>地方</li>
+            <%= render 'search_form', prefecture: @prefecture %>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= @prefecture.name %>
 
 <div class="pr-show-content">
   <% if @region.id == 1 %>
@@ -19,7 +154,7 @@
         <div class="col-md-2">
           <div class="bg-light border-right" id="sidebar-wrapper">
             <div class="list-group list-group-flush">
-              <%= link_to '青森県', prefecture_path(1), class:"list-group-item list-group-item-action bg-light" %>
+              <%= link_to '北海道', prefecture_path(1), class:"list-group-item list-group-item-action bg-light" %>
             </div>
           </div>
         </div>

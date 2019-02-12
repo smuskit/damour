@@ -2,31 +2,138 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.pr-show-border {
+
+
+.pr-show-title-background-hokkaido, .pr-show-title-background-tohoku, .pr-show-title-background-kanto, .pr-show-title-background-hokuriku, .pr-show-title-background-tokai, .pr-show-title-background-kinki,
+.pr-show-title-background-chugoku, .pr-show-title-background-shikoku,
+.pr-show-title-background-kyushu {
+  position: relative;
   width: 100%;
-  border-bottom: solid 1px #000;
-  margin-bottom: 30px;
+  height: 400px;
 }
 
-.pr-show-region-name {
+.pr-show-title-background-hokkaido {
+  background-image: url(hokkaido.jpeg);
+  background-size: 100%;
+  background-position: 0% 10%;
+}
+
+.pr-show-title-background-tohoku {
+  background-image: url(tohoku.jpeg);
+  background-size: 100%;
+  background-position: 0% 40%;;
+}
+
+.pr-show-title-background-kanto {
+  background-image: url(kanto.jpeg);
+  background-size: 100%;
+  background-position: 0 60%;
+}
+
+.pr-show-title-background-hokuriku {
+  background-image: url(hokuriku.jpeg);
+  background-size: 100%;
+  background-position: 0 60%;
+  position: relative;
+}
+
+.pr-show-title-background-hokuriku-white {
+  width: 100%;
+  position: absolute;
+  display: inline-block;
+  height: 300px;
+  background-color: rgba(176,196,222,0.1);
+}
+
+.pr-show-title-background-tokai {
+  background-image: url(tokai.jpeg);
+  background-size: 100%;
+  background-position: 0 40%;
+}
+
+.pr-show-title-background-kinki {
+  background-image: url(kinki.jpeg);
+  background-size: 100%;
+  background-position: 0 20%;
+}
+
+.pr-show-title-background-chugoku {
+  background-image: url(chugoku.jpeg);
+  background-size: 100%;
+  background-position: 0 90%;
+}
+
+.pr-show-title-background-shikoku {
+  background-image: url(shikoku.jpeg);
+  background-size: 100%;
+  background-position: 0 60%;
+}
+
+.pr-show-title-background-kyushu {
+  background-image: url(kyushu.jpeg);
+  background-size: 100%;
+  background-position: 0 60%;
+}
+
+.pr-show-region-name-hokkaido, .pr-show-region-name-tohoku, .pr-show-region-name-kanto, .pr-show-region-name-hokuriku, .pr-show-region-name-tokai, .pr-show-region-name-kinki, .pr-show-region-name-chugoku, .pr-show-region-name-shikoku, .pr-show-region-name-kyushu {
   list-style: none;
-  font-size: 30px;
+  font-size: 65px;
+  font-weight: bold;
   text-align: center;
-  margin: 30px 0;
+  margin: 90px 0 90px 0;
+  line-height: 1.4;
+  -webkit-box-reflect: below -10px -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0) 10%,rgba(0, 0, 0, 0.6));
 }
 
-.pr-show-pr-name {
-  list-style: none;
-  font-size: 30px;
-  padding-left: 65px;
+.pr-show-region-name-hokkaido{
+  color: #FFBF00;
+}
+
+.pr-show-region-name-tohoku {
+  color: #FFF;
+}
+
+.pr-show-region-name-kanto {
+  color: #F5ECCE;
+}
+
+.pr-show-region-name-hokuriku {
+  color: #EFF8FB;
+}
+
+.pr-show-region-name-tokai {
+  color: #FFF;
+}
+
+.pr-show-region-name-kinki {
+  color: #FFF;
+}
+
+.pr-show-region-name-chugoku {
+  color: #FFF;
+}
+
+.pr-show-region-name-shikoku {
+  color: #FFF;
+}
+
+.pr-show-region-name-kyushu {
+  color: #FFF;
 }
 
 .pr-show-search-form {
   text-align: center;
 }
 
+.pr-show-search-form-text {
+  color: #FFF;
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+
 .pr-show-search-form-box{
   width: 400px;
+  height: 30px;
 }
 
 .pr-show-content {
@@ -51,7 +158,7 @@ body {
 }
 
 #sidebar-wrapper .list-group {
-  width: 100%;
+  width: 150px;
 }
 
 .bg-light {
