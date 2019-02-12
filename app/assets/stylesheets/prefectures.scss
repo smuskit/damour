@@ -136,8 +136,15 @@
   height: 30px;
 }
 
+.pre-show-pre-name {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  padding-top: 30px;
+}
+
 .pr-show-content {
-  padding: 50px 0;
+  padding: 0 0 0 50px;
 }
 
 body {
@@ -159,6 +166,7 @@ body {
 
 #sidebar-wrapper .list-group {
   width: 150px;
+  margin-top: 55px;
 }
 
 .bg-light {
