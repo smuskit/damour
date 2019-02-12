@@ -268,16 +268,19 @@ body {
 
 .pr-show-dam-item-facility {
   padding-left: 15px;
+  table {
+    border-top: 0.3px solid gray;
+  }
 }
 
 .pr-show-dam-item-facility-title {
   list-style: none;
   font-weight: bold;
-  padding-bottom: 5px;
+  padding: 5px 0;
 }
 
 .pr-show-dam-item-facility-hours {
-  padding-left: 20px;
+  padding: 5px 0px 5px 20px;
 }
 
 .pr-show-dam-item-facility-business-period {
