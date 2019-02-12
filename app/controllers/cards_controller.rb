@@ -2,7 +2,7 @@ class CardsController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @cards = @user.cards.all
+    @cards = @user.cards.page(params[:page]).reverse_order
     @cards_hokkaido = @user.cards.all.where(region_id: 1)
     @cards_tohoku = @user.cards.all.where(region_id: 2)
     @cards_kanto = @user.cards.all.where(region_id: 3)
