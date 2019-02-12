@@ -221,6 +221,8 @@ background-position:50% 62.5%;
 .dam-show-image {
   width: 800px;
   height: 450px;
+  display: inline-block;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
 }
 
 .square_btn {
@@ -253,16 +255,57 @@ background-position:50% 62.5%;
   padding: 0.3em 0;
 }
 
+.dam-show-head {
+    width: 1100px;
+    margin: 50px auto;
+    font-weight:bold;
+    position: relative;
+    padding: 10px;
+    background: #b8b8b8;
+}
+.dam-show-head:before{
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 0;
+    border-color: transparent;
+    border-right-color: #a6a6a6;
+}
+.dam-show-head:after{
+    content: " ";
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 0;
+    border-color: transparent;
+    border-top-color: #a6a6a6;
+}
+
+
 
 .dam-show-information {
   width: 800px;
   margin: 0 auto;
-  padding-top: 50px;
+  margin: 50px auto;
 }
 
 .dam-show-information-content {
   width: 600px;
+  padding: 20px 20px 5px;
+  background-color: #FFF;
+  border: 0.3px solid #D8D8D8;
+  .table {
+    border: 0.3px solid #D8D8D8;
+  }
 }
+
 
 .dam-show-map-box {
   width: 800px;

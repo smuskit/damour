@@ -1,5 +1,6 @@
-<div>
-  <%= @dam.name %>/<%= @dam.name_kana %>
+<div class="dam-show-head">
+  <%= @dam.name %>
+  <p><%= @dam.name_kana %></p>
 </div>
 <div class="dam-show-image-box">
   <%= attachment_image_tag @dam, :dam_image, format: 'jpeg', fallback: "dam_no_image.jpeg", class:"dam-show-image" %>
@@ -11,41 +12,41 @@
 
 <div class="dam-show-information">
   <div class="dam-show-information-content">
-    <table class= "table">
+    <table class= "table table-bordered">
       <tr>
-        <th>河川名</th>
+        <th scope="row">河川名</th>
         <td><%= @dam.river %></td>
       </tr>
       <tr>
-        <th>ダムの型式</th>
+        <th scope="row">ダムの型式</th>
         <td><%= @dam.dam_type %></td>
       </tr>
       <tr>
-        <th>ゲート</th>
+        <th scope="row">ゲート</th>
         <td><%= @dam.gate %></td>
       </tr>
       <tr>
-        <th>ダムの堤高/堤頂長</th>
+        <th scope="row">ダムの堤高/堤頂長</th>
         <td><%= @dam.height %>m/<%= @dam.length %>m</td>
       </tr>
       <tr>
-        <th>総貯水容量</th>
+        <th scope="row">総貯水容量</th>
         <td><%= @dam.volume %>万㎥</td>
       </tr>
       <tr>
-        <th>ダムの目的</th>
+        <th scope="row">ダムの目的</th>
         <td><%= @dam.purpose %></td>
       </tr>
       <tr>
-        <th>施工業者</th>
+        <th scope="row">施工業者</th>
         <td><%= @dam.constructor %></td>
       </tr>
       <tr>
-        <th>着工年/完成</th>
+        <th scope="row">着工年/完成</th>
         <td><%= @dam.start_of_construction %> / <%= @dam.end_of_construction %></td>
       </tr>
       <tr>
-        <th>ダムへのルート</th>
+        <th scope="row">ダムへのルート</th>
         <td><%= @dam.address %></td>
       </tr>
     </table>
