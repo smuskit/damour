@@ -128,6 +128,9 @@ document.addEventListener("turbolinks:load", function(){
   });
 });
 
-
-
-
+// sidemenu
+document.addEventListener("turbolinks:load", function(){
+  $('#simple-menu').sidr({
+    side: 'right'
+  });
+});

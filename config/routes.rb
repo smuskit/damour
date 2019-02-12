@@ -18,8 +18,6 @@ Rails.application.routes.draw do
   get    '/users/faq',    to: 'users#faq'
   resources :users, only: [:index, :show, :edit, :update, :destroy]
 
-  get    '/cards/top',    to: 'cards#top'
-
   resources :cards, only: [:show] do
     member do
       get 'get_prefectures' #/cards/:id/get_prefectures

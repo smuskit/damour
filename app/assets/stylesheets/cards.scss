@@ -24,7 +24,7 @@
 
 .tabnav li a:hover,
 .tabnav li a.active{
-    background: #ddd;
+    background: #FFF;
     color: #333;
 }
 
@@ -46,7 +46,7 @@
 
 #h a:hover,
 #h a.active{
-    background: #ddd;
+    background: #FFF;
     color: #333;
 }
 
@@ -70,7 +70,7 @@
 
 #hk a:hover,
 #hk a.active{
-    background: #ddd;
+    background: #FFF;
     color: #333;
 }
 
@@ -102,7 +102,7 @@
 
 .tabcontent{
     padding: 20px;
-    border: 1px dotted #ccc;
+    background-color: #FFF;
 }
 
 .dam-card-sample-image {
@@ -111,4 +111,10 @@
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
     filter: grayscale(100%);
+}
+
+.side-menu {
+  display: inline-block;
+  position: fixed;
+  right: 0px;
 }
