@@ -1,94 +1,94 @@
-<div class="card-show">
+<div class="card-show-background"></div>
+<%= render 'layouts/header' %>
+
   <div class="container">
-  <div class="row">
-    <div class="col-md-10" style="margin-left: -60px;">
+    <div class="row">
+      <div class="col-md-10" style="margin-left: -60px;">
 
-      <ul class="tabnav">
-          <li id="h"><a href="#tab01">北海道</a></li>
-          <li><a href="#tab02">東北</a></li>
-          <li><a href="#tab03">関東</a></li>
-          <li id="hk"><a href="#tab04">北陸・甲信越</a></li>
-          <li><a href="#tab05">東海</a></li>
-          <li><a href="#tab06">近畿</a></li>
-          <li><a href="#tab07">中国</a></li>
-          <li><a href="#tab08">四国</a></li>
-          <li><a href="#tab09">九州</a></li>
-          <li id="ed"><a href="#tab10">カード情報編集</a></li>
+        <ul class="tabnav">
+            <li id="h"><a href="#tab01">北海道</a></li>
+            <li><a href="#tab02">東北</a></li>
+            <li><a href="#tab03">関東</a></li>
+            <li id="hk"><a href="#tab04">北陸・甲信越</a></li>
+            <li><a href="#tab05">東海</a></li>
+            <li><a href="#tab06">近畿</a></li>
+            <li><a href="#tab07">中国</a></li>
+            <li><a href="#tab08">四国</a></li>
+            <li><a href="#tab09">九州</a></li>
+            <li id="ed"><a href="#tab10">カード情報編集</a></li>
 
-      </ul>
-      <div class="tabcontent">
-          <div id="tab01">
-            <%= render 'dam_item', cards: @cards_hokkaido %>
-          </div>
+        </ul>
+        <div class="tabcontent">
+            <div id="tab01">
+              <%= render 'dam_item', cards: @cards_hokkaido %>
+            </div>
 
-          <div id="tab02">
-            <%= render 'dam_item', cards: @cards_tohoku %>
-          </div>
+            <div id="tab02">
+              <%= render 'dam_item', cards: @cards_tohoku %>
+            </div>
 
-          <div id="tab03">
-            <%= render 'dam_item', cards: @cards_kanto %>
-          </div>
+            <div id="tab03">
+              <%= render 'dam_item', cards: @cards_kanto %>
+            </div>
 
-          <div id="tab04">
-            <%= render 'dam_item', cards: @cards_hokuriku %>
-          </div>
+            <div id="tab04">
+              <%= render 'dam_item', cards: @cards_hokuriku %>
+            </div>
 
-          <div id="tab05">
-            <%= render 'dam_item', cards: @cards_tokai %>
-          </div>
+            <div id="tab05">
+              <%= render 'dam_item', cards: @cards_tokai %>
+            </div>
 
-          <div id="tab06">
-            <%= render 'dam_item', cards: @cards_kinki %>
-          </div>
+            <div id="tab06">
+              <%= render 'dam_item', cards: @cards_kinki %>
+            </div>
 
-          <div id="tab07">
-            <%= render 'dam_item', cards: @cards_chugoku %>
-          </div>
+            <div id="tab07">
+              <%= render 'dam_item', cards: @cards_chugoku %>
+            </div>
 
-          <div id="tab08">
-            <%= render 'dam_item', cards: @cards_shikoku %>
-          </div>
+            <div id="tab08">
+              <%= render 'dam_item', cards: @cards_shikoku %>
+            </div>
 
-          <div id="tab09">
-            <%= render 'dam_item', cards: @cards_kyushu %>
-          </div>
+            <div id="tab09">
+              <%= render 'dam_item', cards: @cards_kyushu %>
+            </div>
 
-          <div id="tab10">
-            <% if !@cards %>
-              カードはまだありません．
-            <% else %>
-              <div class="" style="">
-                paginate @cards, class: "paginate" %>
-              </div>
-              <% @cards.each do |c| %>
-                <div><%= c.dam_name %>カード
-                  <!-- モーダル編集 -->
-                  <%= link_to '編集', edit_card_path(c.id), remote: true, class: "btn btn-xs btn-primary" %>
-                  <div class="modal fade h" id="edit-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
-                  <!-- モーダル編集 -->
+            <div id="tab10">
+              <% if !@cards %>
+                カードはまだありません．
+              <% else %>
+                <div class="" style="">
+                  paginate @cards, class: "paginate" %>
                 </div>
-                <div>訪問日：<%= c.visit_date%></div>
-                <div>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</div>
-                <div><%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %></div>
+                <% @cards.each do |c| %>
+                  <div><%= c.dam_name %>カード
+                    <!-- モーダル編集 -->
+                    <%= link_to '編集', edit_card_path(c.id), remote: true, class: "btn btn-xs btn-primary" %>
+                    <div class="modal fade h" id="edit-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+                    <!-- モーダル編集 -->
+                  </div>
+                  <div>訪問日：<%= c.visit_date%></div>
+                  <div>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</div>
+                  <div><%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %></div>
+                <% end %>
+                <div class="" style="">
+                  paginate @cards, class: "paginate" %>
+                </div>
               <% end %>
-              <div class="" style="">
-                paginate @cards, class: "paginate" %>
-              </div>
-            <% end %>
-          </div>
+            </div>
+        </div>
       </div>
-    </div>
-    <div class="col-md-2">
-      <div class="new-card-form">
-        <div class="new-card-form-background">
-          <div class="new-card-form-main">
-            <div class="new-card-form-pencil"><%= image_tag("pencil.jpeg", class:"new-card-form-pencil-image")%></div>
-            <%= render 'new_card_form', card: @card %>
+      <div class="col-md-2">
+        <div class="new-card-form">
+          <div class="new-card-form-background">
+            <div class="new-card-form-main">
+              <div class="new-card-form-pencil"><%= image_tag("pencil.jpeg", class:"new-card-form-pencil-image")%></div>
+              <%= render 'new_card_form', card: @card %>
+            </div>
           </div>
         </div>
-        
       </div>
     </div>
   </div>
-</div>
-</div>

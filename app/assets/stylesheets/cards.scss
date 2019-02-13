@@ -4,6 +4,14 @@
 
 /* show */
 
+.card-show-background {
+    position: absolute;
+    position: fixed;
+    width: 1350px;
+    height: 1350px;
+    background-image: image-url("coffee.jpeg");
+    background-size: contain;
+}
 
 .tabnav{
     margin: 0;
