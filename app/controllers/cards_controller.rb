@@ -1,18 +1,7 @@
 class CardsController < ApplicationController
 
   def show
-    @user = User.find(params[:id])
-    @cards = @user.cards.page(params[:page]).reverse_order
-    @cards_hokkaido = @user.cards.page(params[:page]).where(region_id: 1).reverse_order
-    @cards_tohoku = @user.cards.page(params[:page]).where(region_id: 2).reverse_order
-    @cards_kanto = @user.cards.page(params[:page]).where(region_id: 3).reverse_order
-    @cards_hokuriku = @user.cards.page(params[:page]).where(region_id: 4).reverse_order
-    @cards_tokai = @user.cards.page(params[:page]).where(region_id: 5).reverse_order
-    @cards_kinki = @user.cards.page(params[:page]).where(region_id: 6).reverse_order
-    @cards_chugoku = @user.cards.page(params[:page]).where(region_id: 7).reverse_order
-    @cards_shikoku = @user.cards.page(params[:page]).where(region_id: 8).reverse_order
-    @cards_kyushu = @user.cards.page(params[:page]).where(region_id: 9).reverse_order
-    @card = Card.new
+    @card = Card.find(params[:id])
     # 2.times { @card.images.build }
   end
 
@@ -25,7 +14,7 @@ class CardsController < ApplicationController
     card.user_id = current_user.id
     if card.save
       flash.notice = 'カードを登録しました．'
-      redirect_to card_path(current_user.id)
+      redirect_to cardlist_path(current_user.id)
     else
       flash.notice = '入力に誤りがあります．'
       render 'show'
@@ -40,6 +29,7 @@ class CardsController < ApplicationController
     end
   end
 
+
   def update
     @user = User.find(current_user.id)
     @card = Card.find(params[:id])
@@ -48,7 +38,7 @@ class CardsController < ApplicationController
       if @card.update(card_params)
         flash.notice = 'カードを更新しました．'
         format.html { redirect_to @user }
-        format.js { render js: "window.location = '#{card_path(@user)}'" }
+        format.js { render js: "window.location = '#{card_path(@card)}'" }
       else
         @card.errors.each do |name, msg|
           flash.now[name] = msg

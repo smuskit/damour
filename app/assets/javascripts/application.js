@@ -14,6 +14,7 @@
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require rails-ujs
+//= require jquery.colorbox-min.js
 //= require turbolinks
 //= require_tree .
 
@@ -116,7 +117,6 @@ $(function(){
     });
 });
 
-
 //anchor
 document.addEventListener("turbolinks:load", function(){
   $('a[href^="#"]').click(function() {
@@ -129,6 +129,6 @@ document.addEventListener("turbolinks:load", function(){
 });
 
 // sidemenu
-$(function() {
-  $('.drawer').drawer();
+document.addEventListener("turbolinks:load", function(){
+  $(".iframe").colorbox({inline:true, width:"50%"});
 });

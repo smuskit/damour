@@ -1,0 +1,170 @@
+<div class="card-show-background"></div>
+<div class="card-show-background-white"></div>
+<%= render 'layouts/header' %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10" style="margin-left: -60px;">
+
+        <ul class="tabnav">
+            <li id="h"><a href="#tab01">北海道</a></li>
+            <li><a href="#tab02">東北</a></li>
+            <li><a href="#tab03">関東</a></li>
+            <li id="hk"><a href="#tab04">北陸・甲信越</a></li>
+            <li><a href="#tab05">東海</a></li>
+            <li><a href="#tab06">近畿</a></li>
+            <li><a href="#tab07">中国</a></li>
+            <li><a href="#tab08">四国</a></li>
+            <li><a href="#tab09">九州</a></li>
+            <li id="ed"><a href="#tab10">カード情報編集</a></li>
+
+        </ul>
+
+        <div class="tabcontent">
+            <div id="tab01">
+              <div class="card-show-pagenate crearfix">
+                <%= paginate @cards_hokkaido, param_name: 'page_1', class: "paginate" %>
+              </div>
+              <%= render 'cards/dam_item', cards: @cards_hokkaido %>
+              <div class="card-show-pagenate">
+                <%= paginate @cards_hokkaido, param_name: 'page_1', class: "paginate" %>
+              </div>
+            </div>
+
+            <div id="tab02">
+              <div class="card-show-pagenate crearfix">
+                <%= paginate @cards_tohoku, param_name: 'page_2', class: "paginate" %>
+              </div>
+              <%= render 'cards/dam_item', cards: @cards_tohoku %>
+              <div class="card-show-pagenate">
+                <%= paginate @cards_tohoku, param_name: 'page_2', class: "paginate" %>
+              </div>
+            </div>
+
+            <div id="tab03">
+              <div class="card-show-pagenate crearfix">
+                <%= paginate @cards_kanto, param_name: 'page_3', class: "paginate" %>
+              </div>
+              <%= render 'cards/dam_item', cards: @cards_kanto %>
+              <div class="card-show-pagenate">
+                <%= paginate @cards_kanto, param_name: 'page_3', class: "paginate" %>
+              </div>
+            </div>
+
+            <div id="tab04">
+              <div class="card-show-pagenate crearfix">
+                <%= paginate @cards_hokuriku, param_name: 'page_4', class: "paginate" %>
+              </div>
+              <%= render 'cards/dam_item', cards: @cards_hokuriku %>
+              <div class="card-show-pagenate">
+                <%= paginate @cards_hokuriku, param_name: 'page_4', class: "paginate" %>
+              </div>
+            </div>
+
+            <div id="tab05">
+              <div class="card-show-pagenate crearfix">
+                <%= paginate @cards_tokai, param_name: 'page_5', class: "paginate" %>
+              </div>
+              <%= render 'cards/dam_item', cards: @cards_tokai %>
+              <div class="card-show-pagenate">
+                <%= paginate @cards_tokai, param_name: 'page_5', class: "paginate" %>
+              </div>
+            </div>
+
+            <div id="tab06">
+              <div class="card-show-pagenate crearfix">
+                <%= paginate @cards_kinki, param_name: 'page_6', class: "paginate" %>
+              </div>
+              <%= render 'cards/dam_item', cards: @cards_kinki %>
+              <div class="card-show-pagenate">
+                <%= paginate @cards_kinki, param_name: 'page_6', class: "paginate" %>
+              </div>
+            </div>
+
+            <div id="tab07">
+              <div class="card-show-pagenate crearfix">
+                <%= paginate @cards_chugoku, param_name: 'page_7', class: "paginate" %>
+              </div>
+              <%= render 'cards/dam_item', cards: @cards_chugoku %>
+              <div class="card-show-pagenate">
+                <%= paginate @cards_chugoku, param_name: 'page_7', class: "paginate" %>
+              </div>
+            </div>
+
+            <div id="tab08">
+              <div class="card-show-pagenate crearfix">
+                <%= paginate @cards_shikoku, param_name: 'page_8', class: "paginate" %>
+              </div>
+              <%= render 'cards/dam_item', cards: @cards_shikoku %>
+              <div class="card-show-pagenate">
+                <%= paginate @cards_shikoku, param_name: 'page_8', class: "paginate" %>
+              </div>
+            </div>
+
+            <div id="tab09">
+              <div class="card-show-pagenate crearfix">
+                <%= paginate @cards_kyushu, param_name: 'page_9', class: "paginate" %>
+              </div>
+              <%= render 'cards/dam_item', cards: @cards_kyushu %>
+              <div class="card-show-pagenate">
+                <%= paginate @cards_kyushu, param_name: 'page_9', class: "paginate" %>
+              </div>
+            </div>
+
+            <div id="tab10">
+
+              <div class="card-show-pagenate crearfix">
+                <%= paginate @cards, param_name: 'page_0', class: "paginate" %>
+              </div>
+
+              <% if !@cards %>
+                カードはまだありません．
+              <% else %>
+                <div class="card-show-dam-item-box">
+                  <% @user.cards.each do |c| %>
+                    <div class="card-show-dam-item">
+                      <div class="card-show-dam-item-name">
+                        <% if !c.dam_name.blank? %>
+                          【 <%= c.dam_name%> 】
+                        <% else %>
+                          【 NO NAME 】
+                        <% end %>
+                      <!-- モーダル編集 -->
+                        <%= link_to '編集', edit_card_path(c.id), remote: true, class: "btn btn-xs btn-primary" %>
+                        <div class="modal fade h" id="edit-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+                      <!-- モーダル編集 -->
+                      </div>
+
+                      <div class="card-show-dam-item-image">
+                        <%= link_to card_path(c), class: "" do %>
+                          <%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %>
+                        <% end %>
+                      </div>
+                      <div class="card-show-dam-item-ver">
+                        Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+
+                <div class="card-show-pagenate">
+                <%= paginate @cards, param_name: 'page_0', class: "paginate" %>
+                </div>
+
+              <% end %>
+            </div>
+        </div>
+
+      </div>
+      <div class="col-md-2">
+        <div class="new-card-form">
+          <div class="new-card-form-background">
+            <div class="new-card-form-main">
+              <div class="new-card-form-pencil"><%= image_tag("pencil.jpeg", class:"new-card-form-pencil-image")%></div>
+              <%= render 'cards/new_card_form', card: @card %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -16,6 +16,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "colorbox";
 
 .clearfix::after{
   content: "";
@@ -61,7 +62,7 @@ body{
   font-family: 'Oswald', sans-serif;
 }
 
-.menu-btn{
+.menu-btn {
   color:#FFF;
   background:#000;
   padding:10px 20px;
@@ -72,10 +73,10 @@ body{
 }
 
 .menu-btn-home{
-  color:#FFF;
-  background:#000;
-  padding:10px 20px 9px;
-  font-size:18px;
+  color:#000;
+  background:#FFBF00;
+  padding:10px 30px;
+  font-size:12px;
   text-decoration:none;
   letter-spacing:2px;
   text-transform:uppercase;
@@ -83,10 +84,21 @@ body{
 
 .menu-btn:hover, .menu-btn-home:hover{
   border:none;
+  text-decoration:none;
   color: #000;
   background: #FFF;
   background:#fff;
   padding:20px 20px;
+  color:#1b1b1b;
+}
+
+.menu-btn-home:hover{
+  border:none;
+  text-decoration:none;
+  color: #000;
+  background: #FFF;
+  background:#fff;
+  padding:20px 30px;
   color:#1b1b1b;
 }
 

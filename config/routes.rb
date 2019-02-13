@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get    '/users/faq',    to: 'users#faq'
   resources :users, only: [:index, :show, :edit, :update, :destroy]
 
+  get '/users/:id/cardlist' => 'users#cardlist', as: 'cardlist'
+
   resources :cards, only: [:show] do
     member do
       get 'get_prefectures' #/cards/:id/get_prefectures
@@ -34,6 +36,7 @@ Rails.application.routes.draw do
       get 'get_prefectures' #/dams/get_prefectures
     end
   end
+
   resources :dams, only: [:create, :index, :show, :edit, :update, :destroy]
 
   resources :prefectures, only: [:show]

@@ -8,3 +8,229 @@
   width: 80%;
   margin: 0 auto;
 }
+
+
+
+
+
+/* cardlist */
+
+.card-show-background {
+    position: absolute;
+    position: fixed;
+    width: 1500px;
+    height: 1500px;
+    background-image: image-url("coffee.jpeg");
+    background-size: contain;
+}
+
+.card-show-background-white {
+  width: 100%;
+  position: absolute;
+  position: fixed;
+  display: inline-block;
+  width: 1500px;
+  height: 1500px;
+  background-color: rgba(255,255,255,0.2);
+}
+
+.tabnav{
+    margin: 0;
+    padding: 0;
+}
+.tabnav li{
+    display: inline;
+}
+.tabnav li a{
+    display: inline-block;
+    background: #000; /*default  #405dca*/
+    color: #fff;
+    padding: 15px 10px;
+    border-radius: 5px 5px 0 0;
+    text-decoration: none;
+    text-align: center;
+    width: 7%;
+}
+
+.tabnav li a:hover,
+.tabnav li a.active{
+    background: #FFF;
+    color: #333;
+}
+
+/* 北海道用 */
+
+#h a{
+    display: inline;
+}
+#h a{
+    display: inline-block;
+    background: #000; /*default  #405dca*/
+    color: #fff;
+    padding: 15px 10px;
+    border-radius: 5px 5px 0 0;
+    text-decoration: none;
+    text-align: center;
+    width: 9.04%;
+}
+
+#h a:hover,
+#h a.active{
+    background: #FFF;
+    color: #333;
+}
+
+/* 北海道用　ここまで */
+
+/* 北陸・甲信越用 */
+
+#hk a{
+    display: inline;
+}
+#hk a{
+    display: inline-block;
+    background: #000; /*default  #405dca*/
+    color: #fff;
+    padding: 15px 10px;
+    border-radius: 5px 5px 0 0;
+    text-decoration: none;
+    text-align: center;
+    width: 15.17%;
+}
+
+#hk a:hover,
+#hk a.active{
+    background: #FFF;
+    color: #333;
+}
+
+/* 北陸・甲信越用　ここまで */
+
+/* カード情報編集用 */
+
+#ed a{
+    display: inline;
+}
+#ed a{
+    display: inline-block;
+    background: gray; /*default  #405dca*/
+    color: #FFF;
+    padding: 20px 10px 15px 10px;
+    border-radius: 5px 5px 0 0;
+    text-decoration: none;
+    text-align: center;
+    width: 17%;
+}
+
+#ed a:hover,
+#ed a.active{
+    background: #ECF6CE;
+    color: #333;
+}
+
+/* カード情報編集用　ここまで */
+
+.tabcontent{
+    padding: 20px;
+    background-color: #FFF;
+    height: 1300px;
+}
+
+
+    /*タブ内 カード一覧*/
+
+.card-show-dam-item-box {
+    height: 1100px;
+}
+
+.card-show-dam-item {
+    position: relative;
+    float: left;
+    padding: 20px 13px 25px 13px;
+}
+
+.card-show-dam-item-name {
+    text-align: center;
+}
+
+.card-show-dam-item-image {
+    display: inline-block;
+    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.4);
+}
+
+.card-show-dam-item-ver {
+    position: absolute;
+    right: 13px;
+}
+
+.card-show-pagenate {
+    text-align: center;
+}
+
+
+
+
+
+
+.dam-card-sample-image {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.new-card-form {
+    position: relative;
+    margin-top: -50px;
+}
+
+.new-card-form-background {
+    position: fixed;
+    background-color: #000;
+    height: 515px;
+    width: 325px;
+}
+
+.new-card-form-main {
+    position: fixed;
+    padding: 20px;
+    margin: 10px;
+    background-color: #FFF;
+}
+
+.new-card-form-pencil {
+    width: 30px;
+    position: absolute;
+    top: -31px;
+    right: 75px;
+}
+
+.new-card-form-pencil-image {
+    width: 80px;
+}
+
+.new-card-form-item {
+    margin-top: 10px;
+}
+
+.new-card-form-title {
+    width: 180px;
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+.new-card-form-image {
+    margin-top: 20px;
+}
+
+.new-card-form-submit {
+    margin-top: 20px;
+}
+
+.new-card-form-submit-button {
+    width: 100%;
+}

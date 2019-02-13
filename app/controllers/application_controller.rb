@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     case resource
     when User
-      card_path(current_user.id)
+      cardlist_path(current_user.id)
     when Admin
       admin_path(current_admin.id)
     end

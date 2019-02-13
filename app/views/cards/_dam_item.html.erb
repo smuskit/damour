@@ -2,22 +2,26 @@
   <% if cards.count == 0 %>
     カードはまだありません．
   <% else %>
-    <div class="card-show-pagenate-top crearfix">
-      <%= paginate cards, class: "paginate" %>
-    </div>
     <div class="card-show-dam-item-box">
+
       <% cards.each do |c| %>
         <div class="card-show-dam-item">
-          <div>訪問日：<%= c.visit_date%></div>
-          <div>Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)</div>
-          <div class="">
-            <%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %>
+          <div class="card-show-dam-item-name">【
+            <% if !c.dam_name.blank? %>
+              <%= c.dam_name%>
+            <% else %>
+              NO NAME
+            <% end %>
+          】</div>
+          <div class="card-show-dam-item-image">
+              <%= link_to card_path(c), class: "" do %>
+                <%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %>
+              <% end %>
+          </div>
+          <div class="card-show-dam-item-ver">Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)
           </div>
         </div>
       <% end %>
-    </div>
-    <div class="card-show-pagenate-bottom">
-      <%= paginate cards, class: "paginate" %>
     </div>
   <% end %>
 </div>
