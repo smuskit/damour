@@ -7,10 +7,20 @@
 .card-show-background {
     position: absolute;
     position: fixed;
-    width: 1350px;
-    height: 1350px;
+    width: 1500px;
+    height: 1500px;
     background-image: image-url("coffee.jpeg");
     background-size: contain;
+}
+
+.card-show-background-white {
+  width: 100%;
+  position: absolute;
+  position: fixed;
+  display: inline-block;
+  width: 1500px;
+  height: 1500px;
+  background-color: rgba(255,255,255,0.2);
 }
 
 .tabnav{
@@ -112,7 +122,35 @@
 .tabcontent{
     padding: 20px;
     background-color: #FFF;
+    height: 1300px;
 }
+
+
+    /*タブ内 カード一覧*/
+
+.card-show-dam-item-box {
+    background-color-: #000;
+    height: 1100px;
+}
+
+.card-show-dam-item {
+    float: left;
+    padding: 13px;
+}
+
+.card-show-pagenate-top {
+    text-align: center;
+}
+
+.card-show-pagenate-bottom {
+    text-align: center;
+
+}
+
+
+
+
+
 
 .dam-card-sample-image {
     -webkit-filter: grayscale(100%);

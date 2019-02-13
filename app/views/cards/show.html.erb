@@ -1,4 +1,5 @@
 <div class="card-show-background"></div>
+<div class="card-show-background-white"></div>
 <%= render 'layouts/header' %>
 
   <div class="container">
@@ -18,6 +19,7 @@
             <li id="ed"><a href="#tab10">カード情報編集</a></li>
 
         </ul>
+
         <div class="tabcontent">
             <div id="tab01">
               <%= render 'dam_item', cards: @cards_hokkaido %>
@@ -60,7 +62,7 @@
                 カードはまだありません．
               <% else %>
                 <div class="" style="">
-                  paginate @cards, class: "paginate" %>
+                  <%= paginate @cards, class: "paginate" %>
                 </div>
                 <% @cards.each do |c| %>
                   <div><%= c.dam_name %>カード
@@ -74,11 +76,12 @@
                   <div><%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %></div>
                 <% end %>
                 <div class="" style="">
-                  paginate @cards, class: "paginate" %>
+                  <%= paginate @cards, class: "paginate" %>
                 </div>
               <% end %>
             </div>
         </div>
+
       </div>
       <div class="col-md-2">
         <div class="new-card-form">
