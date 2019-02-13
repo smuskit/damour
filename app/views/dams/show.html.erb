@@ -1,8 +1,7 @@
 <div class="dam-show-background">
-  <div class="dam-show-head">
+  <div class="dam-show-black-line"></div>
     <p class="dam-show-dam-name"><%= @dam.name %></p>
     <p class="dam-show-dam-name-kana">- <%= @dam.name_kana %> -</p>
-  </div>
   <div class="dam-show-image-box">
     <%= attachment_image_tag @dam, :dam_image, format: 'jpeg', fallback: "dam_no_image.jpeg", class:"dam-show-image" %>
     <%= link_to prefecture_path(@dam.prefecture), class:"square_btn" do %>
@@ -47,7 +46,7 @@
           <td><%= @dam.start_of_construction %> / <%= @dam.end_of_construction %></td>
         </tr>
         <tr>
-          <th scope="row">ダムへのルート</th>
+          <th scope="row">ダムの所在地</th>
           <td><%= @dam.address %></td>
         </tr>
       </table>

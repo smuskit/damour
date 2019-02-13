@@ -22,7 +22,7 @@
         </div>
         <div class="col-md-8">
           <li class="pr-show-region-name-tohoku"><%= @prefecture.region.name %>地方</li>
-          <%= render 'search_form', prefecture: @prefecture %>
+            <%= render 'search_form', prefecture: @prefecture %>
           </div>
         </div>
         <div class="col-md-2">
@@ -299,7 +299,6 @@
           </div>
         </div>
   <% end %>
-
         <div class="col-md-10">
           <% @dams.each do |d| %>
             <div class="pr-show-dam-item">
