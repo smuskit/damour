@@ -1,10 +1,6 @@
 <!-- カード登録 -->
       <li class="new-card-form-title">ダムカード登録</li>
 
-      <% flash.each do |key, value| %>
-        <%= content_tag(:div, value, class: "#{key}") %>
-      <% end %>
-
       <%= form_for(card) do |f| %>
 
         <% if @card.errors.any? %>

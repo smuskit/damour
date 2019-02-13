@@ -1,8 +1,11 @@
 <%= render 'layouts/header' %>
 <div class="dam-show-background">
+<div class="dam-show-clip"><%= image_tag("clip.jpeg")%></div>
+<div class="dam-show-memo"><%= image_tag("memo.jpeg")%></div>
+<div class="dam-show-pr-name-memo"><%= @dam.prefecture.name %></div>
   <div class="dam-show-black-line"></div>
-    <p class="dam-show-dam-name"><%= @dam.name %></p>
-    <p class="dam-show-dam-name-kana">- <%= @dam.name_kana %> -</p>
+    <li class="dam-show-dam-name"><%= @dam.name %></li>
+    <li class="dam-show-dam-name-kana">- <%= @dam.name_kana %> -</li>
   <div class="dam-show-image-box">
     <%= attachment_image_tag @dam, :dam_image, format: 'jpeg', fallback: "dam_no_image.jpeg", class:"dam-show-image" %>
     <%= link_to prefecture_path(@dam.prefecture), class:"square_btn" do %>

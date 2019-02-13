@@ -2,3 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+/* edit */
+
+.edit-card-box {
+  position: relative;
+  text-align: left;
+  margin: 40px 40px;
+}
+
+.edit-card-form-eraser {
+  position: absolute;
+  top: -30px;
+  right: -15px;
+}
+
+.new-card-form-eraser-image {
+  width: 70px;
+  height: 70px;
+}

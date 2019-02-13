@@ -22,6 +22,7 @@
 
         <div class="tabcontent">
             <div id="tab01">
+              <%= render 'cards/alert' %>
               <div class="card-show-pagenate crearfix">
                 <%= paginate @cards_hokkaido, param_name: 'page_1', class: "paginate" %>
               </div>

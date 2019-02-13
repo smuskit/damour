@@ -133,7 +133,7 @@
 .tabcontent{
     padding: 20px;
     background-color: #FFF;
-    height: 1300px;
+    height: 1400px;
 }
 
 
@@ -233,4 +233,11 @@
 
 .new-card-form-submit-button {
     width: 100%;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.new-card-form-delete {
+    width: 100%;
+    margin-top: 20px;
 }

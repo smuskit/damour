@@ -39,6 +39,8 @@ body{
   padding-bottom:50px 0;
 }
 
+/* header */
+
 .title{
   color: #000;    /* color:#c0c0c0; */
   list-style: none;
@@ -51,9 +53,11 @@ body{
 .sub-title{
   color: #000;    /* #c0c0c0; */
   list-style: none;
-  font-size: 20px;
-  font-weight:100;
+  font-size: 25px;
+  font-weight: 500;
+  font-style: italic;
   text-align:center;
+  font-family: cursive, fantasy, sans-serif;
 }
 
 .nav-menu{

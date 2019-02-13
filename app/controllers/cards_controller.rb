@@ -13,10 +13,10 @@ class CardsController < ApplicationController
     card = Card.new(card_params)
     card.user_id = current_user.id
     if card.save
-      flash.notice = 'カードを登録しました．'
+      flash[:success] = "「#{card.dam_name}」のカードを「#{card.region.name}」に追加しました！"
       redirect_to cardlist_path(current_user.id)
     else
-      flash.notice = '入力に誤りがあります．'
+      flash[:danger] = 'カードの投稿に失敗しました'
       render 'show'
     end
   end
@@ -36,7 +36,7 @@ class CardsController < ApplicationController
     @card.user_id = current_user.id
     respond_to do |format|
       if @card.update(card_params)
-        flash.notice = 'カードを更新しました．'
+        flash[:success] = "「#{@card.dam_name}」のカード情報を更新しました！"
         format.html { redirect_to @user }
         format.js { render js: "window.location = '#{card_path(@card)}'" }
       else
