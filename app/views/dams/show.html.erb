@@ -61,47 +61,62 @@
     <iframe class="dam-show-map" src="https://maps.google.co.jp/maps?output=embed&q= <%= @dam.name %>"></iframe>
   </div>
 
-  <div class="dam-show-kutikomi">
+  <div class="comment">
     <div>
       <i class="fa fa-comment"></i>
       <a href="#comments"><%= @dam.dam_comments.count %></a>
     </div>
-    <ol>
+
+    <div class="comment-item-box">
       <% @dam.dam_comments.each do |c| %>
-        <li class="comment">
-          <div class="comment-body bb">
-            <div class="comment-avatar">
-              <div class="avatar">
-                <%= image_tag('no_image.jpeg', style: "width: 60px; height: 60px;") %>
-              </div>
-            </div>
-            <div class="comment-text">
-              <div class="comment-author clearfix">
-                <div><%= c.user.name %></div>
-                  <span class="comment-meta">
-                    <span class="comment-date"><%= c.created_at.strftime('%Y/%m/%d') %></span>
-                  </span>
-              </div>
-              <div class="comment-entry"><%= c.comment %></div>
-            </div>
+        <div class="comment-item">
+          <div class="comment-item-visit-date">
+            <%= c.created_at.strftime('%Y/%m/%d') %>
           </div>
-        </li>
-      <% end %>
-    </ol>
-    <div>
-      <%= form_for [@dam, @dam_comment] do |f| %>
-        <div class="row">
-            <div class="col-sm-12">
-                <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
-            </div>
-            <div class="col-sm-2 col-sm-offset-8">
-              <div><%= f.label :投稿画像 %>(任意)<br>
-                <%= f.attachment_field :comment_image, class:"" %>
-              </div>
-            </div>
+          <div class="comment-item-title">
+            <%= c.title %>
+          </div>
+          <div class="comment-item-profile-image">
+            <%= attachment_image_tag c.user, :profile_image, size: '40x40', format: 'jpeg', class:"comment-item-profile-image-self" %>
+            <span class="comment-item-hundle-name">
+              <% if c.user.hundle_name.blank? %>
+                名無しのユーザー
+              <% else %>
+                <%= c.user.hundle_name %>
+              <% end %>
+            </span>
+          </div>
+          <div class="comment-item-image">
+            <%= attachment_image_tag c, :comment_image, size: '250x166', format: 'jpeg', fallback: "no_image.jpeg", class:"comment-image" %>
+          </div>
+          <div class="comment-item-text">
+            <%= c.comment %>
+          </div>
         </div>
-        <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
       <% end %>
     </div>
+
+    <div class="comment-form">
+      <%= form_for [@dam, @dam_comment] do |f| %>
+        <div class="comment-form-top">
+          <div class="comment-form-title">
+            <%= f.label :投稿タイトル %>(任意)<br>
+            <%= f.text_field :title, class: "form-control", placeholder: "投稿タイトル" %>
+          </div>
+          <div class="comment-form-image">
+            <%= f.label :投稿画像 %>(任意)<br>
+            <%= f.attachment_field :comment_image, class:"" %>
+          </div>
+        </div>
+        <div class="comment-form-bottom">
+          <%= f.label :投稿本文 %>(必須)<br>
+          <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "口コミ情報をこちらに" %>
+        </div>
+        <div class="comment-submit">
+              <%= f.submit "送信する", class: "btn btn-md btn-info comment-submit-button" %>
+        </div>
+      <% end %>
+    </div>
+
   </div>
 </div>
