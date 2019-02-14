@@ -51,7 +51,7 @@
         <div class="new-card-form-submit">
           <%= f.submit "Update", class: "btn btn-sm btn-primary new-card-form-submit-button" %>
           <div class="new-card-form-delete">
-            <%= link_to 'カードを削除する', card_path(@card_edit), method: :delete, class: "btn btn-xs btn-danger new-card-form-submit-button" %>
+            <%= link_to 'カードを削除する', card_path(@card_edit), method: :delete, "data-confirm" => "Are you sure?", class: "btn btn-xs btn-danger new-card-form-submit-button" %>
           </div>
         </div>
 

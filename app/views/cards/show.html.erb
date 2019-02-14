@@ -1,5 +1,8 @@
 <%= render 'layouts/header' %>
 <%= render 'alert' %>
+<div class="card-show-back-link">
+  <%= link_to 'back', cardlist_path(@card.user), class:"btn btn-default" %>
+</div>
 
 <div class="c-show-background">
   <div class="c-show">
