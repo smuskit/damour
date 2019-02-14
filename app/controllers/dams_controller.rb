@@ -31,6 +31,7 @@ class DamsController < ApplicationController
 
   def show
     @dam = Dam.find(params[:id])
+    @dam_comment = DamComment.new
   end
 
   def edit

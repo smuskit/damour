@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_11_121148) do
+ActiveRecord::Schema.define(version: 2019_02_14_054944) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 2019_02_11_121148) do
     t.integer "version_y"
     t.integer "version_m"
     t.string "card_image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dam_comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "dam_id"
+    t.text "comment"
+    t.string "comment_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

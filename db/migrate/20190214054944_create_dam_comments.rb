@@ -3,6 +3,7 @@ class CreateDamComments < ActiveRecord::Migration[5.2]
     create_table :dam_comments do |t|
       t.integer :user_id
       t.integer :dam_id
+      t.text :title
       t.text :comment
       t.string :comment_image_id
 
