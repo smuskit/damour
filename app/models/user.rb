@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :cards, dependent: :destroy
+  has_many :dam_comments, dependent: :destroy
 
   attachment :profile_image
 

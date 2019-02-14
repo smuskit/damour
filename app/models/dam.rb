@@ -1,7 +1,10 @@
 class Dam < ApplicationRecord
-  has_many :distributes, dependent: :destroy
+
   belongs_to :region
   belongs_to :prefecture
+
+  has_many :distributes, dependent: :destroy
+  has_many :dam_comments, dependent: :destroy
 
   attachment :dam_image
 
