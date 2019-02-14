@@ -17,11 +17,14 @@
       " <%= c.title %> "
     </div>
     <div class="comment-item-image">
-      <%= attachment_image_tag c, :comment_image, size: '250x166', format: 'jpeg', fallback: "no_image.jpeg", class:"comment-image" %>
+      <%= attachment_image_tag c, :comment_image, size: '300x199', format: 'jpeg', fallback: "no_image.jpeg", class:"comment-image" %>
     </div>
     <div class="comment-item-text">
       <%= c.comment %>
     </div>
   </div>
-  <%= link_to '削除',  dam_dam_comments_path(c), method: :delete, class:"btn btn-md-danger" %>
+  <div>
+    <%= link_to '削除',  dam_dam_comments_path(c), method: :delete, class:"btn btn-md-danger" %>
+  </div>
+  
 <% end %>
