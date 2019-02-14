@@ -1,0 +1,2 @@
+class DamCommentsController < ApplicationController
+end
