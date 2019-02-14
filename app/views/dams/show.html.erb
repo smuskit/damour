@@ -64,17 +64,17 @@
   <div class="comment">
     <div>
       <i class="fa fa-comment"></i>
-      <a href="#comments"><%= @dam.dam_comments.count %></a>
+      <a href="#comments"><%= @dam_comments.count %></a>
     </div>
 
     <div class="comment-item-box">
-      <% @dam.dam_comments.each do |c| %>
+      <% @dam_comments.each do |c| %>
         <div class="comment-item">
           <div class="comment-item-visit-date">
             <%= c.created_at.strftime('%Y/%m/%d') %>
           </div>
-          <div class="comment-item-title">
-            <%= c.title %>
+          <br><div class="comment-item-title">
+            " <%= c.title %> "
           </div>
           <div class="comment-item-profile-image">
             <%= attachment_image_tag c.user, :profile_image, size: '40x40', format: 'jpeg', class:"comment-item-profile-image-self" %>

@@ -20,7 +20,7 @@ class DamCommentsController < ApplicationController
 
   private
     def dam_comment_params
-      params.require(:dam_comment).permit(:user_id, :dam_id, :comment, :comment_image)
+      params.require(:dam_comment).permit(:user_id, :dam_id, :title, :comment, :comment_image)
     end
 
 end

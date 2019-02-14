@@ -408,7 +408,9 @@ background-position:50% 62.5%;
 }
 
 .comment-item-title {
-  
+  font-weight: 800;
+  font-size: 17px;
+  text-align: center;
 }
 
 .comment-item-visit-date {
@@ -426,7 +428,8 @@ background-position:50% 62.5%;
 }
 
 .comment-item-hundle-name {
-  padding-left: 20px;
+  font-size: 12px;
+  padding-left: 10px;
 }
 
 .comment-item-image {
@@ -435,6 +438,7 @@ background-position:50% 62.5%;
 }
 
 .comment-item-text {
+  font-size: 13px;
   padding: 10px;
 }
 
