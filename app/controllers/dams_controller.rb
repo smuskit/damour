@@ -32,8 +32,14 @@ class DamsController < ApplicationController
   def show
     @dam = Dam.find(params[:id])
     @dam_comment = DamComment.new
-    @dam_comments = @dam.dam_comments.all
+    @dam_comments = @dam.dam_comments.page(params[:page])
+
+    case params[:type]
+    when 'dam_comment'
+      render "#{params[:type]}"
+    end
   end
+
 
   def edit
     @dam = Dam.find(params[:id])

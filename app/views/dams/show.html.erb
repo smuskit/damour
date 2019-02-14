@@ -60,6 +60,7 @@
   <div class="dam-show-map-box">
     <iframe class="dam-show-map" src="https://maps.google.co.jp/maps?output=embed&q= <%= @dam.name %>"></iframe>
   </div>
+</div>
 
   <div class="comment">
     <div>
@@ -68,34 +69,11 @@
     </div>
 
     <div class="comment-item-box">
-      <% @dam_comments.each do |c| %>
-        <div class="comment-item">
-          <div class="comment-item-visit-date">
-            <%= c.created_at.strftime('%Y/%m/%d') %>
-          </div>
-          <br><div class="comment-item-title">
-            " <%= c.title %> "
-          </div>
-          <div class="comment-item-profile-image">
-            <%= attachment_image_tag c.user, :profile_image, size: '40x40', format: 'jpeg', class:"comment-item-profile-image-self" %>
-            <span class="comment-item-hundle-name">
-              <% if c.user.hundle_name.blank? %>
-                名無しのユーザー
-              <% else %>
-                <%= c.user.hundle_name %>
-              <% end %>
-            </span>
-          </div>
-          <div class="comment-item-image">
-            <%= attachment_image_tag c, :comment_image, size: '250x166', format: 'jpeg', fallback: "no_image.jpeg", class:"comment-image" %>
-          </div>
-          <div class="comment-item-text">
-            <%= c.comment %>
-          </div>
-        </div>
-      <% end %>
+      <div id="comment-item-box-render">
+        <%= render 'dam_comment' %>
+      </div>
+      <%= link_to_next_page(@dam_comments, 'more', remote: true, id: 'more_link', params: { type: :dam_comment }) %>
     </div>
-
     <div class="comment-form">
       <%= form_for [@dam, @dam_comment] do |f| %>
         <div class="comment-form-top">
@@ -119,4 +97,4 @@
     </div>
 
   </div>
-</div>
+

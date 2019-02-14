@@ -1,0 +1,2 @@
+$('#comment-item-box-render').append("<%= escape_javascript(render 'dam_comment', object: @dam_comments) %>")
+$("#more_link").replaceWith("<%= escape_javascript(link_to_next_page(@dam_comments, 'more', remote: true, id: 'more_link')) %>");
