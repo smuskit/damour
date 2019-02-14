@@ -7,4 +7,6 @@ class DamComment < ApplicationRecord
 
   paginates_per 3
   default_scope { order 'created_at DESC' }
+
 end
+

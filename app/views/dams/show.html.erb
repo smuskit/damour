@@ -73,17 +73,19 @@
         <div class="comment-form-top">
           <div class="comment-form-title">
             <%= f.label :投稿タイトル %>(任意)<br>
-            <%= f.text_field :title, class: "form-control", placeholder: "投稿タイトル" %>
+            <%= f.text_field :title, class: "form-control", placeholder: "投稿タイトル（最大 20文字）" %>
           </div>
           <div class="comment-form-image">
             <%= f.label :投稿画像 %>(任意)<br>
             <%= f.attachment_field :comment_image, class:"" %>
           </div>
         </div>
+
         <div class="comment-form-bottom">
-          <%= f.label :投稿本文 %>(必須)<br>
-          <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "口コミ情報をこちらに" %>
-          <p class="comment-form-max-text-count">（最大文字数 530）</p>
+          <%= f.label :投稿本文%>(必須)<br>
+          <%= f.text_area :comment, rows:'5', id:"memo_text", class: "form-control",placeholder: "口コミ情報をこちらに（最大 330文字）" %>
+          <p class="comment-form-max-text-count">残りの文字数 : <span class="count"></span>/330文字</p>
+
         </div>
         <div class="comment-submit">
               <%= f.submit "送信する", class: "btn btn-md btn-info comment-submit-button" %>
