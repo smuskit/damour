@@ -1,10 +1,7 @@
 <% @dam_comments.each do |c| %>
   <div class="comment-item">
     <div class="comment-item-visit-date">
-      <%= c.created_at.strftime('%Y/%m/%d') %>
-    </div>
-    <br><div class="comment-item-title">
-      " <%= c.title %> "
+      投稿日時：<%= c.created_at.strftime('%Y/%m/%d') %>
     </div>
     <div class="comment-item-profile-image">
       <%= attachment_image_tag c.user, :profile_image, size: '40x40', format: 'jpeg', class:"comment-item-profile-image-self" %>
@@ -16,6 +13,9 @@
         <% end %>
       </span>
     </div>
+    <div class="comment-item-title">
+      " <%= c.title %> "
+    </div>
     <div class="comment-item-image">
       <%= attachment_image_tag c, :comment_image, size: '250x166', format: 'jpeg', fallback: "no_image.jpeg", class:"comment-image" %>
     </div>
@@ -23,4 +23,5 @@
       <%= c.comment %>
     </div>
   </div>
+  <%= link_to '削除',  dam_dam_comments_path(c), method: :delete, class:"btn btn-md-danger" %>
 <% end %>

@@ -404,12 +404,14 @@ background-position:50% 62.5%;
   margin: 10px;
   padding: 10px;
   border: 0.5px solid gray;
+  display: inline-block;
 }
 
 .comment-item-title {
   font-weight: 800;
   font-size: 16px;
   text-align: center;
+  text-decoration: underline;
 }
 
 .comment-item-visit-date {
@@ -419,7 +421,9 @@ background-position:50% 62.5%;
 }
 
 .comment-item-profile-image {
-
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 
 .comment-item-profile-image-self {
@@ -432,13 +436,14 @@ background-position:50% 62.5%;
 }
 
 .comment-item-image {
-  text-align: center;
-  margin: 10px 0;
+  float: left;
+  margin: 20px 30px 10px 20px;
 }
 
 .comment-item-text {
+  float: left;
   font-size: 13px;
-  padding: 10px;
+  margin-top: 20px;
 }
 
 .comment-form {

@@ -12,8 +12,8 @@ class DamCommentsController < ApplicationController
   end
 
   def destroy
-    dam = Dam.find(params[:dam_id])
-    comment = current_user.dam_comments.find_by(dam_id: dam.id)
+    comment = DamComment.find(params[:dam_id])
+    dam = comment.dam
     comment.destroy
     redirect_to dam_path(dam)
   end
