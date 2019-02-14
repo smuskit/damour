@@ -1,0 +1,2 @@
+class DamComment < ApplicationRecord
+end

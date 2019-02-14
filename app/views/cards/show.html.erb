@@ -1,17 +1,31 @@
 <%= render 'layouts/header' %>
 <%= render 'alert' %>
-<div class="card-show-dam-item">
-  <div class="card-show-dam-item-name">【
-    <% if !@card.dam_name.blank? %>
-      <%= @card.dam_name%>
-    <% else %>
-      NO NAME
-    <% end %>
-  】</div>
-  <div class="card-show-dam-item-image">
-      <%= link_to card_path(@card), class: "" do %>
-        <%= attachment_image_tag @card, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %>
-      <% end %>
+
+<div class="c-show-background">
+  <div class="c-show">
+    <div class="c-show-image-box">
+      <%= attachment_image_tag @card, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"c-show-image" %>
+    </div>
+
+    <div class="c-show-table">
+      <table class= "table table-bordered">
+        <tr>
+          <th scope="row">地方名</th>
+          <td><%= @card.region.name %>地方</td>
+        </tr>
+        <tr>
+          <th scope="row">都道府県</th>
+          <td><%= @card.prefecture.name %></td>
+        </tr>
+        <tr>
+          <th scope="row">カードのバージョン</th>
+          <td>Ver.<%= @card.version_bf %>.<%= @card.version_af %>(<%= @card.version_y %>.<%= @card.version_m %>)</td>
+        </tr>
+        <tr>
+          <th scope="row">ダムの訪問日</th>
+          <td><%= @card.visit_date %></td>
+        </tr>
+      </table>
+    </div>
   </div>
-  <div class="card-show-dam-item-ver">Ver.<%= @card.version_bf %>.<%= @card.version_af %>(<%= @card.version_y %>.<%= @card.version_m %>)</div>
 </div>
