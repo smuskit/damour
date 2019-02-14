@@ -63,10 +63,10 @@
 </div>
 
   <div class="comment">
-    <div>
+    <li class="comment-title">
       <i class="fa fa-comment"></i>
-      <a href="#comments"><%= @dam_comments.count %></a>
-    </div>
+      <%= @dam.name%> の口コミを投稿しよう！
+    </li>
 
     <div class="comment-form">
       <%= form_for [@dam, @dam_comment] do |f| %>
@@ -82,7 +82,8 @@
         </div>
         <div class="comment-form-bottom">
           <%= f.label :投稿本文 %>(必須)<br>
-          <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "口コミ情報をこちらに（最大文字数 530）" %>
+          <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "口コミ情報をこちらに" %>
+          <p class="comment-form-max-text-count">（最大文字数 530）</p>
         </div>
         <div class="comment-submit">
               <%= f.submit "送信する", class: "btn btn-md btn-info comment-submit-button" %>
@@ -90,12 +91,17 @@
       <% end %>
     </div>
 
+    <div class="comment-count-box">
+      ▼ 総件数 : <%= @dam.dam_comments.count %> 件
+    </div>
+
+
     <div class="comment-item-box">
       <div id="comment-item-box-render">
         <%= render 'dam_comment' %>
       </div>
       <div class="comment-more-link">
-      <%= link_to_next_page(@dam_comments, 'もっと見る', remote: true, id: 'more_link', params: { type: :dam_comment }) %>
+      <%= link_to_next_page(@dam_comments, 'もっと見る', remote: true, id: 'more_link', params: { type: :dam_comment }, class:"btn btn-default") %>
       </div>
     </div>
 

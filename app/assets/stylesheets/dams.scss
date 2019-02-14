@@ -389,17 +389,32 @@ background-position:50% 62.5%;
   width: 1030px;
   margin: 50px auto;
   padding: 30px 0;
+  border-right: 40px solid #000;
   background-color: #FBF8EF;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.7);
+}
+
+.comment-title {
+  list-style: none;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Hiragino Kaku Gothic Std", sans-serif;
 }
 
 .comment-form {
   width: 800px;
-  margin: 30px auto;
+  margin: 50px auto;
 }
 
 .comment-form-bottom {
+  position: relative;
   width: 800px;
   display: inline-block;
+}
+
+.comment-form-max-text-count {
+  position: absolute;
+  right: 0px;
 }
 
 .comment-form-title {
@@ -427,6 +442,13 @@ background-position:50% 62.5%;
   padding: 0px 0px;
 }
 
+
+.comment-count-box {
+  font-size: 20px;
+  padding-top: 30px;
+  text-align: center;
+}
+
 .comment-item-box {
   width: 900px;
   margin: 50px auto;
@@ -436,21 +458,21 @@ background-position:50% 62.5%;
   position: relative;
   width: 900px;
   padding: 10px;
-  border: 0.5px solid gray;
+  margin-bottom: 15px;
   display: inline-block;
+  border-bottom: 5px solid #E6E6E6;
 }
 
 .comment-item-title {
   font-weight: 800;
   font-size: 16px;
   text-align: center;
-  text-decoration: underline;
 }
 
 .comment-item-visit-date {
   position: absolute;
   right: 20px;
-  top: 10px;
+  top: 30px;
 }
 
 .comment-item-profile-image {
@@ -468,16 +490,25 @@ background-position:50% 62.5%;
   padding-left: 10px;
 }
 
+.comment-item-delete {
+  position: absolute;
+  right: 0;
+  top: 130px;
+}
+
+
 .comment-item-image {
   float: left;
-  margin: 10px 30px 10px 20px;
+  margin: 15px 30px 10px 20px;
 }
+
+
 
 .comment-item-text {
   float: left;
   width: 500px;
   font-size: 13px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .comment-more-link {
