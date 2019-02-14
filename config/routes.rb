@@ -37,7 +37,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :dams, only: [:create, :index, :show, :edit, :update, :destroy]
+  resources :dams, only: [:create, :index, :show, :edit, :update, :destroy] do
+     resource :dam_comments, only: [:create, :destroy]
+  end
 
   resources :prefectures, only: [:show]
 
