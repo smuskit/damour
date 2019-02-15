@@ -1,43 +1,43 @@
 <%= render 'cards/alert' %>
 
-
-<h3 class="user-show-title">ユーザ情報編集</h3>
-<div class="user-show-background">
-
-  <div class="user-show-image">
-    <%= attachment_image_tag @user, :profile_image, size: "250x250", class:"user-show-image-self", fallback: "no_image.jpeg" %>
-  </div>
-  <div class="user-show-table">
-    <%= form_for(@user) do |f| %>
-    <table class= "table">
-      <tr>
-        <th>名前</th>
-        <td><%= f.text_field :name, autocomplete: "name", autofocus: true, class:"" %></td>
-      </tr>
-      <tr>
-        <th>ふりがな</th>
-        <td><%= f.text_field :name_kana, autocomplete: "name_kana", class:"" %></td>
-      </tr>
-      <tr>
-        <th>メールアドレス</th>
-        <td><%= f.email_field :email, autocomplete: "email", class:"" %></td>
-      </tr>
-      <tr>
-        <th>ニックネーム</th>
-        <td><%= f.text_field :hundle_name, autocomplete: "hundle_name", class:"" %></td>
-      </tr>
-    </table>
-  </div>
-
+<div class="user-show-back">
+  <%= link_to '<< 戻る', user_path(@user), class:"btn btn-lg btn-default user-show-back-self" %>
 </div>
 
-        <div class="field">
-            <%= f.label :プロフィール画像 %><br />
-            <%= f.attachment_field :profile_image, class:"" %>
-        </div>
-      <%= f.submit "変更を保存", class:"" %>
+<li class="user-show-title">ユーザ情報編集</li>
+<div class="user-show-background">
+
+  <div class="user-edit-image">
+    <%= attachment_image_tag @user, :profile_image, size: "220x220", class:"user-show-image-self", fallback: "no_image.jpeg" %>
+  </div>
+  <%= form_for(@user) do |f| %>
+    <div class="user-edit-attachment-image-field">
+        <%= f.attachment_field :profile_image, class:"user-edit-attachment-image-field-self" %>
+    </div>
+    <div class="user-show-table">
+
+      <table class= "table user-show-table-main">
+        <tr>
+          <th class="user-edit-label">名前</th>
+          <td class="user-edit-field"><%= f.text_field :name, autocomplete: "name", autofocus: true, class:"" %></td>
+        </tr>
+        <tr>
+          <th>ふりがな</th>
+          <td class="user-edit-field"><%= f.text_field :name_kana, autocomplete: "name_kana", class:"" %></td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td class="user-edit-field"><%= f.email_field :email, autocomplete: "email", class:"" %></td>
+        </tr>
+        <tr>
+          <th>ニックネーム</th>
+          <td class="user-edit-field"><%= f.text_field :hundle_name, autocomplete: "hundle_name", class:"" %></td>
+        </tr>
+      </table>
+      <div class="user-edit-submit">
+        <%= f.submit "変更を保存", class:"user-edit-submit-self" %>
+      </div>
+      
     </div>
   <% end %>
 </div>
-
-<%= render 'layouts/header' %>
