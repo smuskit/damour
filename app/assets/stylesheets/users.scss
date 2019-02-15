@@ -13,12 +13,42 @@
 
 /* show */
 
-.user-show-image {
+.user-show-title {
+    margin-top: 30px;
+    text-align: center;
+}
 
+.user-show-background {
+    position: relative;
+    background: #fff;
+    width: 440px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.user-show-setting {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.fa-cogs {
+    color: gray;
+    font-size: 20px;
+}
+
+.user-show-image {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.user-show-image-self {
+    border-radius: 100%;
 }
 
 .user-show-table {
-    
+    margin: 0 auto;
+    width: 400px;
 }
 
 

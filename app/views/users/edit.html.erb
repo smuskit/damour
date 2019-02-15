@@ -1,26 +1,35 @@
 <%= render 'cards/alert' %>
-<%= render 'layouts/header' %>
 
-<%= form_for(@user) do |f| %>
-        <div class="field">
-          <%= f.label :名前 %><br />
-          <%= f.text_field :name, autocomplete: "name", autofocus: true, class:"" %>
-        </div>
 
-        <div class="field">
-          <%= f.label :名前ふりかな %><br />
-          <%= f.text_field :name_kana, autocomplete: "name_kana", autofocus: true, class:"" %>
-        </div>
+<h3 class="user-show-title">ユーザ情報編集</h3>
+<div class="user-show-background">
 
-        <div class="field">
-          <%= f.label :ニックネーム %><br />
-          <%= f.text_field :hundle_name, autocomplete: "hundle_name", class:"" %>
-        </div>
+  <div class="user-show-image">
+    <%= attachment_image_tag @user, :profile_image, size: "250x250", class:"user-show-image-self", fallback: "no_image.jpeg" %>
+  </div>
+  <div class="user-show-table">
+    <%= form_for(@user) do |f| %>
+    <table class= "table">
+      <tr>
+        <th>名前</th>
+        <td><%= f.text_field :name, autocomplete: "name", autofocus: true, class:"" %></td>
+      </tr>
+      <tr>
+        <th>ふりがな</th>
+        <td><%= f.text_field :name_kana, autocomplete: "name_kana", class:"" %></td>
+      </tr>
+      <tr>
+        <th>メールアドレス</th>
+        <td><%= f.email_field :email, autocomplete: "email", class:"" %></td>
+      </tr>
+      <tr>
+        <th>ニックネーム</th>
+        <td><%= f.text_field :hundle_name, autocomplete: "hundle_name", class:"" %></td>
+      </tr>
+    </table>
+  </div>
 
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autocomplete: "email", class:"" %>
-        </div>
+</div>
 
         <div class="field">
             <%= f.label :プロフィール画像 %><br />
@@ -30,3 +39,5 @@
     </div>
   <% end %>
 </div>
+
+<%= render 'layouts/header' %>
