@@ -164,13 +164,143 @@ body{
   border-radius: 5px 5px 0 0;
 }
 
-.modal-header-title {
+.close {
   color: #fff;
 }
+
+.modal-header-title {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: cursive, fantasy, sans-serif;
+}
+
+.modal-body-field-email-signin {
+  margin: -10px 0 20px 0;
+}
+
+.modal-body-field-password-signin {
+  margin: 10px 0;
+}
+
+.modal-body-label-signin {
+  list-style: none;
+  text-align: left;
+  margin-left: 50px;
+}
+
+.modal-body-field-signin {
+  margin-top: -10px;
+}
+
+.modal-body-field-self-signin {
+  width: 70%;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.modal-body-remember-signin {
+  text-align: left;
+  margin: 20px 0 0 30px;
+}
+
+.modal-body-submit-signin {
+  width: 80%;
+  margin: 10px 0;
+}
+
+
 
 
   /* registration */
 
+
+.modal-signup {
+  margin: 50px auto;
+  height: 800px;
+}
+
+.modal-content-signup {
+  width: 500px;
+  height: 700px;
+  margin: 0 auto;
+}
+
+.modal-header {
+  background: #000;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 10px;
+}
+
+.close {
+  color: #fff;
+}
+
+.modal-header-title {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: cursive, fantasy, sans-serif;
+}
+
+.modal-body {
+  position: relative;
+}
+
+.modal-body-image-signup {
+  position: absolute;
+  top: -12px;
+  left: 5px;
+}
+
+.swing1 {
+  width: 60px;
+  height: 60px;
+}
+
+.modal-body-field-signup {
+  margin: 10px 0 20px 0;
+}
+
+.modal-body-attachment-field-signup {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.modal-body-attachment-field-self-signup {
+}
+
+.modal-body-field-password-signup {
+  margin: 10px 0;
+}
+
+.modal-body-label-signup {
+  list-style: none;
+  text-align: left;
+  margin-left: 100px;
+}
+
+.modal-body-field-signup {
+  margin-top: -10px;
+}
+
+.modal-body-field-self-signup {
+  width: 60%;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.modal-body-remember-signup {
+  text-align: left;
+  margin: 20px 0 0 30px;
+}
+
+.modal-body-submit-signup {
+  width: 80%;
+  margin: 10px 0;
+}
 
 
 

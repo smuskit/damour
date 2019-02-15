@@ -1,11 +1,28 @@
 <%= render 'cards/alert' %>
 <%= render 'layouts/header' %>
-<h1>ユーザマイページ</h1>
-
-<p><%= attachment_image_tag @user, :profile_image, size: "100%",class:"", fallback: "no_image.jpeg" %></p>
-<p>名前：<%= @user.name %></p>
-<p>かな：<%= @user.name_kana %></p>
-<p>メールアドレス：<%= @user.email %></p>
 
 
-<p><%= link_to 'ユーザ情報編集画面へ', edit_user_path(@user) %></p>
+<h3>ユーザマイページ</h3>
+
+<div class="user-show-image">
+  <%= attachment_image_tag @user, :profile_image, size: "200x200",class:"", fallback: "no_image.jpeg" %>
+</div>
+<div class="user-show-table">
+  <table class= "table">
+    <tr>
+      <th>名前</th>
+      <td><%= @user.name%></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td><%= @user.email%></td>
+    </tr>
+    <tr>
+      <th>ニックネーム</th>
+      <td><%= @user.hundle_name%></td>
+    </tr>
+  </table>
+</div>
+
+
+<div><%= link_to 'ユーザ情報編集画面へ', edit_user_path(@user) %></div>
