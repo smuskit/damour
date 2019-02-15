@@ -19,6 +19,8 @@
 //= require_tree .
 
 
+
+
 // スライダー
 
 document.addEventListener("turbolinks:load", function(){
@@ -129,10 +131,36 @@ document.addEventListener("turbolinks:load", function(){
 });
 
 // count
-$(function(){
+
+// document.addEventListener("turbolinks:load", function(){
+
+//     var text_max = 330; // 最大入力値
+//     $(".count").text(text_max - $("#memo_text").val().length);
+
+//     $("#memo_text").on("keydown keyup keypress change",function(){
+//         var text_length = $(this).val().length;
+//         var countdown = text_max - text_length;
+//         $(".count").text(countdown);
+//         // CSSは任意で
+//         if(countdown < 0){
+//             $('.count').css({
+//                 color:'#ff0000',
+//                 fontWeight:'bold'
+//             });
+//         } else {
+//             $('.count').css({
+//                 color:'#000000',
+//                 fontWeight:'normal'
+//             });
+//         }
+//     });
+// });
+
+
+document.addEventListener("turbolinks:load", function(){
 
     var text_max = 330; // 最大入力値
-    $(".count").text(text_max - $("#memo_text").val().length);
+    $(".count").text(text_max - $("#memo_text").val());
 
     $("#memo_text").on("keydown keyup keypress change",function(){
         var text_length = $(this).val().length;

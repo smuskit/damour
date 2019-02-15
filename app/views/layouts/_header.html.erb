@@ -1,29 +1,72 @@
 <header style="position: relative;">
   <%= link_to 'Admin Page', admin_path(Admin.find(1)), class:"btn btn-warning" %>
+  <%= link_to '管理者ログイン', new_admin_session_path, class:"btn btn-warning" %>
 
   <li class="title">ダム王</li>
   <li class="sub-title">damour</li>
 
   <div class="nav-menu">
     <% if user_signed_in? %>
-      <%= link_to 'Home', dams_top_path, class:"menu-btn-home" %>
-      <%= link_to 'MyPage', user_path(current_user), class:"menu-btn" %>
-      <%= link_to 'About', "", class:"menu-btn" %>
-      <%= link_to 'Contact', "", class:"menu-btn" %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"menu-btn" %>
+      <%= link_to 'マイページ', user_path(current_user), class:"menu-btn" %>
+      <%= link_to 'ダム王とは', "", class:"menu-btn" %>
+      <%= link_to 'TOP', root_path, class:"menu-btn-home" %>
+      <%= link_to 'お問い合わせ', "", class:"menu-btn" %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"menu-btn" %>
     <% elsif admin_signed_in? %>
-      <%= link_to 'Home', dams_top_path, class:"menu-btn" %>
-      <%= link_to 'ABOUT', "", class:"menu-btn" %>
-      <%= link_to 'ADMIN PAGE', admin_path(@admin), class:"menu-btn" %>
-      <%= link_to 'CONTACT', "", class:"menu-btn" %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"menu-btn" %>
+      <%= link_to 'ダム王とは', "", class:"menu-btn" %>
+      <%= link_to '管理者ページ', admin_path(current_admin), class:"menu-btn" %>
+      <%= link_to 'TOP', root_path, class:"menu-btn-home" %>
+      <%= link_to 'お問い合わせ', "", class:"menu-btn" %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"menu-btn" %>
     <% else %>
-      <%= link_to 'Home', dams_top_path, class:"menu-btn" %>
-      <%= link_to 'About', "", class:"menu-btn" %>
-      <%= link_to 'Contact', "", class:"menu-btn" %>
-      <%= link_to 'SignUp', new_user_registration_path, class:"menu-btn" %>
-      <%= link_to 'LogIn', new_user_session_path, class:"menu-btn" %>
-      <%= link_to 'Admin Login', new_admin_session_path, class:"btn btn-warning" %>
+      <%= link_to 'トップ', root_path, class:"menu-btn-home" %>
+      <%= link_to 'ダム王とは', "", class:"menu-btn" %>
+      <%= link_to '会員登録', new_user_registration_path, class:"menu-btn" %>
+      <%= link_to "ログイン", '', class: "nav-link menu-btn", "data-toggle": "modal", "data-target": "#signinModal" %>
+      <!-- モーダルログイン画面 -->
+        <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin: 200px auto; height: 700px;">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">サンプル</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                  <div class="field">
+                    <%= f.label :email %><br />
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :password %><br />
+                    <%= f.password_field :password, autocomplete: "current-password" %>
+                  </div>
+
+                  <%= f.hidden_field :url, value: request.fullpath %>
+
+                  <% if devise_mapping.rememberable? -%>
+                    <div class="field">
+                      <%= f.check_box :remember_me %>
+                      <%= f.label :remember_me %>
+                    </div>
+                  <% end %>
+
+                  <div class="actions">
+                    <%= f.submit "ログイン" %>
+                  </div>
+                <% end %>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- モーダルログイン画面 -->
+      <%= link_to 'お問い合わせ', "", class:"menu-btn" %>
     <% end %>
   </div>
 </header>
+

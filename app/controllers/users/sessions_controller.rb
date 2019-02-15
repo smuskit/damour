@@ -9,9 +9,20 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
+  def create
+    auth_options = { scope: resource_name, recall: "#{controller_path}#failed" }
+    self.resource = warden.authenticate!(auth_options)
+    set_flash_message!(:notice, :signed_in)
+    sign_in(resource_name, resource)
+    yield resource if block_given?
+    respond_with resource, location: after_sign_in_path_for(resource)
   #   super
-  # end
+  end
+
+  def failed
+    flash[:alert] = "メールアドレスまたはパスワードが違います。"
+    redirect_to params[:user][:url]
+  end
 
   # DELETE /resource/sign_out
   # def destroy
