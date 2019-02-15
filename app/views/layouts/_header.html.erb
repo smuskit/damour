@@ -22,19 +22,89 @@
       <%= link_to 'トップ', root_path, class:"menu-btn-home" %>
       <%= link_to 'ダム王とは', "", class:"menu-btn" %>
       <%= link_to '会員登録', new_user_registration_path, class:"menu-btn" %>
+
+
+      <%= link_to "会員登録", '', class: "nav-link menu-btn" , "data-toggle": "modal", "data-target": "#signupModal" %>
+      <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin: 200px auto; height: 700px;">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <h5>会員登録</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
+
+                <div class="field">
+                  <%= f.label :お名前%>（非公開）<br />
+                  <%= f.text_field :name, autofocus: true %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :お名前ふりがな %>（非公開）<br />
+                  <%= f.text_field :name_kana %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :メールアドレス %>（非公開）<br />
+                  <%= f.email_field :email %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :ハンドルネーム %> ※ 後から追加できます<br />
+                  <%= f.text_field :hundle_name %>
+                </div>
+
+                 <div class="field">
+                    <%= f.label :プロフィール画像 %> ※ 後から追加できます<br />
+                    <%= f.attachment_field :profile_image %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :パスワード %>
+                  <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autocomplete: "new-password" %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :パスワード確認 %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+                </div>
+
+                <%= f.hidden_field :url, value: request.fullpath %>
+
+                <div class="actions">
+                  <%= f.submit "Sign up" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       <%= link_to "ログイン", '', class: "nav-link menu-btn", "data-toggle": "modal", "data-target": "#signinModal" %>
       <!-- モーダルログイン画面 -->
         <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin: 200px auto; height: 700px;">
           <div class="modal-dialog" role="document">
+
             <div class="modal-content">
+
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">サンプル</h5>
+                <h5>ログイン</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
 
+              <div class="modal-body">
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                   <div class="field">
                     <%= f.label :email %><br />
@@ -59,9 +129,10 @@
                     <%= f.submit "ログイン" %>
                   </div>
                 <% end %>
-
               </div>
+
             </div>
+
           </div>
         </div>
       <!-- モーダルログイン画面 -->
