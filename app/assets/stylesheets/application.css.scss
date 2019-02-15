@@ -145,7 +145,39 @@ body{
 }
 
 
+
+  /* session */
+
+.modal-signin {
+  margin: 200px auto;
+  height: 500px;
+}
+
+.modal-content-signin {
+  width: 350px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.modal-header {
+  background: #000;
+  border-radius: 5px 5px 0 0;
+}
+
+.modal-header-title {
+  color: #fff;
+}
+
+
+  /* registration */
+
+
+
+
+
+
 /* footer */
 .footer-text {
   color: #000;
+  margin-top: 200px;
 }

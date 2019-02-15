@@ -172,7 +172,8 @@ background-position:50% 62.5%;
 .dam-top-map-back-text1,
 .dam-top-map-back-text2,
 .dam-top-map-back-text3,
-.dam-top-map-back-text4 {
+.dam-top-map-back-text4,
+.dam-top-map-back-text5 {
   position: absolute;
   list-style: none;
   font-family: "HiraMinPro-W6", "Hiragino Mincho Pro", serif, sans-serif;
@@ -187,7 +188,7 @@ background-position:50% 62.5%;
 
 .dam-top-map-back-text2 {
   right: 30px;
-  top: -120px;
+  top: -150px;
   font-size: 120px;
 }
 
@@ -199,8 +200,14 @@ background-position:50% 62.5%;
 
 .dam-top-map-back-text4 {
   top: -550px;
-  right: -550px;
-  font-size: 180px;
+  right: -500px;
+  font-size: 170px;
+}
+
+.dam-top-map-back-text5 {
+  bottom: -200px;
+  left: -450px;
+  font-size: 200px;
 }
 
 .map {

@@ -89,16 +89,15 @@
 
       <%= link_to "ログイン", '', class: "nav-link menu-btn", "data-toggle": "modal", "data-target": "#signinModal" %>
       <!-- モーダルログイン画面 -->
-        <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin: 200px auto; height: 700px;">
+        <div class="modal fade modal-signin" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
 
-            <div class="modal-content">
-
+            <div class="modal-content modal-content-signin">
               <div class="modal-header">
-                <h5>ログイン</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
+                <h5 class="modal-header-title">ログイン</h5>
               </div>
 
               <div class="modal-body">
