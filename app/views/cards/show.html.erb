@@ -1,9 +1,10 @@
 <%= render 'layouts/header' %>
-<%= render 'alert' %>
+<div class="card-show-alert-message">
+  <%= render 'alert' %>
+</div>
 <div class="card-show-back-link">
   <%= link_to '<< back', cardlist_path(@card.user), class:"btn btn-lg btn-default" %>
 </div>
-
 <div class="c-show-background">
   <div class="c-show">
     <div class="c-show-image-box">

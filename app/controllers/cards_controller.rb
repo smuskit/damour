@@ -14,7 +14,7 @@ class CardsController < ApplicationController
     card.user_id = current_user.id
     if card.save
       flash[:success] = "「#{card.dam_name}」のカードを「#{card.region.name}」に追加しました！"
-      redirect_to cardlist_path(current_user.id)
+      redirect_to card_path(card.id)
     else
       flash[:danger] = 'カードの投稿に失敗しました'
       render 'show'
