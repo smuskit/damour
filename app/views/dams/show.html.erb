@@ -102,9 +102,11 @@
       <div id="comment-item-box-render">
         <%= render 'dam_comment' %>
       </div>
+      <!-- もっと見る -->
       <div class="comment-more-link">
       <%= link_to_next_page(@dam_comments, 'もっと見る', remote: true, id: 'more_link', params: { type: :dam_comment }, class:"btn btn-default") %>
       </div>
+      <!-- もっと見る -->
     </div>
 
   </div>

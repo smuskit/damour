@@ -34,6 +34,7 @@ class DamsController < ApplicationController
     @dam_comment = DamComment.new
     @dam_comments = @dam.dam_comments.page(params[:page])
 
+    #Ajax通信の場合のみ（もっと見るボタン押下時）ここを通過
     case params[:type]
     when 'dam_comment'
       render "#{params[:type]}"

@@ -156,7 +156,7 @@ document.addEventListener("turbolinks:load", function(){
 //     });
 // });
 
-
+//文字入力カウント
 document.addEventListener("turbolinks:load", function(){
 
     var text_max = 330; // 最大入力値

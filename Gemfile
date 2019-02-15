@@ -76,3 +76,4 @@ gem 'pry-rails'
 gem 'jquery-turbolinks'
 
 gem 'dotenv-rails'
+
