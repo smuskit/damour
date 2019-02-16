@@ -1,23 +1,26 @@
 <%= render 'cards/alert' %>
 <%= render 'layouts/header' %>
-<h1 class="">管理者ページ</h1>
 
-<div class="admin-show-dam-new-link">
-  <%= link_to 'ダム新規登録', new_dam_path, class:"" %>
-</div>
+<div class="admin-show">
+  <h2 class="admin-show-title">管理者画面</h2>
 
-<div class="admin-show-dam-index-link">
-  <%= link_to 'ダム一覧・検索', dams_path, class:"" %>
-</div>
+  <div class="admin-show-link">
+    <%= link_to 'ダム新規登録', new_dam_path, class:"btn btn-success admin-show-link-self" %>
+  </div>
 
-<div class="admin-show-facility-index--link">
-  <%= link_to 'カード配布場所', facilities_path, class:"" %>
-</div>
+  <div class="admin-show-link">
+    <%= link_to 'ダム一覧・検索', dams_path, class:"btn btn-success admin-show-link-self" %>
+  </div>
 
-<div class="admin-show-distribute-link">
-  <%= link_to 'Distribute管理', distributes_path, class:"" %>
-</div>
+  <div class="admin-show-link">
+    <%= link_to 'カード配布場所', facilities_path, class:"btn btn-warning admin-show-link-self" %>
+  </div>
 
-<div class="admin-show-admin-edit-link">
-  <%= link_to 'ユーザー管理', users_path, class:"" %>
+  <div class="admin-show-link">
+    <%= link_to 'アソシエーション管理', distributes_path, class:"btn btn-primary admin-show-link-self" %>
+  </div>
+
+  <div class="admin-show-link">
+    <%= link_to 'ユーザー管理', users_path, class:"btn btn-danger admin-show-link-self" %>
+  </div>
 </div>
