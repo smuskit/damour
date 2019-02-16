@@ -18,7 +18,7 @@
   <table class='table table-striped'>
     <thead>
       <tr>
-        <th>イメージ</th>
+        <th class="dam-index-table-text-image">イメージ</th>
         <th>ID</th>
         <th>地方名</th>
         <th>都道府県</th>
@@ -46,10 +46,10 @@
           <td><%= d.constructor %></td>
           <td>
             <div>
-              <%= link_to 'EDIT', edit_dam_path(d), class:"btn btn-xs btn-primary dam-index-btn-self" %>
+              <%= link_to '編集', edit_dam_path(d), class:"btn btn-xs btn-primary dam-index-btn-self" %>
             </div>
             <div>
-              <%= link_to 'DELETE', dam_path(d), method: :delete, "data-confirm" => "本当に削除しますか?", class:"btn btn-xs btn-danger dam-index-btn-self" %>
+              <%= link_to '削除', dam_path(d), method: :delete, "data-confirm" => "本当に削除しますか?", class:"btn btn-xs btn-danger dam-index-btn-self" %>
             </div>
           </td>
         </tr>

@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    if params[:search]
+      #検索用
+      @users = User.page(params[:page]).where('name LIKE ? OR name_kana LIKE ? OR hundle_name LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
+    else
+      #name_kana 並び替え（50音順）
+      @users = User.page(params[:page]).order :name_kana
+    end
   end
 
   def show

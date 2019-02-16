@@ -1,9 +1,23 @@
 <%= render 'cards/alert' %>
 <%= render 'layouts/header' %>
-<h1>ユーザ管理画面</h1>
+
+<h3 class="user-index-title">ユーザ管理画面</h3>
+
+<!--検索フォーム-->
+<div class="user-index-search-form">
+  <%= form_tag(users_index_path, :method => 'get') do %>
+    <%= text_field_tag :search, "", placeholder:"名前，かな，ニックネーム検索", class:"user-index-search-form-self" %>
+    <%= submit_tag 'Search', :name => nil, class:"btn btn-sm btn-default" %>
+  <% end %>
+</div>
+<!--検索フォーム-->
+
+<div class="user-index-paginate">
+  <%= paginate @users, class: "paginate" %>
+</div>
 
 <div class="user-index-table">
-  <table class='table'>
+  <table class='table table-striped'>
     <thead>
       <tr>
         <th>ID</th>
@@ -28,10 +42,16 @@
           <td><%= u.name_kana %></td>
           <td><%= u.hundle_name %></td>
           <td><%= u.email %></td>
-          <td><%= link_to 'EDIT', edit_user_path(u), class:"btn btn-sm btn-primary" %></td>
-          <td><%= link_to 'DELETE', user_path(u), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-sm btn-danger" %></td>
+          <td>
+            <div><%= link_to '編集', edit_user_path(u), class:"btn btn-xs btn-primary user-index-btn-edit-self" %></div>
+            <div><%= link_to '削除', user_path(u), method: :delete, "data-confirm" => "本当に削除しますか?", class:"btn btn-xs btn-danger user-index-btn-delete-self" %></div>
+          </td>
         </tr>
       <% end %>
     </tbody>
   </table>
+</div>
+
+<div class="user-index-paginate">
+  <%= paginate @users, class: "paginate" %>
 </div>
