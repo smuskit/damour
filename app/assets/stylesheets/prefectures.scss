@@ -179,6 +179,11 @@ body {
   color: #FFF;
 }
 
+.list-group-item.list-group-item-action.bg-light:hover {
+  background-color: #fff;
+  color: #000;
+}
+
 #wrapper #sidebar-wrapper {
   margin-left: 0;
 }
