@@ -1,7 +1,16 @@
 <%= render 'layouts/header' %>
 <div class="distribute-index-body">
 
-  <h4>カード配布場所一覧</h4>
+  <h3 class="distribute-index-title">アソシエーション管理</h3>
+
+  <!--検索フォーム-->
+  <div class="facility-index-search-form">
+    <%= form_tag(facilities_path, :method => 'get') do %>
+      <%= text_field_tag :search, "", placeholder:"施設名，かな，住所検索", class:"facility-index-search-form-self" %>
+      <%= submit_tag 'Search', :name => nil, class:"btn btn-sm btn-warning" %>
+    <% end %>
+  </div>
+  <!--検索フォーム-->
 
   <table class='table'>
     <thead>
@@ -20,7 +29,7 @@
           <td><%= d.facility_id %></td>
           <td><%= d.dam.name %></td>
           <td><%= d.facility.name %></td>
-          <td><%= link_to 'DELETE', distribute_path(d), method: :delete, class:"btn btn-sm btn-danger" %>
+          <td><%= link_to '削除', distribute_path(d), method: :delete, class:"btn btn-xs btn-danger" %>
         </tr>
       <% end %>
     </tbody>
@@ -29,7 +38,7 @@
 
 <div class="distribute-index-form">
 
-  <h3>関連づけ登録</h3>
+  <h4 class="distribute-index-form-title">アソシエーション登録</h4>
 
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "#{key}") %>
@@ -48,13 +57,13 @@
       </div>
     <% end %>
 
-    <div class="">
+    <div class="distribute-index-field">
       ■<%= f.label :ダム %><br>
       <!--prefecture_idの昇順-->
       <%= f.collection_select :dam_id, Dam.all.order(prefecture_id: "ASC"), :id, :name %>
     </div>
 
-    <div class="">
+    <div class="distribute-index-field">
       ■<%= f.label :配布場所 %><br>
       <%= f.collection_select :facility_id, Facility.all, :id, :name %>
     </div>
