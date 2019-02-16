@@ -1,0 +1,24 @@
+<header style="position: relative;">
+  <% if admin_signed_in? %>
+    <%= link_to 'Admin Page', admin_path(Admin.find(1)), class:"btn btn-warning" %>
+  <% end %>
+
+
+  <div class="">
+    <%= link_to root_path, class:"title-link" do %>
+      <li class="title">ダム王</li>
+    <% end %>
+  </div>
+
+  <li class="sub-title">damour</li>
+
+  <div class="nav-menu"></div>
+
+  <div class="">
+    <% if admin_signed_in? %>
+      <li class="admin-signed-in-yes">ログイン済です</li>
+    <% else %>
+      <li class="admin-signed-in-no"> ログインしてください</li>
+    <% end %>
+  </div>
+</header>

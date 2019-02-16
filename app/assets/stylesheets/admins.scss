@@ -3,5 +3,49 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-/* show */
 
+
+/* session */
+
+.title-link:hover {
+  text-decoration: none;
+}
+
+.admin-signed-in-yes {
+  list-style: none;
+  text-align: center;
+  padding: 20px 0;
+  background-color:  rgba(0,255,60,0.3);
+}
+
+.admin-signed-in-no {
+  list-style: none;
+  text-align: center;
+  padding: 20px 0;
+  background-color:  rgba(255,100,100,0.3);
+}
+
+.admin-session {
+  width: 200px;
+  text-align: center;
+  margin: 100px auto;
+}
+
+.admin-session-field {
+  margin-top: 20px;
+}
+
+.admin-session-remember {
+  margin-top: 30px;
+}
+
+.admin-session-submit {
+  margin-top: 30px;
+}
+
+.admin-session-submit-self {
+  width: 100px;
+}
+
+
+/* show */
