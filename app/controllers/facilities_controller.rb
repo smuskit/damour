@@ -16,7 +16,8 @@ class FacilitiesController < ApplicationController
 
   def index
     @facility = Facility.new
-    @facilities = Facility.all
+    # 50音順
+    @facilities = Facility.all.order :name_kana
   end
 
   def show

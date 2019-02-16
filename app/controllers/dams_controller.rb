@@ -16,7 +16,7 @@ class DamsController < ApplicationController
     @prefecture = @dam.prefecture
     if @dam.save
       flash.notice = '登録OK!'
-      redirect_to prefecture_path(@prefecture)
+      redirect_to dam_path(@dam)
     else
       flash.notice = '再入力'
       render 'new'
@@ -49,7 +49,7 @@ class DamsController < ApplicationController
   def update
     @dam = Dam.find(params[:id])
     if @dam.update(dam_params)
-      redirect_to dam_path(@dam)
+      redirect_to dams_path
     else
       render 'edit'
     end
