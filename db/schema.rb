@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 2019_02_14_054944) do
   end
 
   create_table "distributes", force: :cascade do |t|
-    t.integer "dam_id"
-    t.integer "facility_id"
+    t.text "dam_id"
+    t.text "facility_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -3,16 +3,7 @@
 
   <h3 class="distribute-index-title">アソシエーション管理</h3>
 
-  <!--検索フォーム-->
-  <div class="facility-index-search-form">
-    <%= form_tag(facilities_path, :method => 'get') do %>
-      <%= text_field_tag :search, "", placeholder:"施設名，かな，住所検索", class:"facility-index-search-form-self" %>
-      <%= submit_tag 'Search', :name => nil, class:"btn btn-sm btn-warning" %>
-    <% end %>
-  </div>
-  <!--検索フォーム-->
-
-  <table class='table'>
+  <table class='table striped'>
     <thead>
       <tr>
         <th>ダムID</th>

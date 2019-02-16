@@ -1,7 +1,7 @@
 class DistributesController < ApplicationController
   def index
-    @distributes = Distribute.all
     @distribute = Distribute.new
+    @distributes = Distribute.page(params[:page]).order :dam_id
   end
 
   def create
