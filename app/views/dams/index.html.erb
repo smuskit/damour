@@ -1,38 +1,55 @@
 <%= render 'cards/alert' %>
 <%= render 'layouts/header' %>
-<table class='table'>
-  <thead>
-    <tr>
-      <th></th>
-      <th>ID</th>
-      <th>地方名</th>
-      <th>都道府県</th>
-      <th>ダム名</th>
-      <th>かな</th>
-      <th>施工業者</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @dams.each do |d|%>
+
+<!--検索フォーム　prefecture-showのcss転用-->
+<div class="dam-index-search-form">
+  <%= form_tag(dams_path, :method => 'get') do %>
+    <%= text_field_tag :search, "", placeholder:"ダム名，地名で検索", class:"dam-index-search-form-self" %>
+    <%= submit_tag 'Search', :name => nil, class:"btn btn-sm btn-success" %>
+  <% end %>
+</div>
+<!--検索フォーム　prefecture-showのcss転用-->
+
+<div class="dam-index">
+  <table class='table table-striped'>
+    <thead>
       <tr>
-        <td>
-          <%= attachment_image_tag d, :dam_image, size: "200x150", format: 'jpeg', fallback: "dam_no_image.jpeg", class:"dam-index-image" %>
-        </td>
-        <td><%= d.id %></td>
-        <td><%= d.prefecture.region.name %>地方</td>
-        <td><%= d.prefecture.name %></td>
-        <td>
-          <%= link_to dam_path(d) do %>
-            <%= d.name %>
-          <% end %>
-        </td>
-        <td><%= d.name_kana %></td>
-        <td><%= d.constructor %></td>
-        <td><%= link_to 'EDIT', edit_dam_path(d), class:"btn btn-sm btn-primary" %></td>
-        <td><%= link_to 'DELETE', dam_path(d), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-sm btn-danger" %></td>
+        <th>イメージ</th>
+        <th>ID</th>
+        <th>地方名</th>
+        <th>都道府県</th>
+        <th>ダム名</th>
+        <th>かな</th>
+        <th>施工業者</th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @dams.each do |d|%>
+        <tr>
+          <td class="dam-index-image">
+            <%= attachment_image_tag d, :dam_image, size: "120x70", format: 'jpeg', fallback: "dam_no_image.jpeg", class:"dam-index-image-self" %>
+          </td>
+          <td><%= d.id %></td>
+          <td><%= d.prefecture.region.name %>地方</td>
+          <td><%= d.prefecture.name %></td>
+          <td>
+            <%= link_to dam_path(d) do %>
+              <%= d.name %>
+            <% end %>
+          </td>
+          <td><%= d.name_kana %></td>
+          <td><%= d.constructor %></td>
+          <td>
+            <div>
+              <%= link_to 'EDIT', edit_dam_path(d), class:"btn btn-xs btn-primary dam-index-btn-self" %>
+            </div>
+            <div>
+              <%= link_to 'DELETE', dam_path(d), method: :delete, "data-confirm" => "本当に削除しますか?", class:"btn btn-xs btn-danger dam-index-btn-self" %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -24,9 +24,16 @@ class DamsController < ApplicationController
   end
 
   def index
-    @dams = Dam.all
     @dams_prefecture = Dam.order(prefecture_id: "ASC")
     @dams_kana = Dam.order :name_kana
+
+    if params[:search]
+      #検索用
+      @dams = Dam.page(params[:page]).where('name LIKE ? OR name_kana LIKE ? OR address LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
+    else
+      #name_kana 並び替え（50音順）
+      @dams = Dam.page(params[:page]).order :name_kana
+    end
   end
 
   def show
