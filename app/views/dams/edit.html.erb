@@ -1,83 +1,78 @@
+<%= render 'cards/alert' %>
 <%= render 'layouts/header' %>
-<h2>ダム編集</h2>
 
-<% @dam.errors.full_messages.each do |e| %>
-  <%= e %>
-<% end %>
+<h2 class="dam-edit-title">ダム情報編集</h2>
 
-<div class="dam-new-form">
+<div class="dam-edit-form">
   <%= form_for (@dam) do |f| %>
-    <div class="dam-new-form-half">
-      <div class="region-area-dam">
+    <div class="dam-edit-form-half-left">
+      <div class="region-area-dam dam-edit-field">
         ■<%= f.label :地域 %><br>
         <%= collection_select :dam, :region_id, Region.all, :id, :name %>
       </div>
 
-      <div class="prefecture-area-dam">
+      <div class="prefecture-area-dam dam-edit-field">
         <%= render partial: 'select_prefecture_for_dam', locals: {region_id: Region.first.id} %>
       </div>
 
-      <div>
+      <div class="dam-edit-field">
         ■<%= f.label :name %><br>
         <%= f.text_field :name %>
       </div>
 
-      <div>
+      <div class="dam-edit-field">
         ■<%= f.label :name_kana %><br>
         <%= f.text_field :name_kana %>
       </div>
 
-      <div>
+      <div class="dam-edit-field">
         ■<%= f.label :postal_code %><br>
         〒<%= f.text_field :postal_code %>
       </div>
 
-      <div>
+      <div class="dam-edit-field">
         ■<%= f.label :address %><br>
         <%= f.text_field :address %>
       </div>
 
-      <div>
+      <div class="dam-edit-field">
         ■<%= f.label :river %><br>
         <%= f.text_field :river %>
       </div>
 
-      <div>
+      <div class="dam-edit-field">
         ■<%= f.label :dam_type %><br>
         <%= f.select :dam_type, Dam.dam_types.keys.to_a, {} %>
       </div>
 
-      <div>
+      <div class="dam-edit-field">
         ■<%= f.label :gate %><br>
         <%= f.text_field :gate %>
       </div>
 
-      <div>
+      <div class="dam-edit-field">
         ■<%= f.label :height_and_length %><br>
         <%= f.text_field :height %>m/<%= f.text_field :length %>m
       </div>
 
-      <div>
+      <div class="dam-edit-field">
         ■<%= f.label :volume %><br>
         <%= f.text_field :volume %>万㎥
       </div>
-
-      <div>
-        ■<%= f.label :ダム写真 %><br>
-        <%= f.attachment_field :dam_image %>
-      </div>
     </div>
-    <div class="dam-new-form-half clearfix">
-      <div>
+    <div class="dam-edit-form-half-right clearfix">
+      <div class="dam-edit-field">
         ■<%= f.label :purpose %><br>
         <%= f.text_area :purpose %>
       </div>
-      <div>
-        <h4>purpose table</h4>
-        <table class= "table dams-new-table">
+
+      <div class="dam-edit-field">
+        <h4>目的一覧</h4>
+        <table class= "table dam-edit-table">
           <tr>
             <th>F</th>
             <td>洪水調節</td>
+          </tr>
           <tr>
             <th>N</th>
             <td>流水の正常な機能の維持</td>
@@ -101,19 +96,24 @@
         </table>
       </div>
 
-      <div>
+      <div class="dam-edit-field">
         ■<%= f.label :constructor %><br>
         <%= f.text_field :constructor %>
       </div>
 
-      <div>
+      <div class="dam-edit-field">
         ■<%= f.label :construction %><br>
         着工年<%= f.text_field :start_of_construction %><br>完成年<%= f.text_field :end_of_construction %>年
       </div>
-    </div>
-    <div class= "dams-new-form-submit">
-      <%= f.submit 'Update DAM！', class:"btn btn-ms btn-success dams-new-form-submit-in" %>
+
+      <div class="dam-edit-field">
+        ■<%= f.label :ダム写真 %><br>
+        <%= f.attachment_field :dam_image %>
+      </div>
     </div>
 
+    <div class= "dam-edit-form-submit">
+      <%= f.submit 'Update DAM！', class:"btn btn-ms btn-success dam-edit-form-submit-self" %>
+    </div>
   <% end %>
 </div>

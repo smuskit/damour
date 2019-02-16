@@ -4,7 +4,7 @@
 <!--検索フォーム　prefecture-showのcss転用-->
 <div class="dam-index-search-form">
   <%= form_tag(dams_path, :method => 'get') do %>
-    <%= text_field_tag :search, "", placeholder:"ダム名，地名で検索", class:"dam-index-search-form-self" %>
+    <%= text_field_tag :search, "", placeholder:"ダム名，かな，住所検索", class:"dam-index-search-form-self" %>
     <%= submit_tag 'Search', :name => nil, class:"btn btn-sm btn-success" %>
   <% end %>
 </div>

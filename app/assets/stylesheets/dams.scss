@@ -222,6 +222,7 @@ background-position:50% 62.5%;
 
 
 
+
 /* new */
 
 .dam-new-form {
@@ -250,7 +251,7 @@ background-position:50% 62.5%;
   margin: 0 auto;
 }
 
-.dams-new-form-submit-in {
+.dams-new-form-submit-self {
   width: 80%;
   font-size: 20px;
 }
@@ -553,5 +554,55 @@ background-position:50% 62.5%;
 
 .comment-more-link {
   text-align: center;
+  margin-top: 30px;
+}
+
+
+
+
+/* edit */
+
+.dam-edit-title {
+  text-align: center;
+}
+
+.dam-edit-form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.dam-edit-form-half-left {
+  float: left;
+  width: 60%;
+}
+
+.dam-edit-form-half-right {
+  float: left;
+  width: 40%;
+}
+
+.dam-edit-field {
+  margin-top: 10px;
+}
+
+.dam-edit-table {
+  th {
+    width: 20%;
+    text-align: center;
+  }
+  td {
+    width: 60%;
+  }
+}
+
+.dam-edit-form-submit {
+  width: 80%;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.dam-edit-form-submit-self {
+  width: 80%;
+  font-size: 20px;
   margin-top: 30px;
 }
