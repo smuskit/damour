@@ -11,7 +11,35 @@
 }
 
 .facility-index-form {
-  width: 20%;
-  padding-left: 20px;
+  width: 22%;
   float: left;
+  background-color: #fff;
+  padding: 20px 0;
+  
+}
+
+.facility-index-title {
+  text-align: center;
+}
+
+.facility-index-form-main {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.facility-index-form-field {
+  margin: 10px 0 0 40px;
+}
+
+.facility-index-example-text {
+  font-size: 12px;
+}
+
+.facility-index-submit {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.facility-index-submit-self {
+  width: 50%;
 }
