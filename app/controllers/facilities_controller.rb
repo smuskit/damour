@@ -16,8 +16,14 @@ class FacilitiesController < ApplicationController
 
   def index
     @facility = Facility.new
-    # 50音順
-    @facilities = Facility.all.order :name_kana
+
+    if params[:search]
+      #検索用
+      @facilities = Facility.page(params[:page]).where('name LIKE ? OR name_kana LIKE ? OR address LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
+    else
+      #name_kana 並び替え（50音順）
+      @facilities = Facility.page(params[:page]).order :name_kana
+    end
   end
 
   def show

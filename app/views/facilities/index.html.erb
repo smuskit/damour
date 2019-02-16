@@ -3,7 +3,21 @@
 <div class="facility-index">
   <div class="facility-index-body">
 
-    <h4>カード配布場所一覧</h4>
+
+<h3 class="facility-index-title">カード配布場所一覧</h3>
+
+<!--検索フォーム-->
+<div class="facility-index-search-form">
+  <%= form_tag(facilities_path, :method => 'get') do %>
+    <%= text_field_tag :search, "", placeholder:"施設名，かな，住所検索", class:"facility-index-search-form-self" %>
+    <%= submit_tag 'Search', :name => nil, class:"btn btn-sm btn-warning" %>
+  <% end %>
+</div>
+<!--検索フォーム-->
+
+    <div class="facility-index-paginate">
+      <%= paginate @facilities, class: "paginate" %>
+    </div>
 
     <table class='table table-hover table-inverse table-striped facility-index-table'>
       <thead>
@@ -51,61 +65,64 @@
         <% end %>
       </tbody>
     </table>
+
+    <div class="dam-index-paginate">
+      <%= paginate @facilities, class: "paginate" %>
+    </div>
+
   </div>
-
   <div class="facility-index-form">
-
     <div class="facility-index-title"><h4>カード配布場所登録</h4></div>
+      <div class="facility-index-form-main">
+        <%= form_for(@facility) do |f| %>
 
-    <div class="facility-index-form-main">
-      <%= form_for(@facility) do |f| %>
+          <div class="facility-index-form-field">
+            ■<%= f.label :配布場所名 %><br>
+            <%= f.text_field :name, class:"" %>
+          </div>
 
-        <div class="facility-index-form-field">
-          ■<%= f.label :配布場所名 %><br>
-          <%= f.text_field :name, class:"" %>
-        </div>
+          <div class="facility-index-form-field">
+            ■<%= f.label :配布場所名かな %><br>
+            <%= f.text_field :name_kana, class:"" %>
+          </div>
 
-        <div class="facility-index-form-field">
-          ■<%= f.label :配布場所名かな %><br>
-          <%= f.text_field :name_kana, class:"" %>
-        </div>
+          <div class="facility-index-form-field">
+            ◽︎<%= f.label :住所 %><br>
+            <span class="facility-index-example-text">例：東京都港区南青山1-1-1</span><br>
+            <%= f.text_field :address, class:"" %>
+          </div>
 
-        <div class="facility-index-form-field">
-          ◽︎<%= f.label :住所 %><br>
-          <span class="facility-index-example-text">例：東京都港区南青山1-1-1</span><br>
-          <%= f.text_field :address, class:"" %>
-        </div>
+          <div class="facility-index-form-field">
+            ■<%= f.label :営業開始時間 %><br>
+            <%= f.time_field :opening_hours, class:"" %>時
+          </div>
 
-        <div class="facility-index-form-field">
-          ■<%= f.label :営業開始時間 %><br>
-          <%= f.time_field :opening_hours, class:"" %>時
-        </div>
+          <div class="facility-index-form-field">
+            ■<%= f.label :営業終了時間 %><br>
+            <%= f.time_field :closing_hours, class:"" %>時
+          </div>
 
-        <div class="facility-index-form-field">
-          ■<%= f.label :営業終了時間 %><br>
-          <%= f.time_field :closing_hours, class:"" %>時
-        </div>
+          <div class="facility-index-form-field">
+            ■<%= f.label :定休日 %><br>
+            <span class="facility-index-example-text">例：「土・日</span>」<br>
+            <%= f.text_field :holiday, class:"" %>曜日
+          </div>
 
-        <div class="facility-index-form-field">
-          ■<%= f.label :定休日 %><br>
-          <span class="facility-index-example-text">例：「土・日</span>」<br>
-          <%= f.text_field :holiday, class:"" %>曜日
-        </div>
+          <div class="facility-index-form-field">
+            ■<%= f.label :営業期間 %><br>
+            <span class="facility-index-example-text">例：「1月第3月曜日〜10月末」</span><br>
+            <%= f.text_field :business_period, class:"" %>
+          </div>
 
-        <div class="facility-index-form-field">
-          ■<%= f.label :営業期間 %><br>
-          <span class="facility-index-example-text">例：「1月第3月曜日〜10月末」</span><br>
-          <%= f.text_field :business_period, class:"" %>
-        </div>
-
-        <div class="facility-index-form-field">
-          ■<%= f.label :備考 %><br>
-          <%= f.text_area :comment, class:"" %>
-        </div>
-        <div class="facility-index-submit">
-          <%= f.submit '登録', class:"btn btn-sm btn-primary facility-index-submit-self"%>
-        </div>
-      <% end %>
+          <div class="facility-index-form-field">
+            ■<%= f.label :備考 %><br>
+            <%= f.text_area :comment, class:"" %>
+          </div>
+          <div class="facility-index-submit">
+            <%= f.submit '登録', class:"btn btn-sm btn-primary facility-index-submit-self"%>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -2,18 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* inde */
+/* index */
 
 .facility-index {
 }
 
-.facility-index-body {
-  margin-left: 20px;
-  width: 72%;
-  float: left;
+.facility-index-title {
+  margin-top: 30px;
+  text-align: center;
 }
 
-.facility-index-table {
+.facility-index-search-form {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.facility-index-search-form-self{
+  width: 400px;
+  height: 30px;
+}
+
+.facility-index-paginate{
+  text-align: center;
+
+}
+
+.facility-index-body {
+  margin: 0 0 50px 20px;
+  width: 72%;
+  float: left;
 }
 
 .facility-index-form {
@@ -24,10 +41,6 @@
   margin-left: 30px;
   padding: 20px 0;
   box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.4);
-}
-
-.facility-index-title {
-  text-align: center;
 }
 
 .facility-index-form-main {

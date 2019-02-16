@@ -1,16 +1,20 @@
 <%= render 'cards/alert' %>
 <%= render 'layouts/header' %>
 
-<!--検索フォーム　prefecture-showのcss転用-->
+<!--検索フォーム-->
 <div class="dam-index-search-form">
   <%= form_tag(dams_path, :method => 'get') do %>
     <%= text_field_tag :search, "", placeholder:"ダム名，かな，住所検索", class:"dam-index-search-form-self" %>
     <%= submit_tag 'Search', :name => nil, class:"btn btn-sm btn-success" %>
   <% end %>
 </div>
-<!--検索フォーム　prefecture-showのcss転用-->
+<!--検索フォーム-->
 
 <div class="dam-index">
+  <div class="dam-index-paginate">
+    <%= paginate @dams, class: "paginate" %>
+  </div>
+
   <table class='table table-striped'>
     <thead>
       <tr>
@@ -52,4 +56,8 @@
       <% end %>
     </tbody>
   </table>
+
+  <div class="dam-index-paginate">
+    <%= paginate @dams, class: "paginate" %>
+  </div>
 </div>
