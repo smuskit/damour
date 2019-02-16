@@ -2,32 +2,33 @@
 <%= render 'layouts/header' %>
 
 
-<div class="facility-show-name"><%= @facility.name %></div>
+<div class="facility-show-name">“ <%= @facility.name %> ”</div>
 
-
-<div class="facility-show-table">
-  <table class= "table table-bordered">
-    <tr>
-      <th>所在地</th>
-      <td><%= @facility.address %></td>
-    </tr>
-    <tr>
-      <th>営業時間</th>
-      <td><%= facility_simple_time(@facility.opening_hours) %> 〜 <%= facility_simple_time(@facility.closing_hours) %></td>
-    </tr>
-    <tr>
-      <th>定休日</th>
-      <td><%= @facility.holiday %></td>
-    </tr>
-    <tr>
-      <th>営業期間</th>
-      <td><%= @facility.business_period %></td>
-    </tr>
-    <tr>
-      <th>備考</th>
-      <td><%= @facility.comment %></td>
-    </tr>
-  </table>
+<div class="facility-show-table-background">
+  <div class="facility-show-table">
+    <table class= "table table-bordered">
+      <tr>
+        <th>所在地</th>
+        <td><%= @facility.address %></td>
+      </tr>
+      <tr>
+        <th>営業時間</th>
+        <td><%= facility_simple_time(@facility.opening_hours) %> 〜 <%= facility_simple_time(@facility.closing_hours) %></td>
+      </tr>
+      <tr>
+        <th>定休日</th>
+        <td><%= @facility.holiday %></td>
+      </tr>
+      <tr>
+        <th>営業期間</th>
+        <td><%= @facility.business_period %></td>
+      </tr>
+      <tr>
+        <th>備考</th>
+        <td><%= @facility.comment %></td>
+      </tr>
+    </table>
+  </div>
 </div>
 
 <div class="facility-show-map-pin"><%= image_tag('map-pin.jpeg', class:"map-pin-self")%></div>
