@@ -5,7 +5,7 @@ class FacilitiesController < ApplicationController
 
   def create
     @facility = Facility.new(facility_params)
-
+ 
     if @facility.save
       redirect_to facilities_path, flash: {key: "#{@facility.name}の情報を登録しました．"}
     else

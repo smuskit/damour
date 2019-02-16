@@ -51,3 +51,54 @@
 .facility-index-submit-self {
   width: 50%;
 }
+
+
+
+/* show */
+
+.facility-show-name {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "HiraMinPro-W6", "Hiragino Mincho Pro", serif, sans-serif;
+  margin-top: 30px;
+}
+
+
+
+.facility-show-table {
+  width: 600px;
+  margin: 30px auto;
+  background-color: #fff;
+}
+
+.map-pin-self {
+  width: 50px;
+  height: 50px;
+}
+
+.facility-show-map-pin {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.facility-show-map-title {
+  list-style: none;
+  text-align: center;
+  color: rgb(197, 162, 71);
+  font-size: 20px;
+  font-family: "HiraMinPro-W6", "Hiragino Mincho Pro", serif, sans-serif;
+  margin: 10px 0 30px 0;
+}
+
+.facility-show-map {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.facility-show-map-self {
+  width: 800px;
+  height: 400px;
+  text-align: center;
+}
+
