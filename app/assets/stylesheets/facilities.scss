@@ -4,18 +4,26 @@
 
 /* index */
 
+.facility-index {
+}
+
 .facility-index-body {
-  width: 75%;
   margin-left: 20px;
+  width: 72%;
   float: left;
 }
 
+.facility-index-table {
+}
+
 .facility-index-form {
+  right: 0;
   width: 22%;
   float: left;
   background-color: #fff;
+  margin-left: 30px;
   padding: 20px 0;
-  
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.4);
 }
 
 .facility-index-title {
