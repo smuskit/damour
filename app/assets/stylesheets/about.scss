@@ -179,9 +179,10 @@
   font-size: 12px;
 }
 
-.about-welcome {
-  margin: 400px 0 100px 0 ;
+
+.about-welcome-content {
   background-color: rgba(0, 0, 0, 0.2);
+  margin: 450px 0 100px 0 ;
   border-radius: 20px;
   padding: 40px;
 }
@@ -189,7 +190,9 @@
 .about-welcome-title{
   font-size: 40px;
   padding-bottom: 20px;
+  margin-bottom: 50px;
   line-height: 120px;
+  border-bottom: 4px double #BDBDBD;
 }
 
 .about-welcome-text p {
@@ -225,9 +228,10 @@
 .to-about-top {
   color: #fff;
   font-size: 40px;
+  text-align: right;
 }
 .to-about-top-self {
-  color: #fff;
+  color: #E6E6E6;
 }
 
 
