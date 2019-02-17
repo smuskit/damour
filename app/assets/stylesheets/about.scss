@@ -1,0 +1,231 @@
+
+/* about */
+
+  /* 背景 */
+.about-background {
+  background-image: image-url('about.jpeg');
+
+  /* 画像の位置は常に中央 */
+  background-position: center center;
+
+  /* 画像を繰り返さない */
+  background-repeat: no-repeat;
+
+  /* コンテンツのheightが画像より高くなっても固定 */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based on its container's size */
+  background-size: cover;
+
+  /* Pick a solid background color that will be displayed while the background image is loading */
+  background-color:#464646;
+
+  /* SHORTHAND CSS NOTATION
+   * background: url(background-photo.jpg) center center cover no-repeat fixed;
+   */
+}
+
+  /* For mobile devices */
+@media only screen and (max-width: 767px) {
+  .about-body {
+    /* The file size of this background image is 93% smaller
+     * to improve page load speed on mobile internet connections */
+    background-image: image-url('about.jpg');
+  }
+  }
+
+
+
+  /*nav*/
+
+.about-navbar {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 60px;
+  z-index: 3;
+  position: fixed;
+}
+
+  .about-inner {
+    position: relative;
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  .about-nav-link-self {
+    color: #000;
+    background-color: #FFF;
+    border-radius: 3px;
+  }
+
+  .about-nav-link-self:hover {
+    color: #FFF;
+    background-color: #000;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+
+.about-navbar a {
+  display: inline-block;
+  border: 1px solid #fff;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 2px 15px;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+
+  /* body */
+
+.about-body, .about-container {
+  height: 100%;
+}
+
+.about-body, .about-text-h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+.about-body {
+  font-family: "Cantarell", sans-serif;
+  color: #ffffff;
+}
+
+.about-container {
+  display: table;
+  padding-top: 80px;
+  width: 100%;
+}
+
+.about-content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding-top: 70px;
+
+  h1 {
+    color: #efecec;
+    text-transform: uppercase;
+    font-size: 40px;
+    line-height: 120px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  h3 {
+    margin: 50px auto;
+    line-height: 23px;
+  }
+
+  h4 {
+    padding-top: 30px;
+  }
+}
+
+.about-button-box {
+  margin: 100px 0 100px 0;
+}
+
+.about-button {
+  display: inline-block;
+  padding: 6px 10px;
+  color: #cafaea;
+  border: 1px solid #cafaea;
+  border-radius: 3px;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.about-button-text {
+  padding-top: 10px;
+  font-size: 12px;
+}
+
+.about-welcome {
+  padding: 200px 0;
+}
+
+
+/* スクロールテキスト */
+
+.about-scroll-box {
+  display: block;
+  max-width: 500px;
+  margin: 15px auto;
+  padding: 15px;
+  background-color: rgba(210, 240, 255, 0.5);
+  color: #000;
+  font-family: "Kotta One", serif;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+#more-content {
+  display: none;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+/* Media Queries */
+@media only screen and (max-width: 340px) {
+
+  .about-container {
+    position: relative;
+    display: block;
+    float: left;
+    vertical-align: baseline;
+    margin: 0 auto;
+    padding: 80px 0 0 0;
+  }
+
+  #more-content {
+    float: left;
+    margin-right: 10px;
+  }
+
+  .about-body .about-text-h1 {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .about-content, .about-scroll-box {
+    display: inline;
+    margin: 0 auto;
+    padding-top: 80px;
+    vertical-align: baseline;
+  }
+
+  .about-scroll-box {
+    width: 150px;
+    margin: 15px auto;
+    font-size: 16px;
+    line-height: 21px;
+    background-color: transparent;
+  }
+
+  .about-sub-title {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .about-button, p {
+    max-width: 150px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .about-body, .about-container {
+    height: auto;
+  }
+}
