@@ -1,6 +1,6 @@
 class InquiryMailer < ApplicationMailer
   default from: "damour@example.com"   # 送信元アドレス
-  default to: "ENV['ADDRESS_KEY']"     # 送信先アドレス
+  default to: ENV['ADDRESS_KEY']     # 送信先アドレス
 
   def received_email(inquiry)
     @inquiry = inquiry
