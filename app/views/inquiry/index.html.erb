@@ -1,33 +1,39 @@
 <%= render 'layouts/header' %>
-<%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
-  <div class="page-header">
-    <h1>お問い合わせ</h1>
-  </div>
+<div class="inquiry-index">
+  <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
 
-  <% if @inquiry.errors.any? %>
-    <div class="alert alert-danger" role="alert">
-      <strong>入力内容にエラーがあります</strong>
-      <ul>
-        <% @inquiry.errors.each do |attr, msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+      <h2 class="inquiry-index-title">お問い合わせフォーム</h2>
+
+
+    <% if @inquiry.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <strong>入力内容にエラーがあります</strong>
+        <ul>
+          <% @inquiry.errors.each do |attr, msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="inquiry-index-table">
+      <table rules="none" class="table">
+        <tr>
+          <th class="inquiry-index-form-label">名前<span class="text-danger">（必須）</span></th>
+          <td class="inquiry-index-form-field"><%= f.text_field :name, class:"inquiry-index-form-name-self" %></td>
+        </tr>
+        <tr>
+          <th class="inquiry-index-form-label">メールアドレス<span class="text-danger">（必須）</span></th>
+          <td class="inquiry-index-form-field"><%= f.text_field :email, class:"inquiry-index-form-email-self" %></td>
+        </tr>
+        <tr>
+          <th class="inquiry-index-form-label">お問い合わせ内容</th>
+          <td class="inquiry-index-form-field"><%= f.text_area :message, class:"inquiry-index-form-message-self" %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="inquiry-index-form-submit">
+      <%= f.submit '確認', class: 'btn btn-primary inquiry-index-form-submit-self' %>
     </div>
   <% end %>
-
-  <table class="table">
-    <tr>
-      <th>名前<span class="text-danger">（必須）</span></th>
-      <td><%= f.text_field :name %></td>
-    </tr>
-    <tr>
-      <th>メールアドレス<span class="text-danger">（必須）</span></th>
-      <td><%= f.text_field :email %></td>
-    </tr>
-    <tr>
-      <th>お問い合わせ内容</th>
-      <td><%= f.text_area :message %></td>
-    </tr>
-  </table>
-  <%= f.submit '確認', class: 'btn btn-primary' %>
-<% end %>
+</div>

@@ -1,3 +1,56 @@
 // Place all the styles related to the inquiry controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* index */
+
+.inquiry-index-title {
+  text-align: center;
+}
+
+.inquiry-index {
+  margin: 0 auto;
+}
+
+.inquiry-index-table {
+  background-color: #fff;
+  width: 60%;
+  padding: 20px;
+  margin : 30px auto;
+  border-radius: 10px;
+}
+
+.table, th, td {
+  border-style:none!important;
+}
+
+.inquiry-index-form-label {
+  width: 30%;
+  margin-top: 10px;
+}
+
+.inquiry-index-form-field {
+  width: 70%;
+}
+
+.inquiry-index-form-name-self, .inquiry-index-form-email-self, .inquiry-index-form-message-self {
+  margin-left: 50px;
+  border-radius: 5px;
+}
+
+.inquiry-index-form-email-self {
+  width: 60%;
+}
+
+.inquiry-index-form-message-self {
+  width: 80%;
+  height: 150px;
+}
+
+.inquiry-index-form-submit {
+  text-align: center;
+}
+
+.inquiry-index-form-submit-self {
+  width: 20%;
+}
