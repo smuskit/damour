@@ -137,7 +137,6 @@
   position: fixed;
   display: inline-block;
   width: 1500px;
-  height: 1500px;
   background-color: rgba(255,255,255,0.2);
 }
 
@@ -237,11 +236,14 @@
 
 /* カード情報編集用　ここまで */
 
+
+
 .tabcontent{
     padding: 20px;
     background-color: #FFF;
-    height: 1400px;
+    border-radius: 0 10px 10px 10px;
 }
+
 
 
     /*タブ内 カード一覧*/
@@ -295,8 +297,9 @@
 .new-card-form-background {
     position: fixed;
     background-color: #000;
-    height: 515px;
-    width: 325px;
+    padding: 5px;
+    width: 24%;
+    height: 530px;
 }
 
 .new-card-form-main {
@@ -304,13 +307,15 @@
     padding: 20px;
     margin: 10px;
     background-color: #FFF;
+    width: 22%;
+    height: 500px;
 }
 
 .new-card-form-pencil {
     width: 30px;
     position: absolute;
     top: -31px;
-    right: 75px;
+    right: 88px;
 }
 
 .new-card-form-pencil-image {

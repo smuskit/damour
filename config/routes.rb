@@ -18,7 +18,6 @@ Rails.application.routes.draw do
 
   resources :admins, only: [:show, :edit, :update, :destroy]
 
-  get    '/users/faq',    to: 'users#faq'
   get    '/users/about',    to: 'users#about'
   get    '/users/index',    to: 'users#index'
   resources :users, only: [:show, :edit, :update, :destroy]
