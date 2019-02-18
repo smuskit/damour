@@ -4,7 +4,6 @@
 
       <h2 class="inquiry-index-title">お問い合わせフォーム</h2>
 
-
     <% if @inquiry.errors.any? %>
       <div class="alert alert-danger" role="alert">
         <strong>入力内容にエラーがあります</strong>
@@ -17,23 +16,35 @@
     <% end %>
 
     <div class="inquiry-index-table">
-      <table rules="none" class="table">
+      <table class="table">
         <tr>
           <th class="inquiry-index-form-label">名前<span class="text-danger">（必須）</span></th>
-          <td class="inquiry-index-form-field"><%= f.text_field :name, class:"inquiry-index-form-name-self" %></td>
+          <td class="inquiry-index-form-field">
+            <div>
+              <%= f.text_field :name, class:"inquiry-index-form-name-self" %>
+            </div>
+          </td>
         </tr>
         <tr>
           <th class="inquiry-index-form-label">メールアドレス<span class="text-danger">（必須）</span></th>
-          <td class="inquiry-index-form-field"><%= f.text_field :email, class:"inquiry-index-form-email-self" %></td>
+          <td class="inquiry-index-form-field">
+            <div>
+              <%= f.text_field :email, class:"inquiry-index-form-email-self" %>
+            </div>
+          </td>
         </tr>
         <tr>
-          <th class="inquiry-index-form-label">お問い合わせ内容</th>
-          <td class="inquiry-index-form-field"><%= f.text_area :message, class:"inquiry-index-form-message-self" %></td>
+          <th class="inquiry-index-form-label">お問い合わせ内容<span class="text-danger">（必須）</span></th>
+          <td class="inquiry-index-form-field">
+            <div>
+              <%= f.text_area :message, class:"inquiry-index-form-message-self" %>
+            </div>
+          </td>
         </tr>
       </table>
     </div>
     <div class="inquiry-index-form-submit">
-      <%= f.submit '確認', class: 'btn btn-primary inquiry-index-form-submit-self' %>
+      <%= f.submit '確認画面へ', class: 'btn btn-default inquiry-index-form-submit-self' %>
     </div>
   <% end %>
 </div>
