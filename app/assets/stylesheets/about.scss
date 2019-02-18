@@ -136,6 +136,11 @@
 
   h4 {
     padding-top: 30px;
+    span {
+      font-size: 22px;
+      font-weight: 600;
+      background: linear-gradient(transparent 80%, red 50%);
+    }
   }
 }
 
@@ -187,6 +192,15 @@
   padding: 40px;
 }
 
+.about-damcard-image {
+}
+
+.about-damcard-image-self {
+  width: 200px;
+  border-radius: 8px;
+  transform: rotate(-90deg);
+}
+
 .about-welcome-title{
   font-size: 40px;
   padding-bottom: 20px;
@@ -201,6 +215,10 @@
   span {
     color: #F4FA58;
   }
+}
+
+.about-welcome-text-line-1 {
+  padding-top: 30px;
 }
 
 .about-welcome-text-line-2 {
@@ -238,16 +256,66 @@
 
 /* スクロールテキスト */
 
+.about-scroll-title {
+  font-size: 20px;
+}
+
+
 .about-scroll-box {
   display: block;
-  max-width: 500px;
+  max-width: 600px;
   margin: 15px auto;
   padding: 15px;
   background-color: rgba(210, 240, 255, 0.5);
   color: #000;
   font-family: "Kotta One", serif;
-  font-size: 22px;
+  font-size: 15px;
   line-height: 28px;
+  p {
+    line-height: 25px;
+  }
+}
+
+.about-scroll-box-title {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 30px 0;
+}
+
+.about-scroll-box-text1 a {
+  text-decoration: underline;
+}
+
+.scroll-image-1 {
+  margin: 40px 0;
+}
+
+.scroll-image-1-self {
+  width: 400px;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.3);
+}
+
+.about-scroll-box-text2 span {
+  text-decoration: underline;
+}
+
+.scroll-image-2 {
+  margin: 40px 0;
+  position: relative;
+}
+
+.scroll-image-2-self {
+  width: 400px;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-image-2-figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 30px;
+  border: 2px solid yellow;
 }
 
 #more-content {

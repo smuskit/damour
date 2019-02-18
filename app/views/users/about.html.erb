@@ -15,7 +15,7 @@
     <div class="about-content">
       <h3 class="about-sub-title">....突然ですが，質問です．</h3>
       <h1 class="about-text-h1">「ダムカード」って知っていますか？</h1>
-      <h4 class="about-text-h4">初耳の方は，まずは <a href="#to-about-welcome">『ようこそ、ダムの世界へ』</a> からどうぞ！</h4>
+      <h4 class="about-text-h4"><span>初耳の方</span> は，まずは <a href="#to-about-welcome">『ようこそ、ダムの世界へ』</a> からどうぞ！</h4>
       <p>（既にご存知の方は，下のボタンから「サイトの使い方」をご覧ください）</p>
 
       <div class="about-button-box" id="to-about-button">
@@ -26,23 +26,29 @@
 
       <!-- スクロールバー -->
       <div id="more-content">
-        <p>サイトの使い方</p>
-        <div class="about-scroll-box">
-        Creating a goal-driven statement of what a product or application does results in better product experiences.
-        It meets expectations because it is focused on solving the problem it was created to address.
-        There is power in doing one thing and it doing it very well.
-        </div>
+        <p class="about-scroll-title">サイトの使い方</p>
+        <div>
+          <div class="about-scroll-box">
+            <p class="about-scroll-box-title">① ダムを検索する</p>
+            <p class="about-scroll-box-text1"><a href="/dams/top#to-map">トップページの日本地図</a>をクリックして，都道府県別のページに入ると<br>ダムのあいまい検索ができます．（ダム名，地名，河川名など）</p>
+            <div class="scroll-image-1"><%= image_tag("scroll_image_1", class:"scroll-image-1-self")%></div>
+          </div>
 
-        <div class="about-scroll-box">
-        Creating a goal-driven statement of what a product or application does results in better product experiences.
-        It meets expectations because it is focused on solving the problem it was created to address.
-        There is power in doing one thing and it doing it very well.
-        </div>
+          <div class="about-scroll-box">
+            <p class="about-scroll-box-title">② 行きたいダムを選んで詳細をチェック</p>
+            <p class="about-scroll-box-text2">ダムの詳細ページで，アクセスマップ，口コミ見ることができます．<br>
+            ダム周辺の観光地も口コミでチェック！</p>
+            <p class="about-scroll-box-text2"><span>カードの配布場所は，都道府県別のページに記載してあります．</span></p>
+            <div class="scroll-image-2"><%= image_tag("scroll_image_2", class:"scroll-image-2-self")%></div>
+          </div>
 
-        <div class="about-scroll-box">
-        Creating a goal-driven statement of what a product or application does results in better product experiences.
-        It meets expectations because it is focused on solving the problem it was created to address.
-        There is power in doing one thing and it doing it very well.
+          <div class="about-scroll-box">
+            <p class="about-scroll-box-title">③ カードを登録</p>
+            <p class="about-scroll-box-text3">カードを手に入れたら，サイトに登録しましょう．<br>
+              ログイン後，右上に表示される「ダムカードコレクション」から<br>
+            カードの登録ができます．</p>
+            <div class="scroll-image-1"><%= image_tag("scroll_image_3", class:"scroll-image-1-self")%></div>
+          </div>
         </div>
       </div>
       <div class="about-welcome">
@@ -51,31 +57,34 @@
           <p class="about-welcome-title">ようこそ、ダムの世界へ<p>
 
           <div class="about-welcome-text">
-            <p>まずは問題です．現在日本には，いくつのダムが存在するでしょうか？</p>
+            <p class="about-welcome-text-line-1">まずは問題です．現在日本には，いくつのダムが存在するでしょうか？</p>
 
             <p class="about-welcome-text-line-2">答えは，約 3000基 です．</p>
 
-            <p>意外と多くて，驚きませんか？</p>
+            <p>そんなにあるのって驚きませんか？</p>
 
-            <p>（ちなみに，ダムの単位は「基」です）</p>
+            <p>（ちなみに　ダムの単位は「基」です）</p>
 
-            <p class="about-welcome-text-line-5">そのうちのいくつかのダムでは，「ダムカード」というものを作って</p>
-            <p>ダムを訪問した人に配布しています．</p>
+            <p class="about-welcome-text-line-5">そのうちのいくつかのダムでは「ダムカード」というものを作って</p>
+            <p>ダムを訪問した人に無料で配布しています．</p>
 
-            <p class="about-welcome-text-line-7">それは，基本的に <span>「1人1枚」</span>，<span>「現地」</span>でしか手に入れることができません．</p>
+            <div class="about-damcard-image"><%= image_tag("about_damcard.jpeg", class:"about-damcard-image-self")%></div>
 
-            <p>ダムカードを手に入れることは，そのダムを訪れた証となり，</p>
-            <p>自分のコレクションの1つになります．</p>
+            <p class="about-welcome-text-line-7">ただしそれは　基本的に <span>「1人1枚」</span> <span>「現地」</span>でしか手に入りません．</p>
 
-            <p class="about-welcome-text-line-10">このサイトの目的は，</p>
-            <p class="about-welcome-text-line-11"><span>みなさんが，手に入れたダムカードをコレクションしたり，</span></p>
+            <p>ダムカードを手に入れることは　そのダムを訪れた証となり</p>
+            <p>あなたの貴重なコレクションになります．</p>
+
+            <p class="about-welcome-text-line-10">このサイトの目的は</p>
+            <p class="about-welcome-text-line-11"><span>みなさんが，手に入れたダムカードをコレクションしたり</span></p>
             <p class="about-welcome-text-line-12"><span>未だ訪れたことのない美しいダムを探したりするための役に立つこと</span>です．</p>
 
-            <p class="about-welcome-text-line-13">あなたが緑に覆われた山中を歩いている時，</p>
-            <p class="about-welcome-text-line-14">目の前に現れる，その雄大で凛とした姿</span>に，</p>
+            <p class="about-welcome-text-line-13">あなたが緑に覆われた山中を歩いている時</p>
+            <p class="about-welcome-text-line-14">目の前に忽然と現れる　荘厳で凛としたその巨大な人工物</span>に</p>
             <p class="about-welcome-text-line-15">きっと魅了されるはずです．</p>
 
-            <p class="about-welcome-text-line-16">さあ，全国のダムを訪れて，ダムカードをGETしましょう！</p>
+            <p class="about-welcome-text-line-16">
+            ぜひ，全国のダムを訪れて　ダムカードをGETしましょう！</p>
             <div class="to-about-top"><a href="#"><i class="fas fa-chevron-circle-up to-about-top-self"></i></a></div>
           </div>
         </div>
