@@ -5,16 +5,15 @@
       <div class="edit-card-form-eraser"><%= image_tag("eraser.jpeg", class:"new-card-form-eraser-image")%></div>
       <%= form_for(@card_edit, remote: true, :url => {:action => 'update'}) do |f| %>
 
-        <% if @card_edit.errors.any? %>
-
-          <div id="error_explanation">
-            <ul>
-              <% @card_edit.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
+      <% if @card_edit.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% @card_edit.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
         <div class="region-area">
           ■<%= f.label :地域 %><br>
@@ -26,7 +25,7 @@
         </div>
 
         <div class="new-card-form-item">
-          ■<%= f.label :ダム名 %><br>
+          ■<%= f.label :ダム名 %><span class="text-danger">（必須）</span><br>
           <%= f.text_field :dam_name, class:"" %>
         </div>
 
@@ -44,7 +43,7 @@
         </div>
 
         <div class="new-card-form-image">
-          ■<%= f.label :カードの写真 %><br>
+          ■<%= f.label :カードの写真 %> (任意)<br>
           <%= f.attachment_field :card_image, class:"" %>
         </div>
 

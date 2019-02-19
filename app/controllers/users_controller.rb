@@ -21,8 +21,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
+      flash[:success] = "#{@user.name}さんのユーザ情報を更新しました．"
       redirect_to user_path(@user.id)
     else
+      flash[:destroy] = "入力に誤りがあります．"
       render 'edit'
     end
   end

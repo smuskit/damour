@@ -10,14 +10,25 @@ class CardsController < ApplicationController
   end
 
   def create
-    card = Card.new(card_params)
-    card.user_id = current_user.id
-    if card.save
-      flash[:success] = "「#{card.dam_name}」のカードを「#{card.region.name}」に追加しました！"
-      redirect_to card_path(card.id)
+    @card = Card.new(card_params)
+    @card.user_id = current_user.id
+    if @card.save
+      flash[:success] = "「#{@card.dam_name}」のカードを「#{@card.region.name}」に追加しました！"
+      redirect_to card_path(@card.id)
     else
       flash[:danger] = 'カードの投稿に失敗しました'
-      render 'show'
+      @user = User.find(current_user.id)
+      @cards = @user.cards.page(params[:page_0]).reverse_order
+      @cards_hokkaido = @user.cards.page(params[:page_1]).where(region_id: 1).reverse_order
+      @cards_tohoku = @user.cards.page(params[:page_2]).where(region_id: 2).reverse_order
+      @cards_kanto = @user.cards.page(params[:page_3]).where(region_id: 3).reverse_order
+      @cards_hokuriku = @user.cards.page(params[:page_4]).where(region_id: 4).reverse_order
+      @cards_tokai = @user.cards.page(params[:page_5]).where(region_id: 5).reverse_order
+      @cards_kinki = @user.cards.page(params[:page_6]).where(region_id: 6).reverse_order
+      @cards_chugoku = @user.cards.page(params[:page_7]).where(region_id: 7).reverse_order
+      @cards_shikoku = @user.cards.page(params[:page_8]).where(region_id: 8).reverse_order
+      @cards_kyushu = @user.cards.page(params[:page_9]).where(region_id: 9).reverse_order
+      render 'users/cardlist'
     end
   end
 
@@ -40,11 +51,9 @@ class CardsController < ApplicationController
         format.html { redirect_to @user }
         format.js { render js: "window.location = '#{card_path(@card)}'" }
       else
-        @card.errors.each do |name, msg|
-          flash.now[name] = msg
-        end
-        format.html { redirect_to @card }
-        format.js { render partial: "shared/message", status: :unprocessable_entity }
+        format.html { render :edit }
+        format.json { render json: @card.errors, status: :unprocessable_entity }
+        format.js { @status = "fail" }
       end
     end
   end

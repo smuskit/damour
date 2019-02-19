@@ -1,11 +1,24 @@
+
 <%= render 'cards/alert' %>
 
 <div class="user-show-back">
   <%= link_to '<< 戻る', user_path(@user), class:"btn btn-lg btn-default user-show-back-self" %>
 </div>
 
+
+
 <li class="user-show-title">ユーザ情報編集</li>
 <div class="user-show-background">
+
+  <% if @user.errors.any? %>  <!-- form forの@bookに合わせる -->
+    <div id="error_explanation" class="alert-danger">
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="user-edit-image">
     <%= attachment_image_tag @user, :profile_image, size: "220x220", class:"user-show-image-self", fallback: "no_image.jpeg" %>

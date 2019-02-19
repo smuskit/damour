@@ -3,17 +3,6 @@
 
       <%= form_for(card) do |f| %>
 
-        <% if @card.errors.any? %>
-
-          <div id="error_explanation">
-            <ul>
-              <% card.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-
         <div class="region-area">
           ■<%= f.label :地域 %><br>
           <%= collection_select :card, :region_id, Region.all, :id, :name %>
@@ -24,7 +13,7 @@
         </div>
 
         <div class="new-card-form-item">
-          ■<%= f.label :ダム名 %><br>
+          ■<%= f.label :ダム名 %><span class="text-danger">（必須）</span><br>
           <%= f.text_field :dam_name, class:"" %>
         </div>
 
@@ -42,7 +31,7 @@
         </div>
 
         <div class="new-card-form-image">
-          <div>■<%= f.label :カードの写真 %>(任意)<br>
+          <div>■<%= f.label :カードの写真 %> (任意)<br>
             <%= f.attachment_field :card_image, class:"" %>
           </div>
         </div>

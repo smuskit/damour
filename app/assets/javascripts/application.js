@@ -14,7 +14,6 @@
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require rails-ujs
-//= require jquery.colorbox-min.js
 //= require turbolinks
 //= require_tree .
 
@@ -182,3 +181,8 @@ document.addEventListener("turbolinks:load", function(){
         }
     });
 });
+
+
+$(document).ready(function(){
+    $("#validate_id").validationEngine();
+  });

@@ -21,7 +21,16 @@
 
         <div class="tabcontent">
             <div id="tab01">
-              <%= render 'cards/alert' %>
+              <% if @card.errors.any? %>
+                <div class="alert alert-danger" role="alert">
+                  <strong>入力内容にエラーがあります</strong>
+                  <ul>
+                    <% @card.errors.each do |attr, msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
               <div class="card-show-pagenate crearfix">
                 <%= paginate @cards_hokkaido, param_name: 'page_1', class: "paginate" %>
               </div>
