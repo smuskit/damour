@@ -22,6 +22,10 @@
           </div>
           <div class="card-show-dam-item-ver">
             Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)
+            <!-- モーダル編集 -->
+              <%= link_to '編集', edit_card_path(c.id), remote: true, class: "btn btn-xs btn-primary" %>
+              <div class="modal fade h" id="edit-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+            <!-- モーダル編集 -->
           </div>
         </div>
       <% end %>

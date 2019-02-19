@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
 
+  before_action :correct_user, only: [:show, :edit, :update]
+
+  def correct_user
+      @user = User.find(params[:id])
+      unless @user == current_user
+        redirect_to root_path
+      end
+  end
+
   def index
     if params[:search]
       #検索用
