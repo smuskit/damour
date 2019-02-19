@@ -1,5 +1,7 @@
 class DamsController < ApplicationController
 
+  before_action :correct_admin, only: [:new, :create, :index, :edit, :update]
+
   def top
   end
 
@@ -71,12 +73,6 @@ class DamsController < ApplicationController
       else
         render action: :new
       end
-  end
-
-  def search
-  end
-
-  def management
   end
 
   private

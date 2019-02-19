@@ -35,16 +35,12 @@
         <tr>
           <td><%= u.id %></td>
           <td><%= attachment_image_tag u, :profile_image, size: "50x50", format: 'jpeg', fallback: "no_image.jpeg", class:"user-index-image" %></td>
-          <td><%= link_to user_path(u) do %>
-                <%= u.name %>
-              <% end %>
-          </td>
+          <td><%= u.name %></td>
           <td><%= u.name_kana %></td>
           <td><%= u.hundle_name %></td>
           <td><%= u.email %></td>
           <td>
-            <div><%= link_to '編集', edit_user_path(u), class:"btn btn-xs btn-primary user-index-btn-edit-self" %></div>
-            <div><%= link_to '削除', user_path(u), method: :delete, "data-confirm" => "本当に削除しますか?", class:"btn btn-xs btn-danger user-index-btn-delete-self" %></div>
+            <div><%= link_to '退会させる', user_path(u), method: :delete, "data-confirm" => "本当に退会させますか?", class:"btn btn-xs btn-danger user-index-btn-delete-self" %></div>
           </td>
         </tr>
       <% end %>

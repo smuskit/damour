@@ -1,5 +1,7 @@
 class CardsController < ApplicationController
 
+  before_action :correct_user, only: [:edit, :update]
+
   def show
     @card = Card.find(params[:id])
     # 2.times { @card.images.build }

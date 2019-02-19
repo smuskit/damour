@@ -33,8 +33,6 @@ Rails.application.routes.draw do
   resources :cards, only: [:create, :edit, :update, :destroy]
 
   get    '/dams/top/',    to: 'dams#top'
-  get    '/dams/search',    to: 'dams#search'
-  get    '/dams/management',    to: 'dams#management'
   resources :dams, only: [:new] do
     collection do
       get 'get_prefectures' #/dams/get_prefectures
