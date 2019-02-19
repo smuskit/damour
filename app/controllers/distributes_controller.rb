@@ -1,4 +1,7 @@
 class DistributesController < ApplicationController
+
+  before_action :authenticate_admin!
+  
   def index
     @distribute = Distribute.new
     @distributes = Distribute.page(params[:page]).order :dam_id

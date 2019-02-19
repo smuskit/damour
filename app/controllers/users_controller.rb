@@ -2,8 +2,6 @@ class UsersController < ApplicationController
 
   before_action :correct_user, only: [:show, :edit, :update, :cardlist]
 
-
-
   def index
     if params[:search]
       #検索用
