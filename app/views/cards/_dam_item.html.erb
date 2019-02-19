@@ -12,13 +12,21 @@
             <% else %>
               NO NAME
             <% end %>
+            <% if @cards %>
+            <% end %>
           </div>
           <div class="card-show-dam-item-image">
               <%= link_to card_path(c), class: "" do %>
                 <%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %>
               <% end %>
           </div>
-          <div class="card-show-dam-item-ver">Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)
+          <div class="card-show-dam-item-ver">
+            Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)
+            <%if%>
+            <!-- モーダル編集 -->
+              <%= link_to '編集', edit_card_path(c.id), remote: true, class: "btn btn-xs btn-primary" %>
+              <div class="modal fade h" id="edit-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+            <!-- モーダル編集 -->
           </div>
         </div>
       <% end %>

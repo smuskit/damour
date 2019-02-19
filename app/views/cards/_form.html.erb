@@ -5,16 +5,6 @@
       <div class="edit-card-form-eraser"><%= image_tag("eraser.jpeg", class:"new-card-form-eraser-image")%></div>
       <%= form_for(@card_edit, remote: true, :url => {:action => 'update'}) do |f| %>
 
-      <% if @card_edit.errors.any? %>
-        <div id="error_explanation">
-          <ul>
-            <% @card_edit.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-
         <div class="region-area">
           ■<%= f.label :地域 %><br>
           <%= collection_select :card, :region_id, Region.all, :id, :name %>
