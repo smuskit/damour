@@ -1,6 +1,6 @@
 class DamsController < ApplicationController
 
-  before_action :correct_admin, only: [:new, :create, :index, :edit, :update]
+  before_action :authenticate_admin!, except: [:top, :show]
 
   def top
   end
