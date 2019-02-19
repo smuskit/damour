@@ -3,12 +3,16 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:show, :edit, :update, :cardlist]
 
   def index
-    if params[:search]
-      #検索用
-      @users = User.page(params[:page]).where('name LIKE ? OR name_kana LIKE ? OR hundle_name LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
+    if current_admin
+      if params[:search]
+        #検索用
+        @users = User.page(params[:page]).where('name LIKE ? OR name_kana LIKE ? OR hundle_name LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
+      else
+        #name_kana 並び替え（50音順）
+        @users = User.page(params[:page]).order :name_kana
+      end
     else
-      #name_kana 並び替え（50音順）
-      @users = User.page(params[:page]).order :name_kana
+      redirect_to root_path
     end
   end
 
