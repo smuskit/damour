@@ -40,18 +40,22 @@ body{
 
 /* header */
 
+.damour-logo {
+  padding-top: 40px;
+  text-align: center;
+}
+
 .damour-title{
-  color: #000;    /* color:#c0c0c0; */
-  list-style: none;
-  font-size: 50px;
-  font-weight:100;
-  text-align:center;
-  padding-top: 30px;
+  display: inline-block;
+  margin: 20px 0 -10px 0;
+}
+
+.logo-image-self {
+  width: 60px;
 }
 
 .damour-sub-title{
   color: #000;    /* #c0c0c0; */
-  list-style: none;
   font-size: 25px;
   font-weight: 500;
   font-style: italic;
@@ -313,10 +317,6 @@ body{
   border-radius: 5px;
 }
 
-.modal-body-attachment-field-self-signup {
-}
-
-
 
 
 
@@ -324,5 +324,8 @@ body{
 /* footer */
 
 .footer{
+  position: fixed;
+  right: 30px;
+  bottom: 0;
   color: #fff;
 }

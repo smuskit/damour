@@ -2,86 +2,90 @@
 <div class="card-show-background-white"></div>
 <%= render 'layouts/header' %>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10" style="margin-left: -60px;">
+<div class="container">
+  <div class="row">
+    <div class="col-md-10" style="margin-left: -60px;">
 
-        <ul class="tabnav">
-            <li id="h"><a href="#tab01">北海道</a></li>
-            <li><a href="#tab02">東北</a></li>
-            <li><a href="#tab03">関東</a></li>
-            <li id="hk"><a href="#tab04">北陸・甲信越</a></li>
-            <li><a href="#tab05">東海</a></li>
-            <li><a href="#tab06">近畿</a></li>
-            <li><a href="#tab07">中国</a></li>
-            <li><a href="#tab08">四国</a></li>
-            <li><a href="#tab09">九州</a></li>
-            <li id="ed"><a href="#tab10">カード情報編集</a></li>
-        </ul>
+      <ul class="tabnav">
+          <li id="h"><a href="#tab01">北海道</a></li>
+          <li><a href="#tab02">東北</a></li>
+          <li><a href="#tab03">関東</a></li>
+          <li id="hk"><a href="#tab04">北陸・甲信越</a></li>
+          <li><a href="#tab05">東海</a></li>
+          <li><a href="#tab06">近畿</a></li>
+          <li><a href="#tab07">中国</a></li>
+          <li><a href="#tab08">四国</a></li>
+          <li><a href="#tab09">九州</a></li>
+          <li id="ed"><a href="#tab10">カード情報編集</a></li>
+      </ul>
 
-        <div class="tabcontent">
-            <div id="tab01">
-              <% if @card.errors.any? %>
-                <div class="alert alert-danger" role="alert">
-                  <strong>入力内容にエラーがあります</strong>
-                  <ul>
-                    <% @card.errors.each do |attr, msg| %>
-                      <li><%= msg %></li>
-                    <% end %>
-                  </ul>
-                </div>
-              <% end %>
-              <%= render 'cards/dam_item', cards: @cards_hokkaido %>
-            </div>
+      <div class="tabcontent">
+          <div id="tab01">
+            <% if @card.errors.any? %>
+              <div class="alert alert-danger" role="alert">
+                <strong>入力内容にエラーがあります</strong>
+                <ul>
+                  <% @card.errors.each do |attr, msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <%= render 'cards/dam_item', cards: @cards_hokkaido %>
+          </div>
 
-            <div id="tab02">
-              <%= render 'cards/dam_item', cards: @cards_tohoku %>
-            </div>
+          <div id="tab02">
+            <%= render 'cards/dam_item', cards: @cards_tohoku %>
+          </div>
 
-            <div id="tab03">
-              <%= render 'cards/dam_item', cards: @cards_kanto %>
-            </div>
+          <div id="tab03">
+            <%= render 'cards/dam_item', cards: @cards_kanto %>
+          </div>
 
-            <div id="tab04">
-              <%= render 'cards/dam_item', cards: @cards_hokuriku %>
-            </div>
+          <div id="tab04">
+            <%= render 'cards/dam_item', cards: @cards_hokuriku %>
+          </div>
 
-            <div id="tab05">
-              <%= render 'cards/dam_item', cards: @cards_tokai %>
-            </div>
+          <div id="tab05">
+            <%= render 'cards/dam_item', cards: @cards_tokai %>
+          </div>
 
-            <div id="tab06">
-              <%= render 'cards/dam_item', cards: @cards_kinki %>
-            </div>
+          <div id="tab06">
+            <%= render 'cards/dam_item', cards: @cards_kinki %>
+          </div>
 
-            <div id="tab07">
-              <%= render 'cards/dam_item', cards: @cards_chugoku %>
-            </div>
+          <div id="tab07">
+            <%= render 'cards/dam_item', cards: @cards_chugoku %>
+          </div>
 
-            <div id="tab08">
-              <%= render 'cards/dam_item', cards: @cards_shikoku %>
-            </div>
+          <div id="tab08">
+            <%= render 'cards/dam_item', cards: @cards_shikoku %>
+          </div>
 
-            <div id="tab09">
-              <%= render 'cards/dam_item', cards: @cards_kyushu %>
-            </div>
+          <div id="tab09">
+            <%= render 'cards/dam_item', cards: @cards_kyushu %>
+          </div>
 
-            <div id="tab10">
-              <%= render 'cards/all_dam_item', cards: @cards %>
-            </div>
-
-        </div>
+          <div id="tab10">
+            <%= render 'cards/all_dam_item', cards: @cards %>
+          </div>
 
       </div>
-      <div class="col-md-2">
-        <div class="new-card-form">
-          <div class="new-card-form-background">
-            <div class="new-card-form-main">
-              <div class="new-card-form-pencil"><%= image_tag("pencil.jpeg", class:"new-card-form-pencil-image")%></div>
-              <%= render 'cards/new_card_form', card: @card %>
-            </div>
+
+    </div>
+    <div class="col-md-2">
+      <div class="new-card-form">
+        <div class="new-card-form-background">
+          <div class="new-card-form-main">
+            <div class="new-card-form-pencil"><%= image_tag("pencil.jpeg", class:"new-card-form-pencil-image")%></div>
+            <%= render 'cards/new_card_form', card: @card %>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<!-- footer -->
+  <%= render 'layouts/footer' %>
+<!-- footer -->

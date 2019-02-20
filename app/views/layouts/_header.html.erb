@@ -1,26 +1,26 @@
 <header style="position: relative;">
-  <%= link_to 'Admin Page', admin_path(Admin.find(1)), class:"btn btn-warning" %>
-  <%= link_to '管理者ログイン', new_admin_session_path, class:"btn btn-warning" %>
 
-  <li class="damour-title">ダム王</li>
-  <li class="damour-sub-title">damour</li>
+  <div class="damour-logo">
+    <div class="damour-title"><%= image_tag('damour_logo.jpeg',class:"logo-image-self")%></div>
+    <p class="damour-sub-title">damour</p>
+  </div>
 
   <div class="nav-menu">
     <% if user_signed_in? %>
       <%= link_to 'マイページ', user_path(current_user), class:"menu-btn" %>
-      <%= link_to 'ダム王とは', users_about_path, class:"menu-btn" %>
+      <%= link_to 'サイトの使い方', users_about_path, class:"menu-btn" %>
       <%= link_to 'TOP', root_path, class:"menu-btn-home" %>
       <%= link_to 'お問い合わせ', inquiry_path, class:"menu-btn" %>
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"menu-btn" %>
     <% elsif admin_signed_in? %>
-      <%= link_to 'ダム王とは', users_about_path, class:"menu-btn" %>
       <%= link_to '管理者画面', admin_path(current_admin), class:"menu-btn" %>
+      <%= link_to 'サイトの使い方', users_about_path, class:"menu-btn" %>
       <%= link_to 'TOP', root_path, class:"menu-btn-home" %>
       <%= link_to 'お問い合わせ', inquiry_path, class:"menu-btn" %>
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"menu-btn" %>
     <% else %>
-      <%= link_to 'トップ', root_path, class:"menu-btn-home" %>
-      <%= link_to 'ダム王とは', users_about_path, class:"menu-btn" %>
+      <%= link_to 'TOP', root_path, class:"menu-btn-home" %>
+      <%= link_to 'サイトの使い方', users_about_path, class:"menu-btn" %>
       <%= link_to "会員登録", '', class: "nav-link menu-btn" , "data-toggle": "modal", "data-target": "#signupModal" %>
       <!-- モーダルログインフォーム -->
         <%= render 'users/registration_form' %>
