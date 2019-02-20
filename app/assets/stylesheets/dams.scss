@@ -8,7 +8,7 @@
 
 #anchor {
   width: 20%;
-  margin: 30px auto;
+  margin: 70px auto;
   text-align: center;
 }
 
@@ -24,6 +24,7 @@
 
 .anchor-text {
   color: #000;
+  padding-bottom: 5px;
 }
 
 .arrow {
@@ -45,7 +46,7 @@
   /* スライダー */
 
 #container{
-  height: 500px;
+  height: 600px;
   margin: 0 auto;
   z-index: 1;
   background-color: #000;
@@ -84,7 +85,7 @@ background-position:50% 62.5%;
   height: 100%;
   display: inline-block;
   background-color: #000;
-  padding-top: 30px;
+  padding-top: 50px;
 }
 
 .kurobe-box-title {

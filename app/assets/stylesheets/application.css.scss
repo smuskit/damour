@@ -81,7 +81,7 @@ body{
 
 .menu-btn-home{
   color:#000;
-  background:#FFBF00;
+  background-color: #FFBF00;   /* #FFBF00; */
   padding:10px 30px;
   font-size:12px;
   text-decoration:none;
@@ -90,23 +90,17 @@ body{
 }
 
 .menu-btn:hover, .menu-btn-home:hover{
-  border:none;
-  text-decoration:none;
+  border: none;
+  text-decoration: none;
   color: #000;
-  background: #FFF;
-  background:#fff;
-  padding:20px 20px;
-  color:#1b1b1b;
+  background: #E6E6E6;
+  padding: 20px 20px;
+  color: #1b1b1b;
 }
 
 .menu-btn-home:hover{
-  border:none;
-  text-decoration:none;
-  color: #000;
-  background: #FFF;
-  background:#fff;
+  background: #E6E6E6;
   padding:20px 30px;
-  color:#1b1b1b;
 }
 
 
