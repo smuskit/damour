@@ -244,7 +244,7 @@
     /*タブ内 カード一覧*/
 
 .card-show-dam-item-box {
-    height: 1100px;
+    display: inline-block;
 }
 
 .card-show-dam-item {
@@ -269,10 +269,6 @@
 .card-show-dam-item-ver {
     position: absolute;
     right: 13px;
-}
-
-.card-show-pagenate {
-    text-align: center;
 }
 
 

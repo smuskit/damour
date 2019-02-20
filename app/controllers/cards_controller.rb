@@ -1,10 +1,10 @@
 class CardsController < ApplicationController
 
-  before_action :correct_user, only: [:edit, :update]
+  before_action :authenticate_user!
 
   def show
     @card = Card.find(params[:id])
-    # 2.times { @card.images.build }
+    redirect_to root_path unless @card.user_id == current_user.id
   end
 
   def get_prefectures
@@ -20,22 +20,23 @@ class CardsController < ApplicationController
     else
       flash[:danger] = 'カードの投稿に失敗しました'
       @user = User.find(current_user.id)
-      @cards_hokkaido = @user.cards.page(params[:page_1]).where(region_id: 1).reverse_order
-      @cards_tohoku = @user.cards.page(params[:page_2]).where(region_id: 2).reverse_order
-      @cards_kanto = @user.cards.page(params[:page_3]).where(region_id: 3).reverse_order
-      @cards_hokuriku = @user.cards.page(params[:page_4]).where(region_id: 4).reverse_order
-      @cards_tokai = @user.cards.page(params[:page_5]).where(region_id: 5).reverse_order
-      @cards_kinki = @user.cards.page(params[:page_6]).where(region_id: 6).reverse_order
-      @cards_chugoku = @user.cards.page(params[:page_7]).where(region_id: 7).reverse_order
-      @cards_shikoku = @user.cards.page(params[:page_8]).where(region_id: 8).reverse_order
-      @cards_kyushu = @user.cards.page(params[:page_9]).where(region_id: 9).reverse_order
-      @cards = @user.cards.page(params[:page_a]).reverse_order
+      @cards_hokkaido = @user.cards.all.where(region_id: 1).reverse_order
+      @cards_tohoku = @user.cards.all.where(region_id: 2).reverse_order
+      @cards_kanto = @user.cards.all.where(region_id: 3).reverse_order
+      @cards_hokuriku = @user.cards.all.where(region_id: 4).reverse_order
+      @cards_tokai = @user.cards.all.where(region_id: 5).reverse_order
+      @cards_kinki = @user.cards.all.where(region_id: 6).reverse_order
+      @cards_chugoku = @user.cards.all.where(region_id: 7).reverse_order
+      @cards_shikoku = @user.cards.all.where(region_id: 8).reverse_order
+      @cards_kyushu = @user.cards.all.where(region_id: 9).reverse_order
+      @cards = @user.cards.all.reverse_order
       render 'users/cardlist'
     end
   end
 
   def edit
     @card_edit = Card.find(params[:id])
+    redirect_to root_path unless @card_edit.user_id == current_user.id
     respond_to do |format|
       format.html{}
       format.js {}

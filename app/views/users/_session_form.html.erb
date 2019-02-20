@@ -23,7 +23,7 @@
             <div class= modal-body-field-signin"><%= f.password_field :password, autocomplete: "current-password", id:"user_password_session", class:"modal-body-field-self-signin" %></div>
           </div>
 
-          <%= f.hidden_field :url, value: request.fullpath %>
+          <%= f.hidden_field :url, value: request.fullpath, id: 'user_url_session' %>
 
           <% if devise_mapping.rememberable? -%>
             <div class="modal-body-remember-signin">

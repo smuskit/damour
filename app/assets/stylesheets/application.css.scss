@@ -245,6 +245,7 @@ body{
 
 .modal-body {
   position: relative;
+  text-align: center;
 }
 
 .modal-body-image-signup {
@@ -300,6 +301,21 @@ body{
   width: 80%;
   margin: 10px 0;
 }
+
+
+/* re-registration*/
+
+
+.modal-body-field-self-re-signup {
+  width: 60%;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.modal-body-attachment-field-self-signup {
+}
+
 
 
 

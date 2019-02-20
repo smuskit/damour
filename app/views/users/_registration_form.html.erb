@@ -48,6 +48,7 @@
             <li class="modal-body-label-signup"><%= f.label :password_confirmation %>(6文字以上)</li>
             <div class= modal-body-field-signup"><%= f.password_field :password_confirmation, autocomplete: "new-password", class:"modal-body-field-self-signup" %></div>
           </div>
+          <%= f.hidden_field :url, value: request.fullpath %>
 
           <div class="actions">
             <%= f.submit "Sign up", class:"btn btn-lg btn-primary modal-body-submit-signup"  %>

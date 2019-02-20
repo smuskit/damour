@@ -2,6 +2,13 @@ class UsersController < ApplicationController
 
   before_action :correct_user, only: [:show, :edit, :update, :cardlist]
 
+  def correct_user
+    @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to root_path
+    end
+  end
+
   def index
     if current_admin
       if params[:search]
@@ -49,18 +56,22 @@ class UsersController < ApplicationController
   end
 
   def cardlist
-    @user = User.find(params[:id])
-    @cards_hokkaido = @user.cards.page(params[:page_1]).where(region_id: 1).reverse_order
-    @cards_tohoku = @user.cards.page(params[:page_2]).where(region_id: 2).reverse_order
-    @cards_kanto = @user.cards.page(params[:page_3]).where(region_id: 3).reverse_order
-    @cards_hokuriku = @user.cards.page(params[:page_4]).where(region_id: 4).reverse_order
-    @cards_tokai = @user.cards.page(params[:page_5]).where(region_id: 5).reverse_order
-    @cards_kinki = @user.cards.page(params[:page_6]).where(region_id: 6).reverse_order
-    @cards_chugoku = @user.cards.page(params[:page_7]).where(region_id: 7).reverse_order
-    @cards_shikoku = @user.cards.page(params[:page_8]).where(region_id: 8).reverse_order
-    @cards_kyushu = @user.cards.page(params[:page_9]).where(region_id: 9).reverse_order
-    @cards = @user.cards.page(params[:page_a]).reverse_order
-    @card = Card.new
+    if current_user
+      @user = User.find(params[:id])
+      @cards_hokkaido = @user.cards.all.where(region_id: 1).reverse_order
+      @cards_tohoku = @user.cards.all.where(region_id: 2).reverse_order
+      @cards_kanto = @user.cards.all.where(region_id: 3).reverse_order
+      @cards_hokuriku = @user.cards.all.where(region_id: 4).reverse_order
+      @cards_tokai = @user.cards.all.where(region_id: 5).reverse_order
+      @cards_kinki = @user.cards.all.where(region_id: 6).reverse_order
+      @cards_chugoku = @user.cards.all.where(region_id: 7).reverse_order
+      @cards_shikoku = @user.cards.all.where(region_id: 8).reverse_order
+      @cards_kyushu = @user.cards.all.where(region_id: 9).reverse_order
+      @cards = @user.cards.all.reverse_order
+      @card = Card.new
+    else
+      redirect_to root_path
+    end
   end
 
   private

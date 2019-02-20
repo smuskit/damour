@@ -31,103 +31,43 @@
                   </ul>
                 </div>
               <% end %>
-              <div class="card-show-pagenate crearfix">
-                <%= paginate @cards_hokkaido, param_name: 'page_1', class: "paginate" %>
-              </div>
               <%= render 'cards/dam_item', cards: @cards_hokkaido %>
-              <div class="card-show-pagenate">
-                <%= paginate @cards_hokkaido, param_name: 'page_1', class: "paginate" %>
-              </div>
             </div>
 
             <div id="tab02">
-              <div class="card-show-pagenate crearfix">
-                <%= paginate @cards_tohoku, param_name: 'page_2', class: "paginate" %>
-              </div>
               <%= render 'cards/dam_item', cards: @cards_tohoku %>
-              <div class="card-show-pagenate">
-                <%= paginate @cards_tohoku, param_name: 'page_2', class: "paginate" %>
-              </div>
             </div>
 
             <div id="tab03">
-              <div class="card-show-pagenate crearfix">
-                <%= paginate @cards_kanto, param_name: 'page_3', class: "paginate" %>
-              </div>
               <%= render 'cards/dam_item', cards: @cards_kanto %>
-              <div class="card-show-pagenate">
-                <%= paginate @cards_kanto, param_name: 'page_3', class: "paginate" %>
-              </div>
             </div>
 
             <div id="tab04">
-              <div class="card-show-pagenate crearfix">
-                <%= paginate @cards_hokuriku, param_name: 'page_4', class: "paginate" %>
-              </div>
               <%= render 'cards/dam_item', cards: @cards_hokuriku %>
-              <div class="card-show-pagenate">
-                <%= paginate @cards_hokuriku, param_name: 'page_4', class: "paginate" %>
-              </div>
             </div>
 
             <div id="tab05">
-              <div class="card-show-pagenate crearfix">
-                <%= paginate @cards_tokai, param_name: 'page_5', class: "paginate" %>
-              </div>
               <%= render 'cards/dam_item', cards: @cards_tokai %>
-              <div class="card-show-pagenate">
-                <%= paginate @cards_tokai, param_name: 'page_5', class: "paginate" %>
-              </div>
             </div>
 
             <div id="tab06">
-              <div class="card-show-pagenate crearfix">
-                <%= paginate @cards_kinki, param_name: 'page_6', class: "paginate" %>
-              </div>
               <%= render 'cards/dam_item', cards: @cards_kinki %>
-              <div class="card-show-pagenate">
-                <%= paginate @cards_kinki, param_name: 'page_6', class: "paginate" %>
-              </div>
             </div>
 
             <div id="tab07">
-              <div class="card-show-pagenate crearfix">
-                <%= paginate @cards_chugoku, param_name: 'page_7', class: "paginate" %>
-              </div>
               <%= render 'cards/dam_item', cards: @cards_chugoku %>
-              <div class="card-show-pagenate">
-                <%= paginate @cards_chugoku, param_name: 'page_7', class: "paginate" %>
-              </div>
             </div>
 
             <div id="tab08">
-              <div class="card-show-pagenate crearfix">
-                <%= paginate @cards_shikoku, param_name: 'page_8', class: "paginate" %>
-              </div>
               <%= render 'cards/dam_item', cards: @cards_shikoku %>
-              <div class="card-show-pagenate">
-                <%= paginate @cards_shikoku, param_name: 'page_8', class: "paginate" %>
-              </div>
             </div>
 
             <div id="tab09">
-              <div class="card-show-pagenate crearfix">
-                <%= paginate @cards_kyushu, param_name: 'page_9', class: "paginate" %>
-              </div>
               <%= render 'cards/dam_item', cards: @cards_kyushu %>
-              <div class="card-show-pagenate">
-                <%= paginate @cards_kyushu, param_name: 'page_9', class: "paginate" %>
-              </div>
             </div>
 
             <div id="tab10">
-              <div class="card-show-pagenate crearfix">
-                <%= paginate @cards, param_name: 'page_a', class: "paginate" %>
-              </div>
               <%= render 'cards/all_dam_item', cards: @cards %>
-              <div class="card-show-pagenate">
-                <%= paginate @cards, param_name: 'page_a', class: "paginate" %>
-              </div>
             </div>
 
         </div>

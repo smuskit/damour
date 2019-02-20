@@ -12,12 +12,7 @@ class ApplicationController < ActionController::Base
   #   # end
   # end
 
-  def correct_user
-    @user = User.find(params[:id])
-    unless @user == current_user
-      redirect_to root_path
-    end
-  end
+
 
   def correct_admin
     @admin = Admin.find(params[:id])
