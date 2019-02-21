@@ -152,6 +152,26 @@ body {
   overflow-x: hidden;
 }
 
+.pr-show-select-pr-text {
+  font-weight: 800;
+  margin: -52px 0 10px 0;
+  text-align: center;
+  animation: key1 .4s ease infinite alternate;
+}
+
+.pr-arrow {
+  width: 20px;
+}
+
+@keyframes key1{
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
 #sidebar-wrapper {
   margin-left: -15rem;
   -webkit-transition: margin .25s ease-out;
