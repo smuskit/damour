@@ -8,7 +8,7 @@
     <li class="dam-show-dam-name"><%= @dam.name %></li>
     <li class="dam-show-dam-name-kana">- <%= @dam.name_kana %> -</li>
   <div class="dam-show-image-box">
-    <%= attachment_image_tag @dam, :dam_image, format: 'jpeg', fallback: "dam_no_image.jpeg", class:"dam-show-image" %>
+    <%= attachment_image_tag @dam, :dam_image, format: 'jpeg', fallback: "/images/dam_no_image.jpeg", class:"dam-show-image" %>
     <%= link_to prefecture_path(@dam.prefecture), class:"square_btn" do %>
       <span>Back↩︎</span>
     <% end %>
@@ -71,6 +71,17 @@
 
     <div class="comment-form">
       <%= form_for [@dam, @dam_comment] do |f| %>
+
+        <% if @dam_comment.errors.any? %>  <!-- form forの@bookに合わせる -->
+          <div id="error_explanation" class="alert-danger">
+            <ul>
+              <% @dam_comment.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
         <div class="comment-form-top">
           <div class="comment-form-title">
             <%= f.label :投稿タイトル %>(任意)<br>
@@ -89,7 +100,7 @@
 
         </div>
         <div class="comment-submit">
-              <%= f.submit "送信する", class: "btn btn-md btn-info comment-submit-button" %>
+          <%= f.submit "送信する", class: "btn btn-md btn-info comment-submit-button" %>
         </div>
       <% end %>
     </div>
@@ -101,7 +112,38 @@
 
     <div class="comment-item-box">
       <div id="comment-item-box-render">
-        <%= render 'dam_comment' %>
+        <% @dam_comments.each do |c| %>
+          <div class="comment-item">
+            <!-- comment-item に対して　absolute -->
+            <div class="comment-item-visit-date">
+              投稿日時：<%= c.created_at.strftime('%Y/%m/%d') %>
+            </div>
+            <div class="comment-item-profile-image">
+              <%= attachment_image_tag c.user, :profile_image, size: '40x40', format: 'jpeg', fallback: "/images/no_image.jpeg", class:"comment-item-profile-image-self" %>
+              <span class="comment-item-hundle-name">
+                <% if c.user.hundle_name.blank? %>
+                  名無しのユーザー
+                <% else %>
+                  <%= c.user.hundle_name %>
+                <% end %>
+              </span>
+            </div>
+            <div class="comment-item-delete">
+              <%= link_to '削除',  dam_dam_comments_path(c), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-xs btn-danger comment-item-delete-self" %>
+            </div>
+            <!-- comment-item に対して　absolute  ここまで -->
+
+            <div class="comment-item-title">
+              " <%= c.title %> "
+            </div>
+            <div class="comment-item-image">
+              <%= attachment_image_tag c, :comment_image, size: '300x199', format: 'jpeg', fallback: "/images/dam_no_image.jpeg", class:"comment-image" %>
+            </div>
+            <div class="comment-item-text">
+              <%= c.comment %>
+            </div>
+          </div>
+        <% end %>
       </div>
       <!-- もっと見る -->
       <div class="comment-more-link">

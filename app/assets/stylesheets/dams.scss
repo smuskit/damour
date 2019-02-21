@@ -57,24 +57,24 @@
 }
 
 .dam-image1 {
-background-image: url(dam_image1.jpeg);
+background-image: url(/images/dam_image1.jpeg);
 background-position: 50% 62.5%;
 }
 .dam-image2 {
-background-image: url(dam_image2.jpeg);
+background-image: url(/images/dam_image2.jpeg);
 background-position: 40% 20%;
 }
 .dam-image3 {
-background-image: url(dam_image3.jpeg);
-background-position:50% 62.5%;
+background-image: url(/images/dam_image3.jpeg);
+background-position: 50% 62.5%;
 }
 .dam-image4 {
-background-image: url(dam_image4.jpeg);
+background-image: url(/images/dam_image4.jpeg);
 background-position: 35% 50%;
 }
 .dam-image5 {
-background-image: url(dam_image5.jpeg);
-background-position:50% 62.5%;
+background-image: url(/images/dam_image5.jpeg);
+background-position: 50% 62.5%;
 }
 
 
@@ -113,7 +113,7 @@ background-position:50% 62.5%;
   height: 285px;
   margin: 0 auto;
   background-size: cover;
-  background-image: image-url("kurobedam.jpeg");
+  background-image: url("/images/kurobedam.jpeg");
 }
 
 .kurobe-text-box {
@@ -183,7 +183,7 @@ background-position:50% 62.5%;
   position: absolute;
   list-style: none;
   font-family: "HiraMinPro-W6", "Hiragino Mincho Pro", serif, sans-serif;
-  color: #EFEFEF;
+  color: #E9EEF7;
 }
 
 .dam-top-map-back-text1 {

@@ -3,7 +3,7 @@
 
   /* 背景 */
 .about-background {
-  background-image: image-url('about.jpeg');
+  background-image: url('/images/about.jpeg');
 
   /* 画像の位置は常に中央 */
   background-position: center center;
@@ -30,7 +30,7 @@
   .about-body {
     /* The file size of this background image is 93% smaller
      * to improve page load speed on mobile internet connections */
-    background-image: image-url('about.jpg');
+    background-image: url('/images/about.jpg');
   }
   }
 

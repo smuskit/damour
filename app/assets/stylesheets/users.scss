@@ -118,16 +118,16 @@
 
 /* cardlist */
 
-.card-show-background {
+.cardlist-background {
     position: absolute;
     position: fixed;
     width: 1500px;
     height: 1500px;
-    background-image: image-url("coffee.jpeg");
+    background-image: url("/images/coffee.jpeg");
     background-size: contain;
 }
 
-.card-show-background-white {
+.cardlist-background-white {
   position: absolute;
   position: fixed;
   display: inline-block;
@@ -243,30 +243,30 @@
 
     /*タブ内 カード一覧*/
 
-.card-show-dam-item-box {
+.cardlist-dam-item-box {
     display: inline-block;
 }
 
-.card-show-dam-item {
+.cardlist-dam-item {
     position: relative;
     float: left;
     padding: 20px 13px 25px 13px;
 }
 
-.card-show-dam-item-name {
+.cardlist-dam-item-name {
     text-align: center;
 }
 
-.card-show-dam-item-name-y {
+.cardlist-dam-item-name-y {
     width: 180px;
 }
 
-.card-show-dam-item-image {
+.cardlist-dam-item-image {
     display: inline-block;
     box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.4);
 }
 
-.card-show-dam-item-ver {
+.cardlist-dam-item-ver {
     position: absolute;
     right: 13px;
 }
@@ -344,38 +344,3 @@
     width: 100%;
     margin-top: 20px;
 }
-
-
-
-/* about */
-
-.about-background {
-  /* Location of the image */
-  background-image: image-url('about.jpeg');
-
-  /* Image is centered vertically and horizontally at all times */
-  background-position: center center;
-
-  /* Image doesn't repeat */
-  background-repeat: no-repeat;
-
-  /* Makes the image fixed in the viewport so that it doesn't move when
-     the content height is greater than the image height */
-  background-attachment: fixed;
-
-  /* This is what makes the background image rescale based on its container's size */
-  background-size: cover;
-
-  /* Pick a solid background color that will be displayed while the background image is loading */
-  background-color:#464646;
-
-}
-
-/* For mobile devices */
-@media only screen and (max-width: 767px) {
-  body {
-    /* The file size of this background image is 93% smaller
-     * to improve page load speed on mobile internet connections */
-    background-image: url('about.jpeg');
-  }
-    }

@@ -80,6 +80,5 @@ gem 'jquery-turbolinks'
 
 gem 'dotenv-rails'
 
-gem 'haml-rails'
 
 

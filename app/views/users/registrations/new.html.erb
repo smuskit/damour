@@ -1,3 +1,4 @@
+<!-- CSSは users/_registration_form を転用 -->
 <%= render 'layouts/header' %>
 
 <%= devise_error_messages %>
@@ -9,7 +10,7 @@
   </div>
 
   <div class="modal-body">
-    <div class="modal-body-image-signup"><%= image_tag('swing1.jpeg', class:"swing1")%></div>
+    <div class="modal-body-image-signup"><%= image_tag('/images/swing1.jpeg', class:"swing1")%></div>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {id: 're_new_user'}) do |f| %>
         <div class="modal-body-field-signup">
           <li class="modal-body-label-signup"><%= f.label :お名前%>（非公開）</li>

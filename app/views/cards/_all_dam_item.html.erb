@@ -2,25 +2,25 @@
   <% if cards.count == 0 %>
     カードはまだありません．
   <% else %>
-    <div class="card-show-dam-item-box">
+    <div class="cardlist-dam-item-box">
 
       <% cards.each do |c| %>
-        <div class="card-show-dam-item">
-          <div class="card-show-dam-item-name">
+        <div class="cardlist-dam-item">
+          <div class="cardlist-dam-item-name">
             <% if !c.dam_name.blank? %>
-              <div class="card-show-dam-item-name-y"><%= c.dam_name%></div>
+              <div class="-cardlist-dam-item-name-y"><%= c.dam_name%></div>
             <% else %>
               NO NAME
             <% end %>
             <% if @cards %>
             <% end %>
           </div>
-          <div class="card-show-dam-item-image">
+          <div class="cardlist-dam-item-image">
               <%= link_to card_path(c), class: "" do %>
                 <%= attachment_image_tag c, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"" %>
               <% end %>
           </div>
-          <div class="card-show-dam-item-ver">
+          <div class="cardlist-dam-item-ver">
             Ver.<%= c.version_bf %>.<%= c.version_af %>(<%= c.version_y %>.<%= c.version_m %>)
             <!-- モーダル編集 -->
               <%= link_to '編集', edit_card_path(c.id), remote: true, class: "btn btn-xs btn-primary" %>

@@ -31,6 +31,16 @@
 
 /* show */
 
+.card-show-background {
+  background-image: url('/images/coffee.jpeg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color:#464646;
+  padding-bottom: 180px;
+}
+
 
 .card-show-alert-message {
   width: 600px;

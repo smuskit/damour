@@ -1,4 +1,6 @@
+<div class="card-show-background">
 <%= render 'layouts/header' %>
+
 <div class="card-show-alert-message">
   <%= render 'alert' %>
 </div>
@@ -8,7 +10,7 @@
 <div class="c-show-background">
   <div class="c-show">
     <div class="c-show-image-box">
-      <%= attachment_image_tag @card, :card_image, size: '200x150', format: 'jpeg', fallback: "dam_no_image.jpeg", class:"c-show-image" %>
+      <%= attachment_image_tag @card, :card_image, size: '200x150', format: 'jpeg', fallback: "/images/dam_no_image.jpeg", class:"c-show-image" %>
     </div>
 
     <div class="c-show-table">
@@ -33,4 +35,4 @@
     </div>
   </div>
 </div>
-
+</div>

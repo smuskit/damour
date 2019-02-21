@@ -34,8 +34,8 @@
 
 
 body{
-  background: #E6E6E6;     /* #1b1b2b; */
-  padding-bottom:50px 0;
+  background: #EFF5FB;  /* #E6E6E6; */     /* #1b1b2b; */
+  padding-bottom: 50px 0;
 }
 
 /* header */
@@ -55,7 +55,7 @@ body{
 }
 
 .damour-sub-title{
-  color: #000;    /* #c0c0c0; */
+  color: #6E6E6E;    /* #c0c0c0; */
   font-size: 25px;
   font-weight: 500;
   font-style: italic;
@@ -228,6 +228,7 @@ body{
   background: #000;
   border-radius: 5px 5px 0 0;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .close {

@@ -34,7 +34,7 @@
       <% @users.each do |u| %>
         <tr>
           <td><%= u.id %></td>
-          <td><%= attachment_image_tag u, :profile_image, size: "50x50", format: 'jpeg', fallback: "no_image.jpeg", class:"user-index-image" %></td>
+          <td><%= attachment_image_tag u, :profile_image, size: "50x50", format: 'jpeg', fallback: "/images/no_image.jpeg", class:"user-index-image" %></td>
           <td><%= u.name %></td>
           <td><%= u.name_kana %></td>
           <td><%= u.hundle_name %></td>

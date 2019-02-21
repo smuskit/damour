@@ -1,10 +1,13 @@
 class CardsController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
 
   def show
     @card = Card.find(params[:id])
-    redirect_to root_path unless @card.user_id == current_user.id
+    if @card.user == current_user || current_admin
+    else
+      redirect_to root_path
+    end
   end
 
   def get_prefectures

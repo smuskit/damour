@@ -2,7 +2,7 @@
   <div class="modal-content">
     <div class="edit-card-box">
       <li class="new-card-form-title">ダムカード編集</li>
-      <div class="edit-card-form-eraser"><%= image_tag("eraser.jpeg", class:"new-card-form-eraser-image")%></div>
+      <div class="edit-card-form-eraser"><%= image_tag("/images/eraser.jpeg", class:"new-card-form-eraser-image")%></div>
       <%= form_for(@card_edit, remote: true, :url => {:action => 'update'}) do |f| %>
 
         <div class="region-area">

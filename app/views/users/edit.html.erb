@@ -10,7 +10,7 @@
 <li class="user-show-title">ユーザ情報編集</li>
 <div class="user-show-background">
 
-  <% if @user.errors.any? %>  <!-- form forの@bookに合わせる -->
+  <% if @user.errors.any? %>
     <div id="error_explanation" class="alert-danger">
       <ul>
         <% @user.errors.full_messages.each do |message| %>
@@ -21,7 +21,7 @@
   <% end %>
 
   <div class="user-edit-image">
-    <%= attachment_image_tag @user, :profile_image, size: "220x220", class:"user-show-image-self", fallback: "no_image.jpeg" %>
+    <%= attachment_image_tag @user, :profile_image, size: "220x220", class:"user-show-image-self", fallback: "/images/no_image.jpeg" %>
   </div>
   <%= form_for(@user) do |f| %>
     <div class="user-edit-attachment-image-field">

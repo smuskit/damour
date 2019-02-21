@@ -1,5 +1,5 @@
-<div class="card-show-background"></div>
-<div class="card-show-background-white"></div>
+<div class="cardlist-background"></div>
+<div class="cardlist-background-white"></div>
 <%= render 'layouts/header' %>
 
 <div class="container">
@@ -77,7 +77,7 @@
       <div class="new-card-form">
         <div class="new-card-form-background">
           <div class="new-card-form-main">
-            <div class="new-card-form-pencil"><%= image_tag("pencil.jpeg", class:"new-card-form-pencil-image")%></div>
+            <div class="new-card-form-pencil"><%= image_tag("/images/pencil.jpeg", class:"new-card-form-pencil-image")%></div>
             <%= render 'cards/new_card_form', card: @card %>
           </div>
         </div>

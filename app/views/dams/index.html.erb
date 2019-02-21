@@ -32,7 +32,7 @@
       <% @dams.each do |d|%>
         <tr>
           <td class="dam-index-image">
-            <%= attachment_image_tag d, :dam_image, size: "120x70", format: 'jpeg', fallback: "dam_no_image.jpeg", class:"dam-index-image-self" %>
+            <%= attachment_image_tag d, :dam_image, size: "120x70", format: 'jpeg', fallback: "/images/dam_no_image.jpeg", class:"dam-index-image-self" %>
           </td>
           <td><%= d.id %></td>
           <td><%= d.prefecture.region.name %>地方</td>

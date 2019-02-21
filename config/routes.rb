@@ -45,7 +45,7 @@ Rails.application.routes.draw do
 
   resources :prefectures, only: [:show]
 
-  resources :facilities, only: [:new, :create, :index, :show, :edit, :update, :destroy]
+  resources :facilities, only: [:create, :index, :show, :edit, :update, :destroy]
 
   resources :distributes, only: [:create, :index, :destroy]
 

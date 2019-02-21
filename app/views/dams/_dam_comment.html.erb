@@ -5,7 +5,7 @@
       投稿日時：<%= c.created_at.strftime('%Y/%m/%d') %>
     </div>
     <div class="comment-item-profile-image">
-      <%= attachment_image_tag c.user, :profile_image, size: '40x40', format: 'jpeg', class:"comment-item-profile-image-self" %>
+      <%= attachment_image_tag c.user, :profile_image, size: '40x40', format: 'jpeg', fallback: "/images/no_image.jpeg", class:"comment-item-profile-image-self" %>
       <span class="comment-item-hundle-name">
         <% if c.user.hundle_name.blank? %>
           名無しのユーザー
@@ -23,7 +23,7 @@
       " <%= c.title %> "
     </div>
     <div class="comment-item-image">
-      <%= attachment_image_tag c, :comment_image, size: '300x199', format: 'jpeg', fallback: "no_image.jpeg", class:"comment-image" %>
+      <%= attachment_image_tag c, :comment_image, size: '300x199', format: 'jpeg', fallback: "/images/no_image.jpeg", class:"comment-image" %>
     </div>
     <div class="comment-item-text">
       <%= c.comment %>
