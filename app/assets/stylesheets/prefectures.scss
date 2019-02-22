@@ -188,7 +188,7 @@ body {
 }
 
 #sidebar-wrapper .list-group {
-  width: 150px;
+  width: 100%;
 }
 
 .bg-light {
@@ -218,10 +218,13 @@ body {
   margin-left: -15rem;
 }
 
+
+  /* ダム情報 */
+
 .pr-show-dam-item {
   position: relative;
   width: 100%;
-  height: 230px;
+  height: 250px;
   background-color: #FFF;
   margin-bottom: 30px;
 }
@@ -229,51 +232,22 @@ body {
 .pr-show-black-box {
   position: absolute;
   width: 40px;
-  height: 230px;
+  height: 250px;
   background-color: #000;
   right: 0;
 }
 
-  /* 詳細へボタン */
-
-.pr-show-dam-item-link-box span {
-  font-size: 22px;
-}
-
-.pr-show-dam-item-link-self {
-  position: absolute;
-  right: 20px;
-  bottom: -20px;
-  display: inline-block;
-  font-weight: bold;
-  padding: 1.5em 1.5em;
-  text-decoration: none;
-  color: #ECECEC;
-  background: #5FB404;
-  transition: .4s;
-}
-
-.pr-show-dam-item-link-self:hover {
-  background: #ECECEC;
-  color: #5FB404;
-  text-decoration: none;
-}
-
-
-  /* ダム情報 */
-
-
 .pr-show-dam-item-image-box {
   width: 40%;
   float: left;
-  line-height: 230px;
+  line-height: 250px;
   padding: 0 20px;
 }
 
 .pr-show-dam-item-image {
   display: inline-block;
-  width: 300px;
-  height: 200px;
+  width: 310px;
+  height: 207px;
   box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
 }
 
@@ -300,14 +274,17 @@ body {
   color: gray;
 }
 
-.pr-show-dam-item-info-river {
+.pr-show-dam-item-info-address {
   font-size: 15px;
   padding-left: 15px;
-  font-weight: 100;
+  font-weight: 300;
 }
 
-.pr-show-dam-item-info-text {
+.pr-show-dam-item-info-river {
   float: left;
+  font-size: 13px;
+  font-weight: 300;
+  padding-top: 3px;
 }
 
 .pr-show-dam-item-facility {
@@ -332,19 +309,67 @@ body {
   padding-left: 10px;
 }
 
+  /* 詳細へボタン */
+
+.pr-show-dam-item-link-box {
+  position: absolute;
+  z-index: 100;
+  left: 240px;
+  bottom: 35px;
+  width: 130px;
+  height: 50px;
+}
+
+.pr-show-dam-item-link-self {
+  display: inline-block;
+  line-height: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ECECEC;
+  background: #5FB404;
+  transition: .4s;
+  padding: 10px 15px;
+  span {
+    font-size: 25px;
+  }
+}
+
+
+.pr-show-dam-item-link-self:hover {
+  background: #ECECEC;
+  color: #5FB404;
+  text-decoration: none;
+}
 
 
 
-
-/* (1199px)程度 */
+/* max-width 1199 */
 @media screen and (max-width:1199px) {
+
+
+  /* ダム情報 */
+
+  .pr-show-dam-item {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background-color: #FFF;
+    margin-bottom: 30px;
+  }
 
   .pr-show-black-box {
     position: absolute;
     width: 30px;
-    height: 230px;
+    height: 220px;
     background-color: #000;
     right: 0;
+  }
+
+  .pr-show-dam-item-image-box {
+    width: 40%;
+    float: left;
+    line-height: 220px;
+    padding: 0 20px;
   }
 
   .pr-show-dam-item-image {
@@ -361,35 +386,6 @@ body {
     padding: 20px 15px 15px 0px;
   }
 
-    /* 詳細へボタン */
-
-  .pr-show-dam-item-link-box {
-    position: absolute;
-    z-index: 100;
-    left: 180px;
-    bottom: 30px;
-    width: 150px;
-    height: 10px;
-  }
-
-  .pr-show-dam-item-link-self {
-    display: inline-block;
-    font-size: 12px;
-    line-height: 10px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #ECECEC;
-    background: #5FB404;
-    transition: .4s;
-  }
-
-  .pr-show-dam-item-link-self:hover {
-    background: #ECECEC;
-    color: #5FB404;
-    text-decoration: none;
-  }
-
-    /* ダム情報 */
   .pr-show-dam-item-facility-hours {
     padding: 5px 0px 5px 20px;
     font-size: 12px;
@@ -400,5 +396,167 @@ body {
     padding-left: 10px;
   }
 
+    /* 詳細へボタン */
+
+  .pr-show-dam-item-link-box {
+    position: absolute;
+    z-index: 100;
+    left: 215px;
+    bottom: 30px;
+    width: 150px;
+    height: 40px;
+  }
+
+  .pr-show-dam-item-link-self {
+    display: inline-block;
+    line-height: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ECECEC;
+    background: #5FB404;
+    transition: .4s;
+    span {
+      font-size: 20px;
+    }
+  }
+
+  .pr-show-dam-item-link-self:hover {
+    background: #ECECEC;
+    color: #5FB404;
+    text-decoration: none;
+  }
+
 }
+
+
+/* max-width 991px */
+@media screen and (max-width:991px) {
+
+
+  /* ダム情報 */
+
+  .pr-show-dam-item {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background-color: #FFF;
+    margin-bottom: 30px;
+  }
+
+  .pr-show-black-box {
+    position: absolute;
+    width: 20px;
+    height: 180px;
+    background-color: #000;
+    right: 0;
+  }
+
+  .pr-show-dam-item-image-box {
+    width: 40%;
+    float: left;
+    line-height: 180px;
+    padding: 0 20px 0 15px;
+  }
+
+  .pr-show-dam-item-image {
+    display: inline-block;
+    width: 220px;
+    height: 147px;
+    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+  }
+
+  .pr-show-dam-item-info-box {
+    width: 60%;
+    float: left;
+    font-size: 12px;
+    padding: 20px 15px 15px 0px;
+  }
+
+  .pr-show-dam-item-info-address {
+    font-size: 12px;
+    padding-left: 15px;
+    font-weight: 300;
+  }
+
+  .pr-show-dam-item-info-river {
+    float: left;
+    font-size: 11px;
+    font-weight: 300;
+    padding-top: 3px;
+  }
+
+  .pr-show-dam-item-facility-name-self {
+    font-size: 12px;
+  }
+
+  .pr-show-dam-item-facility-hours {
+    padding: 5px 0px 5px 20px;
+    font-size: 12px;
+  }
+
+  .pr-show-dam-item-facility-business-period {
+    font-size: 10px;
+    padding-left: 10px;
+  }
+
+  .w991-none {
+    display:none
+  }
+
+
+    /* 詳細へボタン */
+
+  .pr-show-dam-item-link-box {
+    position: absolute;
+    z-index: 100;
+    left: 160px;
+    bottom: 30px;
+    width: 110px;
+    height: 30px;
+  }
+
+  .pr-show-dam-item-link-self {
+    display: inline-block;
+    line-height: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ECECEC;
+    background: #5FB404;
+    transition: .4s;
+    span {
+      font-size: 16px;
+    }
+  }
+
+  .pr-show-dam-item-link-self:hover {
+    background: #ECECEC;
+    color: #5FB404;
+    text-decoration: none;
+  }
+
+  .pr-show-select-pr-text {
+  font-size: 12px;
+  font-weight: 800;
+  margin: -52px 0 10px 0;
+  text-align: center;
+  animation: key1 .4s ease infinite alternate;
+}
+
+  /* arrow */
+
+  .pr-arrow {
+    width: 15px;
+  }
+
+  @keyframes key1{
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+
+}
+
 
