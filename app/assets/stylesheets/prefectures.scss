@@ -139,7 +139,7 @@
   height: 30px;
 }
 
-.pre-show-pre-name {
+.pr-show-pre-name {
   text-align: center;
   font-size: 40px;
   font-weight: bold;
@@ -210,19 +210,17 @@ body {
   margin-left: 0;
 }
 
-@media (min-width: 768px) {
-  #sidebar-wrapper {
-    margin-left: 0;
-  }
+#sidebar-wrapper {
+  margin-left: 0;
+}
 
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
-  }
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: -15rem;
 }
 
 .pr-show-dam-item {
   position: relative;
-  width: 950px;
+  width: 100%;
   height: 230px;
   background-color: #FFF;
   margin-bottom: 30px;
@@ -242,7 +240,7 @@ body {
   font-size: 22px;
 }
 
-.pr-show-dam-item-link {
+.pr-show-dam-item-link-self {
   position: absolute;
   right: 20px;
   bottom: -20px;
@@ -255,14 +253,18 @@ body {
   transition: .4s;
 }
 
-.pr-show-dam-item-link:hover {
+.pr-show-dam-item-link-self:hover {
   background: #ECECEC;
   color: #5FB404;
   text-decoration: none;
 }
 
 
+  /* ダム情報 */
+
+
 .pr-show-dam-item-image-box {
+  width: 40%;
   float: left;
   line-height: 230px;
   padding: 0 20px;
@@ -270,12 +272,20 @@ body {
 
 .pr-show-dam-item-image {
   display: inline-block;
+  width: 300px;
+  height: 200px;
   box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
 }
 
-.pr-show-dam-item-info {
+.pr-show-dam-item-info-box {
+  width: 60%;
   float: left;
   padding: 20px 15px 15px 0px;
+}
+
+.pr-show-dam-item-info {
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 .pr-show-dam-item-info-name {
@@ -288,6 +298,12 @@ body {
 .pr-show-dam-item-info-name-kana {
   font-size: 15px;
   color: gray;
+}
+
+.pr-show-dam-item-info-river {
+  font-size: 15px;
+  padding-left: 15px;
+  font-weight: 100;
 }
 
 .pr-show-dam-item-info-text {
@@ -315,3 +331,74 @@ body {
   font-size: 12px;
   padding-left: 10px;
 }
+
+
+
+
+
+/* (1199px)程度 */
+@media screen and (max-width:1199px) {
+
+  .pr-show-black-box {
+    position: absolute;
+    width: 30px;
+    height: 230px;
+    background-color: #000;
+    right: 0;
+  }
+
+  .pr-show-dam-item-image {
+    display: inline-block;
+    width: 280px;
+    height: 187px;
+    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+  }
+
+  .pr-show-dam-item-info-box {
+    width: 60%;
+    float: left;
+    font-size: 12px;
+    padding: 20px 15px 15px 0px;
+  }
+
+    /* 詳細へボタン */
+
+  .pr-show-dam-item-link-box {
+    position: absolute;
+    z-index: 100;
+    left: 180px;
+    bottom: 30px;
+    width: 150px;
+    height: 10px;
+  }
+
+  .pr-show-dam-item-link-self {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ECECEC;
+    background: #5FB404;
+    transition: .4s;
+  }
+
+  .pr-show-dam-item-link-self:hover {
+    background: #ECECEC;
+    color: #5FB404;
+    text-decoration: none;
+  }
+
+    /* ダム情報 */
+  .pr-show-dam-item-facility-hours {
+    padding: 5px 0px 5px 20px;
+    font-size: 12px;
+  }
+
+  .pr-show-dam-item-facility-business-period {
+    font-size: 10px;
+    padding-left: 10px;
+  }
+
+}
+

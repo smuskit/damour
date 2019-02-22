@@ -1,6 +1,7 @@
 <%= render 'cards/alert' %>
 <%= render 'layouts/header' %>
 
+
 <% if @region.id == 1 %>
   <div class="pr-show-title-background-hokkaido">
   <div class="container">
@@ -148,7 +149,7 @@
   </div>
 <% end %>
 
-<div class="pre-show-pre-name">
+<div class="pr-show-pre-name">
   “<%= @prefecture.name %>”のダム
 </div>
 
@@ -317,28 +318,32 @@
               <div class="pr-show-black-box"></div>
 
               <div class="pr-show-dam-item-link-box">
-                <%=link_to dam_path(d), class:"pr-show-dam-item-link" do %>
+                <%=link_to dam_path(d), class:"pr-show-dam-item-link-self" do %>
                   <span>More<i class="fas fa-angle-double-right"></i></span>
                 <% end %>
               </div>
 
               <div class="pr-show-dam-item-image-box">
                 <%= link_to dam_path(d) do %>
-                  <%= attachment_image_tag d, :dam_image, size: '300x200', format: 'jpeg', fallback: "/images/dam_no_image.jpeg", class:"pr-show-dam-item-image" %>
+                  <%= attachment_image_tag d, :dam_image, format: 'jpeg', fallback: "/images/dam_no_image.jpeg", class:"pr-show-dam-item-image" %>
                 <% end %>
               </div>
-              <div class="pr-show-dam-item-info">
-                <div class="pr-show-dam-item-info-name">
-                  【<%= d.name %>/<span class="pr-show-dam-item-info-name-kana"><%= d.name_kana %></span>】
-                </div>
-                <div  class="pr-show-dam-item-info-text clearfix">
-                  <div class="pr-show-dam-item-info-river">
-                    <%= d.river %>
+              <div class="pr-show-dam-item-info-box">
+
+                <div class="pr-show-dam-item-info clearfix">
+                  <div class="pr-show-dam-item-info-name">
+                    【<%= d.name %>/<span class="pr-show-dam-item-info-name-kana"><%= d.name_kana %></span>】
+                    <div class="pr-show-dam-item-info-river">
+                      <%= d.river %>
+                    </div>
                   </div>
-                  <div class="pr-show-dam-item-info-address">
-                    〒<%= d.postal_code %> <%= d.address %>
+                  <div  class="pr-show-dam-item-info-text">
+                    <div class="pr-show-dam-item-info-address">
+                      〒<%= d.postal_code %><br><%= d.address %>
+                    </div>
                   </div>
                 </div>
+
                 <div  class="pr-show-dam-item-facility">
                   <table class='table-sm table-striped'>
                     <thead>
@@ -358,7 +363,7 @@
                             </div>
                           </td>
                           <td>
-                            <span class="pr-show-dam-item-facility-hours"><%= facility_simple_time(dist.facility.opening_hours) %></span>~<%= facility_simple_time(dist.facility.closing_hours) %>
+                            <span class="pr-show-dam-item-facility-hours"><%= facility_simple_time(dist.facility.opening_hours) %>~<%= facility_simple_time(dist.facility.closing_hours) %></span>
                           </td>
                           <td>
                             <span class="pr-show-dam-item-facility-business-period">(<%= dist.facility.business_period %>)</span>

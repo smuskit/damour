@@ -323,9 +323,6 @@ background-position: 50% 62.5%;
   box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
 }
 
-.dam-show-black-line {
-}
-
 .dam-show-clip {
   position: absolute;
   left: 40px;
@@ -575,27 +572,6 @@ background-position: 50% 62.5%;
   text-align: center;
   margin-top: 30px;
 }
-
-
-/* タブレット横置き(1024px)程度の大きさ以下に適用される設定です */
-@media screen and (max-width:1024px) {
-    .dam-show-background {
-    position: relative;
-    background-color: #FBF8EF;
-    width: 100%;
-    margin: 50px auto;
-    padding: 20px 0px 80px 0px;
-    border-right: 40px solid #000;
-    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
-  }
-}
-
-
-
-
-
-
-
 
 
 /* edit */
