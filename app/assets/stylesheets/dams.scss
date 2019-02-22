@@ -152,6 +152,12 @@ background-position: 50% 62.5%;
   line-height: 40px;
 }
 
+.kurobe-text-main-6 {
+  text-align: center;
+  padding-left: 200px;
+  line-height: 40px;
+}
+
 
 .kurobe-text-sub {
   list-style: none;
@@ -171,6 +177,7 @@ background-position: 50% 62.5%;
 
 .dam-top-map {
   position: relative;
+  z-index: -1;
 }
 
 
@@ -179,7 +186,7 @@ background-position: 50% 62.5%;
 .dam-top-map-back-text2,
 .dam-top-map-back-text3,
 .dam-top-map-back-text4,
-.dam-top-map-back-text5 {
+.dam-top-map-back-text5, {
   position: absolute;
   list-style: none;
   font-family: "HiraMinPro-W6", "Hiragino Mincho Pro", serif, sans-serif;
@@ -206,7 +213,7 @@ background-position: 50% 62.5%;
 
 .dam-top-map-back-text4 {
   top: -550px;
-  right: -500px;
+  right: 0px;
   font-size: 170px;
 }
 
@@ -223,8 +230,6 @@ background-position: 50% 62.5%;
     /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); */
     z-index: 20;
 }
-
-
 
 
 

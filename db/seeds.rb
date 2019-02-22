@@ -8,7 +8,7 @@
 
 Admin.find_or_create_by(id: 1) do |admin|
   admin.email = 'z@z'
-  admin.password = 'hello'
+  admin.password = '000000'
 end
 
 Region.create(name: '北海道')
