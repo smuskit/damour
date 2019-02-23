@@ -1,11 +1,20 @@
 <%= render 'cards/alert' %>
 <%= render 'layouts/header' %>
-<div id="anchor">
+
+<div id="anchor" class="map-title-map-none">
 　<a href="#to-map">
     <li class="anchor-text"> ダムを見に行く</li>
     <%= image_tag("/images/arrow.jpeg", class:"arrow") %>
   </a>
 </div>
+
+<div id="anchor" class="none w990-none map-title-region-none">
+　<a href="#to-map-phone">
+    <li class="anchor-text"> ダムを見に行く</li>
+    <%= image_tag("/images/arrow.jpeg", class:"arrow") %>
+  </a>
+</div>
+
 
 <div id="container">
   <div id="theTarget">
@@ -41,7 +50,7 @@
 
 <p class="dam-top-map-title map-title-map-none" id="to-map">▼ 地図をクリックして，全国のダムを見てみよう！</p>
 
-<p class="dam-top-map-title none w990-none map-title-region-none" id="to-map">▼ 地方名をクリックして，全国のダムを見てみよう！</p>
+<p class="dam-top-map-title none w990-none map-title-region-none" id="to-map-phone">▼ 地方名をクリックして，全国のダムを見てみよう！</p>
 
 <div class="map none"></div>
 <div class="map-w990 w990-none"></div>
