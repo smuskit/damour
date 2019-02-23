@@ -131,6 +131,9 @@ background-position: 50% 62.5%;
   font-family: "HiraMinPro-W6", "Hiragino Mincho Pro", serif, sans-serif;
 }
 
+.kurobe-text-main-1 {
+}
+
 .kurobe-text-main-2 {
   padding-left: 70px;
   line-height: 70px;
@@ -256,6 +259,256 @@ background-position: 50% 62.5%;
    /* スライダー */
 
   #container{
+    height: 420px;
+    margin: 0 auto;
+    z-index: 1;
+    background-color: #000;
+  }
+
+  .dam-image1 {
+  background-image: url(/images/dam_image1.jpeg);
+  background-position: 50% 62.5%;
+  }
+  .dam-image2 {
+  background-image: url(/images/dam_image2.jpeg);
+  background-position: 40% 20%;
+  }
+  .dam-image3 {
+  background-image: url(/images/dam_image3.jpeg);
+  background-position: 50% 62.5%;
+  }
+  .dam-image4 {
+  background-image: url(/images/dam_image4.jpeg);
+  background-position: 35% 50%;
+  }
+  .dam-image5 {
+  background-image: url(/images/dam_image5.jpeg);
+  background-position: 50% 62.5%;
+  }
+
+
+    /* 黒部ダムレコメンド */
+
+  .kurobe-box {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background-color: #000;
+    padding: 40px 0;
+  }
+
+  .kurobe-box-title {
+    line-height: 35px;
+    width: 80%;
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    padding: 0.1em 0.5em;
+    padding-left: 30px;
+    background: -webkit-linear-gradient(to right, rgb(255, 255, 255), transparent);
+    background: linear-gradient(to right, rgb(255, 255, 255), transparent);
+    color: #0B3B24;
+    font-family: "HiraMinPro-W6", "Hiragino Mincho Pro", serif, sans-serif;
+  }
+
+  .kurobe-image-box{
+    width: 45%;
+    padding-top: 40px;
+  }
+
+  .kurobe-image {
+    width: 250px;
+    height: 167px;
+    margin: 0 auto;
+    background-size: cover;
+    background-image: url("/images/kurobedam.jpeg");
+  }
+
+  .kurobe-text-box {
+    width: 55%;
+    padding-top: 40px;
+    color: #6E6E6E;
+  }
+
+  .kurobe-text-main {
+    font-size: 13px;
+    line-height: 30px;
+    padding-bottom: 10px;
+    font-style: italic;
+    font-family: "HiraMinPro-W6", "Hiragino Mincho Pro", serif, sans-serif;
+  }
+
+  .kurobe-text-main-1 {
+    line-height: 30px;
+  }
+
+  .kurobe-text-main-2 {
+    padding-left: 40px;
+    line-height: 30px;
+    color: #A4A4A4;
+  }
+
+  .kurobe-text-main-3 {
+    font-size: 20px;
+    color: #A4A4A4;
+  }
+
+  .kurobe-text-main-4 {
+    padding-left: 15px;
+    line-height: 30px;
+  }
+
+  .kurobe-text-main-5 {
+    padding-left: 60px;
+    line-height: 30px;
+  }
+
+  .kurobe-text-main-6 {
+    padding-left: 180px;
+    line-height: 30px;
+  }
+
+
+  .kurobe-text-sub {
+    list-style: none;
+    text-align: right;
+    font-size: 9px;
+    line-height: 10px;
+    padding: 5px 10px 0px 0;
+    border-top: solid 0.5px #848484;
+    color: #848484;
+  }
+
+
+
+    /* マップ */
+
+  .dam-top-map-title {
+    font-size: 20px;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  .dam-top-map {
+    position: relative;
+    z-index: -1;
+  }
+
+
+  .dam-top-map-back-text1,
+  .dam-top-map-back-text2,
+  .dam-top-map-back-text3,
+  .dam-top-map-back-text4,
+  .dam-top-map-back-text5, {
+    position: absolute;
+    list-style: none;
+    font-family: "HiraMinPro-W6", "Hiragino Mincho Pro", serif, sans-serif;
+    color: #E9EEF7;
+  }
+
+  .dam-top-map-back-text1 {
+    top: -580px;
+    left: -30px;
+    font-size: 100px;
+  }
+
+  .dam-top-map-back-text2 {
+    right: 0px;
+    top: -220px;
+    font-size: 80px;
+  }
+
+  .dam-top-map-back-text3 {
+    top: -350px;
+    left: 50px;
+    font-size: 60px;
+  }
+
+  .dam-top-map-back-text4 {
+    top: -450px;
+    right: 0px;
+    font-size: 120px;
+  }
+
+  .dam-top-map-back-text5 {
+    bottom: -100px;
+    left: -350px;
+    font-size: 150px;
+  }
+
+  .none {
+    display: none;
+  }
+
+  .w990-none {
+    display: block;
+  }
+
+  .w599-none {
+    display: none;
+  }
+
+  .map-title-region-none {
+    display: none;
+  }
+
+  .map-w990 {
+    width: 600px;
+    margin: 50px auto;
+    /* -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); */
+    /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); */
+    z-index: 20;
+  }
+}
+
+
+
+
+
+@media screen and (max-width:599px) {
+
+    /* anchor scroll ボタン */
+
+  #anchor {
+    width: 20%;
+    margin: 40px auto;
+    text-align: center;
+  }
+
+  #anchor a, #anchor a:hover {
+    text-decoration: none;
+  }
+
+  .anchor-text{
+    list-style: none;
+    color: #000;
+    font-weight: bold;
+  }
+
+  .anchor-text {
+    color: #000;
+    padding-bottom: 5px;
+  }
+
+  .arrow {
+    width: 30px;
+    padding-top: 15px;
+    animation: key1 .4s ease infinite alternate;
+  }
+
+  @keyframes key1{
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+
+
+    /* スライダー */
+
+  #container{
     height: 600px;
     margin: 0 auto;
     z-index: 1;
@@ -341,6 +594,9 @@ background-position: 50% 62.5%;
     font-family: "HiraMinPro-W6", "Hiragino Mincho Pro", serif, sans-serif;
   }
 
+  .kurobe-text-main-1 {
+  }
+
   .kurobe-text-main-2 {
     padding-left: 70px;
     line-height: 70px;
@@ -391,32 +647,47 @@ background-position: 50% 62.5%;
   }
 
 
-  .none {
-    display: none;
+
+  .dam-top-map-back-text1,
+  .dam-top-map-back-text2,
+  .dam-top-map-back-text3,
+  .dam-top-map-back-text4,
+  .dam-top-map-back-text5, {
+    position: absolute;
+    list-style: none;
+    font-family: "HiraMinPro-W6", "Hiragino Mincho Pro", serif, sans-serif;
+    color: #E9EEF7;
   }
 
-  .w990-none {
-    display: block;
+  .dam-top-map-back-text1 {
+    top: -750px;
+    left: -30px;
+    font-size: 150px;
   }
 
-  .w599-none {
-    display: none;
+  .dam-top-map-back-text2 {
+    right: 30px;
+    top: -150px;
+    font-size: 120px;
   }
 
-  .map-title-region-none {
-    display: none;
+  .dam-top-map-back-text3 {
+    top: -350px;
+    left: 200px;
+    font-size: 70px;
   }
 
-  .map-w990 {
-    width: 600px;
-    margin: 50px auto;
-    /* -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); */
-    /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); */
-    z-index: 20;
+  .dam-top-map-back-text4 {
+    top: -550px;
+    right: 0px;
+    font-size: 170px;
   }
-}
 
-@media screen and (max-width:599px) {
+  .dam-top-map-back-text5 {
+    bottom: -200px;
+    left: -450px;
+    font-size: 200px;
+  }
 
   .none {
     display: none;
@@ -438,6 +709,8 @@ background-position: 50% 62.5%;
     z-index: 20;
   }
 }
+
+
 
 @media screen and (max-width:479px) {
 
