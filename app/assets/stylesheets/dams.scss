@@ -724,11 +724,6 @@ background-position: 50% 62.5%;
     background-color: #000;
   }
 
-  .skippr-nav-element-block {
-    width: 30px !important;
-    height: 5px !important;
-  }
-
 
     /* 黒部ダムレコメンド */
 
@@ -743,11 +738,11 @@ background-position: 50% 62.5%;
   .kurobe-box-title {
     line-height: 25px;
     width: 80%;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     position: relative;
     padding: 0.1em 0.5em;
-    padding-left: 30px;
+    padding-left: 20px;
     background: -webkit-linear-gradient(to right, rgb(255, 255, 255), transparent);
     background: linear-gradient(to right, rgb(255, 255, 255), transparent);
     color: #0B3B24;
@@ -756,12 +751,12 @@ background-position: 50% 62.5%;
 
   .kurobe-image-box{
     width: 100%;
-    padding-top: 40px;
+    padding-top: 20px;
   }
 
   .kurobe-image {
-    width: 427px;
-    height: 285px;
+    width: 300px;
+    height: 200px;
     margin: 0 auto;
     background-size: cover;
     background-image: url("/images/kurobedam.jpeg");
@@ -775,9 +770,8 @@ background-position: 50% 62.5%;
   .kurobe-text-main {
     width: 95%;
     margin: 0 auto;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 40px;
-    padding-bottom: 20px;
     font-style: italic;
     font-family: "HiraMinPro-W6", "Hiragino Mincho Pro", serif, sans-serif;
   }
@@ -797,11 +791,26 @@ background-position: 50% 62.5%;
     color: #A4A4A4;
   }
 
+  .kurobe-text-main-4 {
+    padding-left: 45px;
+    line-height: 30px;
+  }
+
+  .kurobe-text-main-5 {
+    padding-left: 70px;
+    line-height: 30px;
+  }
+
+  .kurobe-text-main-6 {
+    padding-left: 200px;
+    line-height: 30px;
+  }
+
 
   .kurobe-text-sub {
     list-style: none;
     text-align: right;
-    font-size: 12px;
+    font-size: 9px;
     line-height: 20px;
     padding: 5px 20px 0px 0;
     border-top: solid 0.5px #848484;
