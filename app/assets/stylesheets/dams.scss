@@ -826,6 +826,7 @@ background-position: 50% 62.5%;
 
   .dam-top-region-box {
     text-align: center;
+    padding-bottom: 30px;
   }
 
   .dam-top-region-button {
@@ -833,57 +834,66 @@ background-position: 50% 62.5%;
   }
 
   .dam-top-region-button-self {
-    color: #000;
+    color: #848484;
     font-size: 17px;
+    font-weight: 600;
     background-color: #FFF;
     padding: 15px 100px;
     border-radius: 10px;
-    border: 0.5px solid gray;
+    border: 1px outset #D8D8D8;
   }
 
   .dam-top-region-button-hokkaido-self {
-    color: #000;
+    color: #848484;
     font-size: 17px;
+    font-weight: 600;
     background-color: #FFF;
     padding: 15px 92px;
     border-radius: 10px;
-    border: 0.5px solid gray;
+    border: 1px outset #D8D8D8;
   }
 
   .dam-top-region-button-hokuriku-self {
-    color: #000;
+    color: #848484;
     font-size: 17px;
+    font-weight: 600;
     background-color: #FFF;
     padding: 15px 66px;
     border-radius: 10px;
-    border: 0.5px solid gray;
+    border: 1px outset #D8D8D8;
   }
 
-  .dam-top-region-button-self {
-    color: #000;
+  .dam-top-region-button-self:hover {
+    color: #FFF;
     font-size: 17px;
-    background-color: #FFF;
+    font-weight: 600;
+    background-color: #38610B;
     padding: 15px 100px;
     border-radius: 10px;
-    border: 0.5px solid gray;
+    border: 1px outset #D8D8D8;
+    text-decoration: none;
   }
 
-  .dam-top-region-button-hokkaido-self {
-    color: #000;
+  .dam-top-region-button-hokkaido-self:hover {
+    color: #FFF;
     font-size: 17px;
-    background-color: #FFF;
+    font-weight: 600;
+    background-color: #38610B;
     padding: 15px 92px;
     border-radius: 10px;
-    border: 0.5px solid gray;
+    border: 1px outset #D8D8D8;
+    text-decoration: none;
   }
 
-  .dam-top-region-button-hokuriku-self {
-    color: #000;
+  .dam-top-region-button-hokuriku-self:hover {
+    color: #FFF;
     font-size: 17px;
-    background-color: #FFF;
+    font-weight: 600;
+    background-color: #38610B;
     padding: 15px 66px;
-    border-radius: 10px;
-    border: 0.5px solid gray;
+    border-radius: 10px;border: 1px outset #D8D8D8;
+    border: 1px outset #D8D8D8;
+    text-decoration: none;
   }
 
 
