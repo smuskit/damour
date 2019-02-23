@@ -49,6 +49,8 @@ document.addEventListener("turbolinks:load", function(){
   });
 });
 
+
+
 //JapanMap
 document.addEventListener("turbolinks:load", function(){
   //地域を設定
@@ -77,15 +79,14 @@ document.addEventListener("turbolinks:load", function(){
     "九州地方" : "/prefectures/40",
   };
 
-  $(".map").japanMap(
-    {
+  $(".map").japanMap({
+      width: 900, //canvasのwidth。別途heightも指定可。
       areas  : areas, //上で設定したエリアの情報
       selection : "area", //選ぶことができる範囲(県→prefecture、エリア→area)
       borderLineWidth: 0.25, //線の幅
       drawsBoxLine : false, //canvasを線で囲む場合はtrue
       movesIslands : true, //南西諸島を左上に移動させるときはtrue、移動させないときはfalse
       showsAreaName : true, //エリア名を表示しない場合はfalse
-      width: 900, //canvasのwidth。別途heightも指定可。
       // backgroundColor: "rgba(255, 255, 255, 0.1)", //canvasの背景色
       font : "MS Mincho", //地図に表示する文字のフォント
       fontSize : 12, //地図に表示する文字のサイズ
@@ -94,11 +95,9 @@ document.addEventListener("turbolinks:load", function(){
       onSelect:function(data){ //選択範囲をクリックしたときに実行
         location.href = areaLinks[data.area.name]; //data.area.nameは選択したエリアの名前
       },
-    }
-  );
+  })
 
-  $(".map-w990").japanMap(
-    {
+  $(".map-w990").japanMap({
       width: 600,
       areas  : areas,
       selection : "area",
@@ -111,12 +110,11 @@ document.addEventListener("turbolinks:load", function(){
       fontColor :"#000",
       fontShadowColor : "#fff",
       onSelect : function(data){
-        location.href = areaLinks[data.area.code];
-      }
-  });
+        location.href = areaLinks[data.area.name];
+      },
+  })
 
-  $(".map-w599").japanMap(
-    {
+  $(".map-w599").japanMap({
       width: 480,
       areas  : areas,
       selection : "area",
@@ -129,10 +127,9 @@ document.addEventListener("turbolinks:load", function(){
       fontColor :"#000",
       fontShadowColor : "#fff",
       onSelect : function(data){
-        location.href = areaLinks[data.area.code];
-      }
+        location.href = areaLinks[data.area.name];
+      },
   });
-
 });
 
 //prefectures#show タブメニュー
