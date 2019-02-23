@@ -2,6 +2,6 @@
   <%= form_tag(prefecture_path(prefecture), :method => 'get') do %>
     <div class="pr-show-search-form-text"><%= label_tag(:dam, "#{prefecture.name}内のダムを検索しよう！") %></div>
     <%= text_field_tag :search, "", placeholder:"#{prefecture.name}内のダム名，地名で検索", class:"pr-show-search-form-box" %>
-    <%= submit_tag 'Search', :name => nil, class:"btn btn-sm btn-success" %>
+    <%= submit_tag '検索する', :name => nil, class:"btn btn-sm btn-success" %>
   <% end %>
 </div>

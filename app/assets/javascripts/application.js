@@ -96,6 +96,43 @@ document.addEventListener("turbolinks:load", function(){
       },
     }
   );
+
+  $(".map-w990").japanMap(
+    {
+      width: 600,
+      areas  : areas,
+      selection : "area",
+      borderLineWidth: 0.25,
+      drawsBoxLine : false,
+      movesIslands : true,
+      showsAreaName : true,
+      font : "MS Mincho",
+      fontSize : 10,
+      fontColor :"#000",
+      fontShadowColor : "#fff",
+      onSelect : function(data){
+        location.href = areaLinks[data.area.code];
+      }
+  });
+
+  $(".map-w599").japanMap(
+    {
+      width: 480,
+      areas  : areas,
+      selection : "area",
+      borderLineWidth: 0.25,
+      drawsBoxLine : false,
+      movesIslands : true,
+      showsAreaName : true,
+      font : "MS Mincho",
+      fontSize : 10,
+      fontColor :"#000",
+      fontShadowColor : "#fff",
+      onSelect : function(data){
+        location.href = areaLinks[data.area.code];
+      }
+  });
+
 });
 
 //prefectures#show タブメニュー

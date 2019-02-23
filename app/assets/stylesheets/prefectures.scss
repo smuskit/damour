@@ -137,6 +137,7 @@
 .pr-show-search-form-box{
   width: 400px;
   height: 30px;
+  border-radius: 5px;
 }
 
 .pr-show-pre-name {
@@ -197,13 +198,16 @@ body {
 }
 
 .list-group-item.list-group-item-action.bg-light {
-  background-color: #000;
-  color: #FFF;
+  color: #848484;
+  font-weight: 700;
+  background-color: #fff;
+  border: 1.5px outset #D8D8D8;
 }
 
+
 .list-group-item.list-group-item-action.bg-light:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: #38610B;
+  color: #FFF;
 }
 
 #wrapper #sidebar-wrapper {

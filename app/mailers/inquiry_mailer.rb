@@ -4,6 +4,6 @@ class InquiryMailer < ApplicationMailer
 
   def received_email(inquiry)
     @inquiry = inquiry
-    mail(:subject => 'お問い合わせを承りました')
+    mail to: ENV['ADDRESS_KEY'], :subject => 'お問い合わせを承りました'
   end
 end

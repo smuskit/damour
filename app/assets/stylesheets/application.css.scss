@@ -17,7 +17,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.clearfix::after{
+.clearfix::after {
   content: "";
   display: inline-block;
   clear: both;
@@ -33,7 +33,7 @@
 }
 
 
-body{
+body {
   background: #EFF5FB;  /* #E6E6E6; */     /* #1b1b2b; */
   padding-bottom: 50px 0;
 }
@@ -45,7 +45,7 @@ body{
   text-align: center;
 }
 
-.damour-title{
+.damour-title {
   display: inline-block;
   margin: 20px 0 -10px 0;
 }
@@ -54,52 +54,54 @@ body{
   width: 60px;
 }
 
-.damour-sub-title{
+.damour-sub-title {
   color: #6E6E6E;    /* #c0c0c0; */
   font-size: 25px;
   font-weight: 500;
   font-style: italic;
-  text-align:center;
+  text-align: center;
   font-family: cursive, fantasy, sans-serif;
 }
 
 .nav-menu{
-  text-align:center;
+  text-align: center;
   padding: 30px 0;
   font-family: 'Oswald', sans-serif;
 }
 
+.menu-btn, .menu-btn-home {
+  font-size: 12px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 .menu-btn {
-  color:#FFF;
-  background:#000;
+  color: #FFF;
+  background-color: #000;
   padding:10px 20px;
-  font-size:12px;
-  text-decoration:none;
-  letter-spacing:2px;
-  text-transform:uppercase;
 }
 
-.menu-btn-home{
-  color:#000;
-  background-color: #FFBF00;   /* #FFBF00; */
-  padding:10px 30px;
-  font-size:12px;
-  text-decoration:none;
-  letter-spacing:2px;
-  text-transform:uppercase;
+.menu-btn-home {
+  color: #000;
+  background-color: #FFBF00;
+  padding: 10px 30px;
 }
 
-.menu-btn:hover, .menu-btn-home:hover{
+.menu-btn:hover, .menu-btn-home:hover {
   border: none;
   text-decoration: none;
   color: #000;
   background: #EFF5FB;
-  padding: 20px 20px;
   color: #1b1b1b;
 }
 
+.menu-btn:hover {
+  padding: 20px 20px;
+}
+
 .menu-btn-home:hover{
-  padding:20px 30px;
+  padding: 20px 30px;
 }
 
 
@@ -139,6 +141,60 @@ body{
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
   border-bottom: none;
 }
+
+
+
+
+/* max-width 425 */
+@media screen and (max-width:480px) {
+  .nav-menu {
+    text-align: center;
+    padding: 0px;
+    margin: 80px 0;
+    font-family: 'Oswald', sans-serif;
+  }
+
+
+  .menu-btn, .menu-btn-home {
+    font-size: 20px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .menu-btn {
+    color: #FFF;
+    background-color: #FFF;
+    padding: 40px 20px;
+  }
+
+  .menu-btn-home {
+    color: #000;
+    background-color: #FFBF00;
+    padding: 40px 20px;
+  }
+
+
+  .menu-btn:hover, .menu-btn-home:hover {
+    border: none;
+    text-decoration: none;
+    color: #000;
+    background: #EFF5FB;
+    color: #1b1b1b;
+  }
+
+  .menu-btn:hover {
+    padding: 20px 20px;
+  }
+
+  .menu-btn-home:hover {
+    padding: 20px 30px;
+  }
+
+}
+
+
+
 
 
 

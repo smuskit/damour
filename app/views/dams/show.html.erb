@@ -1,8 +1,8 @@
 <%= render 'cards/alert' %>
 <%= render 'layouts/header' %>
 <div class="dam-show-background">
-<div class="dam-show-clip"><%= image_tag("clip.jpeg")%></div>
-<div class="dam-show-memo"><%= image_tag("memo.jpeg")%></div>
+<div class="dam-show-clip"><%= image_tag("/images/clip.jpeg")%></div>
+<div class="dam-show-memo"><%= image_tag("/images/memo.jpeg")%></div>
 <div class="dam-show-pr-name-memo"><%= @dam.prefecture.name %></div>
   <div class="dam-show-black-line"></div>
     <li class="dam-show-dam-name"><%= @dam.name %></li>
@@ -69,6 +69,8 @@
       <i class="fa fa-comment"></i>
     </li>
 
+    <% if user_signed_in? %>
+
     <div class="comment-form">
       <%= form_for [@dam, @dam_comment] do |f| %>
 
@@ -94,7 +96,7 @@
         </div>
 
         <div class="comment-form-bottom">
-          <%= f.label :投稿本文%>(必須)<br>
+          <%= f.label :投稿本文%><span class="text-danger">（必須）</span><br>
           <%= f.text_area :comment, rows:'5', id:"memo_text", class: "form-control",placeholder: "口コミ情報をこちらに（最大 330文字）" %>
           <p class="comment-form-max-text-count">残りの文字数 : <span class="count"></span>/330文字</p>
 
@@ -104,6 +106,8 @@
         </div>
       <% end %>
     </div>
+
+    <% end %>
 
     <div class="comment-count-box">
       ▼ 総件数 : <%= @dam.dam_comments.count %> 件
@@ -128,9 +132,12 @@
                 <% end %>
               </span>
             </div>
-            <div class="comment-item-delete">
-              <%= link_to '削除',  dam_dam_comments_path(c), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-xs btn-danger comment-item-delete-self" %>
-            </div>
+
+            <% if admin_signed_in? %>
+              <div class="comment-item-delete">
+                <%= link_to '削除',  dam_dam_comments_path(c), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-xs btn-danger comment-item-delete-self" %>
+              </div>
+            <% end %>
             <!-- comment-item に対して　absolute  ここまで -->
 
             <div class="comment-item-title">
