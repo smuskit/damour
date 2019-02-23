@@ -514,29 +514,9 @@ background-position: 50% 62.5%;
     background-color: #000;
   }
 
-  .skippr {
-    background-position: none;
-  }
-
-  .dam-image1 {
-  background-image: url(/images/dam_image1.jpeg);
-  background-position: 50% 62.5%;
-  }
-  .dam-image2 {
-  background-image: url(/images/dam_image2.jpeg);
-  background-position: 40% 20%;
-  }
-  .dam-image3 {
-  background-image: url(/images/dam_image3.jpeg);
-  background-position: 50% 62.5%;
-  }
-  .dam-image4 {
-  background-image: url(/images/dam_image4.jpeg);
-  background-position: 35% 50%;
-  }
-  .dam-image5 {
-  background-image: url(/images/dam_image5.jpeg);
-  background-position: 50% 62.5%;
+  .skippr-nav-element-block {
+    width: 30px !important;
+    height: 5px !important;
   }
 
 
@@ -551,9 +531,9 @@ background-position: 50% 62.5%;
   }
 
   .kurobe-box-title {
-    line-height: 40px;
-    width: 70%;
-    font-size: 30px;
+    line-height: 25px;
+    width: 80%;
+    font-size: 20px;
     font-weight: bold;
     position: relative;
     padding: 0.1em 0.5em;
@@ -565,8 +545,7 @@ background-position: 50% 62.5%;
   }
 
   .kurobe-image-box{
-    float: left;
-    width: 50%;
+    width: 100%;
     padding-top: 40px;
   }
 
@@ -579,14 +558,13 @@ background-position: 50% 62.5%;
   }
 
   .kurobe-text-box {
-    float: left;
-    width: 50%;
+    width: 100%;
     padding-top: 40px;
     color: #6E6E6E;
   }
 
   .kurobe-text-main {
-    font-size: 20px;
+    font-size: 17px;
     line-height: 40px;
     padding-bottom: 50px;
     font-style: italic;
@@ -594,6 +572,7 @@ background-position: 50% 62.5%;
   }
 
   .kurobe-text-main-1 {
+    padding
   }
 
   .kurobe-text-main-2 {
