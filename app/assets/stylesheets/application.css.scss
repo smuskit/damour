@@ -143,58 +143,9 @@ body {
 }
 
 
-
-
-/* max-width 425 */
-@media screen and (max-width:480px) {
-  .nav-menu {
-    text-align: center;
-    padding: 0px;
-    margin: 80px 0;
-    font-family: 'Oswald', sans-serif;
-  }
-
-
-  .menu-btn, .menu-btn-home {
-    font-size: 20px;
-    text-decoration: none;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  .menu-btn {
-    color: #FFF;
-    background-color: #FFF;
-    padding: 40px 20px;
-  }
-
-  .menu-btn-home {
-    color: #000;
-    background-color: #FFBF00;
-    padding: 40px 20px;
-  }
-
-
-  .menu-btn:hover, .menu-btn-home:hover {
-    border: none;
-    text-decoration: none;
-    color: #000;
-    background: #EFF5FB;
-    color: #1b1b1b;
-  }
-
-  .menu-btn:hover {
-    padding: 20px 20px;
-  }
-
-  .menu-btn-home:hover {
-    padding: 20px 30px;
-  }
-
+.wrap {
+  overflow: hidden;
 }
-
-
-
 
 
 
