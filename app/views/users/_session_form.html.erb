@@ -14,13 +14,13 @@
         <!-- registrationと同じ画面にしたことでidが一意ではなくなったので，id変更の記述を追加 -->
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {id: 'user_session'}) do |f| %>
           <div class="modal-body-field-email-signin">
-            <li class= modal-body-label-signin><%= f.label :email %></li>
-            <div class= modal-body-field-signin><%= f.email_field :email, autofocus: true, autocomplete: "email", id:"user_email_session", class:"modal-body-field-self-signin" %></div>
+            <li class="modal-body-label-signin"><%= f.label :email %></li>
+            <div class="modal-body-field-signin"><%= f.email_field :email, autofocus: true, autocomplete: "email", id:"user_email_session", class:"modal-body-field-self-signin" %></div>
           </div>
 
           <div class="modal-body-field-password-signin">
             <li class="modal-body-label-signin"><%= f.label :password %></li>
-            <div class= modal-body-field-signin"><%= f.password_field :password, autocomplete: "current-password", id:"user_password_session", class:"modal-body-field-self-signin" %></div>
+            <div class="modal-body-field-signin"><%= f.password_field :password, autocomplete: "current-password", id:"user_password_session", class:"modal-body-field-self-signin" %></div>
           </div>
 
           <%= f.hidden_field :url, value: request.fullpath, id: 'user_url_session' %>

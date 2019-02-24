@@ -215,8 +215,3 @@ document.addEventListener("turbolinks:load", function(){
         }
     });
 });
-
-
-$(document).ready(function(){
-    $("#validate_id").validationEngine();
-  });

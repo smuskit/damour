@@ -179,7 +179,10 @@ body {
 }
 
 .modal-body-field-email-signin {
-  margin: -10px 0 20px 0;
+  margin: 5px 0 20px 0;
+}
+
+.modal-body-field-signin {
 }
 
 .modal-body-field-password-signin {
@@ -218,6 +221,17 @@ body {
 
   /* registration */
 
+.text-danger-big {
+  font-size: 17px;
+  font-weight: 600;
+  color: #a94442;
+}
+
+.text-danger-small {
+  font-size: 12px;
+  font-weight: 600;
+  color: #a94442;
+}
 
 .modal-signup {
   margin: 50px auto;
@@ -264,21 +278,6 @@ body {
   height: 60px;
 }
 
-.modal-body-field-signup {
-  margin: 10px 0 20px 0;
-}
-
-.modal-body-attachment-field-signup {
-  width: 300px;
-  margin: 0 auto;
-}
-
-.modal-body-attachment-field-self-signup {
-}
-
-.modal-body-field-password-signup {
-  margin: 10px 0;
-}
 
 .modal-body-label-signup {
   list-style: none;
@@ -287,15 +286,27 @@ body {
 }
 
 .modal-body-field-signup {
-  margin-top: -10px;
+  margin-top: 10px;
 }
 
 .modal-body-field-self-signup {
   width: 60%;
   height: 30px;
-  margin-top: 10px;
   border-radius: 5px;
 }
+
+.modal-body-field-password-signup {
+  margin: 10px 0;
+}
+
+.modal-body-attachment-field-signup {
+  width: 300px;
+  margin: 15px auto;
+}
+
+.modal-body-attachment-field-self-signup {
+}
+
 
 .modal-body-remember-signup {
   text-align: left;

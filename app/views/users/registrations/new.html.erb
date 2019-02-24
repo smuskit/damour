@@ -11,47 +11,49 @@
 
   <div class="modal-body">
     <div class="modal-body-image-signup"><%= image_tag('/images/swing1.jpeg', class:"swing1")%></div>
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {id: 're_new_user'}) do |f| %>
-        <div class="modal-body-field-signup">
-          <li class="modal-body-label-signup"><%= f.label :お名前%>（非公開）</li>
-          <div class= modal-body-field-signup"><%= f.text_field :name, autofocus: true, class:"modal-body-field-self-re-signup", id:"re_user_name" %></div>
-        </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-        <div class="modal-body-field-signup">
-          <li class="modal-body-label-signup"><%= f.label :お名前ふりがな%>（非公開）</li>
-          <div class= modal-body-field-signup"><%= f.text_field :name_kana, class:"modal-body-field-self-re-signup", id:"re_user_name_kana" %></div>
-        </div>
+      <div class="modal-body-field-signup">
+        <li class="modal-body-label-signup"><span class="text-danger-big">* </span><%= f.label :お名前%>（非公開）　<span class="text-danger"> *</span><span class="text-danger-small"> は必須項目です．</span></li>
+        <div class="modal-body-field"><%= f.text_field :name, autofocus: true, class:"modal-body-field-self-signup" %></div>
+      </div>
 
-        <div class="modal-body-field-signup">
-          <li class= modal-body-label-signup><%= f.label :email %>（非公開）</li>
-          <div class= modal-body-field-signup><%= f.email_field :email, class:"modal-body-field-self-re-signup", id:"re_user_email" %></div>
-        </div>
+      <div class="modal-body-field-signup">
+        <li class="modal-body-label-signup"><span class="text-danger-big">* </span><%= f.label :お名前ふりがな%>（非公開）</li>
+        <div class="modal-body-field"><%= f.text_field :name_kana, class:"modal-body-field-self-signup" %></div>
+      </div>
 
-        <div class="modal-body-field-signup">
-          <li class="modal-body-label-signup"><%= f.label :ニックネーム%></li>
-          <div class= modal-body-field-signup"><%= f.text_field :hundle_name, class:"modal-body-field-self-re-signup", id:"re_user_hundle_name" %></div>
-        </div>
+      <div class="modal-body-field-signup">
+        <li class="modal-body-label-signup"><span class="text-danger-big">* </span><%= f.label :メールアドレス %>（非公開）</li>
+        <div class="modal-body-field"><%= f.email_field :email, class:"modal-body-field-self-signup" %></div>
+      </div>
 
-        <div class="modal-body-field-signup">
-          <li class="modal-body-label-signup"><%= f.label :プロフィール画像 %></li>
-          <div class="modal-body-attachment-field-signup"><%= f.attachment_field :profile_image, class:"modal-body-attachment-field-self-re-signup", id:"re_user_profile_image" %></div>
-        </div>
+      <div class="modal-body-field-password-signup">
+        <li class="modal-body-label-signup"><span class="text-danger-big">* </span><%= f.label :パスワード %>（6文字以上）</li>
+        <div class="modal-body-field"><%= f.password_field :password, autocomplete: "new-password", class:"modal-body-field-self-signup" %></div>
+      </div>
 
-        <div class="modal-body-field-password-signup">
-          <li class="modal-body-label-signup"><%= f.label :パスワード %>(6文字以上)</li>
-          <div class= modal-body-field-signup"><%= f.password_field :password, autocomplete: "new-password", class:"modal-body-field-self-re-signup", id:"re_user_password" %></div>
-        </div>
+      <div class="modal-body-field-password-signup">
+        <li class="modal-body-label-signup"><span class="text-danger-big">* </span><%= f.label :パスワード確認 %>（6文字以上）</li>
+        <div class="modal-body-field"><%= f.password_field :password_confirmation, autocomplete: "new-password", class:"modal-body-field-self-signup" %></div>
+      </div>
 
-        <div class="modal-body-field-password-signup">
-          <li class="modal-body-label-signup"><%= f.label :password_confirmation %>(6文字以上)</li>
-          <div class= modal-body-field-signup"><%= f.password_field :password_confirmation, autocomplete: "new-password", class:"modal-body-field-self-re-signup", id:"re_user_password_confirmation" %></div>
-        </div>
+      <div class="modal-body-field-signup">
+        <li class="modal-body-label-signup"><%= f.label :ニックネーム%></li>
+        <div class="modal-body-field"><%= f.text_field :hundle_name, class:"modal-body-field-self-signup" %></div>
+      </div>
 
-        <div class="actions">
-          <%= f.submit "Sign up", class:"btn btn-lg btn-primary modal-body-submit-signup"  %>
-        </div>
-      <% end %>
-    </div>
+      <div class="modal-body-field-signup">
+        <li class="modal-body-label-signup"><%= f.label :プロフィール画像 %></li>
+        <div class="modal-body-attachment-field-signup"><%= f.attachment_field :profile_image, class:"modal-body-attachment-field-self-signup" %></div>
+      </div>
+
+      <%= f.hidden_field :url, value: request.fullpath %>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class:"btn btn-lg btn-primary modal-body-submit-signup"  %>
+      </div>
+    <% end %>
   </div>
 </div>
 

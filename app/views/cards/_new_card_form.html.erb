@@ -4,7 +4,7 @@
 <%= form_for(card) do |f| %>
 
   <div class="region-area">
-    ■<%= f.label :地域 %><br>
+    ■<%= f.label :地域 %><span class="text-danger">（必須）</span><br>
     <%= collection_select :card, :region_id, Region.all, :id, :name %>
   </div>
 
@@ -13,17 +13,17 @@
   </div>
 
   <div class="new-card-form-item">
-    ■<%= f.label :ダム名 %><span class="text-danger">（必須）</span><br>
+    ■<%= f.label :ダムカード名 %><span class="text-danger">（必須）</span><br>
     <%= f.text_field :dam_name, class:"" %>
   </div>
 
   <div class="new-card-form-item">
-    ■<%= f.label :ダム訪問日 %> (任意)<br>
+    ■<%= f.label :ダム訪問日 %>（任意）<br>
     <%= f.date_field :visit_date, class:"" %>
   </div>
 
   <div class="new-card-form-item">
-    ■<%= f.label :カードのバージョン %> (任意)<br>
+    ■<%= f.label :カードのバージョン %>（任意）<br>
     Ver.<%= f.number_field :version_bf, min: 0, max:5, class:"" %>
     .<%= f.number_field :version_af, min: 0, max:5, class:"" %>
     (<%= f.number_field :version_y, min: 1, max:9999, class:"" %>
@@ -31,7 +31,7 @@
   </div>
 
   <div class="new-card-form-image">
-    <div>■<%= f.label :カードの写真 %> (任意)<br>
+    <div>■<%= f.label :カードの写真 %>（任意）<br>
       <%= f.attachment_field :card_image, class:"" %>
     </div>
   </div>

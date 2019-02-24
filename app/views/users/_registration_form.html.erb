@@ -15,23 +15,33 @@
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
           <div class="modal-body-field-signup">
-            <li class="modal-body-label-signup"><%= f.label :お名前%>（非公開）</li>
-            <div class= modal-body-field-signup"><%= f.text_field :name, autofocus: true, class:"modal-body-field-self-signup" %></div>
+            <li class="modal-body-label-signup"><span class="text-danger-big">* </span><%= f.label :お名前%>（非公開）　<span class="text-danger"> *</span><span class="text-danger-small"> は必須項目です．</span></li>
+            <div class="modal-body-field"><%= f.text_field :name, autofocus: true, class:"modal-body-field-self-signup" %></div>
           </div>
 
           <div class="modal-body-field-signup">
-            <li class="modal-body-label-signup"><%= f.label :お名前ふりがな%>（非公開）</li>
-            <div class= modal-body-field-signup"><%= f.text_field :name_kana, class:"modal-body-field-self-signup" %></div>
+            <li class="modal-body-label-signup"><span class="text-danger-big">* </span><%= f.label :お名前ふりがな%>（非公開）</li>
+            <div class="modal-body-field"><%= f.text_field :name_kana, class:"modal-body-field-self-signup" %></div>
           </div>
 
           <div class="modal-body-field-signup">
-            <li class= modal-body-label-signup><%= f.label :email %>（非公開）</li>
-            <div class= modal-body-field-signup><%= f.email_field :email, class:"modal-body-field-self-signup" %></div>
+            <li class="modal-body-label-signup"><span class="text-danger-big">* </span><%= f.label :email %>（非公開）</li>
+            <div class="modal-body-field"><%= f.email_field :email, class:"modal-body-field-self-signup" %></div>
+          </div>
+
+          <div class="modal-body-field-password-signup">
+            <li class="modal-body-label-signup"><span class="text-danger-big">* </span><%= f.label :password %>(6文字以上)</li>
+            <div class="modal-body-field"><%= f.password_field :password, autocomplete: "new-password", class:"modal-body-field-self-signup" %></div>
+          </div>
+
+          <div class="modal-body-field-password-signup">
+            <li class="modal-body-label-signup"><span class="text-danger-big">* </span><%= f.label :password_confirmation %>(6文字以上)</li>
+            <div class="modal-body-field"><%= f.password_field :password_confirmation, autocomplete: "new-password", class:"modal-body-field-self-signup" %></div>
           </div>
 
           <div class="modal-body-field-signup">
             <li class="modal-body-label-signup"><%= f.label :ニックネーム%></li>
-            <div class= modal-body-field-signup"><%= f.text_field :hundle_name, class:"modal-body-field-self-signup" %></div>
+            <div class="modal-body-field"><%= f.text_field :hundle_name, class:"modal-body-field-self-signup" %></div>
           </div>
 
           <div class="modal-body-field-signup">
@@ -39,15 +49,6 @@
             <div class="modal-body-attachment-field-signup"><%= f.attachment_field :profile_image, class:"modal-body-attachment-field-self-signup" %></div>
           </div>
 
-          <div class="modal-body-field-password-signup">
-            <li class="modal-body-label-signup"><%= f.label :password %>(6文字以上)</li>
-            <div class= modal-body-field-signup"><%= f.password_field :password, autocomplete: "new-password", class:"modal-body-field-self-signup" %></div>
-          </div>
-
-          <div class="modal-body-field-password-signup">
-            <li class="modal-body-label-signup"><%= f.label :password_confirmation %>(6文字以上)</li>
-            <div class= modal-body-field-signup"><%= f.password_field :password_confirmation, autocomplete: "new-password", class:"modal-body-field-self-signup" %></div>
-          </div>
           <%= f.hidden_field :url, value: request.fullpath %>
 
           <div class="actions">

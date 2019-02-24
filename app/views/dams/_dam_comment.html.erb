@@ -14,9 +14,11 @@
         <% end %>
       </span>
     </div>
-    <div class="comment-item-delete">
-      <%= link_to '削除',  dam_dam_comments_path(c), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-xs btn-danger comment-item-delete-self" %>
-    </div>
+    <% if admin_signed_in? %>
+      <div class="comment-item-delete">
+        <%= link_to '削除',  dam_dam_comments_path(c), method: :delete, "data-confirm" => "本当に削除しますか?", class:"btn btn-xs btn-danger comment-item-delete-self" %>
+      </div>
+    <% end %>
     <!-- comment-item に対して　absolute  ここまで -->
 
     <div class="comment-item-title">
