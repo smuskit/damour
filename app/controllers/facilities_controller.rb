@@ -9,9 +9,10 @@ class FacilitiesController < ApplicationController
     @facility = Facility.new(facility_params)
 
     if @facility.save
-      redirect_to facilities_path, flash: {key: "#{@facility.name}の情報を登録しました．"}
+      flash[:notice] = "#{@facility.name}の情報を更新しました．"
+      redirect_to facilities_path
     else
-      flash[:create] = '入力に誤りがあります．'
+      flash[:alert] = '入力に誤りがあります．'
       render 'index'
     end
   end
@@ -40,9 +41,10 @@ class FacilitiesController < ApplicationController
   def update
     facility = Facility.find(params[:id])
     if facility.update(facility_params)
-      redirect_to facilities_path, flash: {key: "#{facility.name}の情報を更新しました．"}
+      flash[:notice] = "#{facility.name}の情報を更新しました．"
+      redirect_to facilities_path
     else
-      flash[:update] = '入力に誤りがあります．'
+      flash[:alert] = '入力に誤りがあります．'
       render 'edit'
     end
   end

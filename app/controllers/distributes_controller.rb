@@ -10,10 +10,10 @@ class DistributesController < ApplicationController
   def create
     @distribute = Distribute.new(distribute_params)
     if @distribute.save
-      flash.notice = '登録OK!'
+      flash[:notice] = '登録OK!'
       redirect_to distributes_path
     else
-      flash.notice = '再入力'
+      flash[:alert] = '再入力'
       @distributes = Distribute.page(params[:page]).order :dam_id
       render 'index'
     end
@@ -22,10 +22,10 @@ class DistributesController < ApplicationController
   def destroy
     distribute = Distribute.find(params[:id])
     if distribute.destroy
-      flash.notice = '削除完了'
+      flash[:notice] = '削除完了'
       redirect_to distributes_path
     else
-      flash.notice = '削除失敗'
+      flash[:alert] = '削除失敗'
       render 'index'
     end
   end
