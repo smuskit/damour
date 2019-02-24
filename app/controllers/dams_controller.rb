@@ -17,10 +17,10 @@ class DamsController < ApplicationController
     @dam = Dam.new(dam_params)
     @prefecture = @dam.prefecture
     if @dam.save
-      flash.notice = '登録OK!'
+      flash[:notice] = "#{@dam.name}の情報を登録しました．"
       redirect_to dam_path(@dam)
     else
-      flash.notice = '再入力'
+      flash[:alert] = "入力に誤りがあります．"
       render 'new'
     end
   end
@@ -58,8 +58,10 @@ class DamsController < ApplicationController
   def update
     @dam = Dam.find(params[:id])
     if @dam.update(dam_params)
+      flash[:notice] = "#{@dam.name}の情報を更新しました．"
       redirect_to dams_path
     else
+      flash[:alert] = "入力に誤りがあります．"
       render 'edit'
     end
   end
@@ -68,7 +70,7 @@ class DamsController < ApplicationController
     dam = Dam.find(params[:id])
     prefecture = dam.prefecture
       if  dam.destroy
-          flash[:destroy] = '#{dam.name}の情報を削除しました．'
+          flash[:notice] = "#{dam.name}の情報を削除しました．"
           redirect_to dams_top_path
       else
         render action: :new

@@ -25,7 +25,6 @@ class DistributesController < ApplicationController
       flash[:notice] = '削除完了'
       redirect_to distributes_path
     else
-      flash[:alert] = '削除失敗'
       render 'index'
     end
   end

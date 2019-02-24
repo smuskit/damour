@@ -9,7 +9,7 @@ class FacilitiesController < ApplicationController
     @facility = Facility.new(facility_params)
 
     if @facility.save
-      flash[:notice] = "#{@facility.name}の情報を更新しました．"
+      flash[:notice] = "#{@facility.name}の情報を登録しました．"
       redirect_to facilities_path
     else
       flash[:alert] = '入力に誤りがあります．'
@@ -52,7 +52,8 @@ class FacilitiesController < ApplicationController
   def destroy
     facility = Facility.find(params[:id])
     facility.destroy
-    redirect_to facilities_path, flash: {key: "#{facility.name}の情報を削除しました．"}
+    flash[:notice] = "#{facility.name}の情報を削除しました．"
+    redirect_to facilities_path
   end
 
   private
