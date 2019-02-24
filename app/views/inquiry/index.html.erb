@@ -2,7 +2,7 @@
 <div class="inquiry-index">
   <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
 
-      <h2 class="inquiry-index-title">お問い合わせフォーム</h2>
+    <h2 class="inquiry-index-title">お問い合わせフォーム</h2>
 
     <% if @inquiry.errors.any? %>
       <div class="alert alert-danger" role="alert">
@@ -15,36 +15,40 @@
       </div>
     <% end %>
 
-    <div class="inquiry-index-table">
-      <table class="table">
-        <tr>
-          <th class="inquiry-index-form-label">お名前<span class="text-danger">（必須）</span></th>
-          <td class="inquiry-index-form-field">
-            <div>
-              <%= f.text_field :name, class:"inquiry-index-form-name-self" %>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th class="inquiry-index-form-label">メールアドレス<span class="text-danger">（必須）</span></th>
-          <td class="inquiry-index-form-field">
-            <div>
-              <%= f.text_field :email, class:"inquiry-index-form-email-self" %>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th class="inquiry-index-form-label">お問い合わせ内容<span class="text-danger">（必須）</span></th>
-          <td class="inquiry-index-form-field">
-            <div>
-              <%= f.text_area :message, class:"inquiry-index-form-message-self" %>
-            </div>
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div class="inquiry-index-form-submit">
-      <%= f.submit '確認画面へ', class: 'btn btn-default inquiry-index-form-submit-self' %>
+    <div class="inquiry-index-box">
+      <span class="text-danger"> *</span><span class="text-danger-small"> は必須項目です．</span>
+
+      <div class="inquiry-index-table">
+        <table class="table">
+          <tr>
+            <th class="inquiry-index-form-label"><span class="text-danger-big">* </span>お名前 </th>
+            <td class="inquiry-index-form-field">
+              <div>
+                <%= f.text_field :name, class:"inquiry-index-form-name-self" %>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th class="inquiry-index-form-label"><span class="text-danger-big">* </span>メールアドレス</th>
+            <td class="inquiry-index-form-field">
+              <div>
+                <%= f.text_field :email, class:"inquiry-index-form-email-self" %>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th class="inquiry-index-form-label"><span class="text-danger-big">* </span>お問い合わせ内容</th>
+            <td class="inquiry-index-form-field">
+              <div>
+                <%= f.text_area :message, class:"inquiry-index-form-message-self" %>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div class="inquiry-index-form-submit">
+          <%= f.submit '確認画面へ', class:'btn btn-info inquiry-index-form-submit-self' %>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>
