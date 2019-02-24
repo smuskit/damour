@@ -323,11 +323,15 @@ body {
 
 /* re-registration*/
 
+.modal-content-re-signup {
+  width: 500px;
+  displar: inline-block;
+  margin: 0 auto;
+}
 
 .modal-body-field-self-re-signup {
   width: 60%;
   height: 30px;
-  margin-top: 10px;
   border-radius: 5px;
 }
 

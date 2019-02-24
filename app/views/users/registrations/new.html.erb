@@ -1,9 +1,7 @@
 <!-- CSSは users/_registration_form を転用 -->
 <%= render 'layouts/header' %>
 
-<%= devise_error_messages %>
-
-<div class="modal-content modal-content-signup">
+<div class="modal-content modal-content-re-signup">
 
   <div class="modal-header">
     <h5 class="modal-header-title">SIGN UP</h5>
@@ -12,6 +10,8 @@
   <div class="modal-body">
     <div class="modal-body-image-signup"><%= image_tag('/images/swing1.jpeg', class:"swing1")%></div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+    <%= devise_error_messages %>
 
       <div class="modal-body-field-signup">
         <li class="modal-body-label-signup"><span class="text-danger-big">* </span><%= f.label :お名前%>（非公開）　<span class="text-danger"> *</span><span class="text-danger-small"> は必須項目です．</span></li>
