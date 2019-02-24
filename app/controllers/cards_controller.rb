@@ -18,10 +18,10 @@ class CardsController < ApplicationController
     @card = Card.new(card_params)
     @card.user_id = current_user.id
     if @card.save
-      flash[:success] = "「#{@card.dam_name}」のカードを「#{@card.region.name}」に追加しました！"
+      flash[:notice] = "「#{@card.dam_name}」のカードを「#{@card.region.name}」に追加しました！"
       redirect_to card_path(@card.id)
     else
-      flash[:danger] = 'カードの投稿に失敗しました'
+      flash[:alert] = 'カードの投稿に失敗しました'
       @user = User.find(current_user.id)
       @cards_hokkaido = @user.cards.all.where(region_id: 1).reverse_order
       @cards_tohoku = @user.cards.all.where(region_id: 2).reverse_order
@@ -53,7 +53,7 @@ class CardsController < ApplicationController
     @card.user_id = current_user.id
     respond_to do |format|
       if @card.update(card_params)
-        flash[:success] = "「#{@card.dam_name}」のカード情報を更新しました！"
+        flash[:notice] = "「#{@card.dam_name}」のカード情報を更新しました！"
         format.html { redirect_to @user }
         format.js { render js: "window.location = '#{card_path(@card)}'" }
       else

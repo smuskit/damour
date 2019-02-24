@@ -34,10 +34,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:success] = "#{@user.name}さんのユーザ情報を更新しました．"
+      flash[:notice] = "#{@user.name}さんのユーザ情報を更新しました．"
       redirect_to user_path(@user.id)
     else
-      flash[:destroy] = "入力に誤りがあります．"
+      flash[:alert] = "入力に誤りがあります．"
       render 'edit'
     end
   end
@@ -45,10 +45,10 @@ class UsersController < ApplicationController
   def destroy
     user = User.find(params[:id])
       if  user.destroy
-          flash[:destroy] = '#{user.name}の情報を削除しました．'
+          flash[:notice] = '#{user.name}の情報を削除しました．'
           redirect_to users_index_path
       else
-        render action: :new
+          render action: :new
       end
   end
 

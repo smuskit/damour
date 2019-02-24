@@ -3,9 +3,10 @@
     <%= link_to 'Admin Page', admin_path(Admin.find(1)), class:"btn btn-warning" %>
   <% end %>
 
-
-  <%= link_to root_path, class:"title-link" do %><li class="damour-title">ダム王</li><% end %>
-  <li class="damour-sub-title">damour</li>
+  <div class="damour-logo">
+    <div class="damour-title"><%= link_to root_path, class:"title-link" do %><%= image_tag('/images/damour_logo.jpeg',class:"logo-image-self")%><% end %></div>
+    <p class="damour-sub-title">damour</p>
+  </div>
 
   <div class="nav-menu"></div>
 

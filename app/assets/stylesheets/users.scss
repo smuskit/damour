@@ -290,6 +290,10 @@
     filter: grayscale(100%);
 }
 
+.new-card-text-danger {
+    margin-bottom: 10px;
+}
+
 .new-card-form {
     position: relative;
     margin-top: -50px;
@@ -309,14 +313,14 @@
     margin: 10px;
     background-color: #FFF;
     width: 22%;
-    height: 500px;
+    height: 510px;
 }
 
 .new-card-form-pencil {
     width: 30px;
     position: absolute;
     top: -31px;
-    right: 88px;
+    left: 200px;
 }
 
 .new-card-form-pencil-image {
@@ -331,17 +335,17 @@
     width: 180px;
     list-style: none;
     font-size: 20px;
-    font-weight: bold;
+    font-weight:bold;
     border-bottom: 1px solid #000;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .new-card-form-image {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .new-card-form-submit {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .new-card-form-submit-button {
