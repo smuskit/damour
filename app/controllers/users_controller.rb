@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   def destroy
     user = User.find(params[:id])
       if  user.destroy
-          flash[:notice] = '#{user.name}の情報を削除しました．'
+          flash[:notice] = '退会処理が完了しました．ご利用ありがとうございました．'
           redirect_to users_index_path
       else
           render action: :new
