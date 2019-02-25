@@ -20,7 +20,7 @@
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"menu-btn" %>
     <% else %>
       <%= link_to 'TOP', root_path, class:"menu-btn-home" %>
-      <%= link_to 'サイトの使い方', users_about_path, class:"menu-btn" %>
+      <%= link_to '初めての方へ', users_about_path, class:"menu-btn" %>
       <%= link_to "会員登録", '', class: "nav-link menu-btn" , "data-toggle": "modal", "data-target": "#signupModal" %>
       <!-- モーダルログインフォーム -->
         <%= render 'users/registration_form' %>
