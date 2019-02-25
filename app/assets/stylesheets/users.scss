@@ -81,7 +81,20 @@
 
 /* edit */
 
-.user-show-back {
+.user-edit-box {
+    width: 440px;
+    margin: 30px auto;
+}
+
+.user-edit-background {
+    background: #fff;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+
+.user-edit-show-back {
     margin: 0 auto;
     text-align: center;
     padding-top: 100px;
@@ -112,6 +125,10 @@
 .user-edit-submit-self {
     width: 200px;
     margin: 0 auto;
+}
+
+.user-edit-delete-link {
+    text-align: right;
 }
 
 
