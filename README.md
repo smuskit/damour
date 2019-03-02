@@ -1,7 +1,6 @@
-# README
+# Damour
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+全国のダムの概要，口コミ，ダム周辺の観光スポットの情報を得られると共に， ダムを訪問して手に入れたダムカードをコレクションできるサイトです．
 
 Things you may want to cover:
 
