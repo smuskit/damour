@@ -1,24 +1,20 @@
-# README
+# Damour
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+全国のダムの概要，口コミ，ダム周辺の観光スポットの情報を得られると共に， ダムを訪問して手に入れたダムカードをコレクションできるサイトです．
 
-Things you may want to cover:
+## Damourの由来
 
-* Ruby version
+フランス語の 「愛 = "amour"」 と， カードをコレクションしてダムの王を目指すという思いを込めた「ダム王(ローマ字で "damou")」を融合したものです．　
 
-* System dependencies
+## Damourの内容
 
-* Configuration
+* トップページの日本地図から各地方ページにジャンプすることで， その地方にあるダムの一覧と， ダムカードの配布場所を確認できます．
 
-* Database creation
+* ダムの詳細ページで， ダムの諸元， 所在地， ダムおよびその周辺観光地の口コミをチェックできます．
 
-* Database initialization
+* 自分専用のダムカードコレクションページで， 手に入れたダムカードの登録や編集， 閲覧ができます．
 
-* How to run the test suite
+**※口コミの投稿やダムカードの登録を行うには， damourへの会員登録（無料）が必要です．**
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
