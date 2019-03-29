@@ -309,6 +309,7 @@
                   <tbody>
                     <% distributes = d.distributes %>
                     <% distributes.each do |dist| %>
+                      <% if dist.facility %>
                       <tr>
                         <td>
                           <div class="pr-show-dam-item-facility-item">
@@ -316,12 +317,16 @@
                           </div>
                         </td>
                         <td class="w991-none">
-                          <span class="pr-show-dam-item-facility-hours"><%= facility_simple_time(dist.facility.opening_hours) %>~<%= facility_simple_time(dist.facility.closing_hours) %></span>
+                          <% if !dist.facility.opening_hours || !dist.facility.closing_hours %>
+                          <% else %>
+                            <span class="pr-show-dam-item-facility-hours"><%= facility_simple_time(dist.facility.opening_hours) %>~<%= facility_simple_time(dist.facility.closing_hours) %></span>
+                          <% end %>
                         </td>
                         <td>
                           <span class="pr-show-dam-item-facility-business-period">(<%= dist.facility.business_period %>)</span>
                         </td>
                       </tr>
+                      <% end %>
                     <% end %>
                   </tbody>
                 </table>

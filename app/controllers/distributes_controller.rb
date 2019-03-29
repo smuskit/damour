@@ -20,7 +20,7 @@ class DistributesController < ApplicationController
   end
 
   def destroy
-    distribute = Distribute.find(params[:])
+    distribute = Distribute.find(params[:id])
     if distribute.destroy
       flash[:notice] = '削除完了'
       redirect_to distributes_path

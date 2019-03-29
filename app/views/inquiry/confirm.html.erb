@@ -1,40 +1,26 @@
 <%= render 'layouts/header' %>
 
-<div class="inquiry-index">
-  <h2 class="inquiry-index-title">お問い合わせ内容確認</h2>
+<div class="inquiry-confirm">
+  <h2 class="inquiry-confirm-title">お問い合わせ内容確認</h2>
 
-<div class="inquiry-index-box">
-  <div class="inquiry-index-table">
-    <%= form_for @inquiry, :url => inquiry_thanks_path do |f| %>
-      <table class="table">
-        <tr>
-          <th class="inquiry-index-form-label">名前</th>
-          <td class="inquiry-index-form-field">
-            <%= f.hidden_field :name %>
-            <%= @inquiry.name %>
-          </td>
-        </tr>
-        <tr>
-          <th class="inquiry-index-form-label">メールアドレス</th>
-          <td class="inquiry-index-form-field">
-            <%= f.hidden_field :email %>
-            <%= @inquiry.email %>
-          </td>
-        </tr>
-        <tr>
-          <th class="inquiry-index-form-label">お問い合わせ内容</th>
-            <td class="inquiry-index-form-field">
-              <%= f.hidden_field :message %>
-              <%= simple_format(@inquiry.message) %>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="inquiry-index-form-submit">
-        <%= f.submit '送　   信', :class => 'btn btn-primary inquiry-index-form-submit-self' %>
-      </div>
-    <% end %>
-  </div>
+<div class="inquiry-confirm-box">
+  <%= form_for @inquiry, url: inquiry_thanks_path do |f| %>
+    <div class="inquiry-confirm-main">
+      <%= f.hidden_field :name %>
+      <%= f.hidden_field :email %>
+      <%= f.hidden_field :message %>
+      <%= simple_format(@inquiry.message) %>
+    </div>
+    <div class="inquiry-confirm-form-submit">
+      <%= f.submit '送　   信', :class => 'btn btn-primary inquiry-confirm-form-submit-self' %>
+    </div>
+  <% end %>
+  <%= form_for @inquiry, url: inquiry_path do |f| %>
+    <%= f.hidden_field :name %>
+    <%= f.hidden_field :email %>
+    <%= f.hidden_field :message %>
+    <%= f.submit '入力画面へ戻る' %>
+  <% end %>
 </div>
 
 

@@ -13,7 +13,12 @@
       </tr>
       <tr>
         <th>営業時間</th>
-        <td><%= facility_simple_time(@facility.opening_hours) %> 〜 <%= facility_simple_time(@facility.closing_hours) %></td>
+        <td>
+          <% if !@facility.opening_hours || !@facility.closing_hours %>
+          <% else %>
+            <%= facility_simple_time(@facility.opening_hours) %> 〜 <%= facility_simple_time(@facility.closing_hours) %>
+          <% end %>
+        </td>
       </tr>
       <tr>
         <th>定休日</th>

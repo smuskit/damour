@@ -38,7 +38,6 @@ Rails.application.routes.draw do
       get 'get_prefectures' #/dams/get_prefectures
     end
   end
-
   resources :dams, only: [:create, :index, :show, :edit, :update, :destroy] do
      resource :dam_comments, only: [:create, :destroy]
   end
@@ -52,6 +51,7 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   get 'inquiry' => 'inquiry#index'              # 入力画面
+  post 'inquiry' =>  'inquiry#back'
   post 'inquiry/confirm' => 'inquiry#confirm'   # 確認画面
   post 'inquiry/thanks' => 'inquiry#thanks'     # 送信完了画面
 
