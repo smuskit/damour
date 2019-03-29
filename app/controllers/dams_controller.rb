@@ -86,4 +86,10 @@ class DamsController < ApplicationController
       params.require(:dam).permit(:region_id, :prefecture_id, :name, :name_kana, :postal_code, :address, :river, :dam_type, :gate, :height, :length, :volume, :purpose, :constructor, :start_of_construction, :end_of_construction, :dam_image)
     end
 
+    def dam_comment_params
+      params.require(:dam_comment).permit(:user_id, :dam_id, :title, :comment, :comment_image)
+    end
+
+
+
 end

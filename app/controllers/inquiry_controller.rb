@@ -2,6 +2,7 @@ class InquiryController < ApplicationController
   def index
     # 入力画面を表示
     @inquiry = Inquiry.new
+    @user = User.find(current_user.id)
     render :action => 'index'
   end
 
@@ -13,8 +14,15 @@ class InquiryController < ApplicationController
       render :action => 'confirm'
     else
       # NG。入力画面を再表示
+      @user = User.find(current_user.id)
       render :action => 'index'
     end
+  end
+
+  def back
+    @inquiry = Inquiry.new(inquiry_params)
+    @user = User.find(current_user.id)
+    render 'index'
   end
 
   def thanks

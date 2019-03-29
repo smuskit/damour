@@ -17,10 +17,34 @@
     <tbody>
       <% @distributes.each do |d| %>
         <tr>
-          <td><%= d.dam_id %></td>
-          <td><%= d.facility_id %></td>
-          <td><%= d.dam.name %></td>
-          <td><%= d.facility.name %></td>
+          <td>
+            <% if !d.dam %>
+              削除済み
+            <% elsif %>
+              <%= d.dam_id %>
+            <% end %>
+          </td>
+          <td>
+            <% if !d.facility %>
+              削除済み
+            <% elsif %>
+              <%= d.facility_id %>
+            <% end %>
+          </td>
+          <td>
+            <% if !d.dam %>
+              削除済み
+            <% elsif %>
+              <%= d.dam.name %>
+            <% end %>
+          </td>
+          <td>
+            <% if !d.facility %>
+              削除済み
+            <% elsif %>
+              <%= d.facility.name %>
+            <% end %>
+          </td>
           <td><%= link_to '削除', distribute_path(d), method: :delete, class:"btn btn-xs btn-danger" %>
         </tr>
       <% end %>

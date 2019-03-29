@@ -1,4 +1,4 @@
-// Place all the styles related to the inquiry controller here.
+// Place all the styles related to the mnquiry controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -13,46 +13,18 @@
 }
 
 .inquiry-index-box {
-  width: 60%;
+  width: 50%;
   margin: 20px auto;
 }
 
-.inquiry-index-table {
-  background-color: #fff;
+.inquiry-index-form-message-self {
   width: 100%;
-  padding: 20px;
-  margin : 10px auto;
-  border-radius: 10px;
-}
-
-.table, th, td {
-  border-style:none!important;
-}
-
-.inquiry-index-form-label {
-  width: 30%;
-  margin-top: 10px;
-}
-
-.inquiry-index-form-field {
-  width: 70%;
-}
-
-.inquiry-index-form-name-self, .inquiry-index-form-email-self, .inquiry-index-form-message-self {
-  margin-left: 50px;
+  height: 250px;
   border-radius: 5px;
 }
 
-.inquiry-index-form-email-self {
-  width: 60%;
-}
-
-.inquiry-index-form-message-self {
-  width: 80%;
-  height: 150px;
-}
-
 .inquiry-index-form-submit {
+  margin: 20px;
   text-align: center;
 }
 
@@ -61,15 +33,42 @@
 }
 
 
-/* タブレット横置き(1024px)程度 */
-@media screen and (max-width:1024px) {
-  .inquiry-index-table {
-    background-color: #fff;
-    width: 80%;
-    padding: 20px;
-    margin : 30px auto;
-    border-radius: 10px;
-  }
+
+
+
+
+/* confirm */
+
+.inquiry-confirm-title {
+  text-align: center;
+}
+
+.inquiry-confirm {
+  margin: 0 auto;
+}
+
+.inquiry-confirm-box {
+  width: 60%;
+  margin: 20px auto;
+}
+
+.inquiry-confirm-main {
+  border-radius: 5px;
+  background: #fff;
+  padding: 30px;
+}
+
+.inquiry-confirm-form-message-self {
+  border-radius: 5px;
+}
+
+.inquiry-confirm-form-submit {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.inquiry-confirm-form-submit-self {
+  width: 30%;
 }
 
 
