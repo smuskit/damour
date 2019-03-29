@@ -3,7 +3,13 @@ class Inquiry < ApplicationRecord
 
   attr_accessor :name, :email, :message
 
-  validates :name, :presence => {:message => '名前を入力してください'}
-  validates :email, :presence => {:message => 'メールアドレスを入力してください'}
-  validates :message, :presence => {:message => 'お問い合わせ内容を入力してください'}
+  validate :add_error_sample
+  def add_error_sample
+    if message.blank?
+      errors[:base] << "お問い合わせ内容を入力してください"
+    elsif message.length > 500
+      errors[:base] << "申し訳ありません．お問い合わせ内容は「500文字以内」で入力してください．"
+    end
+  end
+
 end
