@@ -13,6 +13,10 @@
 
   </head>
   <div class="wrap">
+  <% if admin_signed_in? %>
+    <div class="mark-for-admin">管理者としてログイン中</div>
+  <% end %>
+
   <%if user_signed_in? %>
     <%= link_to cardlist_path(current_user), class:"my-parts" do %>
       <span class="my-parts-text">ダムカード<br>コレクション<span>
