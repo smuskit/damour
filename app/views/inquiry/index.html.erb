@@ -18,7 +18,7 @@
     <div class="inquiry-index-box">
       <%= f.hidden_field :name, value: @user.name %>
       <%= f.hidden_field :email, value: @user.email %>
-      <%= f.text_area :message, class:"inquiry-index-form-message-self" %>
+      <%= f.text_area :message, placeholder: "お問い合わせ内容をこちらに（最大 500文字）", class:"inquiry-index-form-message-self" %>
       <div class="inquiry-index-form-submit">
         <%= f.submit '確認画面へ', class:'btn btn-info inquiry-index-form-submit-self' %>
       </div>
