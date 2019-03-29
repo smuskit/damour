@@ -8,9 +8,9 @@ class DamCommentsController < ApplicationController
       flash[:notice] = '口コミを投稿しました．'
       redirect_to dam_path(@dam)
     else
-      @dam_comments = @dam.dam_comments.page(params[:page])
       flash[:alert] = '入力に誤りがあります．'
-      render 'dams/show'
+      session[:error] = @dam_comment.errors.full_messages
+      redirect_to dam_path(@dam)
     end
   end
 

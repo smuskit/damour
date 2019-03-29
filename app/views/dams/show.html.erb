@@ -74,14 +74,13 @@
     <div class="comment-form">
       <%= form_for [@dam, @dam_comment] do |f| %>
 
-        <% if @dam_comment.errors.any? %>  <!-- form forの@bookに合わせる -->
-          <div id="error_explanation" class="alert-danger">
-            <ul>
-              <% @dam_comment.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
+        <% if session[:error].present? %>
+          <ul class="errors alert">
+            <% session[:error].each do |e| %>
+              <li><%= e %></li>
+            <% end %>
+          </ul>
+          <% session[:error] = nil # 念のため使い終わったら消す %>   
         <% end %>
 
         <div class="comment-form-top">

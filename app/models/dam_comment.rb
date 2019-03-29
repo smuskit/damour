@@ -14,6 +14,10 @@ class DamComment < ApplicationRecord
   validate :add_error_sample
 
   def add_error_sample
+    if title.length > 20
+      errors[:base] << "タイトルは20文字以内で入力してください"
+    end
+
     if comment.blank?
       errors[:base] << "投稿本文は入力必須項目です"
     elsif comment.length > 330
