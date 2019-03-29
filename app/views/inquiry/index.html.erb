@@ -3,7 +3,7 @@
   <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
 
     <h2 class="inquiry-index-title">お問い合わせフォーム</h2>
-
+    
     <% if @inquiry.errors.any? %>
       <div class="alert alert-danger" role="alert">
         <strong>入力内容にエラーがあります</strong>
