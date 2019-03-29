@@ -14,9 +14,7 @@
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"menu-btn" %>
     <% elsif admin_signed_in? %>
       <%= link_to '管理者画面', admin_path(current_admin), class:"menu-btn" %>
-      <%= link_to 'サイトの使い方', users_about_path, class:"menu-btn" %>
       <%= link_to 'TOP', root_path, class:"menu-btn-home" %>
-      <%= link_to 'お問い合わせ', inquiry_path, class:"menu-btn" %>
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"menu-btn" %>
     <% else %>
       <%= link_to 'TOP', root_path, class:"menu-btn-home" %>

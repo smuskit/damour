@@ -12,5 +12,4 @@ class Inquiry < ApplicationRecord
     end
   end
 
-
 end
