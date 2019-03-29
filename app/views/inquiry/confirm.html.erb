@@ -12,15 +12,18 @@
       <%= simple_format(@inquiry.message) %>
     </div>
     <div class="inquiry-confirm-form-submit">
-      <%= f.submit '送　   信', :class => 'btn btn-primary inquiry-confirm-form-submit-self' %>
+      <%= f.submit '送　   信', class: 'btn btn-primary inquiry-confirm-form-submit-self' %>
     </div>
   <% end %>
-  <%= form_for @inquiry, url: inquiry_path do |f| %>
-    <%= f.hidden_field :name %>
-    <%= f.hidden_field :email %>
-    <%= f.hidden_field :message %>
-    <%= f.submit '入力画面へ戻る' %>
-  <% end %>
+    <div class="inquiry-confirm-form-submit">
+      <%= form_for @inquiry, url: inquiry_path do |f| %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :email %>
+        <%= f.hidden_field :message %>
+        <%= f.submit '入力画面へ戻る', class: 'btn btn-default inquiry-confirm-form-submit-self'%>
+      <% end %>
+    </div>
+  
 </div>
 
 

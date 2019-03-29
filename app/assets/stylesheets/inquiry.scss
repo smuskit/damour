@@ -13,7 +13,7 @@
 }
 
 .inquiry-index-box {
-  width: 60%;
+  width: 50%;
   margin: 20px auto;
 }
 
@@ -33,16 +33,9 @@
 }
 
 
-/* タブレット横置き(1024px)程度 */
-@media screen and (max-width:1024px) {
-  .inquiry-index-table {
-    background-color: #fff;
-    width: 80%;
-    padding: 20px;
-    margin : 30px auto;
-    border-radius: 10px;
-  }
-}
+
+
+
 
 /* confirm */
 
