@@ -21,15 +21,13 @@
 
       <div class="tabcontent">
           <div id="tab01">
-            <% if @card.errors.any? %>
-              <div class="alert alert-danger" role="alert">
-                <strong>入力内容にエラーがあります</strong>
-                <ul>
-                  <% @card.errors.each do |attr, msg| %>
-                    <li><%= msg %></li>
-                  <% end %>
-                </ul>
-              </div>
+            <% if session[:error].present? %>
+              <ul class="errors alert">
+                <% session[:error].each do |e| %>
+                  <li><%= e %></li>
+                <% end %>
+              </ul>
+              <% session[:error] = nil # 念のため使い終わったら消す %>   
             <% end %>
             <%= render 'cards/dam_item', cards: @cards_hokkaido %>
           </div>

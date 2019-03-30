@@ -21,19 +21,8 @@ class CardsController < ApplicationController
       flash[:notice] = "「#{@card.dam_name}」のカードを「#{@card.region.name}」に追加しました！"
       redirect_to card_path(@card.id)
     else
-      flash[:alert] = 'カードの投稿に失敗しました'
-      @user = User.find(current_user.id)
-      @cards_hokkaido = @user.cards.all.where(region_id: 1).reverse_order
-      @cards_tohoku = @user.cards.all.where(region_id: 2).reverse_order
-      @cards_kanto = @user.cards.all.where(region_id: 3).reverse_order
-      @cards_hokuriku = @user.cards.all.where(region_id: 4).reverse_order
-      @cards_tokai = @user.cards.all.where(region_id: 5).reverse_order
-      @cards_kinki = @user.cards.all.where(region_id: 6).reverse_order
-      @cards_chugoku = @user.cards.all.where(region_id: 7).reverse_order
-      @cards_shikoku = @user.cards.all.where(region_id: 8).reverse_order
-      @cards_kyushu = @user.cards.all.where(region_id: 9).reverse_order
-      @cards = @user.cards.all.reverse_order
-      render 'users/cardlist'
+      session[:error] = @card.errors.full_messages
+      redirect_to cardlist_path(current_user)
     end
   end
 
