@@ -9,7 +9,9 @@
       <%= f.hidden_field :name %>
       <%= f.hidden_field :email %>
       <%= f.hidden_field :message %>
-      <%= simple_format(@inquiry.message) %>
+      <div class="inquiry-confirm-message">
+        <%= simple_format(@inquiry.message) %>
+      </div>
     </div>
     <div class="inquiry-confirm-form-submit">
       <%= f.submit '送　   信', class: 'btn btn-primary inquiry-confirm-form-submit-self' %>
